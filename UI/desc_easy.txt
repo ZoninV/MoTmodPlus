@@ -1,6 +1,1 @@
-<br>
--<sp> Can change clothes<sp> -<br>
--<sp> Slow AI<sp> -<br>
--<sp> Increased health<sp> -<br>
--<sp> More tips<sp> -<br>
-<br>
+<br>-<sp> Переодеваться можно<sp> -<br>-<sp> Замедленная реакция врагов<sp> -<br>-<sp> Увеличенное здоровье<sp> -<br>-<sp> Больше подсказок<sp> -<br><br>

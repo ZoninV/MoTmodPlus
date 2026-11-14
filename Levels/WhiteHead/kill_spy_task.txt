@@ -1,2 +1,0 @@
-<tab>Kill the courier Ivan Melnik.<br>
-<br><img=p2_small,bot,50,5><br>

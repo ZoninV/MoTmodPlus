@@ -1,13 +1,9 @@
-<col=400000>HF Radio Message</col><br><br>
-
-To: Agent Zolotnitsky<br>
-Very Urgent!<br><br>
-
-<tab>According to reliable sources, today at 15:30 in the United States, FBI agents arrested Igor Tsavalov (Frank Johnson), codename 'Ramsay'.<br>
-<tab>The Chief Counterintelligence Directorate has ordered you to work out an extraction plan, under the 'Shefferd' protocol, to resolve all possible negative consequences of this arrest. If, however, you discover any compromising information which proves that Tsavalov has been brought in by the Americans as a double agent, you are to implement  a neutralization plan, according to standard 'Black Ops' protocols.<br>
-
-<tab>The list of agents or groups which may be used in either situation is to be submitted within two hours prior to your insertion.<br>
-<tab>The case is filed under No.8925 C.<br>
-<tab>You are to report immediately upon mission completion.<br><br>
-
-<tab>Smirnov. <br>
+<col=400000>Записка по "ВЧ"</col><br><br>
+Золотницкому!<br>
+Весьма срочно!<br><br>
+<tab>"По данным надежных источников, сегодня, в 15:30 в США, агентами ФБР был арестован Игорь Цавалов (Френк Джонсон), проходящий под псевдонимом 'Рамзай'.<br>
+<tab>ГУКР требует, по варианту 'Пастух', разработать меры по устранению возможных последствий данного ареста. В случае если поступят сведения о том, что агент сливает информацию, подготовить вариант по пункту 'Черные операции'.<br>
+<tab>В течение двух часов передать информацию по агентам или группам, которые могут быть задействованы по обоим вариантам.<br>
+<tab>Материалы по делу проходят под No.8925 С.<br>
+<tab>О результатах донесите незамедлительно.<br><br>
+<tab>Смирнов." <br>

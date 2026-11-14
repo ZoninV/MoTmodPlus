@@ -2,260 +2,273 @@
   MissionText = 
   {
       --Mission text
-      TaskTraining             = " Training";
-      Fail_KillBot             = " Your compatriot has been killed";
-      Fail_HitBot              = " Your compatriot has been neutralized";
-      Fail_OnFight             = " You have been noticed";
-      Fail_OnSeeBody           = " The guards have noticed the body";
-      Message_Leave            = " You are leaving the training area";
-      Message_Fail             = " You have left the training area";
+      TaskTraining             = " Тренировка";
+      Fail_KillBot             = " Убит советский человек";
+      Fail_HitBot              = " Нейтрализован советский человек";
+      Fail_OnFight             = " Вас заметили";
+      Fail_OnSeeBody           = " Охрана обнаружила тело";
+      Message_Leave            = " Вы покидаете зону тренировочной задачи";
+      Message_Fail             = " Вы покинули зону тренировочной задачи";
       Message_TriggerInfo      = {
                                    {
-                                     "If the enemy is not looking at you, the danger scale ";
-                                     " indicates how well the enemy can hear your movement.";
+                                     "Если противник не смотрит на вас шкала опасности ";
+                                     "показывает насколько хорошо слышно врагу ваше движение.";
                                    };   --[1]
-                                   "#<SNEK>Press <%s> to move noiselessly.";   --[2]
+                                   "#<SNEK>Нажмите '%s' чтобы двигаться бесшумно.";   --[2]
                                    {
-                                     "Your noise level depends on your movement speed.";
-                                     "#<RUNS>To change your movement speed use <%s>..";
+                                     "Уровень шума зависит от скорости движения.";
+                                     "#<RUNS>Для изменения скорости используйте '%s'..";
                                    };   --[3]
                                    {
-                                     "#<MAPS>Use <%s> to switch the map on..";
-                                     "Use arrows or +/- to zoom the map in or out..";
+                                     "#<MAPS>Используйте '%s' чтобы показать карту.";
+                                     "Используйте стрелки или колесико мыши для масштабирования карты.";
                                    };   --[4]
-                                   "Take chloroform..";   --[5]
-                                   "Neutralize the sentry..";   --[6]
-                                   "Take items from the table..";   --[7]
+                                   "Возьмите Хлороформ.";   --[5]
+                                   "Нейтрализуйте часового.";   --[6]
+                                   "Возьмите предметы на столе.";   --[7]
                                    {
-                                     " - If you move with caution you are less noticeable ";
-                                     "#<CRCH> - To crouch use <%s> or scroll the mouse wheel down";
+                                     " - Аккуратно передвигаясь вы будете не так заметы ";
+                                     "#<CRCH> - Чтобы пригнуться нажмите '%s'";
+                                     "#<LAYG> - Чтобы лечь нажмите '%s'";
+                                     " - Ваш камуфляж позволяет вам прятаться в траве.";
                                    };   --[8]
-                                   "When an enemy is looking in your direction the danger scale indicates your visibility.";   --[9]
-                                   "If an enemy sees anything suspicious he may become more alert";   --[10]
+                                   "Когда противник смотрит в вашу сторону шкала опасности показывает вашу заметность.";   --[9]
+                                   "Увидев что-то подозрительное враг может насторожиться.";   --[10]
                                    {
-                                     "You can use plates, mugs and other items ";
-                                     "to distract the enemy..";
+                                     "Вы можете использовать тарелки, кружки и другие предметы";
+                                     "для того чтобы отвлекать внимание противника.";
+                                     "Вы также можете использовать камни, чтобы отвлечь врага.";
+                                     "#<TGRD>Вы можете достать их с помощью клавиши быстрого броска '%s'.";
                                    };   --[11]
                                    {
-                                     "Reach the bunker while avoiding being noticed by patrols:";
+                                     "Доберитесь до бункера, не попадаясь на глаза патрулям:";
                                      " ";
                                    };   --[12]
                                    {
-                                     " - Use the map to plan your optimal route ";
-                                     " - In crawling mode you will not be as noticeable";
-                                     " - You may try to neutralize the patroller";
+                                     " - Используйте карту, чтобы оптимально спланировать маршрут";
+                                     " - В режиме ползания вы будете не так заметны";
+                                     " - Можете попробовать нейтрализовать патрулирующего";
                                    };   --[13]
-                                   "Reach the radio operator's room..";   --[14]
-                                   "Lock pick the door to the radio operator's room:";   --[15]
-                                   "Neutralize the sleeping radio operator:";   --[16]
+                                   "Доберитесь до комнаты радиста.";   --[14]
+                                   "Взломайте дверь в комнату радиста:";   --[15]
+                                   "Нейтрализуйте спящего радиста:";   --[16]
                                    {
                                      " ";
-                                     " - Sleeping people do not hear the enemy getting closer";
+                                     " - Спящие люди не слышат приближение врага";
                                    };   --[17]
-                                   "#<LLEF> - Use <%s> to look around the corner without being noticed";   --[18]
+                                   "#<LLEF> - Используйте '%s', чтобы незаметно выглянуть из-за угла";   --[18]
                                    {
-                                     " - You cannot take uniforms from enemies killed with firearms or a knife ";
-                                     "   ";
+                                     " - Нельзя взять форму врагов, убитых огнестрельным оружием или ножом. ";
+                                     " - На уровнях сложности 'Легко' и 'Нормально' вы можете взять такую форму, ";
+                                     "    если враг был застрелен или убит броском ножа в голову ";
                                    };   --[19]
                                    "";   --[20]
-                                   " - Use 'Forward'/'Back' buttons or the mouse wheel to select the picklock or rotate the keyhole";   --[21]
-                                   "#<MRIT> - Press <%s> or the left mouse button to bring the picklock close to the keyhole";   --[22]
-                                   "Neutralize the guard..";   --[23]
-                                   "#<MFRD>Press <%s> to start the motor and drive forward";   --[24]
+                                   " - Вперед/Назад или колесико мыши для выбора отмычки и поворота личинки замка";   --[21]
+                                   "#<MRIT> - Нажмите '%s' или 'ЛКМ', чтобы подвести отмычку к личинке";   --[22]
+                                   "Нейтрализуйте охранника.";   --[23]
+                                   "#<MFRD>Нажмите '%s' чтобы завести двигатель и ехать вперед";   --[24]
                                    {
-                                     "Driving:";
+                                     "Вождение:";
                                      " ";
-                                     "#<HANB> - Use <%s> for emergency braking";
-                                     "#<MBRD> - Use <%s> to pull down or move back";
+                                     "#<HANB> - Используйте '%s' для экстренного торможений";
+                                     "#<MBRD> - Используйте '%s' чтобы притормозить или двигаться назад";
                                    };   --[25]
-                                   "Take the German submachine gun..";   --[26]
-                                   "Stun the officer..";   --[27]
+                                   "Возьмите немецкий автомат.";   --[26]
+                                   "Оглушите офицера.";   --[27]
                                    {
-                                     "Take the officer's documents. Use the 'Inventory'";
-                                     " option to change into the officer's uniform..";
+                                     "Заберите документы офицера. Используйте опцию 'Инвентарь'";
+                                     "Переоденьтесь в форму офицера.";
                                    };   --[28]
-                                   "Some enemies have begun patrolling the camp's territory..";   --[29]
+                                   "Некоторые противники начали патрулировать по территории лагеря.";   --[29]
                                    {
-                                     "#<DROP>You can drop an active weapon using the key <%s>";
-                                     "#<INVT>You can drop any item or backpack from your inventory <%s>";
+                                     "#<DROP>Вы можете выбросить активное оружие клавишей '%s'";
+                                     "#<INVT>Вы можете выбросить любой предмет или рюкзак в инвентаре '%s'";
                                    };   --[30]
+                                   {
+                                     "Попробуйте отдать приказы солдатам, стоящим снаружи.";
+                                     "Когда закончите, покажите свои документы охраннику и войдите в здание.";
+                                   };   --[31]
                                  };
-      TaskNeutralize           = " Neutralizing";
-      TaskNeutralizeGuard      = " Guard";
-      TaskNeutralizeSniper     = " Sentry";
-      TaskHideBody             = " Hide body";
-      TaskNeutralizePatrol     = " Patrol";
-      Message_Wirecutter       = "You need pliers to cut the mesh fence.";
+      TaskNeutralize           = " Нейтрализация";
+      TaskNeutralizeGuard      = " Охранник";
+      TaskNeutralizeSniper     = " Часовой";
+      TaskHideBody             = " Спрятать тело";
+      TaskNeutralizePatrol     = " Патруль";
+      Message_Wirecutter       = "Для того, чтобы перерезать забор, нужны кусачки.";
       Message_DropBody         = {
-                                   "Hide the body in a box:";
+                                   "Спрячьте тело в ящике:";
                                    " ";
-                                   "#<TARG> - To throw a body, you can use the <%s> key";
-                                   "#<FIRE> - To lay a body down use <%s>";
+																	 " - Поднимать тела можно клавишей 'B' (по-умолчанию)";
+                                   "#<TARG> - Бросить тело можно по кнопке '%s'";
+                                   "#<FIRE> - Для того, чтобы положить тело, используйте '%s'";
                                  };
-      Message_NeutralizeStart  = "Assignments have been changed: Neutralize the guards";
-      Message_NeutralizeGuard  = "Move left toward the shed..";
-      Message_HideBody         = "Hide the body in a box..";
+      Message_NeutralizeStart  = "Задания изменены: Нейтрализуйте охрану";
+      Message_NeutralizeGuard  = "Двигайтесь налево в сторону навеса.";
+      Message_HideBody         = "Спрячьте тело в ящике.";
       Message_GetWirecutter    = {
-                                   "Take the pliers..";
-                                   "You can put bigger items into a backpack only..";
+                                   "Возьмите кусачки.";
+                                   "Большие предметы можно положить только в рюкзак.";
                                  };
-      Message_NeutralizeSniper = "Neutralize a sentry on the watchtower..";
-      Message_EnterArea        = "Use pliers to cut through the mesh..";
+      Message_NeutralizeSniper = "Нейтрализуйте часового на вышке.";
+      Message_EnterArea        = "Прокусите кусачками сетку.";
       Message_NeutralizePatrol = {
-                                   "Get back to the exit";
-                                   "Neutralize the patroller..";
+                                   "Возвращайтесь к выходу";
+                                   "Нейтрализуйте патрулирующего.";
                                  };
       Message_NeutralizePtrl2  = {
-                                   "Neutralize the patroller:";
+                                   "Нейтрализуйте патрулирующего:";
                                    " ";
-                                   "#<CRCH> - Move crouching (%s) in the running mode to quickly ";
-                                   "   reduce the distance and have time to neutralize an enemy";
+                                   "#<CRCH> - Подбегите пригнувшись (%s), чтобы быстро";
+                                   "   сократить дистанцию и успеть нейтрализовать противника";
                                  };
-      Message_Vehicle          = " Get out of the transport";
-      TaskBunker               = " Getting changed";
-      TaskPalatka              = " Tent";
-      TaskArriveBunker         = " Reach the bunker";
-      TaskRadist               = " Radio operator";
-      Message_BunkerStart      = "Assignments have been changed: Getting changed";
+      Message_Vehicle          = " Выйдите из транспорта";
+      TaskBunker               = " Переодевание";
+      TaskPalatka              = " Палатка";
+      TaskArriveBunker         = " Добраться до бункера";
+      TaskRadist               = " Радист";
+      Message_BunkerStart      = "Задания изменены: Переодевание";
       Message_Palatka          = {
-                                   "Get into the tent without making too much noise:";
+                                   "Проберитесь в палатку без лишнего шума:";
                                    " ";
-                                   "#<SWMP> - Switch on the <%s> map to estimate the location of the enemies";
+                                   "#<SWMP> - Включите карту '%s', чтобы оценить местоположение противников";
                                  };
-      Message_Table            = "Come to the table";
+      Message_Table            = "Подойдите к столу";
       Message_BunkerMessage    = {
-                                   "You have reached the bunker.";
-                                   "You need to get inside. The guard is at the doors:";
+                                   "Вы достигли бункера.";
+                                   "Вам необходимо попасть во внутрь. У дверей охранник:";
                                    " ";
-                                   "#<WIST> - You can try to attract the guard's attention by whistling <%s> ";
-                                   "#<GRAN> - You can also distract the guard by throwing a <%s> smoke bomb.";
+                                   "#<WIST> - Свистнув '%s' вы можете попробовать привлечь внимание охранника.";
+                                   "#<GRAN> - Вы можете отвлечь охранника, бросив '%s' дымовую шашку.";
                                  };
       Message_BodyMessage      = {
-                                   "Always keep in mind that bodies can be discovered.";
-                                   " Ensure the body is hidden in a safe place.";
+                                   "Всегда держите в уме, что тела могут быть обнаружены.";
+                                   "Позаботьтесь о том, чтобы надежно спрятать тело.";
                                  };
-      Message_ChangeCloth      = "Take the radio operator's uniform..";
-      Fail_DontUseRadistForm   = "You cannot change into the uniform until the trainer tells you to do so";
-      Message_Lockpick         = "Get back to take the picklocks. You won't be able to accomplish the task without them";
-      Message_VehicleStart     = "Assignments have been changed. Truck";
-      Message_EnterVehicle     = "Get in a car..";
-      TaskVehicle              = " Truck";
-      Message_ReturnOldPos     = " Get back to the area specified";
+      Message_ChangeCloth      = {
+                                   "Возьмите форму радиста.";
+																	 " ";
+                                   "Переодеваться можно клавишей 'T' (по-умолчанию).";
+                                 };
+      Fail_DontUseRadistForm   = "Нельзя переодеваться в эту форму до указания инструктора.";
+      Message_Lockpick         = "Вернитесь за отмычками. Без них вам не удастся выполнить задание.";
+      Message_VehicleStart     = "Задания изменены. Грузовик";
+      Message_EnterVehicle     = "Сядьте в машину.";
+      TaskVehicle              = " Грузовик";
+      Message_ReturnOldPos     = " Вернитесь в указанную зону";
       Message_LeaveVehicle     = {
-                                   "Get out of the car in the area specified:";
+                                   "Выйдите из машины в указанной зоне:";
                                    " ";
-                                   " - You need to stop the car first ";
-                                   "#<ACTS> - Use the right mouse button or <%s> to exit";
+                                   " - Необходимо сначала остановить машину";
+                                   "#<ACTS> - Используйте 'ПКМ' или '%s' для выхода";
                                  };
-      Message_ReturnVehicle    = "Get back to the truck";
-      Message_CantStartForm    = "You cannot start the mission wearing this uniform";
-      TaskVillage              = " Using uniform";
-      TaskOfficer              = " Officer";
-      Message_VillageStart     = "Assignments have been changed: Using uniform";
-      Message_OfficerStart     = "Assignments have been updated: Officer";
-      Message_EnterHouse       = "Enter the nearest building..";
-      Failed_OfficerForm       = "You cannot change into this uniform";
-      Fail_HitOfficer          = "You cannot kill this officer now";
-      Message_StopMove         = "Only officers can access this building";
+      Message_ReturnVehicle    = "Вернитесь в грузовик";
+      Message_CantStartForm    = "Нельзя начать миссию, будучи в этой форме";
+      TaskVillage              = " Использование формы";
+      TaskOfficer              = " Офицер";
+      Message_VillageStart     = "Задания изменены: Использование формы";
+      Message_OfficerStart     = "Задания изменены: Использование формы";
+      Message_EnterHouse       = "Войдите в ближайшее здание.";
+      Failed_OfficerForm       = "Нельзя переодеваться в эту форму";
+      Fail_HitOfficer          = "Нельзя уничтожать этого офицера сейчас";
       Message_GetFormDocs      = {
                                    " ";
-                                   "Get an officer's uniform in the next building..";
+                                   "Заполучите форму офицера в соседнем здании.";
                                  };
-      Message_OfficerDocs      = "Officer's documents";
-      Message_House            = "Head to the building marked on the map..";
-      Message_DropWeapon       = "Throw your weapons away. They can break your disguise!";
-      Message_DropBackpack     = "#<INVT>Throw your backpack away. You can throw it away in inventory mode <%s>..";
-      Message_ReturnCamp       = "Get back to the tent..";
+      Message_OfficerDocs      = "Документы офицера";
+      Message_House            = "Направляйтесь в здание, отмеченное на карте.";
+      Message_DropWeapon       = "Выбросьте оружие. Оно может выдать вас!";
+      Message_DropBackpack     = "#<INVT>Выбросьте рюкзак. Его можно выбросить в режиме инвентаря '%s'.";
+      Message_ReturnCamp       = "Вернитесь в палатку.";
       Polosa_1                 = {
-                                   "Pass through the zone with wooden barriers..";
+                                   "Пройдите полосу с деревянными преградами.";
                                    " ";
-                                   "#<JUMP>Use the key 'Jump/Climb (%s)'";
-                                   "to climb onto the barrier";
+                                   "#<JUMP>Используйте клавишу 'Прыгнуть/Залезть (%s)'";
+                                   "для того, чтобы взобраться на преграду";
                                  };
-      Polosa_2                 = "Use the ladder to climb the wall...";
-      Polosa_3                 = "Run across both access gangways..";
-      Polosa_4                 = "Pass through both trenches..";
+      Polosa_2                 = "Заберитесь по лестнице на стену.";
+      Polosa_3                 = "Пробегите по обеим сходням.";
+      Polosa_4                 = "Пройдите обе траншеи.";
       Polosa_5                 = {
-                                   "Crawl under barbed wire..";
-                                   "#<LAYG>Use the '%s' key or the scroll wheel to crawl";
+                                   "Проползите под колючей проволокой.";
+                                   "#<LAYG>Используйте клавишу '%s' чтобы ползти";
                                  };
-      Polosa_Fail              = "Try again..";
-      Polosa_Task              = " Line of barriers";
-      Polosa_Start             = "Assignments have been changed: Pass through the line of barriers";
-      Polosa_Leave             = "You have left the building area. Get back";
-      Fire_Task                = " Target shooting ";
-      Fire_Start               = "Assignments have been changed: target shooting";
-      Fire_Pistol              = "Target shooting: Using a pistol";
+      Polosa_Fail              = "Попробуйте заново.";
+      Polosa_Task              = " Полоса препятствий";
+      Polosa_Start             = "Задания изменены: Пройдите полосу препятствий";
+      Polosa_Leave             = "Вы покинули область задания. Вернитесь назад";
+      Fire_Task                = " Стрельба по мишеням";
+      Fire_Start               = "Задания изменены: Стрельба по мишеням";
+      Fire_Pistol              = "Стрельба по мишеням: Использование пистолета";
       Fire_PistolTake          = {
-                                   "Take a pistol from the table..";
+                                   "Возьмите пистолет со стола.";
                                    " ";
-                                   "#<ACTS>Press and hold down the 'Action menu (%s)' key to enter the menu ";
-                                   "Use the forward/back keys or the scroll wheel to select a menu item ";
-                                   "#<ACTS>Release the 'Action menu (%s)' key to enable the menu item you need";
+                                   "#<ACTS>Нажмите и держите клавишу 'Меню действий (%s)' для входа в меню ";
+                                   "Используйте клавиши 'Вперед/Назад' или колесико мыши для выбора пункта меню ";
+                                   "#<ACTS>Отпустите клавишу 'Меню действий (%s)' для активации нужного пункта меню";
                                  };
       Fire_PistolTask          = {
-                                   "Hit three red targets - you need to hit ";
-                                   " the target's center twice";
+                                   "Поразите три красные мишени - необходимо попасть ";
+                                   "два раза в центр мишени";
                                    " ";
-                                   " - The precision of shooting depends on movement and distance to the target ";
-                                   "#<TARG> - Use aimed mode (%s) to improve";
-                                   "   shooting accuracy";
-                                   " - If the aiming sight turns red then the target is at a valid";
-                                   "distance for shooting ";
-                                   " - You can change the shape of the aiming sight in game options";
-                                   "#<RELD> - To reload weapon use the (%s) key";
-                                   " - You can take cartridges from the table ";
-                                   "#<PIST> - You can take the pistol out using (%s) key";
-                                   "#<DROP> - You can throw the weapon away using (%s) key";
+                                   " - Точность стрельбы зависит от движения и от расстояния до цели ";
+                                   "#<TARG> - Используйте прицельный режим (%s) для повышения";
+                                   "   точности стрельбы";
+                                   " - Если прицел краснеет, значит цель находится на эффективной";
+                                   "   для стрельбы дальности";
+                                   " - Форму прицела можно изменить в опциях игры";
+                                   "#<RELD> - Для перезарядки оружия используйте клавишу (%s)";
+                                   " - Патроны можно взять на столе";
+                                   "#<PIST> - Достать пистолет можно клавишей (%s)";
+                                   "#<DROP> - Выбросить оружие можно клавишей (%s)";
                                  };
       Fire_MachingunTask       = {
-                                   "Hit two targets ";
+                                   "Поразите две мишени";
                                    " ";
-                                   "#<TARG> - Use aimed mode (%s) to improve ";
-                                   " shooting accuracy";
-                                   " - A submachine gun has poor accuracy. To ensure precision";
-                                   " you should fire shot after shot";
-                                   " - You can change the shape of the aiming sight in game options";
-                                   "#<RELD> - To reload weapon use (%s) key";
-                                   " - You can take the weapon's magazine case from the table";
-                                   "#<MGUN> - You can draw the weapon <submachine gun/rifle> using the key (%s)";
-                                   "#<HIDE> - You can take the weapon away using the key (%s)";
+                                   "#<TARG> - Используйте прицельный режим (%s) для повышения";
+                                   " точности стрельбы";
+                                   " - У автомата плохая кучность стрельбы, поэтому для точности";
+                                   " лучше стрелять одиночными";
+                                   " - Форму прицела можно изменить в опциях игры";
+                                   "#<RELD> - Для перезарядки оружия используйте клавишу (%s)";
+                                   " - Магазины для оружия можно взять на столе";
+                                   "#<MGUN> - Достать оружие <автомат/винтовку> можно клавишей (%s)";
+                                   "#<HIDE> - Убрать оружие можно клавишей (%s)";
                                  };
       Fire_RifleTask           = {
-                                   "Hit a target: you need to hit the very center of the target ";
+                                   "Поразите мишень - необходимо попасть в центр мишени";
                                    " ";
-                                   " - For more accurate shooting use a rifle instead of a submachine gun ";
-                                   "#<TARG> - Use aiming mode (%s) to improve";
-                                   "  shooting accuracy ";
-                                   " - You can change the shape of the aiming sight in game options";
-                                   " - You can take the rifle magazine cases from the table";
+                                   " - Для более точной стрельбы используйте винтовку вместо автомата";
+                                   "#<TARG> - Используйте прицельный режим (%s) для повышения";
+                                   "  точности стрельбы";
+                                   " - Форму прицела можно изменить в опциях игры";
+                                   " - Магазины для винтовки можно взять на столе";
                                  };
       Fire_SniperTask          = {
-                                   "Hit three targets: you need to hit the white mark";
+                                   "Поразите три мишени - необходимо попасть в белую метку";
                                    " ";
-                                   "#<TARG> - Use aiming mode (%s) to switch";
-                                   "   into optics mode ";
-                                   "#<TARG> - Press and hold down (%s) to hold breath";
-                                   " in optics mode";
+                                   "#<TARG> - Используйте прицельный режим (%s) для перехода";
+                                   "   в режим оптики";
+                                   "#<TARG> - Нажмите и держите (%s) для задержки дыхания";
+                                   " в режиме оптики";
                                  };
-      Fire_Complete            = "Assignment accomplished..";
-      Fire_Machingun           = "Target shooting: Using a submachine gun/rifle";
-      Fire_MachingunTake       = "Take a submachine gun from the table..";
-      Fire_NextRoom            = "Go to the next room..";
-      Fire_Rifle               = "Take a rifle from the table..";
-      Fire_Sniper              = "Target shooting: Using a sniper rifle";
-      Fire_SniperTake          = "Take a sniper rifle from the table..";
-      Grenade_Task             = " Throwing grenades";
-      Grenade_Start            = "Assignments have been changed: Throwing grenades";
-      Grenade_Take             = "Take grenades..";
+      Fire_Complete            = "Задание выполнено.";
+      Fire_Machingun           = "Стрельба по мишеням: Использование автомата/винтовки";
+      Fire_MachingunTake       = "Возьмите один из автоматов со стола.";
+      Fire_NextRoom            = "Пройдите в соседнюю комнату.";
+      Fire_Rifle               = "Возьмите винтовку со стола.";
+      Fire_Sniper              = "Стрельба по мишеням: Использование снайперской винтовки";
+      Fire_SniperTake          = "Возьмите снайперскую винтовку со стола.";
+      Grenade_Task             = " Броски гранат";
+      Grenade_Start            = "Задания изменены: Броски гранат";
+      Grenade_Take             = "Возьмите гранаты.";
       Grenade_Task1            = {
-                                   "Hit the hole with a grenade:";
+                                   "Попадите гранатой в яму:";
                                    " ";
-                                   "#<GRAN> - To select items you can throw press (%s)";
-                                   "#<GRAN> - To select an item to be thrown press and hold down the key (%s)";
-                                   " - To select a necessary item from the list, you can use arrows or the scroll wheel";
-                                   "#<TGRD> - For a quick throw use the key (%s)";
-                                   " - In game options you can select a power throw ";
+                                   "#<GRAN> - Для выбора предметов, которые можно бросить нажмите (%s)";
+                                   "#<GRAN> - Для выбора бросаемого предмета нажмите и держите клавишу (%s)";
+                                   " - Выбрать из списка необходимый предмет можно стрелками или колесикоом мыши";
+                                   "#<TGRD> - Для быстрого броска используйте клавишу (%s)";
+                                   " - В опциях игры можно задать бросок с использованием силы";
                                    " ";
                                    " ";
                                    " ";
@@ -267,13 +280,13 @@
                                    " ";
                                  };
       Grenade_Task2            = {
-                                   "Hit one of the top windows of the building with a grenade:";
+                                   "Попадите гранатой в одно из верхних окон здания:";
                                    " ";
-                                   "#<GRAN> - To select items that can be thrown press (%s)";
-                                   "#<GRAN> - To select an item to be thrown press and hold down (%s) key";
-                                   " - You can select the necessary item from the list using arrows or the mouse scroll button";
-                                   "#<TGRD> - For a quick throw use (%s) key";
-                                   " - In game options you can select a power throw ";
+                                   "#<GRAN> - Для выбора предметов, которые можно бросить нажмите (%s)";
+                                   "#<GRAN> - Для выбора бросаемого предмета нажмите и держите клавишу (%s)";
+                                   " - Выбрать из списка необходимый предмет можно стрелками или колесикоом мыши";
+                                   "#<TGRD> - Для быстрого броска используйте клавишу (%s)";
+                                   " - В опциях игры можно задать бросок с использованием силы";
                                    " ";
                                    " ";
                                    " ";
@@ -284,60 +297,73 @@
                                    " ";
                                    " ";
                                  };
-      Grenade_Next             = "Go to the next room marked on the map..";
-      Knife_Task               = " Knife throwing";
-      Knife_Start              = "Assignments have been changed: knife throwing";
-      Knife_Pick_4             = "Take 4 knives..";
-      Knife_Pick_3             = "Take 3 knives..";
-      Knife_TakePosition       = "Take up a posture for throwing.";
+      Grenade_Next             = "Пройдите в соседнее помещение, отмеченное на карте.";
+      Knife_Task               = " Метание ножа";
+      Knife_Start              = "Задания изменены: Метание ножа";
+      Knife_Pick_4             = "Возьмите 4 ножа.";
+      Knife_Pick_3             = "Возьмите 3 ножа.";
+      Knife_TakePosition       = "Перейдите на позицию для броска.";
       Knife_Target_1           = {
                                    {
-                                     "Hit the target from standing:";
+                                     "Попадите в цель из позиции стоя:";
                                      " ";
-                                     "#<KNIF> - You can draw a knife by pressing (%s).";
-                                     "#<FIRE> - To throw a knife press (%s).";
+                                     "#<KNIF> - Достать нож можно клавишей (%s).";
+                                     "#<FIRE> - Бросить нож можно клавишей (%s).";
                                    };   --[1]
                                    {
-                                     "Hit the target from sitting:";
+                                     "Попадите в цель из позиции сидя:";
                                      " ";
-                                     "#<CRCH> - To sit down use (%s) or the scroll wheel";
-                                     "#<KNIF> - To take out a knife you can press (%s)";
-                                     "#<FIRE> - To throw a knife use (%s) key";
+                                     "#<CRCH> - Сесть можно клавишей (%s)";
+                                     "#<KNIF> - Достать нож можно клавишей (%s)";
+                                     "#<FIRE> - Бросить нож можно клавишей (%s)";
                                    };   --[2]
                                    {
-                                     "Hit the target from prone posture:";
+                                     "Попадите в цель из позиции лежа:";
                                      " ";
-                                     "#<KNIF> - You can take out the knife by pressing (%s)";
-                                     "#<FIRE> - To drop a knife press (%s)";
-                                     "#<LAYG> - To lie down use the key (%s) or the scroll wheel";
+                                     "#<KNIF> - Достать нож можно клавишей (%s)";
+                                     "#<FIRE> - Бросить нож можно клавишей (%s)";
+                                     "#<LAYG> - Лечь можно клавишей (%s)";
                                    };   --[3]
                                  };
       Knife_Target_2           = {
-                                   "Hit the target accurately with a knife:";
+                                   "Попадите ножом точно в мишень:";
                                    " ";
-                                   "#<KNIF> - To take out a knife you can use the (%s) key";
-                                   "#<FIRE> - To throw a knife you can use the (%s) key";
-                                   " - A knife flies in a parabola, so aim higher if a target is distant";
-                                   "";
+                                   "#<KNIF> - Достать нож можно клавишей (%s)";
+                                   "#<FIRE> - Бросить нож можно клавишей (%s)";
+                                   " - Нож летит по параболе, поэтому если цель далеко";
+                                   "   цельтесь выше";
                                  };
-      Knife_WrongPos           = "A wrong position for a throw. Try again..";
-      Knife_Missed             = "You missed. Try again..";
+      Knife_WrongPos           = "Неверная поза для броска. Попробуйте заново.";
+      Knife_Missed             = "Вы промазали, попробуйте заново.";
       Action_Menu              = {
-                                   "Action menu:";
+                                   "Меню действий:";
                                    " ";
-                                   "#<ACTS> - Press and hold down the 'Action menu (%s)' key to enter the menu";
-                                   " - Use the forward /back keys or the scroll wheel to select the menu item ";
-                                   "#<ACTS> - Release the 'Action menu (%s)' key to enable the necessary menu item";
+                                   "#<ACTS> - Нажмите и держите клавишу 'Меню действий (%s)' для входа в меню";
+                                   " - Используйте клавиши вперед/назад или колесико мыши для выбора пункта меню";
+                                   "#<ACTS> - Отпустите клавишу 'Меню действий (%s)' для активации нужного пункта меню";
                                  };
-      Start_Move               = "Move to the point marked on the map";
-      Start_Next               = "Move to the next training site marked on the map ('Briefing' key 'O' by default).";
+      Start_Move               = "Двигайтесь к точке, обозначенной на карте";
+      Start_Next               = "Двигайтесь к следующему месту тренировки, обозначенному на карте";
       Start_Message            = {
-                                   "Move to the point:";
+                                   "Двигайтесь к точке:";
                                    " ";
-                                   "#<BRIF> - Press the 'Briefing (%s)' key to view assignments ";
-                                   "#<SWMP> - Press the 'Map (%s)' key to enable the map ";
-                                   "#<MAPS> - Press the 'Map Mini/Full Size. (%s)' to toggle the map ";
-                                   " - Use arrows or +/- keys to zoom the map in or out.";
+                                   "#<BRIF> - Нажмите клавишу 'Брифинг (%s)' для просмотра задач";
+                                   "#<SWMP> - Нажмите клавишу 'Карта (%s)' для включения карты";
+                                   "#<MAPS> - Нажмите клавишу 'Карта/Компас (%s)' для переключения между типами навигации";
+                                   " - Используйте стрелки или колесико мыши для масштабирования карты.";
+                                 };
+
+      -- Liz Shaw
+      Message_StopMove         = "@ Доступ в это здание разрешен только офицерам!";
+      Message_StopMove2        = "@ Техперсоналу здесь не место!";
+      Message_StopMove_Search  = "@ Мне нужно проверить вас на наличие оружия, прежде чем я смогу вас впустить!";
+      Message_StopMove_Docs    = "@ Мне нужно проверить ваши документы, прежде чем я смогу вас пропустить!";
+      Message_SearchClear      = "@ Никакого оружия не обнаружено! Теперь можете проходить!";
+      Message_DocsClear        = "@ Все в порядке! Разрешите идти?";
+      Message_ShowDocs         = "ПОКАЗАТЬ ДОКУМЕНТЫ";
+      Message_GetFormSpare     = {
+                                   " ";
+                                   "Найдите запасную форму пехотинца.";
                                  };
   };
 
@@ -446,6 +472,18 @@
      -- AA6
 
      Stream.WriteBool( Level.ShowActionMenu );
+
+     -- Liz Shaw
+
+     Stream.WriteBool  ( Level.SoldierInfoShowed );
+     Stream.WriteBool  ( Level.SearchInfoShowed );
+     Stream.WriteString( Level.SearchZoneName );
+     Stream.WriteBool  ( Level.SearchingStart );
+     Stream.WriteBool  ( Level.SearchJustFinished );
+     Stream.WriteBool  ( Level.SearchManReset );
+     Stream.WriteBool  ( Level.SubordinateInfoShowed );
+     Stream.WriteBool  ( Level.PassShowed );
+
      Level.OnSave_Common(); -- forlik
 
   end
@@ -552,15 +590,24 @@
 
      Level.ShowActionMenu = Stream.ReadBool();
 
+     -- Liz Shaw
+
+     Level.SoldierInfoShowed     = Stream.ReadBool();
+     Level.SearchInfoShowed      = Stream.ReadBool();
+     Level.SearchZoneName        = Stream.ReadString();
+     Level.SearchingStart        = Stream.ReadBool();
+     Level.SearchJustFinished    = Stream.ReadBool();
+     Level.SearchManReset        = Stream.ReadBool();
+     Level.SubordinateInfoShowed = Stream.ReadBool();
+     Level.PassShowed            = Stream.ReadBool();
+
      Level.OnLoad_Common(); -- forlik
      Level.OnFinishLoad();
   end 
 
   function Level.SaveTraining()
 
-     -- #HACK
-     --Level.AddSmallMessage( "Контрольная точка сохранена.." , 5.0, 255, 128, 0 );
-
+     Level.AddSmallMessage( "Контрольная точка сохранена.." , 5.0, 255, 128, 0 );
      System:SaveGame( "_training.asv" , false );
 
   end;
@@ -580,8 +627,12 @@
      -- forlik System:SetVar( "g_maxblood", 0 );
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
-     System:SetVar( "r_farclip" , 5000 ); -- forlik
+     System:SetVar( "r_farclip" , 3000 ); -- forlik
      System:SetVar( "r_dofsky", 128 ); --forlik
+
+     Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\ambiento.ogg" );
+     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\action_2.ogg" );
+     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\sustain.ogg" );
 
      -- AA2
 
@@ -597,7 +648,6 @@
 
      Level.Enable("saving", false );
      Level.Enable("score" , false );
-
 
   end
 
@@ -756,10 +806,31 @@
      Level.StartTrainingMessages();
 
      AI.DisableDecamouflageMethod( AI.METHOD_BACKPACK, -1.0 );
-     Actor.EnableHitFace( Level.FindActor('SS08'), true );
      Actor.EnableFallDeath( Level.FindActor('SS01'), false );
 
+     -- Liz Shaw
+
+     Level.SoldierInfoShowed     = false;
+     Level.SearchInfoShowed      = false;
+     Level.SearchZoneName        = "";
+     Level.SearchingStart        = false;
+     Level.SearchJustFinished    = false;
+     Level.SearchManReset        = false;
+     Level.SubordinateInfoShowed = false;
+     Level.PassShowed            = false;
+
+     AI.SetPlayerForm("Diversant");
+     AI.SetPlayerDefaultForm("Diversant");
+
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
+
+     AI.EnableZone("TargetHouse", false);
+     AI.EnableZone("TargetHouse_Near", false);
+     AI.EnableZone("TargetHouse_NearDocs", false);
+     AI.EnableZone("OfficerHouse", false);
+     AI.EnableZone("OfficerHouse_NotSearched", false);
+     AI.EnableZone("OfficerHouse_Near", false);
+     AI.EnableZone("OfficerHouse_NearSearch", false);
      Level.OnFinishLoad();
      Level.SaveTraining();
 
@@ -888,6 +959,13 @@
     elseif (trgname == 'VillageDropWeaponTrigger_1' or
             trgname == 'VillageDropWeaponTrigger_2') then
        Level.OnEnterVillageDropWeaponTrigger();
+    -- Liz Shaw
+    elseif (trgname == 'SubordinateTrigger') then
+       Level.OnEnterSubordinateTrigger();
+    elseif (trgname == 'SearchTipTrigger') then
+       Level.OnEnterSearchTipTrigger();
+    elseif (trgname == 'ResetSearchManTrigger') then
+       Level.OnEnterResetSearchManTrigger();
     end
 
   end
@@ -1008,6 +1086,7 @@
      if (Level.IsNeutralizeMiniMission() != false) then
         if (botId == 'SS01') then
            -- Update tasks
+           Level.PlayMenuSound("task_finish"); -- Liz Shaw
            Level.CompleteMissionTask('NRGR', 10.0 );
            Level.RemoveMissionTask( 'NRGR' ); 
            -- Add new mission task
@@ -1035,6 +1114,7 @@
               Level.AddMissionTask( MissionText.TaskNeutralizePatrol, 'NRPT', "levels\\training\\neutral_patrol.txt" );
            end
 
+           Level.PlayMenuSound("task_finish"); -- Liz Shaw
            Level.CompleteMissionTask('NRSR', 10.0 );
            Level.RemoveMissionTask( 'NRSR' ); 
            Level.EnableLevelMark( 'SS02', false );
@@ -1066,6 +1146,7 @@
               return;
            end
 
+           Level.PlayMenuSound("task_finish"); -- Liz Shaw
            Level.CompleteMissionTask('NRPT', 10.0 );
            Level.RemoveMissionTask( 'NRPT' ); 
            Level.EnableLevelMark( 'SS09', false );
@@ -1125,7 +1206,9 @@
           end
 
        elseif (botId == 'SO01' or
-               botId == 'SS13') then
+               botId == 'SS12' or
+               botId == 'SS13' or
+               botId == 'SS16') then
           Level.OnFailMiniMission( MissionText.Fail_HitBot );
        end
      end
@@ -1425,11 +1508,21 @@
            print("Error. Cant create item: weapon.mp40");
         end
 
+        local cloth = Level.CreateWorldItem( "Wear:SovietSolRKKI" , "Equipment" ,
+                                    182.74, -72.88, -213.66, 0.0, 0.0, 0.0, 'WS01' );
+        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH , "WS01" , "OnSoldierClothChange");
+
+        local form = Level.FindItem( 'WS01' );
+        if (form != nil) then
+          AI.RegisterWearForm( form, "Soldier" );          
+        end;
+
      end;
 
      -- Add action handlers
      if (missionId == 'VILG') then
    
+        Level.AddActionHandler( Level.AH_SEE_PLAYER, "SO01", "OnSeePlayer" ); -- Liz Shaw
         Level.AddActionHandler( Level.AH_SEE_PLAYER, "SS11", "OnSeePlayer" );
         Level.AddActionHandler( Level.AH_SEE_PLAYER, "SS12", "OnSeePlayer" );
         Level.AddActionHandler( Level.AH_SEE_PLAYER, "SS13", "OnSeePlayer" );
@@ -1446,6 +1539,27 @@
         if ( door != nil ) then
            Level.SetDoorLocked( door, true, true );
         end;
+     end;
+
+     -- Change ai forms
+     if (missionId == 'VILG') then
+
+        AI.SetForm(AI.FindNPC('SS11'), "Radist");
+        AI.SetForm(AI.FindNPC('SO01'), "Officer");
+        AI.SetForm(AI.FindNPC('SS12'), "Soldier");
+        AI.SetForm(AI.FindNPC('SO02'), "Officer");
+        AI.SetForm(AI.FindNPC('SS14'), "Radist");
+        AI.SetForm(AI.FindNPC('SS15'), "Radist");
+     end;
+
+     -- Enable zones
+     if (missionId == 'VILG') then
+
+        AI.EnableZone("TargetHouse", true);
+        AI.EnableZone("TargetHouse_Near", true);
+        AI.EnableZone("TargetHouse_NearDocs", true);
+        AI.EnableZone("OfficerHouse", true);
+        AI.EnableZone("OfficerHouse_Near", true);
      end;
 
      -- save current progress..
@@ -1501,6 +1615,7 @@
      end
 
      -- complete tasks...
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask(missionId, 15.0 );
     
      if ( missionId == 'VEHL') then
@@ -1513,6 +1628,7 @@
         Level.AddLargeMessage( MissionText.Start_Next, 15.0, 255,255, 255 );
         Level.EnableLevelMark('VILG', true );
      elseif ( missionId == 'VILG' ) then
+        Level.PlayMenuSound("task_finish"); -- Liz Shaw
         Level.CompleteMissionTask('TRAN', 15.0 );
      end;
 
@@ -1667,6 +1783,7 @@
                v.z > -289.0 and v.z < -275.5) then
 
              Level.EnableLevelMark( 'HDBD', false );
+             Level.PlayMenuSound("task_finish"); -- Liz Shaw
              Level.CompleteMissionTask('HDBD');
              Level.RemoveMissionTask( 'HDBD' ); 
              Level.RemoveTimer( 'HBTM' );
@@ -1737,7 +1854,8 @@
                    { x = 343.94,   y = -59.12,  z = -537.41 }, -- mp40 (29)
                    { x = 333.73,   y = -56.24,  z = -116.83 }, -- target house door (30)
                    { x = 327.42,   y =   9.18,  z = -65.16 },  -- target house (31)
-                   { x = 26.53,    y = -45.43,  z =  69.56 }   -- tatget officer (32)
+                   { x = 26.53,    y = -45.43,  z =  69.56 },  -- tatget officer (32)
+                   { x = 182.74,   y = -66.69,  z = -213.66}   -- spare uniform (33)
                  };
      local rot = { 
                    -- neutralize   
@@ -1777,6 +1895,7 @@
                    { x = 0.0,  y = 0.0,    z = 0.0 },  
                    { x = 0.0,  y = 0.0,    z = -90.0 },
                    { x = 0.0,  y = 0.0,    z = 0.0 },  
+                   { x = 0.0,  y = 0.0,    z = 0.0 },
                    { x = 0.0,  y = 0.0,    z = 0.0 }
                  };
 
@@ -1842,6 +1961,7 @@
   end
 
   function Level.OnFinishPalatkaTask()
+    Level.PlayMenuSound("task_finish"); -- Liz Shaw
     Level.CompleteMissionTask('PALT');
     Level.RemoveMissionTask('PALT');
     Level.ClearSmallMessages();
@@ -1923,6 +2043,7 @@
           Level.EnableLevelMark('BUKT', true);
           Level.EnableLevelMark('BUK2', false);
 
+          Level.PlayMenuSound("task_finish"); -- Liz Shaw
           Level.CompleteMissionTask('ARBN');
           Level.RemoveMissionTask('ARBN');
 
@@ -2066,6 +2187,65 @@
      Level.ShowMessage( MissionText.Message_TriggerInfo[25] );
   end
 
+  -- On search tip trigger
+  function Level.OnEnterSearchTipTrigger()
+     if (Level.IsVillageMiniMission() == false) then
+        return;
+     end
+
+     if (Level.SoldierInfoShowed == false) then
+        return;
+     end
+
+     if (Level.SearchInfoShowed != false) then
+        return;
+     end
+
+     Level.SearchInfoShowed = true;
+
+     Level.ShowHelp( "game:levels\\training\\tips\\search_tip.txt" );
+  end
+
+  -- Reset search man's default job
+  function Level.OnEnterResetSearchManTrigger()
+     if (Level.IsVillageMiniMission() == false) then
+        return;
+     end
+
+     if (Level.SearchJustFinished == false) then
+        return;
+     end
+
+     if (Level.SearchManReset != false) then
+        return;
+     end
+
+     Level.SearchManReset = true;
+
+     AI.SetJob(AI.FindNPC('SS16'), "default");
+  end
+
+  -- On subordinate trigger
+  function Level.OnEnterSubordinateTrigger()
+     if (Level.IsVillageMiniMission() == false) then
+        return;
+     end
+
+     if (Level.IsMissionTaskCompleted('OFCL') == false) then
+        return;
+     end
+
+     if (Level.SubordinateInfoShowed != false) then
+        return;
+     end
+
+     Level.SubordinateInfoShowed = true;
+
+     Level.ShowHelp( "game:levels\\training\\tips\\subordinate_tip.txt" );
+     Level.ClearSmallMessages();
+     Level.ShowMessage(MissionText.Message_TriggerInfo[31]);
+  end
+
   -- On finish village trigger
   function Level.OnEnterFinishVillageTrigger()
      if (Level.IsVillageMiniMission() == false) then
@@ -2073,6 +2253,10 @@
      end
 
      if (Level.IsMissionTaskCompleted('OFCL') == false) then
+        return;
+     end
+
+     if (Level.PassShowed == false) then
         return;
      end
 
@@ -2126,9 +2310,12 @@
   -- on finished task OFCL..
   function Level.OnFinishedOfficerClothTask()
      Level.ClearSmallMessages();
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask('OFCL');
      Level.SetPointerConfiguration(30);
      Level.EnableLevelMark('OFCL', false);
+     AI.SetJob(AI.FindNPC('SS14'), "officer"); -- Liz Shaw
+     AI.SetJob(AI.FindNPC('SS15'), "officer"); -- Liz Shaw
      Level.ShowMessageTime(MissionText.Message_House, 15.0);
      --Level.SetObjectPointer(nil, 0.0);
      Level.SetDynamicObjectPointer(nil, 0.0);
@@ -2281,6 +2468,10 @@
 
            Level.EnableItemPickup( Level.FindWeaponItem('MP40'), false );
 
+           -- Liz Shaw
+
+           AI.SetJob(AI.FindNPC('SS16'), "officer");
+
            if (Level.HasTask('OFCL') == false) then
               Level.ClearMessagesDropWeapon = true;
               Level.AddTimer( 'WDTM', "OnDropWeaponTimer", 0.5, true );
@@ -2309,7 +2500,7 @@
 
      if (Actor.HasCustomEquipment(Level.GetPlayer(), 'DOCS') != false) then
        
-         if (Actor.GetActorType(Level.GetPlayer()) == Actor.ACTOR_TYPE_OFFICER) then
+         if (AI.GetPlayerForm() == "Officer") then
             Level.OnFinishedOfficerClothTask();
          else
             Level.ClearSmallMessages();
@@ -2441,81 +2632,6 @@
 
   end
 
-  -- Check need stop
-  function Level.CheckNeedStop( actorId )
-
-      local player = Level.GetPlayer();
-      local form = Actor.GetActorType(player);
-
-      if (actorId == 'SS13') then
-
-          return (form != Actor.ACTOR_TYPE_OFFICER) and
-                 Level.IsVillageMiniMission() != false;
-      end
-
-  end
-
-  function Level.OnStopMove( actorId )
-
-      if (actorId == 'SS13') then
-        Level.ClearSmallMessages();
-        Level.AddSmallMessage( MissionText.Message_StopMove, 15.0, 255, 255, 255 );
-        AI.HandleVoice( AI.FindNPC(actorId), AI.VOICE_STOP_MOVE_OFFICER );
-
-        if (Level.HasTask('OFCL') == false) then
-           -- add mission task
-           Level.AddMissionTask( MissionText.TaskOfficer, 'OFCL', "levels\\training\\officer_task.txt" );
-
-           -- unlock door
-           local door = Level.FindDoor('DROF');
-           if ( door != nil ) then
-              Level.SetDoorLocked( door, false, true );
-           end;
-
-           -- set new help pointer 
-           Level.SetPointerConfiguration( 32 );
-
-           -- enable marks
-           Level.EnableLevelMark('OFCL', true);
-
-           -- setup officer docs
-          local docs = Level.CreateItem( "Custom" , "Equipment" );
-
-          if (docs != nil) then
-
-             Entity.SetUniqueID( docs, 'DOCS' );
-         
-             Level.SetCustomItemName( docs, MissionText.Message_OfficerDocs );
-             Level.SetCustomItemIcon( docs, "ammo_doc" );
-
-             local officer = Level.FindActor( 'SO02' );
-             if ( officer != nil ) then 
-                Actor.PutPouch( officer, Actor.GetEmptyPouch(officer), docs );
-             end
-          end
-
-          -- mark as target...
-          Actor.MarkAsTarget( Level.FindActor('SO02'), true );
-                            
-          -- Show messages...
-
-          Level.ShowMessage(MissionText.Message_GetFormDocs);
-
-          -- Set large message...
-          -- Level.SetLargeMessage( MissionText.Message_OfficerStart, 15.0, 255, 255, 255 );
-
-          -- Show help...
---          Level.ShowHelp( "game:levels\\training\\tips\\stopmove_tip.txt" );
-
-          -- save progress
-          Level.SaveTraining();
-
-        end
-
-        return;
-      end
-  end
-
   -- On change cloth
   function Level.OnChangeCloth()
      local player = Level.GetPlayer();
@@ -2602,6 +2718,7 @@
         if ( Level.PolosaTask == 14 ) then
 
            Level.ClearSmallMessages();
+           Level.PlayMenuSound("task_finish"); -- Liz Shaw
            Level.CompleteMissionTask( 'POLS' , 15.0 );
            Level.AddLargeMessage( MissionText.Start_Next, 20.0, 255, 255, 255 );
            Level.RemoveHelpPointer();
@@ -3338,6 +3455,7 @@
      Level.UnregisterTrigger( Level.FindTrigger('Fire_Sniper') );
 
      Level.CurrentTask = "";
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask('FIRE',15.0); 
 
      Level.SetDoorLocked( Level.FindDoor('GDR1'), false, true );
@@ -3590,6 +3708,7 @@
      Level.RemoveActionHandler( Level.AH_EXPLOSION );
      Level.CurrentTask = "";
 
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask('GRND', 15.0 );
      Level.SetDoorLocked( Level.FindDoor('GDR2'), false, true );
      Level.ClearSmallMessages();
@@ -3874,6 +3993,7 @@
 
       Level.RemoveHelpPointer();
       Level.ClearSmallMessages();
+      Level.PlayMenuSound("task_finish"); -- Liz Shaw
       Level.CompleteMissionTask( 'KNIF' , 15.0 );
       Level.EnableLevelMark( 'KNIF' , false );
 
@@ -3886,13 +4006,13 @@
  
   function Level.CreateKnifeTask_1()
 
-     local k1 = Level.CreateWorldItem( "Knife" , "Weapon" , -435.412, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF1' );
-     local k2 = Level.CreateWorldItem( "Knife" , "Weapon" , -436.877, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF2' );
-     local k3 = Level.CreateWorldItem( "Knife" , "Weapon" , -438.431, -66.847, 3.849, 0.0,-180.0, 90.0, 'KPCK' );
-     local k4 = Level.CreateWorldItem( "Knife" , "Weapon" , -439.904, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF4' );
-     local k5 = Level.CreateWorldItem( "Knife" , "Weapon" , -441.486, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF5' );
-     local k6 = Level.CreateWorldItem( "Knife" , "Weapon" , -443.056, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF6' );
-     local k7 = Level.CreateWorldItem( "Knife" , "Weapon" , -444.649, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF7' );
+     local k1 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -435.412, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF1' );
+     local k2 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -436.877, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF2' );
+     local k3 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -438.431, -66.847, 3.849, 0.0,-180.0, 90.0, 'KPCK' );
+     local k4 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -439.904, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF4' );
+     local k5 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -441.486, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF5' );
+     local k6 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -443.056, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF6' );
+     local k7 = Level.CreateWorldItem( "KnifeNR43" , "Weapon" , -444.649, -66.847, 3.849, 0.0,-180.0, 90.0, 'KNF7' );
 
      Level.AddKnife( k1 );
      Level.AddKnife( k2 );
@@ -4209,4 +4329,354 @@ end
 --------------------------------------------------------
 function Level.OnCalcRateScore(rank, score, levelStats, aiStats, a, c, p, n, acc)
    return rank, score;
+end
+
+--------------------------------------------------------
+-- Level.OnStopMove()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnStopMove(actorId, npc)
+  if (npc == nil) then
+    print("MoTmod.ERROR: Jagdpanther.OnStopMove() npc is null " .. tostring(actorId));
+    return;
+  end
+
+  local npcForm = AI.GetForm(npc);
+  local zone = AI.GetPrimaryPlayerZone(npc);
+  local playerForm = AI.GetPlayerForm();
+  local class = AI.GetClass(npc);
+
+  if (zone == nil) then 
+    return;
+  end
+
+  if (zone == "TargetHouse_Near") then
+
+    Level.ClearSmallMessages();
+    Level.AddSmallMessage( MissionText.Message_StopMove, 5.0, 175, 175, 175 );
+    AI.HandleVoice(npc, "male_rus_ohers_stop_02");
+
+    if (Level.HasTask('OFCL') == false) then
+       -- add mission task
+       Level.AddMissionTask( MissionText.TaskOfficer, 'OFCL', "levels\\training\\officer_task.txt" );
+
+       -- unlock door
+       local door = Level.FindDoor('DROF');
+       if ( door != nil ) then
+         Level.SetDoorLocked( door, false, true );
+         end;
+
+       -- set new help pointer 
+       Level.SetPointerConfiguration( 32 );
+
+       -- enable marks
+       Level.EnableLevelMark('OFCL', true);
+
+       -- setup officer docs
+       local docs = Level.CreateItem( "Custom" , "Equipment" );
+
+       if (docs != nil) then
+
+          Entity.SetUniqueID( docs, 'DOCS' );
+         
+          Level.SetCustomItemName( docs, MissionText.Message_OfficerDocs );
+          Level.SetCustomItemIcon( docs, "ammo_doc" );
+
+          local officer = Level.FindActor( 'SO02' );
+          if ( officer != nil ) then 
+             Actor.PutPouch( officer, Actor.GetEmptyPouch(officer), docs );
+            end
+          end
+
+        -- mark as target...
+        Actor.MarkAsTarget( Level.FindActor('SO02'), true );
+                            
+        -- Show messages...
+
+        Level.ShowMessage(MissionText.Message_GetFormDocs);
+
+        -- Set large message...
+        -- Level.SetLargeMessage( MissionText.Message_OfficerStart, 15.0, 255, 255, 255 );
+
+        -- Show help...
+--      Level.ShowHelp( "game:levels\\training\\tips\\stopmove_tip.txt" );
+
+        -- save progress
+        Level.SaveTraining();
+
+        end
+
+      return;
+
+  elseif (zone == "OfficerHouse_Near") then
+
+    Level.ClearSmallMessages();
+    Level.AddSmallMessage(MissionText.Message_StopMove2, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_rus_ohers_stop_02");
+
+    if (Level.HasTask('OFCL') == true) then
+       -- set new help pointer 
+       Level.SetPointerConfiguration( 33 );
+
+       -- enable marks
+       Level.EnableLevelMark('WS01', true);
+
+        -- Show messages...
+
+        Level.ShowMessage(MissionText.Message_GetFormSpare);
+
+        end
+
+      return;
+
+  elseif (zone == "TargetHouse_NearDocs") then
+
+    Level.ClearSmallMessages();
+    Level.AddSmallMessage( MissionText.Message_StopMove_Docs, 5.0, 175, 175, 175 );
+    AI.HandleVoice( npc, "male_rus_script_script_75" );
+        
+    if ((Level.PlayerHasPass() == true) and 
+       (Level.HasPlayerAction('PASS') == false)) then
+
+        Level.SafeAddLevelPlayerAction('PASS', MissionText.Message_ShowDocs);
+
+        Level.AddTimer('PSTM', "OnCheckShowPass", 1.0, true );
+    end
+
+  elseif (zone == "OfficerHouse_NearSearch") then
+
+    local playerPosition = Level.GetPlayerPosition();
+    local npcPosition = Level.GetNpcPosition(npc);
+
+    Level.SearchZoneName = zone;
+
+    Level.ClearSmallMessages();
+    Level.AddSmallMessage( MissionText.Message_StopMove_Search, 5.0, 175, 175, 175 );
+    AI.HandleVoice( npc, "%Script01_Sound" );
+
+    Level.InitSearchScript(npc);
+
+  end
+
+end
+
+--------------------------------------------------------
+-- Name: Level:OnPlayerAction()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level:OnPlayerAction(id)
+
+   if (id == 'PASS') then
+
+      -- get show stop move bot...
+      local npc = AI.FindNearestNpc(AI.TASK_SHOW_STOP_MOVE, "");
+      if (npc == nil) then
+         Level.SafeRemoveLevelPlayerAction(id);
+         Level.RemoveTimer('PSTM');
+         return;
+      end     
+
+      Level.SafeRemoveLevelPlayerAction(id);
+
+      local properties = Level.CreateCustomParams();
+
+      Level.SetValue(properties, "CustomString_1", "Level.OnReadDocs()" );
+
+      AI.RunScriptTask(npc, "scripts:job\\ReadDocsTask.lua", AI.LOGIC_DEFAULT, properties);
+
+      local player = Level.GetPlayer();
+
+      if (Actor.GetPickupItem(player) == nil) then 
+         Level.PlayerShowDocsAnim();
+      else           
+         Actor.DropPickupItem(player, false);
+         Level.InstallDpc("Level.PlayerShowDocsAnim()", 0.8);
+      end
+
+      Level.RemoveTimer('PSTM');
+
+      AI.EnableZone("TargetHouse", false);
+      AI.EnableZone("TargetHouse_NearDocs", false);
+
+   end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnSoldierClothChange()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnSoldierClothChange()
+  local player = Level.GetPlayer();
+  if (player != nil) then
+    Actor.EnableMesh( player, "sabg_equipment_up"   , false );
+    Actor.EnableMesh( player, "sabg_equipment_down" , false );
+    Actor.EnableMesh( player, "mesh_helmet"         , false );
+    Actor.EnableMesh( player, "mesh_coat"           , false );
+    Actor.EnableMesh( player, "mesh_shoulder"       , false );
+    Actor.EnableMesh( player, "mesh_cap"            , false );
+
+    Actor.SetSkin( player, 3 );
+  end;
+
+  if (Level.SoldierInfoShowed == false) then
+    Level.AddTimer('SHLP' , "ShowSoldierHelpTimer" , 1.0, false );
+    Level.SoldierInfoShowed = true;
+  end
+
+  Level.ClearSmallMessages();
+  Level.SetPointerConfiguration(32);
+  Level.EnableLevelMark('WS01', false);
+  AI.EnableZone("OfficerHouse_NotSearched", true);
+  AI.EnableZone("OfficerHouse_NearSearch", true);
+  Level.ShowMessage(MissionText.Message_GetFormDocs);
+  Level.RemoveActionHandler(Level.AH_FINISH_CHANGECLOTH, 'WS01');
+end
+
+--------------------------------------------------------
+-- Name: Level.ShowSoldierHelpTimer()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.ShowSoldierHelpTimer()
+   Level.ShowHelp( "game:levels\\training\\tips\\form2_tip.txt" );
+end
+
+--------------------------------------------------------
+-- Name: Level.OnSearchFinished()
+-- Desc:
+--------------------------------------------------------
+function Level.OnSearchFinished()
+   Level.AddSmallMessage( MissionText.Message_SearchClear, 5.0, 175, 175, 175 );
+   AI.HandleVoice( Level.GetSearchMan(), "%Script02_Sound");
+
+   AI.EnableZone("OfficerHouse_NotSearched", false);
+   AI.EnableZone("OfficerHouse_NearSearch", false);
+
+   AI.ChangeLogic( Level.GetSearchMan(), "ActiveTraining" );
+
+   Level.SearchJustFinished = true;
+end
+
+--------------------------------------------------------
+-- Name: Level.InitSearchScript()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.InitSearchScript(npc)
+     local properties = Level.CreateCustomParams();     
+        
+     Level.SetValue(properties, "CustomString_1", "PlayerFront" );
+     Level.SetValue(properties, "CustomString_2", "Level.OnSearchFinished()" );
+     Level.SetValue(properties, "CustomString_3", 'SRSC' );
+     Level.SetValue(properties, "CustomString_4", "Act_Cowboy_SearchMan" );
+     Level.SetValue(properties, "CustomString_5", "" );
+     Level.SetValue(properties, "CustomString_6", "7.0" );
+
+     AI.RunScriptTask(npc, "scripts:job\\LookObjectTask.lua", AI.LOGIC_DEFAULT, properties);
+
+     AI.ChangeLogic( npc, "LiteScriptSoldier" );
+     
+     Level.SearchingStart = true;
+     Level.InstallDpc('Level.SearchingStart = true', 0.5);
+end
+
+--------------------------------------------------------
+-- Name: Level.CheckLookObjectTaskCondition()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.CheckLookObjectTaskCondition(npc, id) 
+   if (id == 'SRSC') then
+      local zone = AI.GetPrimaryPlayerZone( npc );
+      return zone == Level.SearchZoneName;
+   end
+   
+   return false;
+end
+
+--------------------------------------------------------
+-- Name: Level.GetSearchMan()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.GetSearchMan()
+     
+   local job = AI.GetScriptJob("TASK_SCRIPT_LOOK_OBJECT");
+   if (job != nil) then
+     return Job.GetNPC( job );
+   end
+     
+   return nil; 
+end
+
+--------------------------------------------------------
+-- Name: Level.PlayerHasPass()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.PlayerHasPass()
+   local player = Level.GetPlayer();
+   return (Actor.HasCustomEquipment(player, 'DOCS') == true);
+end
+
+--------------------------------------------------------
+-- Name: Level.PlayerShowDocsAnim()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.PlayerShowDocsAnim()
+   Level.StartPlayerCustomAnim("Custom_PassticketShow", 0, true, true);
+end
+
+--------------------------------------------------------
+-- Name: Level.OnCheckShowPass()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnCheckShowPass()
+   local npc = AI.FindNearestNpc(AI.TASK_SHOW_STOP_MOVE, "");
+
+   if (npc == nil) then
+      Level.SafeRemoveLevelPlayerAction('PASS');
+      Level.RemoveTimer('PSTM');
+   end
+end
+
+--------------------------------------------------------
+-- Name: Level.GetReadMan()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.GetReadMan()
+   local job = AI.GetScriptJob("TASK_SCRIPT_READ_DOCS");
+   if (job != nil) then
+     return Job.GetNPC( job );
+   end
+
+   return nil; 
+end
+
+--------------------------------------------------------
+-- Name: Level.OnReadDocs()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnReadDocs()
+   local npc = Level.GetReadMan();
+   if (npc != nil) then
+      local properties = Level.CreateCustomParams();
+
+      Level.SetValue(properties, "CustomString_1", "Act_Stand_ArmyHi:^male_rus_script_script_62" );
+      Level.SetValue(properties, "CustomString_2", "5.0" );
+      Level.SetValue(properties, "CustomString_3", "" );
+
+      AI.RunScriptTask(npc, "scripts:job\\PlayerAnimTask.lua", AI.LOGIC_DEFAULT, properties);
+
+      Level.VoiceMessage(npc, nil, "Message_DocsClear");
+
+      Level.PassShowed = true;
+   end
 end

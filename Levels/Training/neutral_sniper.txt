@@ -1,1 +1,8 @@
-<tab>Neutralize the sentry on the watchtower:<br><br>-<sp> Take pliers.<br>-<sp> Cut the mesh.<br>-<sp> Climb the watchtower.<br>-<sp> Neutralize the sentry on the watchtower.<br>-<sp> To neutralize him you can use chloroform or your fist.<br>-<sp> If the guard notices you, your assignment will fail.<br>-<sp> If the guard is killed, your assignment will fail.<br>
+<tab>Нейтрализовать часового на вышке:<br><br>
+-<sp> Взять Кусачки.<br>
+-<sp> Перекусить сетку.<br>
+-<sp> Залезть на вышку.<br>
+-<sp> Нейтрализовать часового на вышке.<br>
+-<sp> Нейтрализовать можно Хлороформом или оглушить кулаком.<br>
+-<sp> Если часовой заметит вас - задание провалено.<br>
+-<sp> Если часовой будет убит - задание провалено.<br>

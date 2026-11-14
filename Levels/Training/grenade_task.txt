@@ -1,1 +1,1 @@
-<tab>Pass training in grenades <br>
+<tab>Пройти тренировку по броскам Гранат.<br>

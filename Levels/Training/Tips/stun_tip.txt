@@ -1,1 +1,4 @@
-<tab>Stunning:<br><br>-<sp> To stun an enemy you need to approach an enemy from behind and choose the STUN action <l="game:Levels\training\tips\action_tip.txt">from the Action menu </l>.<br>-<sp> Stunning is a noisy operation.<br>
+<tab>Оглушение:<br><br>
+-<sp> Чтобы оглушить противника необходимо подойти сзади и воспользоваться действием 'Оглушить' в <l="game:Levels\training\tips\action_tip.txt">'Меню действий'</l>.<br>
+-<sp> Оглушение является шумным действием.<br>
+-<sp> Вы также можете нажать клавишу огонь ('ЛКМ'), чтобы оглушить врага с любой стороны, но будьте осторожны, так как для его нейтрализации потребуется нанести несколько ударов, а от первого удара он может не отшатнуться.<br>

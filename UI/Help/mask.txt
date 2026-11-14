@@ -1,5 +1,4 @@
-Hiding:<br><br>
-<tab>-<sp> Enemies have trouble seeing the hero when he is hidden in the grass, especially when he is wearing camouflage gear.<br>
-<tab>-<sp> Poorly lit places lower the enemy's ability to visually detect the player. Bear this in mind, and you may be able to move invisibly.<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Маскировка:<br><br>
+<tab>-<sp> Противник намного хуже видит игрока в траве, чем на открытой местности, особенно если главный герой в маскхалате.<br>
+<tab>-<sp> В плохо освещенных местах противник хуже будет видеть игрока, это можно использовать для незаметного передвижения.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

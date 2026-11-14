@@ -1,1 +1,3 @@
-<tab>Find the weapon. It has been transferred to the hotel in a box filled with newspapers. The parcels are in one of the utility rooms.<br>
+<tab>Необязательное задание. Отыскать оружие. Оно было передано в 
+гостиницу в коробке с газетами. Скорее всего, посылки находятся в 
+одном из подсобных помещений.<br>

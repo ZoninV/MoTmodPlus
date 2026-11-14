@@ -1,1 +1,2 @@
-<tab>When an enemy is looking in your direction <l="game:Levels\training\tips\threat_tip.txt">the danger scale </l> indicates your visibility.<br><tab> If an enemy sees anything suspicious he may become more alert.<br>
+<tab> огда противник смотрит в вашу сторону, <l="game:Levels\training\tips\threat_tip.txt">'Ўкала опасности'</l> показывает вашу заметность.<br>
+<tab>”видев что-нибудь подозрительное, враг может насторожитьс€.<br>

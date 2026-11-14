@@ -1,3 +1,1 @@
-<tab>You must discover the contents of the cipher text which the fortress radio centre is expecting. The radio operator <col=800000>must stay alive until he receives the cipher text</col>.<br>
-
-
+<tab>Необходимо выяснить содержание шифрограммы, которая должна поступить в радиоцентр крепости. Радист <col=800000>должен остаться в живых, до момента получения шифрограммы</col>.<br>

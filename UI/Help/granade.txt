@@ -1,8 +1,7 @@
-Throwing grenades and other items:<br><br>
-<tab>-<sp> For a quick throw press the 'Throw item' key ("G" by default), select the item from the list and press the 'Fire' button.<br>
-<tab>-<sp> To make a series of throws, repeatedly press the 'Grenade' key (key "5" by default). To select an item to throw press and hold down the "Grenade" key until the list appears. You can select an item from the list using the arrows or the mouse scroll wheel.<br>
-<tab>-<sp> To attract an enemy's attention you might <col=800000>throw a stone</col> (the "G" key by default). Stones can be thrown an unlimited number of times.<br>
-<tab>-<sp> Aside from grenades you can throw small kitchen items.<br> 
-<tab>-<sp> If 'Throw force' mode is on, throwing grenades or other items becomes more difficult, but your precision increases. To do this, press and hold down 'Fire' button until the force scale reaches desired the level. At that moment, release the button and the throw will be executed according to the force selected. You can cancel a throw by pressing the right mouse button.<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Бросание гранат и других предметов:<br><br>
+<tab>-<sp> Для быстрого броска, нажмите клавишу 'Бросить предмет' ('G'), выберите предмет из списка, и нажмите кнопку огонь.<br>
+<tab>-<sp> Чтобы бросить нескольких предметов подряд нажмите клавишу 'Граната' ('5'). Для выбора предмета удерживайте клавишу 'Граната' пока не появится список. Выбрать предмет из списка можно стрелками или колесом мыши.<br>
+<tab>-<sp> Для привлечения внимания противника, можно <col=800000>кинуть камень</col> ('G'). Камни можно кидать неограниченное количество раз.<br>
+<tab>-<sp> Помимо гранат можно бросать всякие мелкие предметы кухонной утвари.<br> 
+<tab>-<sp> Если включен режим 'Сила броска' бросок гранаты или других предметов усложняется, но дает возможность бросать точнее. Для этого удерживайте кнопку огонь, пока шкала силы не вырастет до нужного вам уровня. После этого отпустите ее, тогда произойдет бросок. Отменить бросок можно правой кнопкой мыши.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

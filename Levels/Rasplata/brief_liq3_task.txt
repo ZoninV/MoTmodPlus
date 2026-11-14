@@ -1,1 +1,3 @@
-<tab>Kill Obersturmbannfьhrer Henry Knutt.<br><br><img=p4_small,bot,60,5><br><br><br><img=p3_small,bot,0,2><br>
+<tab>Ликвидировать Оберштурбанфюрера Генри Кнута.<br>
+<br><img=p4_small,bot,60,5><br><br>
+<br><img=p3_small,bot,0,2><br>

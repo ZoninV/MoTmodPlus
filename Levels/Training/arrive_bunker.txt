@@ -1,1 +1,6 @@
-<tab>Access the bunker:<br><br>-<sp> Access the bunker from the south without being noticed by patrols.<br>-<sp> Distract the guard at the bunker by whistling or throwing a smoke bomb.<br>-<sp> Enter the bunker.<br>-<sp> If you are noticed, your mission will fail.<br>-<sp> If the guards notice other guards being stunned or put to sleep, your mission will fail.<br>
+<tab>ѕроникнуть в бункер:<br><br>
+-<sp> Ќе попада€сь на глаза патрул€м, добратьс€ до бункера на юге.<br>
+-<sp> ќтвлечь охранника у бункера свистом или дымовой шашкой.<br>
+-<sp> ¬ойти в бункер.<br>
+-<sp> ≈сли вас замет€т - задание провалено.<br>
+-<sp> ≈сли охрана увидит оглушенного или усыпленного товарища - задание будет провалено.<br>

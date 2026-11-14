@@ -1,8 +1,7 @@
-Melee and stunning:<br><br>
-<tab>-<sp> You can stun an enemy with your fist or the butt of a weapon, or by throwing a breakable item at his head.<br>
-<tab>-<sp> To stun the enemy with your fist or a buttstock, you need to sneak up to an enemy from behind and click 'Fire' or 'Stun' on the <l="game:UI\Help\menu.txt">"Action Menu."</l><br>
-<tab>-<sp> To stun an enemy with an item, you must have the respective item in your inventory and <l="game:UI\Help\granade.txt">throw it</l> at the enemy's head.<br>
-<tab>-<sp> After you stun the enemy, you can take his uniform.<br>
-<tab>-<sp> Stunning is a noisy operation.<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Ближний бой и оглушение:<br><br>
+<tab>-<sp> Оглушить противника можно кулаком, прикладом оружия или кинув ему в голову разбивающийся предмет.<br>
+<tab>-<sp> Для того чтобы оглушить кулаком или прикладом необходимо подобраться к противнику сзади и нажать клавишу огонь или выбрать 'Оглушить' в <l="game:UI\Help\menu.txt">'Меню действий'.</l><br>
+<tab>-<sp> Для того чтобы оглушить противника предметом необходимо держать такой предмет в инвентаре и <l="game:UI\Help\granade.txt">бросить его</l> в голову врага.<br>
+<tab>-<sp> После оглушения форму противника можно использовать.<br>
+<tab>-<sp> Оглушение является шумным действием.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

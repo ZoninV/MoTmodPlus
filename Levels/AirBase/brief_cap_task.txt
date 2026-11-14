@@ -1,7 +1,4 @@
-<tab>Capture a test pilot of the Me-163 Komet rocket-powered interceptor before the recon squad arrives.<br>
-<tab>He must also be personally identified. This information is most likely available in the traffic control tower, or in the archives located in the main building.<br>
-<tab>According to our information, there are two test pilots on the base. <br>
+<tab>Захватить летчика-испытателя ракетного перехватчика Me-163 Komet до прибытия разведгруппы.<br>
+<tab>Необходимо выяснить его личность, вероятнее всего эту информацию можно получить в диспетчерской вышке, либо в архивах главного здания.<br>
+<tab>По нашим данным летчиков-испытателей на базе двое. <br>
 <br><img=me_small,bot,45,5><br>
-
-
-

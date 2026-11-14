@@ -1,10 +1,9 @@
-Cold weapons, the garrotte and chloroform:<br><br>
-Knife:<br><br>
-<tab>-<sp> A knife can be used as both a melee and a throwing weapon. When the knife is the active weapon, you attack by pressing the "Fire" key. If you are standing close to an enemy, the knife will be used as a melee weapon.<br>
-<tab>-<sp> If you sneak up to an enemy form behind, you can kill him quickly and noiselessly. In addition to the "Fire" key you can select  the "Eliminate" item on the <l="game:UI\Help\menu.txt">action menu.</l><br><br>
-Garrotte and chloroform:<br><br>
-<tab>-<sp> To <col=800000> switch between</col> the garrotte and chloroform (if you have both in your inventory) press and hold down the 'Garrotte/Chloroform' key ("2" by default) and select the desired item on the list.<br>
-<tab>-<sp> If you press the 'Garrotte/Chloroform' key without holding it down, the last used item will be selected (either the garrotte or chloroform).<br>
-<tab>-<sp> To use chloroform or the garrotte you need to approach enemy from behind his back while holding the garrotte or chloroform in your hands ("2" by default) and press 'Fire' key or select the 'Strangle/Use the Chloroform' item on the <l="game:UI\Help\menu.txt">action menu</l>.<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Холодное оружие и Удавка/Хлороформ:<br><br>
+Нож:<br><br>
+<tab>-<sp> Нож можно использовать как оружие ближнего боя, так и как метательное. Когда нож является активным оружием, его можно кинуть, используя клавишу огонь. Если стоять рядом с противником, то нож будет использоваться как оружие ближнего боя.<br>
+<tab>-<sp> Если подойти к противнику, за спину, в упор, то, используя нож, можно быстро и бесшумно уничтожить его. Кроме клавиши огонь можно воспользоваться пунктом 'Уничтожить' из <l="game:UI\Help\menu.txt">'Меню действий'.</l><br><br>
+Удавка и Хлороформ:<br><br>
+<tab>-<sp> Чтобы <col=800000>поменять между</col> удавкой и хлороформом ( удавка и хлороформ должны находиться в инвентаре ) нужно нажать и удерживать клавишу Удавка/Хлороформ ('1') и выбрать предмет из полученного списка.<br>
+<tab>-<sp> Если нажать без удержания клавишу Удавка/Хлороформ, то будет выбран последний используемый предмет (Удавка или Хлороформ).<br>
+<tab>-<sp> Чтобы воспользоваться Хлороформом или Удавкой, необходимо подобраться к противнику за спину, взяв в руки Удавку или Хлороформ ('1') и нажать клавишу огонь или выбрать пункт 'Задушить/Усыпить' в <l="game:UI\Help\menu.txt">'Меню действий'</l>.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

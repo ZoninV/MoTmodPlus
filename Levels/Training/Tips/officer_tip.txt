@@ -1,1 +1,3 @@
-<tab>Officer's uniform:<br><br>- You look less <l="game:Levels\training\tips\form_tip.txt">suspicious </l> wearing an officer's uniform.<br>- You can get access to many guarded sites only while wearing an officer's uniform.<br>
+<tab>Форма офицера:<br><br>
+- В форме офицера вы менее <l="game:Levels\training\tips\form_tip.txt">подозрительны</l>.<br>
+- Можно получить доступ на многие охраняемые объекты и даже <l="game:Levels\training\tips\subordinate_tip.txt">отдавать приказы</l> солдатам ниже по званию.<br>

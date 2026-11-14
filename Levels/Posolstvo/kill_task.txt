@@ -1,1 +1,2 @@
-<tab>Kill Volkov. Volkov is on the third floor. There should be no alarm.<br><br><img=foto,bot,35,5><br>
+<tab>Уничтожить Волкова. Волков находится на третьем этаже. Тревога не должна быть поднята.<br>
+<br><img=foto,bot,35,5><br>

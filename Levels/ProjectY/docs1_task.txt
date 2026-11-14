@@ -1,1 +1,2 @@
-<tab>Get documents from the laboratory's safe. The laboratory chief Professor Charles Brown must have the key to the safe. The Professor must not suffer any injury.<br>
+<tab>Достать документы из сейфа лаборатории. Ключ от сейфа должен быть у заведующего лабораторией профессора Чарльза Брауна.
+Профессор не должен пострадать.<br>

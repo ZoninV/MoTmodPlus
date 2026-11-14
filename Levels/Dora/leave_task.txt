@@ -1,4 +1,1 @@
-<tab>Leave the area of the park, carrying the case. The alarm must not be raised.<br>
-
-
-
+<tab>Покинуть территорию парка с кейсом. Тревога не должна быть поднята.<br>

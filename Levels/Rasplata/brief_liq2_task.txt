@@ -1,1 +1,3 @@
-<tab>Kill Obersturmbannfьhrer Wenk Bartels.<br> <tab>He is fond of the bottle. You may take advantage of this and try to poison him.<br><br><img=p1_small,bot,60,5><br>
+<tab>Ликвидировать Оберштурбанфюрера Венка Бартелса.<br> 
+<tab>Он любит выпить, можно этим воспользоваться и попытаться его отравить.<br>
+<br><img=p1_small,bot,60,5><br>

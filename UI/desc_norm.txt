@@ -1,4 +1,1 @@
-<br>
--<sp> Can change clothes<sp> -<br>
--<sp> Normal AI<sp> -<br>
-<br>
+<br>-<sp> Переодеваться можно<sp> -<br>-<sp> Нормальная реакция врагов<sp> -<br><br>

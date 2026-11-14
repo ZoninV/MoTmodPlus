@@ -1,4 +1,3 @@
-Binoculars:<br><br>
-<tab>To enable binoculars mode, you must have a pair of binoculars in your inventory and press the respective key ("B" by default).<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Бинокль:<br><br>
+<tab>Для того чтобы активировать режим бинокля необходимо иметь бинокль в инвентаре и нажать клавишу '7'.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

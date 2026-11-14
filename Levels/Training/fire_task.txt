@@ -1,1 +1,5 @@
-<tab>Pass training in weapons as follows:<br><br>- Shooting a pistol <br>- Shooting a submachine gun <br>- Shooting a rifle <br>- Shooting a sniper rifle<br>
+<tab>Пройти следующие тренировки с оружием:<br><br>
+- Стрельба из Пистолета<br>
+- Стрельба из Автомата<br>
+- Стрельба из Винтовки<br>
+- Стрельба из Снайперской винтовки<br>

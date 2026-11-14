@@ -1,1 +1,2 @@
-<tab>Meet the messenger. He will pass you layouts of the enemy's positions. The meeting will take place in an small, abandoned house on the outskirts of the city.<br><br><img=foto_kurier,bot,45,5><br>
+<tab>Встретиться с курьером, он должен передать схемы оборонительных полос противника. Встреча произойдет в одном заброшенном домике, на окраине города.
+<br><br><img=foto_kurier,bot,45,5><br>

@@ -1,5 +1,1 @@
-<br>
--<sp> Can change clothes after stunning or strangling<sp> -<br>
--<sp> Faster AI<sp> -<br>
--<sp> Fewer tips<sp> -<br>
-<br>
+<br>-<sp> Переодеваться можно только оглушив или с помощью удавки<sp> -<br>-<sp> Улучшенная реакция врагов<sp> -<br>-<sp> Меньше подсказок<sp> -<br><br>

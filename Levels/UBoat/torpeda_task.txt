@@ -1,6 +1,3 @@
-<tab>Obtain the schematics of the latest self-guided acoustic torpedoes, the T-5 Zaunkцnig, codename 'Wren.'<br>
-<tab>These documents are most likely stored in the <col=800000>submarine captain's private quarters</col>.<br>
-<tab>You will have to spy on the captain to discover where these documents are kept.<br>
-
-
-
+<tab>Достать информацию по новейшим самонаводящимся акустическим торпедам Т-5 'Цаункениг', кодовое название "Король заборов".<br>
+<tab>Скорее всего данная документация может храниться <col=800000>в кабинете у капитана</col> подводной лодки U-479, Оберлейтенанта морских сил Фридриха-Вильгельма Сонса.<br>
+<tab>Необходимо проследить за капитаном и выяснить где находится документация.<br>

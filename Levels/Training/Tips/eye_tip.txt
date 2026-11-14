@@ -1,1 +1,4 @@
-<tab>Eye icon:<br><br>- The eye icon shows that at least one enemy has seen you. Be attentive - try not to take any suspicious actions. If an enemy suspects you the <l="game:Levels\training\tips\threat_tip.txt">danger scale</l> will increase.<br>
+<tab>»конка глаза:<br><br>
+- »конка глаза означает - вы находитесь в поле зрени€ как минимум одного противника.
+Ѕудьте внимательны и постарайтесь не совершать подозрительных действий.
+≈сли враг подозревает вас <l="game:Levels\training\tips\threat_tip.txt">шкала опасности</l> будет расти.<br>

@@ -1,1 +1,1 @@
-<tab>Obtain the documentation of the SPA's test results.<br>
+<tab>Завладеть документацией по результатам испытания САУ.<br>

@@ -2,79 +2,82 @@
   MissionText = 
   {
       --Mission text
-      Task_KillSpy                      = " Kill I. Melnik";
-      Task_KillStandartenfurer          = " Kill G. Richter";
-      Task_Leave                        = " Exit the area";
-      Task_Information                  = " Meet the informer ";
-      Task_Boxes                        = " Recover the documents";
-      Message_TaskChanged               = "Objectives have been updated";
-      Message_StartTractor              = "SWITCH THE ENGINE ON";
-      Message_CutRope                   = "UNTIE THE ROPE";
-      Message_StartCinema               = "TURN THE FILM PROJECTOR ON";
-      Message_CloseCrane                = "CUT OFF THE WATER";
-      Message_PoissonVine               = "POISON THE WINE";
-      Message_LightOff                  = "TURN OFF THE LIGHT";
-      Message_PutToVehicle              = "LOAD THE TRUCK";
-      Message_OrderWorkers              = "ORDER THE TRUCK LOADED";
-      Key_Cinema                        = "Key to the movie theatre";
-      Key_Boiler                        = "Key to the boiler room";
-      Key_SecondFloorStair              = "Key to the second floor";
-      Key_SpyRoom                       = "Key to the courier's room";
-      Key_KitchenStorage                = "Key to the wine cellar";
-      Key_FirstFloor                    = "Key to the rooms on the first floor";
-      Key_Shed                          = "Key to the shed ";
-      Key_Radist                        = "Key to the radio room ";
-      Key_Storage                       = "Key to the warehouse on the third floor";
-      Key_Library                       = "Key to the library";
-      Key_OfficerRoom                   = "Room key";
-      Message_IWantDinner               = "@ Bring my breakfast up to my room.";
-      Message_OnlyForDinner             = "@ I am waiting for my breakfast to be brought up. Don't let anyone in except the waiter.";
-      Message_ComeHere                  = "@ Come closer.";
-      Message_Thanks                    = "@Thank you! We knew we could rely on you!";
-      Message_Cutscene_Spy              = "- Here is the information we managed to gather on the security at the residence... Also, there are some important documents inside the building that the Germans are probably mistaking for useless trash. And it looks like the Germans are burning all the old rubbish... Better recover these documents before it's too late!";
-      Message_StopMove_GetOut           = "@ Get out of here!";
-      Message_StopMove_NoAccess         = "@ You'll have to leave! You aren't allowed to be here!";
-      Message_StopMove_OnlySklad        = "@ Don't they need you somewhere else?";
-      Message_StopMove_OnlyOfficers     = "@ Only officers are allowed on the third floor!";
-      Message_StopMove_ThisIsMyRoom     = "@ This is my room! Leave it right now!";
-      Message_StopMove_LeaveRoom        = "@ Leave this room immediately!";
-      Message_StopMove_IMustStopYou     = "@ I was ordered not to let anyone in!";
-      Message_StopMove_FilmIsNotStarted = "@ What are you doing here? The movie hasn't started yet.";
-      Message_StopMove_LeaveRoof        = "@ You've got no business in the attic!";
-      Message_StopMove_Leave            = "@ There's no reason for you to be here!";
-      Message_StopMove_MainHouse        = "@ What do you need?";
-      Message_StopMove_Sniper           = "@ You should stay outside. You know there's no sniper positions inside the residence.";
-      Message_StopMove_Kitchen          = "@ I cannot let you into the kitchen.";
-      Message_StopMove_WhereIsEat       = "@ You are supposed to deliver the breakfast, aren't you? ";
-      Message_StopMove_Officer          = "@ Only officers are allowed in here!";
-      Message_StopMove_Bathroom         = "@ By Standartenfьhrer Richter's orders, no one is allowed to enter!";
-      Message_StopMove_Bathroom_Rihter  = "@ What are you doing here?";
-      Message_Alarm                     = "The alarm has been raised!";
-      Message_BlitzLoaded               = "! The truck has been loaded.";
-      Message_BlitzIsNotLoaded          = "! The truck needs to be loaded.";
+      Task_KillSpy                      = " Уничтожить И. Мельника";
+      Task_KillStandartenfurer          = " Уничтожить Г. Рихтера";
+      Task_Leave                        = " Покинуть местность";
+      Task_Information                  = " Встретиться с инф-ром";
+      Task_Boxes                        = " Вывезти документы";
+      Message_TaskChanged               = "Задания изменены";
+      Message_StartTractor              = "ВКЛЮЧИТЬ ДВИГАТЕЛЬ";
+      Message_CutRope                   = "ОТВЯЗАТЬ ВЕРЕВКУ";
+      Message_StartCinema               = "ВКЛЮЧИТЬ КИНОПРОЕКТОР";
+      Message_CloseCrane                = "ПЕРЕКРЫТЬ ВОДУ";
+      Message_PoissonVine               = "ОТРАВИТЬ ВИНО";
+      Message_LightOff                  = "ВЫКЛЮЧИТЬ СВЕТ";
+      Message_PutToVehicle              = "ПОЛОЖИТЬ В МАШИНУ";
+      Message_OrderWorkers              = "ПРИКАЗАТЬ НАЧАТЬ ЗАГРУЗКУ";
+      Key_Cinema                        = "Ключ от кинозала";
+      Key_Boiler                        = "Ключ от бойлерной";
+      Key_SecondFloorStair              = "Ключ от второго этажа";
+      Key_SpyRoom                       = "Ключ от комнаты связного";
+      Key_KitchenStorage                = "Ключ от винного склада";
+      Key_FirstFloor                    = "Ключ от номеров на первом этаже";
+      Key_Shed                          = "Ключ от сарая";
+      Key_Radist                        = "Ключ от радиокомнаты";
+      Key_Storage                       = "Ключ от склада на третьем этаже";
+      Key_Library                       = "Ключ от библиотеки";
+      Key_OfficerRoom                   = "Ключ от номера";
+      Message_IWantDinner               = "@ Принесите мне завтрак в комнату.";
+      Message_OnlyForDinner             = "@ Мне должны принести завтрак. Не пускайте никого кроме официанта.";
+      Message_ComeHere                  = "@ Подойди ближе.";
+      Message_Thanks                    = "@ Спасибо! Мы знали, что можем расчитывать на вас!";
+      Message_Cutscene_Spy_1            = "- Вот информация, которую нам удалось получить по охране резиденции... Еще, в здании находятся важные документы, замаскированные под ненужную макулатуру.";
+      Message_Cutscene_Spy_2            = "- Судя по всему, немцы сжигают старый хлам... Нужно вывезти документы, пока не поздно!";
+      Message_StopMove_GetOut           = "@ Проваливай отсюда!";
+      Message_StopMove_NoAccess         = "@ Покиньте резиденцию! Вам запрещено здесь находиться!";
+      Message_StopMove_OnlySklad        = "@ Работы в другом месте хватает.";
+      Message_StopMove_OnlyOfficers     = "@ Только солдатам и офицерам СС разрешено посещать третий этаж!";
+      Message_StopMove_ThisIsMyRoom     = "@ Это моя комната! Покиньте ее немедленно!";
+      Message_StopMove_LeaveRoom        = "@ Немедленно покиньте эту комнату!";
+      Message_StopMove_IMustStopYou     = "@ Мне приказано сюда никого не пускать!";
+      Message_StopMove_FilmIsNotStarted = "@ Что вам здесь нужно? Фильм еще не начался!";
+      Message_StopMove_LeaveRoof        = "@ Вам нечего делать на чердаке!";
+      Message_StopMove_Leave            = "@ Вам тут делать нечего!";
+      Message_StopMove_MainHouse        = "@ Что вам нужно?";
+      Message_StopMove_Sniper           = "@ Снайперских позиций в резиденции нет.";
+      Message_StopMove_Kitchen          = "@ Я не могу пропустить вас на кухню.";
+      Message_StopMove_WhereIsEat       = "@ Вы должны принести завтрак! Не так ли?";
+      Message_StopMove_Officer          = "@ Вход только для офицеров!";
+      Message_StopMove_Bathroom         = "@ Полковник Рихтер приказал никого не пускать!";
+      Message_StopMove_Bathroom_Rihter  = "@ Что вы тут забыли!?";
+      Message_StopMove_Blitz            = "@ Только водитель может управлять грузовиком!";
+      Message_Alarm                     = "Поднята тревога!";
+      Message_BlitzLoaded               = "! Машина загружена.";
+      Message_BlitzIsNotLoaded          = "! Необходимо загрузить машину.";
       Message_Help                      = {
-                                            "Old mansions sometimes have secret doors.";
-                                            "A running engine can muffle other sounds.";
-                                            "A rope can be damaged by a gunshot.";
-                                            "The residence has a movie theatre.";
-                                            "The dining hall is on the ground floor.";
-                                            "The movie theatre is on the second floor.";
-                                            "An officer can give orders to privates.";
+                                            "В старых особняках могут быть потайные двери.";
+                                            "Включенный двигатель может приглушить остальные звуки.";
+                                            "Веревку можно перебить выстрелом.";
+                                            "В резиденции есть кинозал.";
+                                            "Столовая находится на первом этаже.";
+                                            "Кинозал располагается на третьем этаже.";
+                                            "Офицер может отдавать приказы солдатам в звании не выше капрала.";
                                           };
-      Message_GrassHelp                 = "It is much more difficult to detect a camouflaged enemy in dense grass.";
-      Message_TraktorHelp               = "The roar of an engine may muffle other loud noises.";
-      Message_KillHelp_1                = "Richter must be killed";
-      Message_KillHelp_2                = "Melnik must be killed";
+      Message_GrassHelp                 = "В густой траве намного сложнее заметить противника в камуфляже.";
+      Message_TraktorHelp               = "Гул трактора может приглушить громкие звуки.";
+      Message_KillHelp_1                = "Необходимо уничтожить Рихтера";
+      Message_KillHelp_2                = "Необходимо уничтожить Мельника";
       Message_ClothInfo                 = {
-                                            "It is normal to see workers inside utility areas on the first floor.";
-                                            "A waiter can move freely around the first and second floors.";
-                                            "Snipers guard the area around the residence.   ";
-                                            "An office worker is responsible for serving officers on the third floor, and working the movie theatre.";
-                                            "French workers are forbidden to stay in the residence. ";
-                                            " Nobody is surprised to see a cook in the kitchen.";
+                                            "Рабочие не вызывают подозрения в подсобных помещениях на первом этаже.";
+                                            "Официант может свободно передвигаться по первому и второму этажу.";
+                                            "Снайперы контролируют территорию вокруг резиденции.";
+                                            "Служащий отвечает за обслуживание офицеров на третьем этаже и работу кинозала.";
+                                            "Французским рабочим запрещено находиться в резиденции.";
+                                            "Повар не вызывает подозрения на кухне.";
+                                            "Водители несут ответственность за вывоз мусора из резиденции.";
                                           };
-      Poison_Name                       = "POISON";
-      Poison_TipName                    = "Poison";
+      Poison_Name                       = "ЯД";
+      Poison_TipName                    = "Яд";
   };
 
 
@@ -93,7 +96,7 @@
 --------------------------------------------------------
 function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_addon" 4' );
 
 end;
 
@@ -104,8 +107,9 @@ end;
   function Level.OnFinishLoad()
        Level.OnFinishLoad_Common();
        
-       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.75#sounds\\music\\b_action2.ogg" );       
-       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.35#sounds\\music\\b_dark3.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\b_action2.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\action_2.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark3.ogg" );
               
        Level.SetDefaultMusicPause( 180.0, 240.0, 30.0, 120.0 );
        Level.SetDOFPostFilter( 1, 0.0, 1500.0, 2000.0 );
@@ -177,6 +181,12 @@ end;
        System:SetVar( "cl_vehicle_camera_radius" , 5.5 );
        
        Level.EnableObjectHitNotify('ROPE', true );
+
+       -- Liz Shaw
+       Entity.SetSkin(Level.FindVehicle('BMW1'), 5);
+       Entity.SetSkin(Level.FindVehicle('MER2'), 2);
+       Entity.SetSkin(Level.FindVehicle('MER3'), 2);
+       Entity.SetSkin(Level.FindVehicle('BL04'), 10);
   end;
  
 --------------------------------------------------------
@@ -273,6 +283,15 @@ end;
        Stream.WriteBool( Level.GotLuger );
        
        Level.OnSave_Common();              
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
 --------------------------------------------------------
@@ -380,8 +399,48 @@ end;
        Level.OnLoad_Common();     
              
        
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
        Level.OnFinishLoad();
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_whitehead_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_whitehead_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
   
 --------------------------------------------------------
 -- Name: Level.OnLoaded()
@@ -487,6 +546,7 @@ end;
        Level.AddActionHandler( Level.AH_ACTOR_HITTED , 'FREN' , "OnKillFrench");       
 
        Level.AddActionHandler( Level.AH_CHANGE_CLOTH );
+       Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WOFF', "OnChangeOfficerCloth" );
 
        Level.AddActionHandler( Level.AH_LEAVE_VEHICLE, 'BL04', "OnLeaveBlitz" );
        Level.AddActionHandler( Level.AH_ENTER_VEHICLE, 'BL04', "OnEnterBlitz" );
@@ -630,6 +690,8 @@ end;
        
        AI.EnableZone("SecretDoorZone", false);
        AI.EnableZone("global_box", false);
+       AI.EnableZone("Blitz", false);
+       AI.EnableZone("BlitzOut", false);
        
        AI.Enable("subordinate");
        AI.Enable("notify_visited_body");
@@ -669,6 +731,7 @@ end;
        Level.SetFormHelp( "French",            MissionText.Message_ClothInfo[5] );
        Level.SetFormHelp( "Civilian",          MissionText.Message_ClothInfo[5] );
        Level.SetFormHelp( "Cook",              MissionText.Message_ClothInfo[6] );
+       Level.SetFormHelp( "Driver",            MissionText.Message_ClothInfo[7] );
        
        if (Level.GetDifficulty() <= 1) then
           Level.InstallDpc("Level.HelpMessage(MissionText.Message_GrassHelp)", 15.0);
@@ -678,10 +741,49 @@ end;
        Level.InstallInitialTasks();
        
        Level.ChangePlayerStand( 2 );
+
+     -- The civilian in charge of the movie theatre now carries a silenced Luger and ammo, instead of a Walther P38. -- Liz Shaw
+     local cinemaMan = Level.FindActor('CIMN');
+
+     Actor.ClearInventory(cinemaMan , true );
+     local gun  = Level.CreateItem("LugerSilencer","Weapon");
+     Actor.PutWeapon( cinemaMan, Actor.WEAPON_SLOT_PISTOL, gun );
+     Actor.PutWeaponAmmo( cinemaMan, "Luger");
+     Actor.PutWeaponAmmo( cinemaMan, "Luger");
+     --
+
+     if (cinemaMan != nil) then
+
+         local key = Level.CreateItem( "Custom" , "Equipment" );
+         if ( key != nil ) then
+
+             Entity.SetUniqueID( key, 'STKY' );
+
+             Level.SetCustomItemName( key, MissionText.Key_Storage );
+             Level.SetCustomItemIcon( key, "ammo_key" );
+
+             Actor.PutPouch( cinemaMan, Actor.GetEmptyPouch(cinemaMan), key );
+          end;
+     end
+
+     if (cinemaMan != nil) then
+
+         local key = Level.CreateItem( "Custom" , "Equipment" );
+         if ( key != nil ) then
+
+             Entity.SetUniqueID( key, 'CIKY' );
+
+             Level.SetCustomItemName( key, MissionText.Key_Cinema );
+             Level.SetCustomItemIcon( key, "ammo_key" );
+
+             Actor.PutPouch( cinemaMan, Actor.GetEmptyPouch(cinemaMan), key );
+          end;
+     end
                            
        -- Finish load..
        Level.OnFinishLoad();
        Level.OnLoadedDifficulty();
+       Level.AutoSave();
   end;
 
   --------------------------------------------------------
@@ -893,6 +995,9 @@ end;
         Level.CompleteMissionTask(taskId);
 
         Level.PlayMenuSound("task_finish");
+        if (taskId != 'LEAV' and taskId != 'ALAR') then
+           Level.AutoSave();
+        end;
      else
         Level.RemoveMissionTask(taskId);
         
@@ -1202,13 +1307,12 @@ end;
            return false;        
         end;
 
-        if (id != "VineTrigger_03") then
-           if (AI.GetPlayerForm() != "Waiter") then        
+        if (id != "VineTrigger_01") then
+           if (AI.GetPlayerForm() != "CinemaMan") then        
               AI.StartDecamouflage( 80.0, 150.0, 5.0 );
            end
         else
-           if (AI.GetPlayerForm() != "Waiter" and
-               AI.GetPlayerForm() != "CinemaMan") then        
+           if (AI.GetPlayerForm() != "Waiter") then        
               AI.StartDecamouflage( 80.0, 150.0, 5.0 );
            end
         end
@@ -1415,6 +1519,16 @@ end;
      if (zone == "Shed") then
         Level.AddSmallMessage( MissionText.Message_StopMove_GetOut, 5.0, 175, 175, 175 );
         AI.HandleVoice(npc, "@v_stop_move");
+
+     elseif (zone == "Blitz") then
+     
+        Level.AddSmallMessage( MissionText.Message_StopMove_Blitz, 5.0, 175, 175, 175 );
+        AI.HandleVoice(npc, "male_ger_stopmove_stopmove_02");
+
+        local driver = Level.FindActor('GS18');
+        if (driver != nil) then
+           Actor.MarkAsTarget( driver, true );
+        end
         
      elseif (zone == "FirstFloor") then
         
@@ -2667,16 +2781,22 @@ function Level.OnNotifyVisitedBody(npc, body, accident)
 --------------------------------------------------------
   function Level.StartSpySpeaking()
      local npc = AI.FindNPC('FREN');
+
+     local messages = { MissionText.Message_Cutscene_Spy_1, 
+                        MissionText.Message_Cutscene_Spy_1, 
+                        MissionText.Message_Cutscene_Spy_1, 
+                        MissionText.Message_Cutscene_Spy_2, 
+                        MissionText.Message_Cutscene_Spy_2};
      
      -- Install player anim task...
      local p = {};
      p["CustomString_1"] = "Relaxed_Talk_Express1";
-     p["CustomString_2"] = "18.0";
+     p["CustomString_2"] = "24.0";
      p["CustomString_3"] = "Level.OnInformationRecieved()";
 
      AI.RunScriptTask(npc, "scripts:job\\PlayerAnimTask.lua", AI.LOGIC_DEFAULT, Level.ToCustomParams(p));        
 
-     Level.BeginCutScene( "Spy", "Levels\\Whitehead\\spy.scm", MissionText.Message_Cutscene_Spy, 16.0, { 3, 20.0, 45.0, 100.0, 255 } );
+     Level.BeginCutScene( "Spy", "Levels\\Whitehead\\spy.scm", messages, 21.5, { 3, 20.0, 45.0, 100.0, 255 } );
      
      Level.InstallDpc("AI.HandleVoice( AI.FindNPC('FREN'), '%Script02_Sound' )", 0.1);
   end
@@ -2720,6 +2840,19 @@ function Level.OnChangeCloth()
   Level.InstallDpc("Level.OnHelpForm()", 3.0);
     
 end
+
+--------------------------------------------------------
+-- Name: Level.OnChangeOfficerCloth()
+-- Desc:
+--------------------------------------------------------
+function Level.OnChangeOfficerCloth()
+    
+   local player = Level.GetPlayer();
+   if ( player != nil ) then
+     Actor.EnableMesh( player, "mesh_glasses" , false );     
+   end;
+
+end;
 
 --------------------------------------------------------
 -- Name: Level.CanOrderWorkers()
@@ -2928,6 +3061,9 @@ end
             Level.BoxesVehicleAtZone = Level.BoxesAtVehicle;
          end
      end
+
+     AI.EnableZone("Blitz", false);
+     AI.EnableZone("BlitzOut", false);
      
      -- if (Level.BojlerReturnPlaceTrigger == true) then
      --   Level.BoxesCompleted = Level.BoxesCompleted + Level.BoxesAtVehicle;
@@ -2950,7 +3086,11 @@ end
             Level.BoxesCompleted = Level.BoxesCompleted - Level.BoxesVehicleAtZone;
             Level.BoxesVehicleAtZone = 0;
          end
-     end     
+     end
+
+     AI.EnableZone("Blitz", true);
+     AI.EnableZone("BlitzOut", true);
+ 
   end
  
 --------------------------------------------------------
@@ -3276,4 +3416,17 @@ end
 function Level.OnExplodeVehicle()
    Level.VehicleExploded = true;
 end
+
+--------------------------------------------------------
+-- Name: Level.ChangeDriverJob()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+  function Level.ChangeDriverJob()
+     AI.Debug(npc, "Script", "Level.ChangeDriverJob()");
+
+     if (AI.IsDefault(AI.FindNPC('GS18')) != false) then
+        AI.SetJob(AI.FindNPC('GS18'), "shed");
+     end
+  end
 

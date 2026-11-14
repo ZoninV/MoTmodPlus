@@ -1,1 +1,4 @@
-<tab>Action menu:<br><br>-<sp> Hold down the 'Action menu ("E" by default)' key to enter the menu.<br>-<sp> Roll the scroll wheel or use the forward/backward keys to select the menu item.<br>-<sp> Release the 'Action menu' key to activate the required menu item.<br>
+<tab>Меню действий:<br><br>
+-<sp> Удерживайте клавишу 'E' для входа в 'Меню действий'.<br>
+-<sp> Используйте колесико мыши или клавиши вперед/назад для выбора действия.<br>
+-<sp> Отпустите клавишу 'E' для совершения выбранного действия.<br>

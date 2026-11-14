@@ -2,71 +2,81 @@
   MissionText = 
   {
       --Mission text
-      Task_Agent                            = " Obtain the information";
-      Task_CryptLetter                      = " Intercept the cipher";
-      Task_Explosion                        = " Place the explosive charges";
-      Task_Leave                            = " Leave the castle";
-      Key_Kitchen                           = "Key to the kitchen";
-      Key_Doctor                            = "Key to the doctor's room";
-      Key_Seif                              = "Key to the safe";
-      Key_Floor2                            = "Key to the rooms on the second floor";
-      Key_SkladExplosive                    = "Key to the explosives warehouse";
-      Key_SkladHoz                          = "Key to the supply warehouse ";
-      Key_SkladFloor1                       = "Key to the first level of the warehouse";
-      Key_SkladFloor2                       = "Key to the second level of the warehouse";
-      Key_Podval                            = "Key to the basement";
-      Key_Radio                             = "Key to the radio room";
-      Message_SetupDynamite                 = "SET THE DYNAMITE";
-      Message_NoDynamite                    = "! You don't have any dynamite.";
-      Message_DynSetuped                    = "The dynamite has been set";
-      Message_ListenTalk                    = "EAVESDROP ON THE CONVERSATION";
-      Message_FailRadist                    = "The radio operator was neutralized before he received the cipher text";
-      Message_RadistGetPaper                = "! The radio operator has received the cipher text…";
-      Message_DoctorBeSoon                  = "- The Doctor was told that you are waiting for him. He will be back soon.";
-      Message_VinePoison                    = "ADD POISON";
-      Message_KastrulaPoison                = "ADD POISON";
-      Message_PoisonTipName                 = "Poison";
-      Message_PoisonName                    = "POISON";
-      Message_PushVineBox                   = "PUSH THE BARREL";
-      Message_DocTip                        = "Cipher text";
-      Message_DocName                       = "CIPHER TEXT";
-      Message_GetDocsFromSeif               = "TAKE THE CIPHER TEXT";
-      Message_PassName                      = "Invoice to access the warehouse";
-      Message_PassNameL                     = "ACCESS TO THE WAREHOUSE";
-      Message_MoveDoska                     = "MOVE THE PLYWOOD";
-      Message_ShowDocs                      = "PRODUCE THE PERMIT";
-      Message_ReadInfo                      = "EXAMINE THE CACHE";
-      Message_StopMove_DocsClear            = "@ Everything is fine, please proceed.";
-      Message_Alarm                         = "The alarm has been raised!";
-      Message_AlarmFinished                 = "The alarm has been cancelled.";
-      WhereIsFuckenCookMessage              = "@ I am starving! When will that bloody cook get here?!";
-      Message_StopMove_EastSklad            = "@ The warehouse is off limits!";
-      Message_StopMove_SecondFloor          = "@ Leave the second floor immediately! An officers' meeting is underway.";
-      Message_StopMove_ConferenceRoom       = "@ Leave the second floor immediately! An officers' meeting is underway.";
-      Message_StopMove_FirstFloorSklad      = "@ I am under orders not to let anyone except workers enter the warehouse.";
-      Message_StopMove_DoctorRoom_Doctor    = "@ What are you doing here? This is my room!";
-      Message_StopMove_DoctorRoom           = "@ This is the doctor's room. You have to leave!";
-      Message_StopMove_OfficerKitchen_1     = "@ The table is set for officers only. You have to leave.";
-      Message_StopMove_OfficerKitchen_2     = "@ Leave the officers' dining hall immediately!";
-      Message_StopMove_RadistZone_1         = "@ Access to this room is forbidden to everyone except radio operators.";
-      Message_StopMove_RadistZone_2         = "@ You're not a doctor! Heinrich is sick!... Leave the room!";
-      Message_StopMove_RadistZoneEnter      = "@ You have no business in the radio room!";
-      Message_StopMove_Billiard             = "@ What are you doing here? Go back and do your job!";
-      Message_StopMove_Basement_1           = "@ There is no reason for you to be in the basement!";
-      Message_StopMove_Basement_2           = "@ Back to your job! There's nothing for you to do here!";
-      Message_StopMove_GuardsRoom           = "@ Nobody except guards are allowed in here!";
-      Message_StopMove_SecondFloorSklad     = "@ The entrance to the warehouse is forbidden! I cannot let you in!";
-      Message_StopMove_WorkersSklad         = "@ I am under orders to allow no one to enter the warehouse!";
-      Message_StopMove_WorkersSkladEnterBox = "@ What are you doing messing around here? Go take your smoke break outside!";
-      Message_StopMove_CookRoom             = "@ What are you doing in the kitchen?";
+      Task_Agent                            = " Получить информацию";
+      Task_CryptLetter                      = " Перехватить шифрограмму";
+      Task_Explosion                        = " Заложить заряды";
+      Task_Leave                            = " Покинуть замок";
+      Key_Kitchen                           = "Ключ от кухни";
+      Key_Doctor                            = "Ключ от кабинета доктора";
+      Key_Seif                              = "Ключ от сейфа";
+      Key_Floor2                            = "Ключ от комнат второго этажа";
+      Key_SkladExplosive                    = "Ключ от склада со взрывчаткой";
+      Key_SkladHoz                          = "Ключ от хозяйственного склада";
+      Key_SkladFloor1                       = "Ключ от первого этажа склада";
+      Key_SkladFloor2                       = "Ключ от второго этажа склада";
+      Key_Podval                            = "Ключ от подвала";
+      Key_Radio                             = "Ключ от радио комнаты";
+      Message_SetupDynamite                 = "УСТАНОВИТЬ ДИНАМИТ";
+      Message_NoDynamite                    = "! У вас нет динамита.";
+      Message_DynSetuped                    = "Динамит установлен";
+      Message_ListenTalk                    = "ПОДСЛУШАТЬ РАЗГОВОР";
+      Message_FailRadist                    = "Радист нейтрализован до получения шифрограммы";
+      Message_RadistGetPaper                = "! Радист получил шифрограмму.";
+      Message_DoctorBeSoon                  = "- Доктору передали, что вы его ждете, он скоро подойдет.";
+      Message_VinePoison                    = "ДОБАВИТЬ ЯД";
+      Message_KastrulaPoison                = "ДОБАВИТЬ ЯД";
+      Message_PoisonTipName                 = "Яд";
+      Message_PoisonName                    = "ЯД";
+      Message_PushVineBox                   = "ТОЛКНУТЬ БОЧКУ";
+      Message_DocTip                        = "Шифрограмма";
+      Message_DocName                       = "ШИФРОГРАММУ";
+      Message_GetDocsFromSeif               = "ВЗЯТЬ ШИФРОГРАММУ";
+      Message_PassName                      = "Накладная для допуска на склад";
+      Message_PassNameL                     = "ДОПУСК НА СКЛАД";
+      Message_MoveDoska                     = "ОТОДВИНУТЬ ДОСКУ";
+      Message_ShowDocs                      = "ПОКАЗАТЬ ПРОПУСК";
+      Message_ReadInfo                      = "ОСМОТРЕТЬ ТАЙНИК";
+      Message_StopMove_DocsClear            = "@ Все нормально - проходите.";
+      Message_Alarm                         = "Поднята тревога!";
+      Message_AlarmFinished                 = "Тревога закончилась.";
+      WhereIsFuckenCookMessage              = "@ Жрать охота! Когда придет этот кашевар?!";
+      Message_StopMove_EastSklad            = "@ На склад доступ закрыт!";
+      Message_StopMove_SecondFloor          = "@ Немедленно покиньте второй этаж! Проходит совещание офицеров.";
+      Message_StopMove_ConferenceRoom       = "@ Немедленно покиньте второй этаж! Проходит совещание офицеров.";
+      Message_StopMove_FirstFloorSklad      = "@ Мне приказано, кроме рабочих никого не пускать на склад.";
+      Message_StopMove_DoctorRoom_Doctor    = "@ Что вы тут забыли! Это мой кабинет!";
+      Message_StopMove_DoctorRoom           = "@ Это кабинет доктора! Покиньте его немедленно!";
+      Message_StopMove_OfficerKitchen_1     = "@ В этой комнате накрыто для офицеров. Вы должны покинуть ее.";
+      Message_StopMove_OfficerKitchen_2     = "@ Покиньте офицерскую столовую немедленно!";
+      Message_StopMove_RadistZone_1         = "@ Кроме радистов в эту комнату доступ запрещен.";
+      Message_StopMove_RadistZone_2         = "@ Вы не доктор?! Генриху плохо! ... Покиньте комнату!";
+      Message_StopMove_RadistZoneEnter      = "@ Вам нечего делать в радиокомнате!";
+      Message_StopMove_Billiard             = "@ Что ты здесь забыл! Иди занимайся своими делами!";
+      Message_StopMove_Basement_1           = "@ В подвале нет никакой работы для вас!";
+      Message_StopMove_Basement_2           = "@ Занимайтесь своими делами! Тут вам делать нечего!";
+      Message_StopMove_GuardsRoom           = "@ Кроме инженерных войск здесь никто не должен находиться.";
+      Message_StopMove_SecondFloorSklad     = "@ Вход на склад запрещен! Я не имею права вас сюда пускать!";
+      Message_StopMove_WorkersSklad         = "@ У меня приказ никого не пропускать на склад!";
+      Message_StopMove_WorkersSklad_2       = "@ Я не могу позволить вам войти без пропуска!";
+      Message_StopMove_WorkersSkladEnterBox = "@ Чего халтуришь? Перекур на улице!";
+      Message_StopMove_CookRoom             = "@ Чего забыл на кухне?";
+      Message_StopMove_FirstFloorWest       = "@ Только радисты могут пройти дальше.";
       Message_Help                          = {
-                                                "In the darkness, the enemy's vision is much poorer.";
-                                                "Sleeping enemies have poor hearing.";
-                                                "Toxic agents and a first aid kit may be found at the medical station.";
+                                                "В темноте противник значительно хуже видит.";
+                                                "Спящие враги плохо слышат.";
+                                                "В медицинском пункте можно найти отравляющие вещества и аптечку первой помощи.";
+                                                "Весь инженерный персонал имеет пропуски.";
                                               };
       Message_ClothInfo                     = {
-                                                "A radio operator naturally belongs in the radio room.";
-                                                "It is normal for a doctor to visit his patients.";
+                                                "Радист, как правило, находится в радиорубке.";
+                                                "Для врача нормально посещать своих пациентов.";
+                                                "Длля повара нормально навещать голодных охранников.";
+                                                "Рабочий отвечает за доставку боеприпасов на склад.";
+                                                "Для входа на склад военным инженерам требуется пропуск.";
+                                                "Пехотинец может свободно передвигаться по общественным местам.";
+                                                "Полевой медик, как правило, находится на медицинском пункте.";
+                                                "Офицер может свободно передвигаться по замку.";
+                                                "Многие знают командира в лицо.";
                                               };
   };
 
@@ -85,7 +95,7 @@
 --------------------------------------------------------
 function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_addon" 6' );
 
 end;
 
@@ -96,8 +106,9 @@ end;
   function Level.OnFinishLoad()
        Level.OnFinishLoad_Common();
        
-       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.75#sounds\\music\\insurgent.ogg" );              
-       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.23#sounds\\music\\imbroken03.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\insurgent.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\danger.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\imbroken03.ogg" );
                      
        Level.SetDefaultMusicPause( 180.0, 300.0, 30.0, 60.0 );
        Level.SetDOFPostFilter( 1, 0.0, 700.0, 1500.0 );
@@ -142,8 +153,11 @@ end;
        Level.SetDoorLocked( Level.FindDoor('LOOK'), true, false );
                
        -- effects
-       Level.SetHudEffect("noise_small" , true ); 
-                                        
+       Level.SetHudEffect("noise_small" , true );
+
+       --Liz Shaw
+       Entity.SetSkin(Level.FindVehicle('BLT1'), 2);
+       Entity.SetSkin(Level.FindVehicle('BLT2'), 2);
   end;
  
 --------------------------------------------------------
@@ -191,6 +205,15 @@ end;
        Stream.WriteBool( Level.Cook_Poissoned );
        
        Level.OnSave_Common();              
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
 --------------------------------------------------------
@@ -252,8 +275,48 @@ end;
        end
        
        Level.OnLoad_Common();                                   
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
        Level.OnFinishLoad();
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_pgift_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_pgift_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
   
 --------------------------------------------------------
 -- Name: Level.OnLoaded()
@@ -334,6 +397,8 @@ end;
              Level.EnableItemPickup( item, false );
           end;       
        end;
+
+      Level.SetupPass();
       
        -- Keys
        
@@ -434,13 +499,22 @@ end;
        Level.GS06_Poissoned   = false;
        Level.Cook_Poissoned   = false;
        
-       Level.SetFormHelp( "Radist", MissionText.Message_ClothInfo[1] );
-       Level.SetFormHelp( "Doctor", MissionText.Message_ClothInfo[2] );
+       Level.SetFormHelp( "Radist",             MissionText.Message_ClothInfo[1] );
+       Level.SetFormHelp( "Doctor",             MissionText.Message_ClothInfo[2] );
+       Level.SetFormHelp( "Cook",               MissionText.Message_ClothInfo[3] );
+       Level.SetFormHelp( "Worker",             MissionText.Message_ClothInfo[4] );
+       Level.SetFormHelp( "SoldiHP",            MissionText.Message_ClothInfo[5] );
+       Level.SetFormHelp( "SoldiHI",            MissionText.Message_ClothInfo[6] );
+       Level.SetFormHelp( "SoldiHS",            MissionText.Message_ClothInfo[7] );
+       Level.SetFormHelp( "Officer",            MissionText.Message_ClothInfo[8] );
+       Level.SetFormHelp( "OfficHK",            MissionText.Message_ClothInfo[9] );
        
        -- Init mission tasks..
        Level.InstallInitialTasks();
        
        Level.ChangePlayerStand( 2 );
+
+       AI.OnPlayerEnterZone("global", 'GLSC'); -- Liz Shaw
        
        AI.EnableZone("WorkersSkladAlarmZone", false);
        AI.EnableZone("ConferenceRoom_Info", false);
@@ -472,10 +546,80 @@ end;
        Level.SetSoundSystemFadeFactor('VA85', 'VA80', 0.65);
        
        Level.LockDoor('DR21', false);
+
+     -- The cook now carries a silenced Luger and ammo, instead of a Walther P38. -- Liz Shaw
+     local cook = Level.FindActor('COOK');
+
+     Actor.ClearInventory(cook , true );
+     local gun  = Level.CreateItem("LugerSilencer","Weapon");
+     Actor.PutWeapon( cook, Actor.WEAPON_SLOT_PISTOL, gun );
+     Actor.PutWeaponAmmo( cook, "Luger");
+     --
+
+     if (cook != nil) then
+
+         local key = Level.CreateItem( "Custom" , "Equipment" );
+         if ( key != nil ) then
+
+             Entity.SetUniqueID( key, 'KITC' );
+
+             Level.SetCustomItemName( key, MissionText.Key_Kitchen );
+             Level.SetCustomItemIcon( key, "ammo_key" );
+
+             Actor.PutPouch( cook, Actor.GetEmptyPouch(cook), key );
+          end;
+     end
+
+     -- The doctor now carries a silenced Luger and ammo, instead of a Walther P38. -- Liz Shaw
+     local doctor = Level.FindActor('DOCT');
+
+     Actor.ClearInventory(doctor , true );
+     local gun  = Level.CreateItem("LugerSilencer","Weapon");
+     Actor.PutWeapon( doctor, Actor.WEAPON_SLOT_PISTOL, gun );
+     Actor.PutWeaponAmmo( doctor, "Luger");
+     --
+
+     if (doctor != nil) then
+
+         local key = Level.CreateItem( "Custom" , "Equipment" );
+         if ( key != nil ) then
+
+             Entity.SetUniqueID( key, 'DOCC' );
+
+             Level.SetCustomItemName( key, MissionText.Key_Doctor );
+             Level.SetCustomItemIcon( key, "ammo_key" );
+
+             Actor.PutPouch( doctor, Actor.GetEmptyPouch(doctor), key );
+          end;
+     end
+
+     -- The nurse in the sick bay now carries a silenced Luger and ammo, instead of a Walther P38. -- Liz Shaw
+     local nurse = Level.FindActor('GN03');
+
+     Actor.ClearInventory(nurse , true );
+     local gun  = Level.CreateItem("LugerSilencer","Weapon");
+     Actor.PutWeapon( nurse, Actor.WEAPON_SLOT_PISTOL, gun );
+     Actor.PutWeaponAmmo( nurse, "Luger");
+     --
+
+     if (nurse != nil) then
+
+         local key = Level.CreateItem( "Custom" , "Equipment" );
+         if ( key != nil ) then
+
+             Entity.SetUniqueID( key, 'DOCC' );
+
+             Level.SetCustomItemName( key, MissionText.Key_Doctor );
+             Level.SetCustomItemIcon( key, "ammo_key" );
+
+             Actor.PutPouch( nurse, Actor.GetEmptyPouch(nurse), key );
+          end;
+     end
        
        -- Finish load..
        Level.OnFinishLoad();
        Level.OnLoadedDifficulty();
+       Level.AutoSave();
   end;
   
   --------------------------------------------------------
@@ -498,10 +642,6 @@ end;
         Level.LockDoor('DR15', false);
         Level.LockDoor('DR19', false);
         Level.LockDoor('DR08', false);
-     end
-     
-     if (Level.GetDifficulty() == 2) then
-        AI.SetForm(AI.FindNPC('GS24'), "SS_Soldier");
      end
      
      if (Level.GetDifficulty() == 3) then
@@ -655,6 +795,9 @@ end;
         Level.CompleteMissionTask(taskId);
 
         Level.PlayMenuSound("task_finish");
+        if (taskId != 'LEAV' and taskId != 'ALAR') then
+           Level.AutoSave();
+        end;
      else
         Level.RemoveMissionTask(taskId);
         Level.RunLogic(nil);
@@ -1017,6 +1160,38 @@ end
      
   end
 
+  --------------------------------------------------------
+  -- Name: Level.SetupPass()
+  -- Desc:
+  --------------------------------------------------------
+  function Level.SetupPass()
+
+     local passActors = { 'GS37', 'GS38', 'GS39', 'GS40', 'GS41', 'GS43',
+                          'GS44', 'GS45', 'GS47', 'GS48', 'GS54', 'GS62',
+                          'GS64', 'GS65'
+                        };
+
+     local n = table.getn(passActors);
+
+     for i = 1, n do
+
+        local docs = Level.CreateItem( "Custom" , "Equipment" );
+
+        if ( docs != nil ) then
+
+            Entity.SetUniqueID( docs, 'PASS' );
+
+            Level.SetCustomItemName( docs, MissionText.Message_PassName );
+            Level.SetCustomItemIcon( docs, "ammo_doc" );
+     
+            local soldier = Level.FindActor( passActors[i] );
+            if ( soldier != nil ) then 
+               Actor.PutPouch( soldier, Actor.GetEmptyPouch(soldier), docs );
+            end
+        end
+     end
+  end
+
 
   --------------------------------------------------------
   -- Name: Level.PlayerHasPass()
@@ -1264,7 +1439,7 @@ end
      elseif (zone == "SecondFloor") then
      
          Level.AddSmallMessage( MissionText.Message_StopMove_SecondFloor, 5.0, 175, 175, 175 );
-         AI.HandleVoice(npc, "male_ger_stopmove_stopmove_13");
+         AI.HandleVoice(npc, "male_ger_stopmove_stopmove_20");
          
      elseif (zone == "FirstFloorSklad") then
      
@@ -1318,6 +1493,11 @@ end
          AI.HandleVoice(npc, "male_ger_stopmove_stopmove_03");
          
      elseif (zone == "Basement") then
+
+         if (playerForm == "Radist") then
+
+            AI.HandleVoice(npc, "male_ger_stopmove_stopmove_12");
+         end
          
          if (random() < 0.5) then
             Level.AddSmallMessage( MissionText.Message_StopMove_Basement_1, 5.0, 175, 175, 175 );
@@ -1328,7 +1508,7 @@ end
          AI.HandleVoice(npc, "@v_stop_move");
          
      elseif (zone == "GuardsRoom" or 
-             zone == "GuardsRoomNear") then
+             zone == "GuardRoomNear") then
      
          Level.AddSmallMessage( MissionText.Message_StopMove_GuardsRoom, 5.0, 175, 175, 175 );
          AI.HandleVoice(npc, "male_ger_stopmove_stopmove_15");
@@ -1339,9 +1519,21 @@ end
          AI.HandleVoice(npc, "male_ger_stopmove_stopmove_16");
          
      elseif (zone == "WorkersSklad" or zone == "WorkersSkladEnter") then
+
+       if (playerForm == "SoldiHI" or
+           playerForm == "SoldiHS" or
+           playerForm == "Radist") then
      
          Level.AddSmallMessage( MissionText.Message_StopMove_WorkersSklad, 5.0, 175, 175, 175 );
          AI.HandleVoice(npc, "male_ger_stopmove_stopmove_16");
+       end
+
+       if (playerForm == "SoldiHP" or
+           playerForm == "Doctor") then
+     
+         Level.AddSmallMessage( MissionText.Message_StopMove_WorkersSklad_2, 5.0, 175, 175, 175 );
+         AI.HandleVoice(npc, "male_ger_stopmove_stopmove_16");
+       end
          
          if (zone == "WorkersSkladEnter") then
             AI.EnableZone('WorkersSkladAlarmZone', true);
@@ -1359,10 +1551,90 @@ end
      
          Level.AddSmallMessage( MissionText.Message_StopMove_CookRoom, 5.0, 175, 175, 175 );
          AI.HandleVoice(npc, "@v_stop_move");
+
+     elseif (zone == "FirstFloorWest" ) then
+              
+         Level.AddSmallMessage( MissionText.Message_StopMove_FirstFloorWest, 5.0, 175, 175, 175 );
+         AI.HandleVoice(npc, "male_ger_stopmove_stopmove_19");
          
      end
      
      if (playerForm != "Worker" and Level.PlayerHasPass() == true) then
+     
+        if (zone == "WorkersSklad" or 
+            zone == "WorkersSkladEnter" or
+            zone == "WorkersSkladEnterBox") then
+           
+            if (Level.HasPlayerAction('SHP1') == false) then
+               --Level.AddPlayerAction('SHP1', MissionText.Message_ShowDocs, "Level", false );
+               Level.SafeAddLevelPlayerAction('SHP1', MissionText.Message_ShowDocs);
+               Level.AddTimer('CHSP', "OnCheckShowPass", 1.0, true );
+            end
+        end
+        
+        if (zone == "SecondFloorSklad" or
+            zone == "GuardRoomNear") then
+
+            if (Level.HasPlayerAction('SHP2') == false) then
+                --Level.AddPlayerAction('SHP2', MissionText.Message_ShowDocs, "Level", false );
+                Level.SafeAddLevelPlayerAction('SHP2', MissionText.Message_ShowDocs);
+                Level.AddTimer('CHSP', "OnCheckShowPass", 1.0, true );
+            end
+        end
+
+     end
+
+     if (playerForm != "SoldiHI" and Level.PlayerHasPass() == true) then
+     
+        if (zone == "WorkersSklad" or 
+            zone == "WorkersSkladEnter" or
+            zone == "WorkersSkladEnterBox") then
+           
+            if (Level.HasPlayerAction('SHP1') == false) then
+               --Level.AddPlayerAction('SHP1', MissionText.Message_ShowDocs, "Level", false );
+               Level.SafeAddLevelPlayerAction('SHP1', MissionText.Message_ShowDocs);
+               Level.AddTimer('CHSP', "OnCheckShowPass", 1.0, true );
+            end
+        end
+        
+        if (zone == "SecondFloorSklad" or
+            zone == "GuardRoomNear") then
+
+            if (Level.HasPlayerAction('SHP2') == false) then
+                --Level.AddPlayerAction('SHP2', MissionText.Message_ShowDocs, "Level", false );
+                Level.SafeAddLevelPlayerAction('SHP2', MissionText.Message_ShowDocs);
+                Level.AddTimer('CHSP', "OnCheckShowPass", 1.0, true );
+            end
+        end
+
+     end
+
+     if (playerForm != "SoldiHS" and Level.PlayerHasPass() == true) then
+     
+        if (zone == "WorkersSklad" or 
+            zone == "WorkersSkladEnter" or
+            zone == "WorkersSkladEnterBox") then
+           
+            if (Level.HasPlayerAction('SHP1') == false) then
+               --Level.AddPlayerAction('SHP1', MissionText.Message_ShowDocs, "Level", false );
+               Level.SafeAddLevelPlayerAction('SHP1', MissionText.Message_ShowDocs);
+               Level.AddTimer('CHSP', "OnCheckShowPass", 1.0, true );
+            end
+        end
+        
+        if (zone == "SecondFloorSklad" or
+            zone == "GuardRoomNear") then
+
+            if (Level.HasPlayerAction('SHP2') == false) then
+                --Level.AddPlayerAction('SHP2', MissionText.Message_ShowDocs, "Level", false );
+                Level.SafeAddLevelPlayerAction('SHP2', MissionText.Message_ShowDocs);
+                Level.AddTimer('CHSP', "OnCheckShowPass", 1.0, true );
+            end
+        end
+
+     end
+
+     if (playerForm != "Radist" and Level.PlayerHasPass() == true) then
      
         if (zone == "WorkersSklad" or 
             zone == "WorkersSkladEnter" or

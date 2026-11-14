@@ -21,6 +21,7 @@
 
      Level.UpdateLeaveTask( 'DOCS' );
 
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask('DOCS', 15.0 );
 
      if (Level.HasMissionTask('YMOV')) then

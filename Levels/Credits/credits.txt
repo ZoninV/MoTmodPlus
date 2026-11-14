@@ -1,215 +1,228 @@
-<img=mm_logo><br>
-<col=C8C8C8>http://motmod.at.tut.by</col><br><br><br>
+<img=mm_logo><br><br>
 
-IGOR "forlik" LUKYANCHUK<br>
-ANDREW "mok" MOKRETSOV<br><br><br><br><br>
+Лукьянчук "forlik" Игорь<br>
+Мокрецов "mok" Андрей<br><br>
 
-DEATH TO SPIES: THE MOMENT OF TRUTH<br><br><br>
+Дополнительные материалы от Dr. Elizabeth "Cambridge Spy" Shaw<br>
+с помощью от forlik и AHO<br><br>
 
-<col=C8C8C8>Project Lead</col><br>
-ALEKSEY AGAMALOV<br><br>
+Особая благодарность totallyfrozen и Mazryonh за их советы и отзывы.<br><br>
 
-<col=C8C8C8>Lead Programmer</col><br>
-ALEKSEY AGAMALOV<br><br>
+Голосовые клипы "Iron Storm" предоставлены Mazryonh<br><br>
 
-<col=C8C8C8>Lead Artist</col><br>
-ANDREY KHARCHENKO<br><br>
+Голосовые клипы Halo PC и Halo: Reach предоставлены Bizarchivist Sound Collection<br><br>
 
-<col=C8C8C8>Lead Animator</col><br>
-KONSTANTIN MASLYUK<br><br>
+Особая благодарность AHO, XendroX, STiFU, Altered-beast, Ivan The Belarussian and Fra30ahg2r за некоторые текстуры.<br><br>
 
-<col=C8C8C8>Programmers</col><br>
-ALEKSEY AGAMALOV<br>
-SERGEY GVOZDEV<br><br>
+Французские транскрипты предоставлены Hiei-<br><br>
 
-<col=C8C8C8>AI</col><br>
-SERGEY GVOZDEV<br><br>
+«Peril» из Halo: Combat Evolved OST, написанный Мартином О'Доннелом и Майклом Сальватори<br><br><br><br><br>
 
-<col=C8C8C8>Game Design</col><br>
-ALEKSEY AGAMALOV<br>
-SERGEY GVOZDEV<br><br>
+СМЕРТЬ ШПИОНАМ: МОМЕНТ ИСТИНЫ<br><br><br>
 
-<col=C8C8C8>Scripters</col><br>
-SERGEY GVOZDEV<br>
-ALEKSEY AGAMALOV<br><br>
+<col=C8C8C8>Руководитель проекта:</col><br>
+АГАМАЛОВ АЛЕКСЕЙ<br><br>
 
-<col=C8C8C8>Sound Producer</col><br>
-GRIGORY KLIMENKO<br><br>
+<col=C8C8C8>Ведущий программист:</col><br>
+АГАМАЛОВ АЛЕКСЕЙ<br><br>
 
-<col=C8C8C8>3D Artists</col><br>
-ARMAN AVAKYAN<br>
-ALEKSANDR BOCHAROV<br>
-ROMAN ENDOVITSKY<br>
-ALEKSEY KOLESNIKOV<br>
-KONSTANTIN MASLYUK<br>
-ALEKSEY CHENTSOV<br>
-ANDREY KHARCHENKO<br><br>
+<col=C8C8C8>Ведущий художник:</col><br>
+ХАРЧЕНКО АНДРЕЙ<br><br>
 
-<col=C8C8C8>2D Artists</col><br>
-DMITRY BOCHAROV<br><br>
+<col=C8C8C8>Ведущий аниматор:</col><br>
+МАСЛЮК КОНСТАНТИН<br><br>
 
-<col=C8C8C8>Character Designers</col><br>
-ARMAN AVAKYAN<br>
-KONSTANTIN MASLYUK<br>
-ROMAN ENDOVITSKY<br>
-ALEKSEY CHENTSOV<br>
-ALEKSEY KOLESNIKOV<br><br>
+<col=C8C8C8>Программирование:</col><br>
+АГАМАЛОВ АЛЕКСЕЙ<br>
+ГВОЗДЕВ СЕРГЕЙ<br><br>
 
-<col=C8C8C8>Lighting</col><br>
-ALEKSEY AGAMALOV<br><br>
+<col=C8C8C8>Искусственный интеллект:</col><br>
+ГВОЗДЕВ СЕРГЕЙ<br><br>
 
-<col=C8C8C8>Level Design</col><br>
-ANDREY KHARCHENKO<br>
-DMITRY VOLOSHKO<br>
-GRIGORY KLIMENKO<br><br>
+<col=C8C8C8>Игровой дизайн:</col><br>
+АГАМАЛОВ АЛЕКСЕЙ<br>
+ГВОЗДЕВ СЕРГЕЙ<br><br>
 
-<col=C8C8C8>Writers</col><br>
-ALEKSEY AGAMALOV<br>
-SERGEY GVOZDEV<br>
-GRIGORY KLIMENKO<br><br>
+<col=C8C8C8>Скрипты:</col><br>
+ГВОЗДЕВ СЕРГЕЙ<br>
+АГАМАЛОВ АЛЕКСЕЙ<br><br>
 
-<col=C8C8C8>Historical Consultant</col><br>
-NIKOLAY PLUGIN<br><br>
+<col=C8C8C8>Звукорежиссер:</col><br>
+КЛИМЕНКО ГРИГОРИЙ<br><br>
 
-<col=C8C8C8>Testers</col><br>
-DMITRY VOLOSHKO<br>
-ALEKSEY CHENTSOV<br>
-ALEKSEY KOLESNIKOV<br><br>
+<col=C8C8C8>3D Художники:</col><br>
+АВАКЯН АРМАН<br>
+БОЧАРОВ АЛЕКСАНДР<br>
+ЕНДОВИЦКИЙ РОМАН<br>
+КОЛЕСНИКОВ АЛЕКСЕЙ<br>
+МАСЛЮК КОНСТАНТИН<br>
+ЧЕНЦОВ АЛЕКСЕЙ<br>
+ХАРЧЕНКО АНДРЕЙ<br><br>
 
-<col=C8C8C8>Composers</col><br>
-VALERY "WhiteLake" BELOZERTSEV<br>
-ALEKSANDR MACHUGOVSKY / the SandS<br>
-IVAN SIDORUK / the SandS<br>
-DMITRY ZHEMKOV / the SandS<br>
-KHARITON KANTIEV / the SandS<br><br>
+<col=C8C8C8>2D Художники:</col><br>
+БОЧАРОВ ДМИТРИЙ<br><br>
 
-<col=C8C8C8>Voices</col><br>
-VLADIMIR ANTONIK<br>
-DMITRY PHILIMONOV<br>
-ROMAN MATVEEV<br>
-EGOR PEREGUDOV<br>
-SERGEY ALEKSEEV<br>
-PAVEL NOVICHKOV<br>
-SVETLANA EKIMENKO<br>
-ELENA BASKAKOVA<br>
-MIKHAIL PEREGUDOV<br>
-ALEKSANDR KUZMIN-TARASOV<br>
-ANASTASIA GOROKHOVA<br>
-ELENA CHERNENKO<br>
+<col=C8C8C8>Персонажи:</col><br>
+АВАКЯН АРМАН<br>
+МАСЛЮК КОНСТАНТИН<br>
+ЕНДОВИЦКИЙ РОМАН<br>
+ЧЕНЦОВ АЛЕКСЕЙ<br>
+КОЛЕСНИКОВ АЛЕКСЕЙ<br><br>
+
+<col=C8C8C8>Освещение:</col><br>
+АГАМАЛОВ АЛЕКСЕЙ<br><br>
+
+<col=C8C8C8>Дизайн уровней:</col><br>
+ХАРЧЕНКО АНДРЕЙ<br>
+ВОЛОШКО ДМИТРИЙ<br>
+КЛИМЕНКО ГРИГОРИЙ<br><br>
+
+<col=C8C8C8>Сценарий:</col><br>
+АГАМАЛОВ АЛЕКСЕЙ<br>
+ГВОЗДЕВ СЕРГЕЙ<br>
+КЛИМЕНКО ГРИГОРИЙ<br><br>
+
+<col=C8C8C8>Исторический консультант:</col><br>
+ПЛУГИН НИКОЛАЙ<br><br>
+
+<col=C8C8C8>Тестирование:</col><br>
+ВОЛОШКО ДМИТРИЙ<br>
+ЧЕНЦОВ АЛЕКСЕЙ<br>
+КОЛЕСНИКОВ АЛЕКСЕЙ<br><br>
+
+<col=C8C8C8>Музыка:</col><br>
+БЕЛОЗЕРЦЕВ (WhiteLake) ВАЛЕРИЙ<br>
+МАЧУГОВСКИЙ АЛЕКСАНДР / the SandS<br>
+СИДОРУК ИВАН / the SandS<br>
+ЖЕМКОВ ДМИТРИЙ / the SandS<br>
+КАНТИЕВ ХАРИТОН / the SandS<br><br>
+
+<col=C8C8C8>Роли озвучивали:</col><br>
+АНТОНИК ВЛАДИМИР<br>
+ФИЛИМОНОВ ДМИТРИЙ<br>
+МАТВЕЕВ РОМАН<br>
+ПЕРЕГУДОВ ЕГОР<br>
+АЛЕКСЕЕВ СЕРГЕЙ<br>
+НОВИЧКОВ ПАВЕЛ<br>
+ЕКИМЕНКО СВЕТЛАНА<br>
+БАСКАКОВА ЕЛЕНА<br>
+ПЕРЕГУДОВ МИХАИЛ<br>
+КУЗЬМИН-ТАРАСОВ АЛЕКСАНДР<br>
+ГОРОХОВА АНАСТАСИЯ<br>
+ЧЕРНЕНКО ЕЛЕНА<br>
 FRITZSCHE ROLAND<br>
 LISKE CASIMIR<br>
 ALLEN MARK<br><br>
 
-<col=C8C8C8> Sound Recording</col><br>
-DMITRY KOMISSAROV<br>
-ALEKSANDR MACHUGOVSKY<br><br>
+<col=C8C8C8>Звукозапись:</col><br>
+КОМИССАРОВ ДМИТРИЙ<br>
+МАЧУГОВСКИЙ АЛЕКСАНДР<br><br>
 
-<br><br><br><br>1C COMPANY<br><br>
+<br><br><br><br>ФИРМА "1C"<br><br>
 
-<col=C8C8C8>Producers</col><br>
-SERGEY GERASEV<br>
-DMITRY NOZHNIN<br><br>
+<col=C8C8C8>Продюсеры:</col><br>
+ГЕРАСЕВ СЕРГЕЙ<br>
+НОЖНИН ДМИТРИЙ<br><br>
 
-<col=C8C8C8>PR and Marketing</col><br>
-ALEKSEY ARTEMENKO <br>
-ALEXEY PASTUSHENKO<br>
-SVETLANA TARASOVA<br><br>
+<col=C8C8C8>Маркетинг и PR:</col><br>
+АРТЕМЕНКО АЛЕКСЕЙ<br>
+ПАСТУШЕНКО АЛЕКСЕЙ<br>
+ТАРАСОВА СВЕТЛАНА<br><br>
 
-<col=C8C8C8>Sound Recording</col><br>
-OLEG MIRONOV<br><br>
+<col=C8C8C8>Звукозапись:</col><br>
+МИРОНОВ ОЛЕГ<br><br>
 
-<col=C8C8C8>Setup Application</col><br>
-KONSTANTIN SHAVRUK<br><br>
+<col=C8C8C8>Сборка инсталлятора:</col><br>
+ШАВРУК КОНСТАНТИН<br><br>
 
+<col=C8C8C8>Локализация:</col><br>
+МИРОНОВ ОЛЕГ<br>
+САЛАМАТОВ ИЛЬЯ<br><br>
 
-<col=C8C8C8>Localization</col><br>
-OLEG MIRONOV<br>
-ILYA SALAMATOV<br><br>
-
-<col=C8C8C8>Additional Localization</col><br>
+<col=C8C8C8>Дополнительная локализация:</col><br>
 STEVE BRESLIN<br><br>
 
-<col=C8C8C8>Testers</col><br>
-DMITRY SAVIN<br>
-DMITRY PAUTOV<br>
-SERGEY KIYATKIN<br><br>
+<col=C8C8C8>Тестирование:</col><br>
+САВИН ДМИТРИЙ<br>
+ПАУТОВ ДМИТРИЙ<br>
+КИЯТКИН СЕРГЕЙ<br><br>
 
-Strogov's Appearance by TriDigital Studio<br><br>
+Разработка внешнего вида Строгова студия TriDigital<br><br>
 
 <br><br><br><br>ASPYR PUBLISHING<br><br>
 
-<col=C8C8C8>Executive Producer</col><br>
+<col=C8C8C8>Исполнительный продюсер:</col><br>
 JAY GORDON<br><br>
 
-<col=C8C8C8>Senior Project Manager</col><br>
+<col=C8C8C8>Старший менеджер проекта:</col><br>
 KELLY BATES<br><br>
 
-<col=C8C8C8>Marketing Managers</col><br>
+<col=C8C8C8>Менеджеры по маркетингу:</col><br>
 AMITY PONSETTI<br>
 ERIC DUNCAN<br>
 KARRI SCOTT<br><br>
 
-<col=C8C8C8>PR Manager</col><br>
+<col=C8C8C8>PR-менеджер:</col><br>
 ERIC DUNCAN<br><br>
 
-<col=C8C8C8>Creative Marketing Lead</col><br>
+<col=C8C8C8>Руководитель креативного маркетинга:</col><br>
 DEVIN COX<br><br>
 
-<col=C8C8C8>Build Engineer</col><br>
+<col=C8C8C8>Билд-Инженер:</col><br>
 JOHN MERRILL<br><br>
 
-<col=C8C8C8>Director of QA</col><br>
+<col=C8C8C8>Директор по контролю качества:</col><br>
 ANDY BRAZELL<br><br>
 
-<col=C8C8C8>QA Manager</col><br>
+<col=C8C8C8>Менеджер по контролю качества:</col><br>
 BARD ALEXANDER<br><br>
 
-<col=C8C8C8>QA Supervisor</col><br>
+<col=C8C8C8>Руководитель контролем качества:</col><br>
 RANDALL DAVIS<br><br>
 
-<col=C8C8C8>QA Lead</col><br>
+<col=C8C8C8>Управляющий контролем качества</col><br>
 CLEMENT YEUNG<br><br>
 
-<col=C8C8C8>QA Testers</col><br>
+<col=C8C8C8>Контроль качества:</col><br>
 BEN STOCKTON<br>
 DANIEL BECKER<br>
 IAN ROMERO<br>
 NATHAN MRVICHIN<br>
 WILL O'BRIEN<br><br>
 
-<col=C8C8C8>CRG Manager</col><br>
+<col=C8C8C8>Менеджер CRG:</col><br>
 STEVE AMACKER<br><br>
 
-<col=C8C8C8>CRG Lead</col><br>
+<col=C8C8C8>CRG-Лид:</col><br>
 MICHAEL CARDONA<br><br>
 
-<col=C8C8C8>CRG Testers</col><br>
+<col=C8C8C8>Тестеры CRG:</col><br>
 HOLLY MUHS<br>
 ADAM WEBBER<br><br>
 
-<col=C8C8C8>Compatibility Supervisor</col><br>
+<col=C8C8C8>Супервайзер по совместимости:</col><br>
 DUSTAN COLEMAN<br><br>
 
-<col=C8C8C8>Compatibility Technician</col><br>
+<col=C8C8C8>Технический специалист по совместимости:</col><br>
 MICHAEL GREENE<br><br>
 
-<col=C8C8C8>Compatibility Testers</col><br>
+<col=C8C8C8>Тестеры совместимости:</col><br>
 DAVID WHITEFIELD<br>
 RENE OGANDO<br>
 CHAD BRAUNECK<br>
 GREG BENNETT<br><br>
 
-<col=C8C8C8>Technical Support Manager</col><br>
+<col=C8C8C8>Менеджер технической поддержки:</col><br>
 JASON MCCLURE<br><br>
 
-<col=C8C8C8>Technical Support</col><br>
+<col=C8C8C8>Техническая поддержка:</col><br>
 MICKEY OGANDO<br>
 JONAH HARDENBERGH<br>
 JEREMY JORGENSON<br><br>
 
 <br><br>
-This product uses Ogg Vorbis<br>
-Copyright (c) 2002, Xiph.org Foundation <br><br>
+Этот продукт использует Ogg Vorbis<br>
+Авторские права (c) 2002, Xiph.org Foundation <br><br>
 
 
 <br><br><br><br><br><br>

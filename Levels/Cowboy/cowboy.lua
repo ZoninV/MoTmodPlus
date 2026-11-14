@@ -2,72 +2,79 @@
   MissionText = 
   {
       --Mission text
-      Task_Rescue                            = " Free I. Tsavalov";
-      Task_Body                              = " Plant a decoy body";
-      Task_Fire                              = " Demolish the room";
-      Task_Leave                             = " Leave the area";
-      Action_DropBarrels                     = "PUSH THE BARRELS";
-      Action_DropKitchenCabinet              = "OVERTURN THE CABINET";
-      Action_UseLift                         = "USE THE CRANE";
-      Message_SuitcaseWithExplosion          = "CASE OF EXPLOSIVES";
-      Message_Move                           = "LET'S GO";
-      Message_Stop                           = "WAIT HERE";
-      Message_PolicemanTask                  = "@ We've got the building under control. You mind your own business.";
-      Message_IAmFbi                         = "@ Agent Johnson, FBI.";
-      Message_WhenItWillFinish               = "@ When will this be over?";
-      Message_IDontKnow                      = "@ When the investigation is completed.";
-      Message_WhereBarrelsFall               = "@ Did the barrels fall from up there?";
-      Message_WhatIdiot                      = "@ What idiot put them on the edge...";
-      Message_StopMove_Search                = "- Halt! I'm gonna have to frisk you.";
-      Message_StopMove_Search2               = "- No weapons are allowed in the building!";
-      Message_StopMove_Clean                 = "@ You're clean. Thank you, move along.";
-      Message_StopMove_Weapon                = "@ You can't have a weapon inside the building!";
-      Message_StopMove_WeaponSuitcase        = "@ I'll need to search your case.";
-      Message_StopMove_Diplomat              = "@ What's that inside there? I'm afraid I can't let you in with that.";
-      Message_StopMove_Strange               = "@ I cannot let you into the building!";
-      Message_StopMove_ConstHouse            = "@ Leave the premises immediately.";
-      Message_StopMove_Floor1                = "@ Federal agents control this building. You must leave here immediately!";
-      Message_StopMove_Floor2_MilkMan        = "@ Aren't you headed to the kitchen? It isn't located on the second floor.";
-      Message_StopMove_Floor2                = "@ If you do not leave the building immediately, we will be forced to open fire!";
-      Message_StopMove_Floor3                = "@ You can't come in here.";
-      Message_StopMove_ShopStorage           = "@ This is a secure area! You have no business here!";
-      Message_StopMove_ShopStorage_Policeman = "@ This is a secure area! Are you here under orders?!";
-      Message_StopMove_House3_West           = "@ Wait! That's restricted.";
-      Message_StopMove_Kitchen               = "@ I don't think you belong here!";
-      Message_StopMove_Garage                = "@ What on earth are you doing here?!";
-      Message_StopMove_Floor2_Sklad          = "@ What on earth are you doing here?!";
-      Message_StopMove_BehindMainHouse       = "@ This area is off-limits! What do you need?";
-      Message_StopMove_ShopStorageEnter      = "@ You do not belong here.";
-      Message_StopMove_Civilian              = "@ Federal agents control this building. You must leave here immediately.";
-      Message_StopMove_House3_EastEnter      = "@ Can't you see the door is sealed? Where do you think you're going?";
-      Message_StopMove_House3_EastEnter2     = "@ This is a crime scene. Clear the area immediately or I'll place you under arrest.";
-      Message_StopMove_House3_East           = "@ Leave the crime scene immediately, or I'll be forced to place you under arrest!";
-      Message_FailSpyDied                    = "TSAVALOV IS DEAD";
-      Message_FailSaySpy                     = "THE ESCAPE HAS BEEN DISCOVERED";
-      Message_FailSpyHit                     = "THERE IS NO WAY TO ESCAPE WITH TSAVALOV NOW";
-      Message_SpyDialog                      = "- You are finally here! I know how we can get out of here, but there's one little problem -- the guard in the next room. You'll have to deal with him.";
-      Message_SpyDialog_NoGuard              = "- You are finally here. I know how we can get out of here. Has the guard been dealt with? Good, then follow me.";
-      Message_SpyDialog_DoorLocked           = "- You are finally here. I know how we can get out of here, but there's one little problem -- this door is locked.";
-      Message_SpyWaitThink                   = "! Return to Tsavalov.";
-      Message_ICantGo                        = "@ Where are you going? I'm fed up with your crazy ideas!";
-      Message_YouAreIdiot                    = "@ Are you mad? That little platform isn't going to hold us!";
-      Message_DangerFbi                      = "@ Where are you going? They'll see us! I'm staying here!";
-      Message_SpyAlert                       = "! Tsavalov has been seen! If the escape is reported, then the mission is a failure!";
-      Message_SpyBodyAlert                   = "! Tsavalov's body has been found. If the escape is reported, then the mission is a failure!";
-      Message_EmptyRoom                      = "! Tsavalov's disappearance has been discovered. If the escape is reported, then the mission is a failure!";
-      Message_Alarm                          = "The alarm has been raised!";
-      Key_Shop                               = "Store key";
-      Key_Backdoor                           = "Backdoor key";
-      Key_Garage                             = "Garage key";
-      Key_Garderob                           = "Cloakroom key";
-      Key_Spy                                = "Third floor key";
-      Message_TaskChanged                    = "Objectives have been updated";
+      Task_Rescue                            = " Освободить И. Цавалова";
+      Task_Body                              = " Подложить тело";
+      Task_Fire                              = " Устроить пожар";
+      Task_Leave                             = " Покинуть территорию";
+      Action_DropBarrels                     = "ТОЛКНУТЬ БОЧКИ";
+      Action_DropKitchenCabinet              = "ОПРОКИНУТЬ ШКАФ";
+      Action_UseLift                         = "ИСПОЛЬЗОВАТЬ КРАН";
+      Message_SuitcaseWithExplosion          = "ДИП-Т СО ВЗРЫВЧАТКОЙ";
+      Message_Move                           = "ИДЕМ";
+      Message_Stop                           = "ЖДИ ЗДЕСЬ";
+      Message_PolicemanTask                  = "@ Здание под нашим контролем. Занимайтесь своими делами.";
+      Message_IAmFbi                         = "@ Агент Джонсон. ФБР.";
+      Message_WhenItWillFinish               = "@ Когда все это закончится?";
+      Message_IDontKnow                      = "@ Пока не закончится расследование.";
+      Message_WhereBarrelsFall               = "@ Бочки сверху упали?";
+      Message_WhatIdiot                      = "@ Какой идиот додумался их на край поставить...";
+      Message_StopMove_Search                = "- Стоять! Я должен обыскать вас!";
+      Message_StopMove_Search2               = "- В здание запрещено проносить оружие!";
+      Message_StopMove_Clean                 = "@ Все чисто - проходите!";
+      Message_StopMove_Weapon                = "@ С оружием вход в здание запрещен!";
+      Message_StopMove_WeaponSuitcase        = "@ Мне необходимо осмотреть содержимое вашего дипломата.";
+      Message_StopMove_Diplomat              = "@ А что это в дипломате такое? Я не могу пусть вас с этим.";
+      Message_StopMove_Strange               = "@ Я не могу вас пустить в здание!";
+      Message_StopMove_ConstHouse            = "@ В здании небезопасно. Что вам тут нужно?";
+      Message_StopMove_Floor1                = "@ Здание под контролем федеральных агентов! Немедленно покиньте его!";
+      Message_StopMove_Floor2_MilkMan        = "@ Тебе вроде на кухню надо? На втором этаже ее нет.";
+      Message_StopMove_Floor2                = "@ Если вы немедленно не покинете здание, мы откроем огонь!";
+      Message_StopMove_Floor3                = "@ Вам нечего тут делать.";
+      Message_StopMove_ShopStorage           = "@ Это частная территория! Вы не имеете права находиться здесь!";
+      Message_StopMove_ShopStorage_Policeman = "@ Это частная территория! У вас есть ордер?!";
+      Message_StopMove_House3_West           = "@ Что вы тут забыли?!";
+      Message_StopMove_Kitchen               = "@ Мне кажется на кухне вам не место!";
+      Message_StopMove_Garage                = "@ Что вы тут забыли?!";
+      Message_StopMove_Floor2_Sklad          = "@ Что вы тут забыли?!";
+      Message_StopMove_BehindMainHouse       = "@ Закрытая зона! Что вам нужно?";
+      Message_StopMove_ShopStorageEnter      = "@ Что вам нужно?";
+      Message_StopMove_Civilian              = "@ Здание под контролем федеральных агентов! Гражданским вход запрещен!";
+      Message_StopMove_House3_EastEnter      = "@ Вы не видите, что дверь опечатана? Куда вы идете?";
+      Message_StopMove_House3_EastEnter2     = "@ Вы не видите, что это место преступления? Куда вы идете?";
+      Message_StopMove_House3_East           = "@ Покиньте место преступления! Или я вынужден буду вас арестовать!";
+      Message_FailSpyDied                    = "ЦАВАЛОВ ПОГИБ";
+      Message_FailSaySpy                     = "ПОБЕГ РАСКРЫТ";
+      Message_FailSpyHit                     = "ПОТЕРЯНА ВОЗМОЖНОСТЬ ВЫВЕСТИ ЦАВАЛОВА";
+      Message_SpyDialog                      = "- Наконец-то вы пришли, я знаю, как нам выбраться отсюда, но есть небольшая проблема, охранник в соседней комнате, с ним надо разобраться.";
+      Message_SpyDialog_NoGuard              = "- Наконец-то вы пришли, я знаю, как нам выбраться отсюда, а с охранником уже покончено? Тогда идите за мной.";
+      Message_SpyDialog_DoorLocked           = "- Наконец-то вы пришли, я знаю, как нам выбраться отсюда, но есть небольшая загвоздка, эта дверь заперта.";
+      Message_SpyWaitThink                   = "! Вернитесь за Цаваловым.";
+      Message_ICantGo                        = "@ Куда ты? С меня хватит приключений!";
+      Message_YouAreIdiot                    = "@ Ты что? Кран не удержит нас!";
+      Message_DangerFbi                      = "@ Ты куда? Нас же увидят?! Я туда не пойду!";
+      Message_SpyAlert                       = "! Цавалова заметили! Если информация о побеге будет передана - миссия провалится!";
+      Message_SpyBodyAlert                   = "! Обнаружено тело Цавалова. Если информация о побеге будет передана - миссия провалится!";
+      Message_EmptyRoom                      = "! Обнаружено исчезновение Цавалова. Если информация о побеге будет передана - миссия провалится!";
+      Message_Alarm                          = "Поднята тревога!";
+      Key_Shop                               = "Ключ от магазина";
+      Key_Backdoor                           = "Ключ от заднего выхода";
+      Key_Garage                             = "Ключ от гаража";
+      Key_Garderob                           = "Ключ от гардероба";
+      Key_Spy                                = "Ключ от третьего этажа";
+      Message_TaskChanged                    = "Задания изменены";
       Message_Help                           = {
-                                                 "It's easy to start a fire with a petrol canister.";
-                                                 "Petrol tanks might be kept inside stores.";
-                                                 "Plates and other fragile objects may be used to stun enemies.";
-                                                 "Some objects can be thrown through windows.";
+                                                 "При помощи канистры с бензином легко устроить пожар.";
+                                                 "В магазинах могут храниться газовые балоны.";
+                                                 "Тарелки и другие бьющиеся предметы можно использовать для оглушения противника.";
+                                                 "Некоторые предметы можно забрасывать в окно.";
                                                };
+      Message_ClothInfo                             = {
+                                                        "Гражданским нельза находиться в доме Цавалова.";
+                                                        "Молочник разносит молоко по домам.";
+                                                        "Строителей часто находяться в строящихся или ремонтируемых домах.";
+                                                        "Полицейские часто находяться поблизости мест преступлений.";
+                                                        "В одежде агента ФБР можно свободно перемещаться по дому Цавалова.";
+                                                      };
   };
 
 
@@ -85,7 +92,7 @@
 --------------------------------------------------------
 function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_addon" 7' );
 
 end;
 
@@ -110,8 +117,8 @@ end;
        
        Level.SetHudEffect("noise_small" , true ); 
 
-       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.75#sounds\\music\\sustain.ogg" );        
-       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.4#sounds\\music\\b_dark5.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\sustain.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark5.ogg" );
        
        Level.SetDefaultMusicPause( 120.0, 210.0, 30.0, 120.0 );
        
@@ -168,7 +175,7 @@ end;
        
        if ( Level.ExplosionDone == true ) then
           Level.PlayEffect( "Levels\\cowboy\\fire_window.sef" , 496.19287, 117.08772, -1240.70251, 0.0, -68.36087, 0.0 );       
-          Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.75#sounds\\music\\sustain.ogg" );       
+          Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\sustain.ogg" );       
        end;
   end;
  
@@ -274,6 +281,15 @@ end;
        
               
        Level.OnSave_Common();
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
 --------------------------------------------------------
@@ -384,8 +400,48 @@ end;
        end
        
        Level.OnLoad_Common();     
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
        Level.OnFinishLoad();
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_cowboy_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_cowboy_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
   
 --------------------------------------------------------
 -- Name: Level.OnLoaded()
@@ -491,6 +547,7 @@ end;
        Level.AddActionHandler( Level.AH_FOLLOW_WAIT_THINK , 'FSPY' , "OnFollowWaitThink");
 
        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WRFB', "OnChangeFbiCloth" );
+       Level.AddActionHandler( Level.AH_CHANGE_CLOTH );
        
        
        -- Items..
@@ -650,14 +707,6 @@ end;
        
        NPC.SetFlag( AI.FindNPC('ML01'), NPC.F_CANT_OPEN_LOCK_DOOR, false );
        
-       local worker = AI.FindNPC('CW16');
-       if (worker != nil) then
-          AI.SetConfLogic( worker, "scripts:ConfLogic\male_usa_guards_conf.shadvs" );
-          AI.SetJob(worker, "default");
-       else
-          print("Can't find worker: CW16");
-       end
-       
        -- timers
        Level.AddTimer( 'CFJB', "OnDoFbiPatrol", 200.0, true );
        Level.AddTimer( 'FBGO', "OnFbiGoFirstFloor", 150.0, true );
@@ -695,10 +744,17 @@ end;
        Level.HideWorldObject( 'BRP2' );
        
        Level.HideWorldObject( 'BRDA' );
+
+       Level.SetFormHelp( "Civilian",          MissionText.Message_ClothInfo[1] );
+       Level.SetFormHelp( "Milkman",           MissionText.Message_ClothInfo[2] );
+       Level.SetFormHelp( "Worker",            MissionText.Message_ClothInfo[3] );
+       Level.SetFormHelp( "Policeman",         MissionText.Message_ClothInfo[4] );
+       Level.SetFormHelp( "Fbi",               MissionText.Message_ClothInfo[5] );
                     
        -- Finish load..
        Level.OnFinishLoad();
        Level.OnLoadedDifficulty();
+       Level.AutoSave();
   end;
       
   --------------------------------------------------------
@@ -942,6 +998,9 @@ end;
         end
 
         Level.PlayMenuSound("task_finish");
+        if (taskId != 'LEAV') then
+           Level.AutoSave();
+        end;
      else
         Level.RemoveMissionTask(taskId);
 
@@ -3406,7 +3465,7 @@ end;
 -- Desc:
 --------------------------------------------------------
   function Level.DoAiExplosionReaction()
-     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.75#sounds\\music\\sustain.ogg" );       
+     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\sustain.ogg" );       
      AI.SetAttention(AI.AI_TARGET_FORM, "Fbi", AI.ATTENTION_ALARM, true);
      AI.DisableDecamouflageMethod(AI.METHOD_COMBAT_SOUND, 25.0);
      AI.AddSound( AI.SOUND_TYPE_SHOOTING, 400.0, 515.13, 115.89, -1193.98)
@@ -4016,6 +4075,14 @@ function Level.OnTransformStats(levelStats, aiStats)
    if (Level.CivilianHittedBeforeExplosion > 0) then
       Level.ChangeLevelStats(levelStats, "NumCivilianStuned", -Level.CivilianHittedBeforeExplosion);
    end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnChangeCloth()
+-- Desc:
+--------------------------------------------------------
+function Level.OnChangeCloth()
+  Level.InstallDpc("Level.OnHelpForm()", 3.0);
 end
 
 --------------------------------------------------------

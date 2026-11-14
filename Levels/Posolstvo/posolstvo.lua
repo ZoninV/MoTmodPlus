@@ -2,41 +2,64 @@
   MissionText = 
   {
       --Mission text
-      Task_1               = " Get the weapon";
-      Task_2               = " Kill Volkov";
-      Task_3               = " Leave the building";
-      Key_Name             = "Key to the depot";
-      Key3f_Name           = "Key to the archives";
-      Message_StopMove_1   = "You are not allowed to pass here..";
-      Message_StopMove_2   = "Only for guards..";
-      Message_StopMove_3   = "Only for the Embassy employees ..";
-      Message_HaveNoKey    = "The door is locked. The head of the archives has it.";
-      Message_IsNotSilence = "The alarm has been raised in the Embassy. The body has been discovered and the guards are on high alert";
-      Kill_Agents          = "You have killed too many agents. ";
-      Kill_Civilians       = "You have killed too many Embassy employees. ";
-      Kill_Diplomats       = "You have killed too many diplomats. ";
-      Kill_Guards          = "You have killed too many guards. ";
-      Fail_Alarm           = "ALARM HAS BEEN RAISED";
-      Message_Poison       = "POISON COFFEE";
-      Poison_Name          = "Poison";
-      Kill_Msg_1           = "";
-      Kill_Msg_3           = "";
-      Kill_Msg_2           = " more left before a large-scale diplomatic scandal erupts.";
-      Message_TestHelp     = {
-                               "Killing a large number of people can result in a diplomatic scandal";
-                               "Killing diplomats can result in a diplomatic scandal";
-                               "There is a lounge for the staff on the third floor";
-                               "The first floor is open to Embassy visitors";
-                               "Volkov is guarded by the Embassy special agents";
-                               "The archive rooms are located in the basement of the Embassy";
-                               "An accidental death is no cause for alarm";
+      Task_1               = " Достать оружие";
+      Task_2               = " Уничтожить Волкова";
+      Task_3               = " Покинуть здание";
+      Key_Name             = "Ключ от склада";
+      Key3f_Name           = "Ключ от картотеки";
+      Message_PassName     = "Удостоверение служащего";
+      Message_PassNameL    = "УДОСТОВЕРЕНИЕ СЛУЖАЩЕГО";
+      Message_HaveNoKey    = "Дверь заперта. Ключ находится у заведующего архивами.";
+      Message_IsNotSilence = "В посольстве поднята тревога. Обнаружили тело или уровень настороженности охраны достаточно высок.";
+      Message_SayCook      = "@ Рабочие в подвале проголодались. Они хотят, чтобы ты спустился туда как можно скорее.";
+      Kill_Agents          = "Вы уничтожили слишком много агентов.";
+      Kill_Civilians       = "Вы уничтожили слишком много работников посольства.";
+      Kill_Diplomats       = "Вы уничтожили слишком много дипломатов.";
+      Kill_Guards          = "Вы уничтожили слишком много охранников.";
+      Fail_Alarm           = "ПОДНЯТА ТРЕВОГА";
+      Message_Poison       = "ОТРАВИТЬ КОФЕ";
+      Message_ShowDocs     = "ПОКАЗАТЬ УДОСТОВЕРЕНИЕ СЛУЖАЩЕГО";
+      Kill_Msg_1           = "Осталось ";
+      Kill_Msg_3           = "Остался ";
+      Kill_Msg_2           = " до инициализации крупного дипломатического скандала.";
+      Message_Help         = {
+                               "Убийство большого количества человек может привести к дипломатическому скандалу.";
+                               "Убийство дипломатов может привести к дипломатическому скандалу.";
+                               "На третьем этаже расположена комната отдыха персонала.";
+                               "Первый этаж открыт для посетителей посольства.";
+                               "Волков охраняется специальными агентами посольства.";
+                               "Комнаты с архивами расположены в подвале посольства.";
+                               "Смерть в результате несчастного случая не является причиной тревоги.";
+                               "Для входа в подвал и на верхние этажи гражданскому необходимо иметь при себе удостоверение служащего.";
                              };
-      Message_CloseDoor    = "HANG THE SIGN";
+      Message_CloseDoor    = "ПОВЕСИТЬ ТАБЛИЧКУ";
+      Poison_Need          = "! Нужен яд, чтобы отравить.";
+
+      -- Liz Shaw
+      MM_StopMove_Pass          = "@ Стоять! Покажите свое удостоверение!";
+      MM_StopMove_DocsClear     = "@ Все в порядке, проходите.";
+      MM_StopMove_Search        = "@ Я должен обыскать вас, прежде чем вы сможете пройти!";
+      MM_StopMove_SearchClear   = "@ Оружия не обнаружено. Заходите.";
+      MM_StopMove_Tualet        = "@ Вам здесь не место!";
+      MM_StopMove_TualetWomen   = "@ Немедленно покиньте женский туалет!";
+      MM_StopMove_Kitchen       = "@ Что вы делаете на кухне?";
+      MM_StopMove_OfficeNear    = "@ Я не могу вас впустить, сэр! У вас назначена встреча?";
+      MM_StopMove_Office2Near   = "@ В данный момент офис закрыт, пожалуйста, зайдите позже.";
+      MM_StopMove_Office3Near   = "@ Сейчас этот офис занят нашим гостем.";
+      MM_StopMove_Office        = "@ Я здесь работаю! Что вам нужно?";
+      MM_StopMove_ArchiveClean  = "@ Эта комната закрыта на уборку! Оставьте меня в покое!";
+      MM_StopMove_LeaveRoom     = "@ Вы должны немедленно покинуть эту комнату!";
+      MM_StopMove_ConfRoom      = "@ Сейчас мы готовим зал для совещаний.";
+      MM_StopMove_StaffLounge   = "@ В комнату отдыха для персонала допускаются только работники посольства.";
+      MM_StopMove_Volkov        = "@ Эта спальня занята нашим гостем.";
+      MM_StopMove_NearVolkov    = "@ В эту комнату имеют доступ только специальные агенты посольства.";
+      MM_StopMove_Diplomat      = "@ Что? Я же специально дал указание меня не беспокоить!";
+      MM_StopMove_LeaveOffice   = "@ Покиньте офис прямо сейчас!";
   };
 
   function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_final" 1' );
 
   end;
 
@@ -46,11 +69,30 @@
       Stream.WriteBool  (Level.CanPoison);
       Stream.WriteBool  (Level.VolkovPoissoned);
       Stream.WriteBool  (Level.PianoMusicPlaying);
+      Level.WriteArray  (Level.Pass);
+      Level.WriteArray  (Level.GetPass );
 
       for i = 1, 6 do
         Stream.WriteBool(Level.ClosedDoor[i]);
       end
+
+      Level.WriteArray( Level.NumKilled ); -- Liz Shaw
+      Stream.WriteString( Level.SearchZoneName ); -- Liz Shaw
+      Stream.WriteBool  ( Level.SearchingStart ); -- Liz Shaw
+      Stream.WriteBool  ( Level.SearchJustFinished ); -- Liz Shaw
+      Stream.WriteBool(Level.HadForbidObjects); -- Liz Shaw
+      Stream.WriteBool  ( Level.TopFloorsDisabled ); -- Liz Shaw
+
       Level.OnSave_Common(); -- forlik
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
   function Level.OnLoad()
@@ -59,15 +101,64 @@
       Level.CanPoison         = Stream.ReadBool();
       Level.VolkovPoissoned   = Stream.ReadBool();
       Level.PianoMusicPlaying = Stream.ReadBool();
+      Level.Pass              = Level.ReadArray();
+      Level.GetPass           = Level.ReadArray();
 
       Level.ClosedDoor = {};
       for i = 1, 6 do
         Level.ClosedDoor[i] = Stream.ReadBool();
       end
 
+      Level.NumKilled             = Level.ReadArray(); -- Liz Shaw
+      Level.SearchZoneName        = Stream.ReadString(); -- Liz Shaw
+      Level.SearchingStart        = Stream.ReadBool(); -- Liz Shaw
+      Level.SearchJustFinished    = Stream.ReadBool(); -- Liz Shaw
+      Level.HadForbidObjects      = Stream.ReadBool(); -- Liz Shaw
+      Level.TopFloorsDisabled     = Stream.ReadBool(); -- Liz Shaw
+
       Level.OnLoad_Common(); -- forlik
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
       Level.OnFinishLoad();
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_posolstvo_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_posolstvo_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
 
   function Level.OnFinishLoad()
 
@@ -76,7 +167,7 @@
       Level.OnFinishLoad_Common(); -- forlik
       Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
 
-      local doors = { 'DR06', 'DR07', 'DR04' };
+      local doors = { 'DR06', 'DR07', };
 
       for i = 1, 2 do
          local door = Level.FindDoor( doors[i] ); 
@@ -86,19 +177,23 @@
          end
       end;
 
-      local door3f = Level.FindDoor( 'DR24' ); 
+      local doors = { 'CG01', 'CG02', };
 
-      if ( door3f != nil ) then
-          Level.SetDoorUnlockKey( door3f, '3FKY' );
-      end
+      for i = 1, 2 do
+         local door = Level.FindDoor( doors[i] ); 
+
+         if ( door != nil ) then
+             Level.SetDoorUnlockKey( door, 'AKKY' );
+         end
+      end;
 
       if (Level.PianoMusicPlaying != false) then
          Level.PlayPianoSound( true );
       end
 
-      Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "sounds\\music\\danger.ogg");
-      Level.AddMusic( Level.MUSIC_MOOD_ACTION, "sounds\\music\\action_3.ogg" );
-      Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.25#sounds\\music\\new_found_power.ogg" );
+      Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "#0.50#sounds\\music\\danger.ogg");
+      Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\sustain.ogg" );
+      Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark6.ogg" );
       Level.SetDefaultMusicPause( 250.0, 360.0, 20.0, 120.0 );
 
       local tualetDoorUid = { 'TLD1', 'TLD2', 'TLD3', 'TLD4', 'TLD5', 'TLD6' };
@@ -149,16 +244,17 @@
       Level.AddActionHandler( Level.AH_ACTOR_KILLED , 'E210' , "OnKilledTualetBot");
       Level.AddActionHandler( Level.AH_ACTOR_HITTED , 'E210' , "OnKilledTualetBot");
 
-      Level.AddActionHandler( Level.AH_CHANGE_CLOTH );
+      Level.AddActionHandler( Level.AH_ACTOR_KILLED , 'COOK' , "OnKilledCook");
+      Level.AddActionHandler( Level.AH_ACTOR_HITTED , 'COOK' , "OnKilledCook");
 
       Actor.MarkAsTarget( Level.FindActor( 'KEYM' ) , true );
       Actor.MarkAsTarget( Level.FindActor( 'VOLK' ) , true );
 
-      Level.AddActionHandler( Level.AH_ACTOR_NUMKILLED, 'Soldier',  1 );
-      Level.AddActionHandler( Level.AH_ACTOR_NUMKILLED, 'Civilian', 3 );
-      Level.AddActionHandler( Level.AH_ACTOR_NUMKILLED, 'Officer',  0 );
-      Level.AddActionHandler( Level.AH_ACTOR_NUMKILLED, 'Majors',   0 );
+      Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH , "COCL" , "OnCookClothChange" );
+      Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH , "TCCL" , "OnTechiClothChange" );
+
       Level.AddActionHandler( Level.AH_PLAYER_INVENTORY );
+      Level.AddActionHandler( Level.AH_ACTOR_ALL_KILLED );
 
       NPC.SetFlag( AI.FindNPC('M207'), NPC.F_CANT_OPEN_LOCK_DOOR, true );
       NPC.SetFlag( AI.FindNPC('M209'), NPC.F_CANT_OPEN_LOCK_DOOR, true );
@@ -166,6 +262,9 @@
       NPC.SetFlag( AI.FindNPC('E206'), NPC.F_CANT_OPEN_LOCK_DOOR, true );
 
       AI.EnableGrenades( false );
+
+      Level.Pass = { 'PAS1' };
+      Level.GetPass = { false };
 
       local player = Level.GetPlayer();
 
@@ -177,26 +276,51 @@
          Actor.ChangeActorSkin( player, "WhiteHands" );
          Actor.EnableMesh( player, "mesh_hat2" , false );
 
-         Actor.PutEmptyPouch( player, "lockpick", "Equipment" );
-
-         Actor.PutEmptyPouch( player, "chloroform", "Weapon" );
-
          Level.PlayerFormId = Actor.GetWearFormId( player );
-
-         local poison = Level.CreateItem( "Custom" , "Equipment" );
-         if ( poison != nil ) then
-
-            Entity.SetUniqueID( poison, 'POIS' );
-
-            Level.SetCustomItemName( poison, MissionText.Poison_Name );
-            Level.SetCustomItemIcon( poison, "g_pois" );
-            Actor.PutPouch( player, Actor.GetEmptyPouch( player ), poison );
-
-         end;
 
          AI.RebuildPlayerForm();
          AI.AddFormChangedValue();
       end
+
+       for i in Level.Pass do
+          Level.SetEntityName(Level.Pass[i], MissionText.Message_PassNameL, MissionText.Message_PassName);
+       end
+       
+       local passNpc = { 'M203', 'HG05', 'DP02', 'DP03',
+                         'E202', 'E205', 'E206', 'M211', 'M212',
+                         'E208',
+                         'M214', 'E210', 'M125', 'HG11',
+                         'E213', 'E214', 'E219',
+                         'A216', 'M218', 'M216', 'M224'
+                         
+                       };
+                       
+                       
+       for i in passNpc do
+          local actor = Level.FindActor(passNpc[i]);
+          local pass = Level.CreateItem( "Custom" , "Equipment" );
+          
+          if (actor == nil) then
+             print("Warning! Can't find actor " .. passNpc[i]);
+          end
+
+          if (pass != nil and actor != nil) then
+
+             Entity.SetUniqueID( pass, 'PASS' );
+          
+             Level.SetCustomItemName( pass, MissionText.Message_PassName );
+             Level.SetCustomItemIcon( pass, "ammo_doc" );
+
+             Actor.PutPouch( actor, Actor.GetEmptyPouch(actor), pass );
+          end
+       end
+
+      AI.ChangeLogic( AI.FindNPC('HG21'), "LiteScriptSoldier" );
+      AI.ChangeLogic( AI.FindNPC('HG12'), "LiteScriptSoldier" );
+      AI.ChangeLogic( AI.FindNPC('HG13'), "LiteScriptSoldier" );
+
+      AI.SetPlayerForm("Civilian");
+      AI.SetPlayerDefaultForm("Civilian");
 
       local keyMaster = Level.FindActor( 'KEYM' );
       if (keyMaster != nil) then
@@ -213,122 +337,52 @@
           end;
       end
 
-      local keyFloor3 = { 'Z214', 'ZG16', 'ZG15' };
+      local keyMaster = Level.FindActor( 'KEYM' );
+      if (keyMaster != nil) then
 
-      for i = 1, table.getn(keyFloor3) do
+         local key = Level.CreateItem( "Custom" , "Equipment" );
+         if ( key != nil ) then
 
-        local keyMaster = Level.FindActor( keyFloor3[i] );
-        if (keyMaster != nil) then
+             Entity.SetUniqueID( key, 'AKKY' );
 
-           local key = Level.CreateItem( "Custom" , "Equipment" );
-           if ( key != nil ) then
-
-               Entity.SetUniqueID( key, '3FKY' );
-
-               Level.SetCustomItemName( key, MissionText.Key_Name );
-               Level.SetCustomItemIcon( key, "ammo_key" );
+             Level.SetCustomItemName( key, MissionText.Key3f_Name );
+             Level.SetCustomItemIcon( key, "ammo_key" );
      
-               Actor.PutPouch( keyMaster, Actor.GetEmptyPouch(keyMaster), key );
-            end;
-        end
+             Actor.PutPouch( keyMaster, Actor.GetEmptyPouch(keyMaster), key );
+          end;
       end
-
 
       AI.EnableFloorRiskTest( true );
 
       -- Install timers...
       Level.AddTimer( 'DRTR', "OnDinnerTimer", 400, true );
       Level.AddTimer( 'PTTR', "OnPianistTimer", 250, true );
+      Level.AddTimer( 'CTTR', "OnCookTimer", 100, true );
 
       Level.PoisonCup = "";
       Level.CanPoison = true;
       Level.VolkovPoissoned = false;
       Level.ClosedDoor = { false, false, false, 
                            false, false, false };
-      Level.AddTimer( 'STHL', "OnShowTestHelp", 110, true );
+
+      Level.NumKilled = {}; -- Liz Shaw
+      Level.SearchZoneName        = ""; -- Liz Shaw
+      Level.SearchingStart        = false; -- Liz Shaw
+      Level.SearchJustFinished    = false; -- Liz Shaw
+      Level.HadForbidObjects = false; -- Liz Shaw
+      Level.TopFloorsDisabled = false; -- Liz Shaw
 
       AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
+
+      AI.EnableZone("SearchAlertZone_1",  false);
+      AI.EnableZone("SearchZone_1",       false);
+      AI.EnableZone("SearchAlertZone_2",  false);
+      AI.EnableZone("SearchZone_2",       false);
       Level.OnFinishLoad();
+     Level.AutoSave();
   end;
 
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
-
-  function Level.OnStopMove( actorId )
-
-      if (actorId == 'HG06' or
-          actorId == 'HG21') then
-
-         Level.AddSmallMessage( MissionText.Message_StopMove_1, 15.0 , 255, 255, 255 );
-
-      elseif (actorId == 'HG09' or
-              actorId == 'HG10' or
-              actorId == 'HG16') then
-
-         Level.AddSmallMessage( MissionText.Message_StopMove_2, 15.0 , 255, 255, 255 );
-
-      elseif (actorId == 'HG12' or
-              actorId == 'HG13' or
-              actorId == 'HG15') then
-
-         Level.AddSmallMessage( MissionText.Message_StopMove_3, 15.0 , 255, 255, 255 );
-
-      elseif (actorId == 'E231' or
-              actorId == 'HG14') then
-
-         Level.AddSmallMessage( MissionText.Message_StopMove_1, 15.0 , 255, 255, 255 );
-
-      end
-
-  end
-
-
-  function Level.CheckNeedStop( actorId )
-
-      local player = Level.GetPlayer();
-      if (player == nil) then
-         return false;
-      end;
-
-      local type = Actor.GetActorType( player );
-
-      if (actorId == 'HG06' or
-          actorId == 'HG21') then
-
-          if (Actor.GetWearFormId( player ) == Level.PlayerFormId) then
-             return true;
-          else
-             return false;
-          end;
-
-      elseif (actorId == 'HG09' or
-              actorId == 'HG10' or
-              actorId == 'HG16') then
-
-          if (type == Actor.ACTOR_TYPE_CIVILIAN) then
-             return true;
-          else
-             return false;
-          end
-
-      elseif (actorId == 'HG12' or
-              actorId == 'HG13' or
-              actorId == 'HG15') then
-
-          if (type == Actor.ACTOR_TYPE_OFFICER) then
-             return false;
-          else
-             return true;
-          end
-
-      elseif (actorId == 'E231' or
-              actorId == 'HG14') then
-
-          return true;
-
-      end;
-
-      return true;
-  end
 
   function Level.OnDinnerTimer()
 
@@ -418,12 +472,14 @@
          Level.RemoveMissionTask('WEPN');
       end
 
+      Level.PlayMenuSound("task_finish"); -- Liz Shaw
       Level.CompleteMissionTask('KILL', 15.0 );
 
       Level.EnableLevelMark( 'COFF', false );
       Level.EnableLevelMark( 'VOLK', false );
 
       Level.EnableLevelMark( 'LEAV', true );
+      Level.AutoSave();
   end
 
   function Level.OnEnterTriggerArea( sender, trgname, trgcmd )
@@ -437,6 +493,10 @@
          Level.EnableLevelMark('SKD1', false );
          Level.UnregisterTrigger( Level.FindTrigger( trgname ) );
 
+         if (Level.GetDifficulty() != 3) then
+           Level.EnableLevelMark('CLTS', true);
+         end;
+
     --elseif ( trgname == 'SkladTrigger_02' ) then
 
     --     Level.EnableLevelMark('SKD2', false );
@@ -444,12 +504,18 @@
 
     elseif ( trgname == 'WeaponTrigger_01') then
 
+         Level.PlayMenuSound("task_finish"); -- Liz Shaw
          Level.CompleteMissionTask('WEPN', 15.0 );
          Level.UnregisterTrigger( Level.FindTrigger( trgname ) );
 
          Level.EnableLevelMark('SKD1', false );
          Level.EnableLevelMark('SKD2', false );
          Level.EnableLevelMark('BOTP', false );
+
+         if (Level.GetDifficulty() != 3) then
+           Level.EnableLevelMark('CLTS', true);
+         end;
+         Level.AutoSave();
 
     elseif (trgname == 'PodvalTrigger_01') then
 
@@ -462,6 +528,7 @@
 
               if (AI.IsSilence() != false) then
 
+                Level.PlayMenuSound("task_finish"); -- Liz Shaw
                 Level.CompleteMissionTask('LEAV', 15.0 );
                 Level.UnregisterTrigger( Level.FindTrigger( trgname ) );
 
@@ -485,7 +552,21 @@
          Level.UnregisterTrigger( Level.FindTrigger( 'DoorTrigger_01' ) );
          Level.UnregisterTrigger( Level.FindTrigger( 'DoorTrigger_02' ) );
 
+    elseif (trgname == 'RestoreZonesTrigger_01') then
+       -- restore zones...
+
+       Level.RestoreZones_01();
+
+    elseif (trgname == 'RestoreZonesTrigger_02') then
+       -- restore zones...
+
+       Level.RestoreZones_02();
+
     end;
+
+  end;
+
+  function Level.OnLeaveTriggerArea( sender, trgname, trgcmd ) -- Liz Shaw
 
   end;
 
@@ -514,10 +595,7 @@
   end;
 
 
-  function Level.OnActorNumKilled( numCivilian, numSoldiers, numOfficers, numMajors, numOverall, actorTypeId )
-
-   -- print("Level.OnActorNumKilled");
---    print("Level.OnActorNumKilled", numCivilian, numSoldiers, numOfficers, numMajors, numOverall, actorTypeId);
+  function Level.OnActorKilled( actor )
 
     if ( (AI.IsLocalAlert(1) != false) or
          (AI.IsLocalAlert(2) != false) or
@@ -526,40 +604,39 @@
         return;
     end;
 
-    if ( actorTypeId == Actor.ACTOR_TYPE_SOLDIER ) then
+    local npc = AI.FromActor ( actor );
+    if (npc != nil) then
+       local form = AI.GetForm( npc );
+       if (Level.NumKilled[form] == nil) then
+          Level.NumKilled[form] = 0;
+       end;
 
-       Level.PersonKillHandler( 3, numSoldiers, MissionText.Kill_Guards );
-       return;
+     Level.NumKilled[form] = Level.NumKilled[form] + 1;
 
-    elseif ( actorTypeId == Actor.ACTOR_TYPE_CIVILIAN ) then
+     local civilianKilled  = Level.GetNumKilled("Civilian") + Level.GetNumKilled("Cook") + Level.GetNumKilled("Plumber") + Level.GetNumKilled("ArchiveMan") + Level.GetNumKilled("Maid") + Level.GetNumKilled("Secretary") + Level.GetNumKilled("Madam") + Level.GetNumKilled("OfficeMan") + Level.GetNumKilled("ArchiveMan2");
+     local soldiersKilled  = Level.GetNumKilled("Soldier") + Level.GetNumKilled("Guardian") + Level.GetNumKilled("Guardian2") + Level.GetNumKilled("Soldier2") + Level.GetNumKilled("SearchMan_1") + Level.GetNumKilled("SearchMan_2");
+     local agentsKilled    = Level.GetNumKilled("Agent");
+     local diplomatsKilled = Level.GetNumKilled("Diplomat");
 
-       Level.PersonKillHandler( 5, numCivilian, MissionText.Kill_Civilians );
-       return;     
-
-    elseif ( actorTypeId == Actor.ACTOR_TYPE_OFFICER ) then
-
-       Level.PersonKillHandler( 2, numOfficers, MissionText.Kill_Agents );
-       return;
-
-    elseif ( actorTypeId == Actor.ACTOR_TYPE_MAJOR ) then
-
-       Level.PersonKillHandler( 1, numMajors, MissionText.Kill_Diplomats );
-       return;
-
+     if (form == "Civilian" or form == "Cook" or form == "Plumber" or form == "ArchiveMan" or form == "Maid" or form == "Secretary" or form == "Madam" or form == "OfficeMan" or form == "ArchiveMan2") then
+        if (civilianKilled > 3) then
+           Level.PersonKillHandler( 5, civilianKilled, MissionText.Kill_Civilians );
+        end;
+     elseif (form == "Soldier" or form == "Guardian" or form == "Guardian2" or form == "Soldier2" or form == "SearchMan_1" or form == "SearchMan_2") then
+        if (soldiersKilled > 1) then
+           Level.PersonKillHandler( 3, soldiersKilled, MissionText.Kill_Guards );
+        end;
+     elseif (form == "Agent") then
+        if (agentsKilled > 0) then
+           Level.PersonKillHandler( 2, agentsKilled, MissionText.Kill_Agents );
+        end;
+     elseif (form == "Diplomat") then
+        if (diplomatsKilled > 0) then
+           Level.PersonKillHandler( 1, diplomatsKilled, MissionText.Kill_Diplomats );
+        end;
+     end;
     end;
   end;
-
-  function Level.OnShowTestHelp()
-
-     if (Random() < 0.4) then
-        local index = AI.RandomSample(table.getn(MissionText.Message_TestHelp), 1, false);
-
-        if (index != nil) then
-           local msg = MissionText.Message_TestHelp[ index ];
-           Level.AddSmallMessage( msg, 10.0, 255, 255, 255 );
-        end
-     end
-  end
 
   function Level.AddKey( actorId, keyId, name )
      local actor = Level.FindActor(actorId);
@@ -872,7 +949,24 @@
            end
         end
 
+        if (AI.GetPlayerForm() != "Plumber") then
+           AI.StartDecamouflage( 50.0, 100.0, 10.0 );
+        end
+
         Level.EnableLevelMark( 'TOOO', false );
+     end
+
+       local player = Level.GetPlayer();
+     
+     for i in Level.Pass do 
+        if (Level.GetPass[i] == false and 
+            Actor.HasCustomEquipment(player, Level.Pass[i]) == true) then
+           
+           AI.StartDecamouflage( 50.0, 100.0, 3.0 );
+           Level.GetPass[i] = true;
+        end
+
+        Level.EnableLevelMark( 'PAS1', false );
      end
 
      if (update != false) then
@@ -882,9 +976,314 @@
      end
   end
 
-  function Level.OnChangeCloth()
-     Level.EnableLevelMark( 'TOOO', false );
-  end
+--------------------------------------------------------
+-- Name: Level.HasForbidObjects()
+-- Desc:
+--------------------------------------------------------
+function Level.HasForbidObjects()
+
+   local numKnifes = Actor.GetNumWeaponOfClass( Level.GetPlayer(), Level.WEAPON_CLASS_KNIFE, true );
+   if (numKnifes >= 1) then
+      return true;
+   end
+   
+   local numPistols = Actor.GetNumWeaponOfClass( Level.GetPlayer(), Level.WEAPON_CLASS_PISTOL, true );
+   if (numPistols >= 1) then
+      return true;
+   end
+   
+   local numRifles = Actor.GetNumWeaponOfClass( Level.GetPlayer(), Level.WEAPON_CLASS_RIFLE, true ) +
+                     Actor.GetNumWeaponOfClass( Level.GetPlayer(), Level.WEAPON_CLASS_MACHINEGUN, true );
+   if (numRifles >= 1) then
+      return true;
+   end
+
+   return false;
+end
+
+--------------------------------------------------------
+-- Name: Level.OnSearchFinished()
+-- Desc:
+--------------------------------------------------------
+function Level.OnSearchFinished()
+
+   if (Level.HasForbidObjects() == true) then
+        
+      AI.DecamouflagePlayer(Level.GetSearchMan());
+        
+   else
+      Level.AddSmallMessage( MissionText.MM_StopMove_SearchClear, 5.0, 175, 175, 175 );
+
+      AI.EnableZone("SearchAlertZone_1", false);
+      AI.EnableZone("SearchZone_1", false);
+   end
+
+   Level.SearchJustFinished = true;
+end
+
+--------------------------------------------------------
+-- Name: Level.OnSearch2Finished()
+-- Desc:
+--------------------------------------------------------
+function Level.OnSearch2Finished()
+
+   if (Level.HasForbidObjects() == true) then
+        
+      AI.DecamouflagePlayer(Level.GetSearchMan());
+        
+   else
+      Level.AddSmallMessage( MissionText.MM_StopMove_SearchClear, 5.0, 175, 175, 175 );
+
+      AI.EnableZone("SearchAlertZone_2", false);
+      AI.EnableZone("SearchZone_2", false);
+   end
+
+   Level.SearchJustFinished = true;
+end
+
+--------------------------------------------------------
+-- Name: Level.InitSearchScript()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.InitSearchScript(npc)
+     local properties = Level.CreateCustomParams();     
+        
+     Level.SetValue(properties, "CustomString_1", "PlayerFront" );
+     Level.SetValue(properties, "CustomString_2", "Level.OnSearchFinished()" );
+     Level.SetValue(properties, "CustomString_3", 'SRSC' );
+     Level.SetValue(properties, "CustomString_4", "Act_Cowboy_SearchMan" );
+     Level.SetValue(properties, "CustomString_5", "" );
+     Level.SetValue(properties, "CustomString_6", "7.0" );
+
+     AI.RunScriptTask(npc, "scripts:job\\LookObjectTask.lua", AI.LOGIC_DEFAULT, properties);
+     
+     Level.SearchingStart = true;
+     Level.InstallDpc('Level.SearchingStart = true', 0.5);
+end
+
+--------------------------------------------------------
+-- Name: Level.InitSearch2Script()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.InitSearch2Script(npc)
+     local properties = Level.CreateCustomParams();     
+        
+     Level.SetValue(properties, "CustomString_1", "PlayerFront" );
+     Level.SetValue(properties, "CustomString_2", "Level.OnSearch2Finished()" );
+     Level.SetValue(properties, "CustomString_3", 'SRSC' );
+     Level.SetValue(properties, "CustomString_4", "Act_Cowboy_SearchMan" );
+     Level.SetValue(properties, "CustomString_5", "" );
+     Level.SetValue(properties, "CustomString_6", "7.0" );
+
+     AI.RunScriptTask(npc, "scripts:job\\LookObjectTask.lua", AI.LOGIC_DEFAULT, properties);
+     
+     Level.SearchingStart = true;
+     Level.InstallDpc('Level.SearchingStart = true', 0.5);
+end
+
+--------------------------------------------------------
+-- Name: Level.CheckLookObjectTaskCondition()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.CheckLookObjectTaskCondition(npc, id) 
+   if (id == 'SRSC') then
+      local zone = AI.GetPrimaryPlayerZone( npc );
+      return zone == Level.SearchZoneName;
+   end
+   
+   return false;
+end
+
+--------------------------------------------------------
+-- Name: Level.GetSearchMan()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.GetSearchMan()
+     
+   local job = AI.GetScriptJob("TASK_SCRIPT_LOOK_OBJECT");
+   if (job != nil) then
+     return Job.GetNPC( job );
+   end
+     
+   return nil; 
+end
+
+--------------------------------------------------------
+-- Name: Level.OnCheckShowPass()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnCheckShowPass()
+   local npc = AI.FindNearestNpc(AI.TASK_SHOW_STOP_MOVE, "");
+
+   if (npc == nil) then
+      Level.SafeRemoveLevelPlayerAction('SHP1');
+      Level.SafeRemoveLevelPlayerAction('SHP2');
+   end
+end
+
+--------------------------------------------------------
+-- Name: Level.RestoreBasementZone()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.RestoreBasementZone()
+   AI.EnableZone("Basement_Pass",      true);
+   AI.EnableZone("BasementEnter",      true);
+end
+
+--------------------------------------------------------
+-- Name: Level.RestoreTopFloorsZone()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.RestoreTopFloorsZone()
+   AI.EnableZone("TopFloors",      true);
+   AI.EnableZone("TopFloorsEnter", true);
+   Level.TopFloorsDisabled = false;
+end
+
+--------------------------------------------------------
+-- Name: Level.PlayerHasPass()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.PlayerHasPass()
+   local player = Level.GetPlayer();
+   for i in Level.Pass do 
+      if (Actor.HasCustomEquipment(player, Level.Pass[i]) == true) then
+         return true;
+      end
+   end
+     
+   return (Actor.HasCustomEquipment(player, 'PASS') == true);
+end
+
+--------------------------------------------------------
+-- Name: Level.GetNumKilled()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.GetNumKilled(form)
+   if (Level.NumKilled[form] == nil) then
+      return 0;
+   end
+   
+   return Level.NumKilled[form];
+end
+
+--------------------------------------------------------
+-- Name: Level.OnReadDocs()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnReadDocs()
+   Level.AddSmallMessage( MissionText.MM_StopMove_DocsClear, 5.0, 175, 175, 175 );
+
+   local job = AI.GetScriptJob("TASK_SCRIPT_READ_DOCS");
+   if (job != nil) then
+      local npc = Job.GetNPC( job );
+      if (npc != nil) then
+         AI.HandleVoice(npc, "male_eng_script_script_24");
+      end
+   end
+end
+
+--------------------------------------------------------
+-- Name: Level:OnPlayerAction()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level:OnPlayerAction(id)
+
+   if (id == 'SHP1' or id == 'SHP2') then
+
+      -- get show stop move bot...
+      local npc = AI.FindNearestNpc(AI.TASK_SHOW_STOP_MOVE, "");
+      if (npc == nil) then
+         Level.SafeRemoveLevelPlayerAction(id);
+         Level.RemoveTimer('PSTM');
+         return;
+      end
+
+      Level.SafeRemoveLevelPlayerAction(id);
+
+      local properties = Level.CreateCustomParams();
+
+      Level.SetValue(properties, "CustomString_1", "Level.OnReadDocs()" );
+
+      AI.RunScriptTask(npc, "scripts:job\\ReadDocsTask.lua", AI.LOGIC_DEFAULT, properties);
+
+      if (id == 'SHP1') then
+
+         Level.DisableBasementZone();
+
+      elseif (id == 'SHP2') then
+
+         Level.DisableTopFloorsZone();
+
+      end
+
+      local player = Level.GetPlayer();
+
+      if (Actor.GetPickupItem(player) == nil) then 
+         Level.PlayerShowDocsAnim();
+      else
+         Actor.DropPickupItem(player, false);
+         Level.InstallDpc("Level.PlayerShowDocsAnim()", 0.8);
+      end
+
+      Level.RemoveTimer('PSTM');
+   end
+end
+
+--------------------------------------------------------
+-- Name: Level.PlayerShowDocsAnim()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.PlayerShowDocsAnim()
+   Level.StartPlayerCustomAnim("Custom_PassticketShow", 0, true, true);
+end
+
+--------------------------------------------------------
+-- Name: Level.DisableBasementZone()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.DisableBasementZone()
+   AI.EnableZone("Basement_Pass",      false);
+   AI.EnableZone("BasementEnter",      false);
+
+   if (Level.SearchJustFinished == false) then
+      AI.EnableZone("SearchZone_1",       true);
+   end
+
+   Level.AddTimer( 'RBZN', "RestoreBasementZone", 5.0 * 60.0, false );
+end
+
+--------------------------------------------------------
+-- Name: Level.DisableTopFloorsZone()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.DisableTopFloorsZone()
+   AI.EnableZone("TopFloors",      false);
+   AI.EnableZone("TopFloorsEnter", false);
+
+   if (Level.SearchJustFinished == false) then
+      AI.EnableZone("SearchAlertZone_2",  true);
+      AI.EnableZone("SearchZone_2",       true);
+   end
+
+   Level.TopFloorsDisabled = true;
+
+   Level.AddTimer( 'RTZN', "RestoreTopFloorsZone", 5.0 * 60.0, false );
+end
 
 --------------------------------------------------------
 -- Name: Level.OnTransformStats()
@@ -908,4 +1307,303 @@ end
 --------------------------------------------------------
 function Level.OnCalcRateScore(rank, score, levelStats, aiStats, a, c, p, n, acc)
    return rank, score;
+end
+
+--------------------------------------------------------
+-- Name: Level.OnCookClothChange()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnCookClothChange()
+  Level.EnableLevelMark('CLTS', false);
+  Level.RemoveActionHandler(Level.AH_FINISH_CHANGECLOTH, 'COCL');
+end
+
+--------------------------------------------------------
+-- Name: Level.OnTechiClothChange()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnTechiClothChange()
+  local player = Level.GetPlayer();
+  if (player != nil) then
+    Actor.EnableMesh(player, "mesh_cap", false);
+  end
+  Level.EnableLevelMark('CLTS', false);
+  Level.RemoveActionHandler(Level.AH_FINISH_CHANGECLOTH, 'TCCL');
+end
+
+--------------------------------------------------------
+-- Name: Level.OnCookTimer()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnCookTimer()
+    Level.RunAnchorJob( AI.FindNPC('E206'), 'AN42', true );
+end
+
+--------------------------------------------------------
+-- Name: Level.OnAnchor_SummonCook()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnAnchor_SummonCook()
+    Level.RunAnchorJob( AI.FindNPC('COOK'), 'MM03', true );
+end
+
+--------------------------------------------------------
+-- Name: Level.OnAnchor_CookAddress()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnAnchor_CookAddress()
+    Level.RemoveTimer('CTTR');
+    Level.RunAnchorJob( AI.FindNPC('E206'), 'MM04', true );
+    Level.VoiceMessage( AI.FindNPC('E206'), "", "Message_SayCook");
+    Level.InstallDpc("Level.RunAnchorJob(AI.FindNPC('COOK'), 'MM05', false)", 4.0);
+    Level.InstallDpc( "AI.SetJob( AI.FindNPC('COOK'), 'tualet')", 5.5 );
+    Level.InstallDpc( "AI.SetJob( AI.FindNPC('E205'), 'dinner')", 6.0 );
+end
+
+--------------------------------------------------------
+-- Name: Level.OnAnchor_RestartCookTimer()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnAnchor_RestartCookTimer()
+   Level.AddTimer( 'CTTR', "OnCookTimer", 100, true );
+   AI.SetJob(AI.FindNPC('COOK'), "default");
+   AI.SetJob(AI.FindNPC('E205'), "default");
+end
+
+--------------------------------------------------------
+-- Name: Level.RestoreZones_01()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.RestoreZones_01()
+    if (AI.GetPlayerForm() == "Civilian") then
+       AI.EnableZone("SearchAlertZone_1",  true);
+       AI.EnableZone("SearchZone_1",       true);
+       Level.SearchJustFinished = false;
+    else
+       AI.EnableZone("SearchAlertZone_1",  false);
+       AI.EnableZone("SearchZone_1",       false);
+    end
+end
+
+--------------------------------------------------------
+-- Name: Level.RestoreZones_02()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.RestoreZones_02()
+    if (AI.GetPlayerForm() == "Civilian" and
+        Level.TopFloorsDisabled == true) then
+       AI.EnableZone("SearchAlertZone_2",  true);
+       AI.EnableZone("SearchZone_2",       true);
+       Level.SearchJustFinished = false;
+    else
+       AI.EnableZone("SearchAlertZone_2",  false);
+       AI.EnableZone("SearchZone_2",       false);
+    end
+end
+
+--------------------------------------------------------
+-- Level.OnStopMove()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnStopMove(actorId, npc)
+  if (npc == nil) then
+    print("MoTmod.ERROR: Jagdpanther.OnStopMove() npc is null " .. tostring(actorId));
+    return;
+  end
+
+  local npcForm = AI.GetForm(npc);
+  local zone = AI.GetPrimaryPlayerZone(npc);
+  local playerForm = AI.GetPlayerForm();
+  local class = AI.GetClass(npc);
+
+  if (zone == nil) then 
+    return;
+  end
+
+  if (zone == "Basement_Pass" or
+      zone == "BasementEnter") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Pass, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_stopmove_stopmove_06");
+    AI.EnableZone("SearchZone_1",       false);
+    if (Level.PlayerHasPass() == true) then
+      if (Level.HasPlayerAction('SHP1') == false) then
+         --Level.AddPlayerAction('SHP1', MissionText.Message_ShowDocs, "Level", false );
+         Level.SafeAddLevelPlayerAction('SHP1', MissionText.Message_ShowDocs);
+         Level.AddTimer('PSTM', "OnCheckShowPass", 1.0, true );
+      end
+    end
+  elseif (zone == "TopFloors" or
+          zone == "TopFloorsEnter") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Pass, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_stopmove_stopmove_06");
+    if (Level.PlayerHasPass() == true) then
+      if (Level.HasPlayerAction('SHP2') == false) then
+         --Level.AddPlayerAction('SHP2', MissionText.Message_ShowDocs, "Level", false );
+         Level.SafeAddLevelPlayerAction('SHP2', MissionText.Message_ShowDocs);
+         Level.AddTimer('PSTM', "OnCheckShowPass", 1.0, true );
+      end
+    end
+  elseif (zone == "VolkovArea" or
+          zone == "Archive03" or
+          zone == "Archive04" or
+          zone == "StaffLounge") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_LeaveRoom, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_stopmove_stopmove_03");
+  elseif (zone == "VolkovAreaEnter") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_NearVolkov, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_ohers_stop");
+  elseif (zone == "VolkovBedroomEnter") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Volkov, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_ohers_stop");
+  elseif (zone == "Office" or
+          zone == "Office2_1" or
+          zone == "Archive01") then
+    if (class == "civilian_woman" or
+        class == "enemy_woman") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_LeaveOffice, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "female_eng_stopmove_stopmove");
+    else
+      Level.AddSmallMessage(MissionText.MM_StopMove_Office, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove");
+    end
+  elseif (zone == "Office2_2") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_LeaveOffice, 5.0, 175, 175, 175);
+    if (class == "civilian_woman" or
+        class == "enemy_woman") then
+      AI.HandleVoice(npc, "female_eng_stopmove_stopmove");
+    else
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_03");
+    end
+  elseif (zone == "Office3") then
+    if (npcForm == "Diplomat") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_Diplomat, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove");
+    elseif (npcForm == "Agent") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_LeaveOffice, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_03");
+    elseif (npcForm == "Secretary") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_LeaveOffice, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "female_eng_stopmove_stopmove");
+    end
+  elseif (zone == "OfficeNear") then
+    if (playerForm == "Civilian") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_OfficeNear, 5.0, 175, 175, 175);
+    else
+      Level.AddSmallMessage(MissionText.MM_StopMove_Office, 5.0, 175, 175, 175);
+    end
+    AI.HandleVoice(npc, "female_eng_stopmove_stopmove");
+  elseif (zone == "Office2_1Near" or
+          zone == "Office2_2Near") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Office2Near, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "female_eng_stopmove_stopmove");
+  elseif (zone == "Office3Near") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Office3Near, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "female_eng_stopmove_stopmove");
+  elseif (zone == "Archive02") then
+    if (npcForm == "Plumber") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_ArchiveClean, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_09");
+    elseif (npcForm == "Soldier") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_LeaveRoom, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_03");
+    end
+  elseif (zone == "ConfRoom") then
+    if (npcForm == "Agent") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_ConfRoom, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_09");
+    elseif (npcForm == "Soldier" or
+            npcForm == "Guardian2") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_ConfRoom, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_03");
+    end
+  elseif (zone == "ConfRoomEnter") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_ConfRoom, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_ohers_stop");
+  elseif (zone == "StaffLoungeEnter") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_StaffLounge, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_ohers_stop");
+  elseif (zone == "Kitchen") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Kitchen, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_eng_stopmove_stopmove_09");
+  elseif (zone == "TualetWomen") then
+    if (class == "civilian_woman" or
+        class == "enemy_woman") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_Tualet, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "female_eng_stopmove_stopmove_02");
+    else
+      Level.AddSmallMessage(MissionText.MM_StopMove_TualetWomen, 5.0, 175, 175, 175);
+      AI.HandleVoice(npc, "male_eng_stopmove_stopmove_03");
+    end
+  elseif (zone == "SearchZone_1") then
+    local playerPosition = Level.GetPlayerPosition();
+    local npcPosition = Level.GetNpcPosition(npc);
+    Level.SearchZoneName = zone;
+    Level.AddSmallMessage( MissionText.MM_StopMove_Search, 5.0, 175, 175, 175 );
+    Level.InitSearchScript(npc);
+    Level.HadForbidObjects = Level.HasForbidObjects();
+  elseif (zone == "SearchZone_2") then
+    local playerPosition = Level.GetPlayerPosition();
+    local npcPosition = Level.GetNpcPosition(npc);
+    Level.SearchZoneName = zone;
+    Level.AddSmallMessage( MissionText.MM_StopMove_Search, 5.0, 175, 175, 175 );
+    Level.InitSearch2Script(npc);
+    Level.HadForbidObjects = Level.HasForbidObjects();
+  end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnChangeMadamJobTrigger()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnTrigger_ChangeMadamJob()
+   Level.InstallDpc("Level.ChangeMadamJob()", 10.0);
+end
+
+--------------------------------------------------------
+-- Name: Level.ChangeMadamJob()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.ChangeMadamJob()
+   AI.SetJob(AI.FindNPC('M205'), "job_new");
+end
+
+--------------------------------------------------------
+-- Name: Level.OnKilledCook()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnKilledCook()
+   Level.RemoveTimer('CTTR');
+   AI.SetJob(AI.FindNPC('E205'), "default2");
+end
+
+--------------------------------------------------------
+-- Name: Level.OnChangePashJobsTrigger()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnTrigger_ChangePashJobs()
+   Level.EnableLevelMark('PASH', false);
+   Level.InstallDpc("Level.ChangePashJobs()", 5.0);
+end
+
+--------------------------------------------------------
+-- Name: Level.ChangePashJobs()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.ChangePashJobs()
+   AI.SetJob(AI.FindNPC('E235'), "post_pash");
+   AI.SetJob(AI.FindNPC('M227'), "post_pash");
 end

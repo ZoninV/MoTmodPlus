@@ -1,42 +1,42 @@
 
   MissionText = 
   {
-       Task_1                = " Infiltrate the base";
-       Task_2                = " Get a uniform";
-       Task_3                = " Hijack a truck";
-       Task_4                = " Obtain the documents";
-       Task_5                = " Neutralize the captive";
-       Task_6                = " Carry out the captive";
+       Task_1                = " Проникнуть на базу";
+       Task_2                = " Добыть форму";
+       Task_3                = " Угнать грузовик";
+       Task_4                = " Обезвредить языка";
+       Task_5                = " Добыть документы";
+       Task_6                = " Вывезти языка";
 
-       Fail_Alarm            = "Alarm has been raised";
-       Fail_YKilled          = "Dietrich Meltzer has been killed";
+       Fail_Alarm            = "Поднята тревога";
+       Fail_YKilled          = "Дитрих Мельтцер убит";
 
-       Message_2             = "Tasks have been updated";
-       Message_Docs          = "GET DOCUMENTS";
-       Message_DisableAlert  = "DISABLE ALARM";
+       Message_2             = "Задания обновлены";
+       Message_Docs          = "ВЗЯТЬ ДОКУМЕНТЫ";
+       Message_DisableAlert  = "ОТКЛЮЧИТЬ ТРЕВОГУ";
 
-       Fail_Vodila           = "Task has failed: The driver is dead";
-       Fail_Bliz             = "Task has failed: The car has exploded";
-       Message_3             = "Tasks have been changed";
+       Fail_Vodila           = "Задание провалено: Водитель погиб";
+       Fail_Bliz             = "Задание провалено: Машина взорвана";
+       Message_3             = "Задания изменены";
 
-       Key_Name              = "Key to the safe";
-       Key_Name2             = "Key to the office";
-       Docs_Name             = "\"Jagdpanther\" project documentation";
+       Key_Name              = "Ключ от сейфа";
+       Key_Name2             = "Ключ от кабинета";
+       Docs_Name             = "Документация по проекту \"Jagdpanther\"";
 
-       Message_BunkerAlarm   = "The alarm has been raised around the bunker.";
-       Message_BaseAlarm_1   = "The alarm has been raised. The number of patrols has increased.";
-       Message_BaseAlarm_2   = "The alarm has been raised. Guards are on high alert.";
-       Message_AlarmFinished = "Guards are standing down.";
+       Message_BunkerAlarm   = "В районе бункера поднята тревога.";
+       Message_BaseAlarm_1   = "Поднята тревога. Число патрулей увеличено.";
+       Message_BaseAlarm_2   = "Поднята тревога. Охрана стала более внимательна.";
+       Message_AlarmFinished = "Охрана успокоилась.";
 
        -- forlik
-       MM_StopMove_FGS = "@ Field police have no business here!";
-       MM_StopMove_OFF = "@ Excuse me, Herr Offizier, but you can't come in here!";
-       MM_StopMove_Truck = "@ Only the driver can use the truck!";
-       MM_StopMove_Tower = "@ These towers are off-limits! Get back down immediately!";
-       MM_StopMove_Bunker = "@ You have nothing to do here!";
-       MM_StopMove_Base = "@ You are not allowed in this area!";
-       MM_StopMove_MeltzerRoom = "@ Herr Meltzer is out at the moment, please come back later!";
-       MM_StopMove_Warehouse = "@ I am under orders not to let anyone into the warehouse!";
+       MM_StopMove_FGS = "@ Полевой жандармерии здесь делать нечего!";
+       MM_StopMove_OFF = "@ Простите, офицер, но вам сюда нельзя!";
+       MM_StopMove_Truck = "@ Лишь водителю позволено ездить на машине!";
+       MM_StopMove_Tower = "@ Никто не имеет право находиться на вышке! Немедленно спускайтесь!";
+       MM_StopMove_Bunker = "@ Вам здесь нечего делать!";
+       MM_StopMove_Base = "@ Вам сюда нельзя!";
+       MM_StopMove_MeltzerRoom = "@ Господин Мельтцер сейчас отсутствует, пожалуйста, приходите позже!";
+       MM_StopMove_Warehouse = "@ У меня приказ никого не впускать на склад!";
   };
 
 
@@ -46,13 +46,14 @@
      -- forlik System:SetVar( 'r_glow_r' , 2.0 );
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); -- forlik
-     System:SetVar( "r_farclip" , 5000 ); -- forlik
+     System:SetVar( "r_farclip" , 3000 ); -- forlik
      System:SetVar( "r_dofsky", 128 ); -- forlik
     
      --- init music
 
-     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "sounds\\music\\action_2.ogg");
-     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "sounds\\music\\action_1.ogg" );
+     Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark3.ogg");
+     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "#0.50#sounds\\music\\action_2.ogg");
+     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\b_action2.ogg" );
 
      -- init stuff
 
@@ -83,6 +84,7 @@
      Entity.SetSkin(Level.FindVehicle('BLIZ'), 1);
      Entity.SetSkin(Level.FindVehicle('BLI2'), 2);
      Entity.SetSkin(Level.FindVehicle('BLI3'), 3);
+     Entity.SetSkin(Level.FindVehicle('BLI4'), 2); -- Liz Shaw
      Entity.SetSkin(Level.FindVehicle('KUB2'), 2);
      Entity.SetSkin(Level.FindVehicle('KUB1'), 3);
      Entity.SetSkin(Level.FindVehicle('MOT1'), 1);
@@ -104,6 +106,15 @@
      Stream.WriteBool(Level.ExecutedDitrihHack);
 
      Level.OnSave_Common(); -- forlik
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end;
 
   function Level.OnLoad()
@@ -120,7 +131,47 @@
      Level.ExecutedDitrihHack   = Stream.ReadBool();
 
      Level.OnLoad_Common(); -- forlik
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
      Level.OnFinishLoad();
+  end;
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_jagdpanther_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_jagdpanther_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
   end;
 
 
@@ -222,8 +273,6 @@
      local yazik = Level.FindActor( 'YAZK' );
      if ( yazik != nil ) then
 
-       Actor.EnableHitFace( yazik, true );
-
        local key = Level.CreateItem( "Custom" , "Equipment" );
        if ( key != nil ) then
 
@@ -243,6 +292,16 @@
          Level.SetCustomItemName(key2, MissionText.Key_Name2);
          Level.SetCustomItemIcon(key2, "ammo_key");
          Actor.PutPouch(yazik, Actor.GetEmptyPouch(yazik), key2);
+       end;
+
+       -- Liz Shaw
+       local diff = Level.GetDifficulty();
+
+       if (diff == 3) then
+
+          local blitz = Level.CreateWorldItem( "blitz" , "Vehicle" , 
+                                     -237.38, 10.96, 1572.09, 0.0, -90.0, 0.0, 'BLI4' );
+
        end;
 
      end;
@@ -277,6 +336,7 @@
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
 
      Level.OnFinishLoad();
+     Level.AutoSave();
 
   end;
 
@@ -297,8 +357,10 @@
 
     if ( Level.IsMissionTaskCompleted('VODL') == false ) then
 
+       Level.PlayMenuSound("task_finish"); -- Liz Shaw
        Level.CompleteMissionTask('VODL', 15.0 );
        Level.EnableLevelMark( 'VODL', false );
+       Level.AutoSave();
 
     end;
        
@@ -351,6 +413,7 @@
   function Level.OnHittedYazik()
 
    Level.UpdateLeaveTask( "HITA" );
+   Level.PlayMenuSound("task_finish"); -- Liz Shaw
    Level.CompleteMissionTask( "HITA" );
 
    if (Level.HasMissionTask('YMOV')) then
@@ -363,6 +426,7 @@
    Level.EnableLevelMark( 'MAK4' , false );
 
    Level.YazikHitted = true;
+   Level.AutoSave();
 
   end;
 
@@ -501,7 +565,7 @@
 -- forlik
 -------------------------------------------------------------------------------
 function Level.OnCompleteMission()
-  System:ConsoleCommand('l_loadlevel "gamemenu" 1');
+  System:ConsoleCommand( 'l_loadlevel "rolik_lubyanka" 2' );
 end
 
 -------------------------------------------------------------------------------
@@ -605,8 +669,10 @@ function Level.OnBlitzEnter()
     return;
   end
   if (AI.GetPlayerForm() == "HFS1" and Level.IsMissionTaskCompleted('UGON') == false) then
+    Level.PlayMenuSound("task_finish"); -- Liz Shaw
     Level.CompleteMissionTask('UGON', 15.0 );
     Level.EnableLevelMark( 'UGON', false );
+    Level.AutoSave();
   end
 end
 
@@ -713,11 +779,13 @@ function Level.OnEnterTriggerArea(sender, trgname, trgcmd)
 
   if (trgname == 'basa_Trigger' or trgname == 'basa_Trigger2') then
     if (Level.IsMissionTaskCompleted('BASA') == false) then
-      Level.AddMissionTask(MissionText.Task_4, 'DOCS', "levels\\Jagdpanther\\docs_task.txt");
-      Level.AddMissionTask(MissionText.Task_5, 'HITA', "levels\\Jagdpanther\\hit_task.txt");
+      Level.AddMissionTask(MissionText.Task_4, 'HITA', "levels\\Jagdpanther\\hit_task.txt");
+      Level.AddMissionTask(MissionText.Task_5, 'DOCS', "levels\\Jagdpanther\\docs_task.txt");
+      Level.PlayMenuSound("task_finish"); -- Liz Shaw
       Level.CompleteMissionTask('BASA', 15.0);
       Level.AddLargeMessage(MissionText.Message_2, 15.0, 255, 255, 255);
       if (Level.YazikMoved == true) then
+        Level.PlayMenuSound("task_finish"); -- Liz Shaw
         Level.CompleteMissionTask("YMOV", 0.0);
       end
       Level.EnableLevelMark('BASA', false);
@@ -731,6 +799,7 @@ function Level.OnEnterTriggerArea(sender, trgname, trgcmd)
       Level.RemoveMissionTask('VODL');
       Level.RemoveMissionTask('UGON');
       Level.EnterBase = true;
+      Level.AutoSave();
     end
   elseif (trgname == 'YazikTrigger') then
     if (Level.IsMissionTaskCompleted('HITA') != false) then
@@ -751,6 +820,7 @@ function Level.OnEnterTriggerArea(sender, trgname, trgcmd)
         end
       end
       if (completed != false) then
+        Level.PlayMenuSound("task_finish"); -- Liz Shaw
         Level.CompleteMissionTask('YMOV', 15.0);
         Level.YazikMoved = true;
       end
@@ -797,6 +867,7 @@ function Level.GiveDocs()
       Actor.PutPouch(player, Actor.GetEmptyPouch(player), docs);
     end
   end
+  Level.AutoSave();
 end
 
 -------------------------------------------------------------------------------

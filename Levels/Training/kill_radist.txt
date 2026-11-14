@@ -1,1 +1,1 @@
-<tab>Neutralize the sleeping radio operator.<br>
+<tab>Нейтрализовать спящего радиста.<br>

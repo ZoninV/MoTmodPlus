@@ -1,1 +1,1 @@
-<tab>Leave the castle. Move to the point marked on the map.<br>
+<tab>Покинуть замок. Перейти в точку, обозначенную на карте.<br>

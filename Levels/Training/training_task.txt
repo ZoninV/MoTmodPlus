@@ -1,1 +1,9 @@
-<tab>Accomplish all training tasks:<br><br>- Line of barriers<br>- Shooting<br>- Throwing grenades<br>- Knife throwing <br>- Driving<br>- Neutralizing<br>- Getting changed<br>- Using uniform.<br>
+<tab>Выполнить все тренировочные задачи:<br><br>
+- Полоса препятствий<br>
+- Стрельба<br>
+- Броски гранат<br>
+- Метание ножа<br>
+- Вождение<br>
+- Нейтрализация<br>
+- Переодевание<br>
+- Использование формы<br>

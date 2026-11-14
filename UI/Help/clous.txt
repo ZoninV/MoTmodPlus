@@ -1,5 +1,4 @@
-Getting changed:<br><br>
-<tab>-<sp> You can change into a <l="game:UI\Help\for.txt">uniform</l> of a neutralized enemy if the uniform is not stained by blood.<br>
-<tab>-<sp> To do this, you need to get close to the body and use 'Change clothes' item on the <l="game:UI\Help\menu.txt">"Action menu."</l><br> 
-
-<br><br><tab><l="$back">BACK</l><br>
+Переодевание:<br><br>
+<tab>-<sp> Переодеться можно в не испачканную кровью  <l="game:UI\Help\for.txt">форму</l> нейтрализованного противника.<br>
+<tab>-<sp> Для выполнения этой операции необходимо подойти к телу и нажать 'T' или воспользоваться пунктом 'Переодеться' из <l="game:UI\Help\menu.txt">'Меню действий'.</l><br> 
+<br><br><tab><l="$back">НАЗАД</l><br>

@@ -1,1 +1,1 @@
-<tab>Leave the hotel.<br>
+<tab>Покинуть отель.<br>

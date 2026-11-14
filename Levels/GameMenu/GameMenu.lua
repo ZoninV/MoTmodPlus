@@ -33,7 +33,7 @@ function Level.OnLoaded( cutsceneId )
         
       if ( cutsceneId == 1 or Level.NextLevel == nil or Level.NextLevel == "" ) then
          Level.SetHudOverlay( "MainMenu" );
-         Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.45#sounds\\music\\b_dark4.ogg" );
+         Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.3#sounds\\music\\b_dark4.ogg" );
          Level.SetMusic( Level.MUSIC_MOOD_DEFAULT, 6.0 );               
       else
          Level.SetHudOverlay( "Equipment", Level.NextLevel );
@@ -52,10 +52,10 @@ function Level.OnLoaded( cutsceneId )
 
      CutScene.Play( ns, 15.0 );
 
-     Level.SetHudEffect("noise", true );
-     Level.SetHudEffect("lines", true );
+     -- Level.SetHudEffect("noise", true );
+     -- Level.SetHudEffect("lines", true );
      
-     CutScene.SetBlurEffect( ns, 0.5 );
+     -- CutScene.SetBlurEffect( ns, 0.5 );
                     
      if ( cutsceneId == 3 ) then
         Level.SetColorPostFilter( 1.0, 0.0, 0.0, 0.65 );
@@ -81,7 +81,7 @@ function Level.OnCreditsMenu( musicFadeTime )
    Level.SetMusic( Level.MUSIC_MOOD_NONE, 0.5 );
    Level.SetMusic( Level.MUSIC_MOOD_CLEARALL, 0.0 );
     
-   Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.45#sounds\\music\\b_dark4.ogg" );
+   Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.3#sounds\\music\\b_dark4.ogg" );
    Level.SetMusic( Level.MUSIC_MOOD_DEFAULT, musicFadeTime );
    
    Level.SetHudOverlay("credits", "game:Levels\\Credits\\credits.txt<1.0>" );
@@ -121,7 +121,7 @@ function Level.OnCancelBriefing()
     Level.SetMusic( Level.MUSIC_MOOD_NONE, 0.5 );
     Level.SetMusic( Level.MUSIC_MOOD_CLEARALL, 0.0 );
     
-    Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.45#sounds\\music\\b_dark4.ogg" );
+    Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.3#sounds\\music\\b_dark4.ogg" );
     Level.SetMusic( Level.MUSIC_MOOD_DEFAULT, 0.5 ); 
    
 end;
@@ -154,23 +154,42 @@ end;
 -------------------------------------------------------- 
 function Level.OnNewGame( levelName )
 
- -- forlik: disable movies
+ if ( levelName == "jagdpanther" ) then
+    return "rolik_lubyanka",1;
+ elseif ( levelName == "posilka" ) then
+    return "rolik_lubyanka",2;
+ elseif ( levelName == "krasavitca" ) then
+    return "rolik_lubyanka",4;     
+ elseif ( levelName == "hotel" ) then
+    return "rolik_lubyanka",7;     
+ elseif ( levelName == "rasplata" ) then
+    return "rolik_kabinet",1;
+ elseif ( levelName == "projecty" ) then
+    return "rolik_lubyanka",9;
+ elseif ( levelName == "razvedshkola" ) then
+    return "rolik_mashina",1;
+ elseif ( levelName == "svalka" ) then
+    return "rolik_svalka",1;
+ elseif ( levelName == "izyatie" ) then
+    return "rolik_lubyanka",13;
+ elseif ( levelName == "posolstvo" ) then
+    return "rolik_lubyanka",14;
+ elseif ( levelName == "airbase" ) then
+    return "rolik_addon",1;
+ elseif ( levelName == "uboat" ) then
+    return "rolik_addon",2;
+ elseif ( levelName == "whitehead" ) then
+    return "rolik_addon",3;
+ elseif ( levelName == "dora" ) then
+    return "rolik_addon",4;
+ elseif ( levelName == "pgift" ) then
+    return "rolik_addon",5;
+ elseif ( levelName == "cowboy" ) then
+    return "rolik_addon",6; 
+ elseif ( levelName == "otstupniki" ) then
+    return "rolik_addon",7; 
+ end;
 
- --if ( levelName == "airbase" ) then
- --   return "rolik_addon",1;
- --elseif ( levelName == "uboat" ) then
- --   return "rolik_addon",2;
- --elseif ( levelName == "whitehead" ) then
- --   return "rolik_addon",3;
- --elseif ( levelName == "dora" ) then
- --   return "rolik_addon",4;
- --elseif ( levelName == "pgift" ) then
- --   return "rolik_addon",5;
- --elseif ( levelName == "cowboy" ) then
- --   return "rolik_addon",6; 
- --elseif ( levelName == "otstupniki" ) then
- --   return "rolik_addon",7; 
- --end;
  return "",0;
-    
+
 end;

@@ -1,1 +1,2 @@
-<tab>Kill the head of the school, SS-Standartenfьhrer Hans Himell. You will arouse less suspicion from the patrols if you pretend to be an officer in training at the school. Officers' have grey uniform.<br><br><img=foto1,bot,55,0><br>
+<tab>Уничтожить начальника школы, Оберста разведки Ганса Химелля. Вы вызовите меньшее подозрения у патрулей выдав себя за офицера, проходящего 
+подготовку в школе. Офицеры имеют при себе удостоверения.<br><br><img=foto1,bot,55,0><br>

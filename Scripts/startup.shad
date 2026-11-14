@@ -5,6 +5,7 @@
 setv r_shfxusecache true
 setv r_shadercache true
 setv r_shaderusecache true
+setv r_shader_print_notfound false
 
 setv land_static true
 setv r_vegbendcameraview true
@@ -14,28 +15,28 @@ setv cl_freectrl 0
 setv r_refltexsize 1024
 setv r_vfogtexsize 1024
 
+setv g_blood 1
 setv ai_enable_voice 1
 
 addleveldesc "training" 'NTRN' 0 1
-addleveldesc "demoday" 'NDMD' 1 1
-addleveldesc "posilka" 'NPSL' 1 1
-addleveldesc "krasavitca" 'NKRA' 1 1
-addleveldesc "hotel" 'NHTL' 1 1
-addleveldesc "rasplata" 'NRPL' 1 1
-addleveldesc "projecty" 'NPRJ' 1 1
-addleveldesc "razvedshkola" 'NRZD' 1 1
-addleveldesc "svalka" 'NSVL' 1 1
-addleveldesc "izyatie" 'NZYT' 1 1
-addleveldesc "posolstvo" 'NPOS' 1 1
 addleveldesc "jagdpanther" 'NJPN' 1 1
-addleveldesc "airbase"    'NMOL' 1 1
-addleveldesc "uboat"      'NUBT' 1 1
-addleveldesc "whitehead"  'NWTH' 1 1
-addleveldesc "dora"       'NDOR' 1 1
-addleveldesc "pgift"      'NGFT' 1 1
-addleveldesc "cowboy"     'NCOW' 1 1
-addleveldesc "otstupniki" 'NOTS' 1 1
+addleveldesc "posilka" 'NPSL' 1
+addleveldesc "krasavitca" 'NKRA' 1
+addleveldesc "hotel" 'NHTL' 1
+addleveldesc "rasplata" 'NRPL' 1
+addleveldesc "projecty" 'NPRJ' 1
+addleveldesc "razvedshkola" 'NRZD' 1
+addleveldesc "svalka" 'NSVL' 1
+addleveldesc "izyatie" 'NZYT' 1
+addleveldesc "posolstvo" 'NPOS' 1
+addleveldesc "airbase"    'NMOL' 1
+addleveldesc "uboat"      'NUBT' 1
+addleveldesc "whitehead"  'NWTH' 1
+addleveldesc "dora"       'NDOR' 1
+addleveldesc "pgift"      'NGFT' 1
+addleveldesc "cowboy"     'NCOW' 1
+addleveldesc "otstupniki" 'NOTS' 1
 
 setbrightness -0.15
 
-playavi "game:intro_1.vid,game:intro_2.vid,game:intro_3.vid" "l_loadlevel 'gamemenu' 1"
+playavi "game:intro_1.vid,game:intro_2.vid" "l_loadlevel 'gamemenu' 1"

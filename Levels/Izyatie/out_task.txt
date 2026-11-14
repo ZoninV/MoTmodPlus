@@ -1,1 +1,3 @@
-<tab>Liberate the informer. Bring him to a safe place.<br><tab>The doctor can carry any prisoner to the aid post for a medical examination. Green mark.<br><tab>A warden can take a prisoner out to carry out any work on the territory of the prison camp. Blue marks.<br>
+<tab>Освободить осведомителя. Вывести его в безопасное место.<br>
+<tab>Врач может увести любого заключенного в медпункт на обследование. Зеленая метка.<br>
+<tab>Надзиратель может уводить заключеннго на работы на территории лагеря. Синие метки.<br>

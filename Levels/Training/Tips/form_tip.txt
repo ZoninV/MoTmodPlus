@@ -1,1 +1,7 @@
-<tab>Playing the game when dressed in an enemy uniform:<br><br>- When you are wearing an enemy uniform most of your opponents will consider you to be a friendly soldier. In this case they are marked <col=008000>green</col> on the map. <br>- If you do not take <l="game:Levels\training\tips\dc_tip.txt">suspicious actions</l> - your opponents will not react to you. <br> - <col=D20000>Red</col> is used to show the enemies, who can recognize you from a short distance. They usually have a higher rank than you, or patrol the area.<br><tab>Try to avoid encountering them.<br>
+<tab>¬ражеска€ форма:<br><br>
+-  огда вы одеты во вражескую форму большинство противников считают вас за своего. ¬ этом случае они отображаютс€ на карте <col=008000>зеленым</col> цветом.<br>
+- ≈сли вы не делаете <l="game:Levels\training\tips\dc_tip.txt">подозрительные действи€</l>, противники не будут реагировать на вас.<br>
+- <col=808000>∆елтый</col> используетс€ дл€ обозначени€ врагов, которые могут заподозрить что-то, если подойти к ним слишком близко. ќбычно, они имеют такое же или более высокое звание, чем вы, или патрулируют территорию.<br>
+<tab>ѕостарайтесь не находитьс€ в поле их зрени€ долго, иначе они вас раскроют.<br>
+- <col=D20000> расным</col> цветом отображаютс€ враги, которые могут распознать вас на небольшом рассто€нии. ќбычно, они охран€ют особо важную территорию или могут лично знать, кто может носить вашу текущую форму.<br>
+<tab>—тарайтесь избегать встречи с ними.<br>

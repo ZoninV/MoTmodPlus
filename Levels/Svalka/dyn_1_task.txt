@@ -1,1 +1,3 @@
-<tab>Put five dynamite charges at the points marked on the map.<tab>Dynamite can be obtained from an ammo depot in one of the bridge towers.<br><br><img=foto_2,bot,15,0><br>
+<tab>Установить пять зарядов динамита на мосту в точках обозначенных на карте.
+<tab>Динамит можно достать на складе боеприпасов в одной из башен моста.<br>
+<br><img=foto_2,bot,15,0><br>

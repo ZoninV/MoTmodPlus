@@ -1,3 +1,1 @@
-<tab>According to our source, all necessary information about the architectural layout of the castle was hidden by an agent in a secure cache. Find the cache and recover the information.<br>
-
-
+<tab>По сообщению нашего источника, вся необходимая информация об архитектуре замка была спрятана агентом в надежном тайнике. Обнаружить тайник и достать сведения.<br>

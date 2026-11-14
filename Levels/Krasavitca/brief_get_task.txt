@@ -1,1 +1,7 @@
-<tab>Liberate Boris Polyakov. He should be in one of the prison cells located in the basement of the castle.<br>If it is impossible to save the captain, he must be killed.<br>- It will be easier to sneak inside the prison after getting a warden's uniform.<br>- The warden can visit a prisoner once he has aquired an access permit signed by the Gestapo investigator SS-Sturmbannfьhrer Reinhard Roerich.<br>- To take the prisoner from his cell for an interrogation, the warden must transfer special papers to the officer in charge of the guards. The papers can be taken from SS-Sturmbannfьhrer Jьrgen Goldschmit.<br><br>Boris Polyakov's photo:<br><br><img=foto_2,bot,60,0><br>
+<tab>Освободить капитана разведки Бориса Полякова. Он должен находиться в одной из камер тюрьмы, расположенной в подземелье замка.<br>Если спасти капитана не получится, необходимо его ликвидировать.<br>
+- Проникнуть на территорию тюрьмы будет проще добыв форму коменданта.<br>
+- Комендант может пройти к заключенному имея соответствующее разрешение на допуск от следователя Гестапо Штурмбаннфюрера СС Рейнхарда Рериха.<br>
+- Заключенного могут вызвать на допрос. Для этого комендант должен передать бумаги офицеру охраны. Бумаги можно взять у Штурмбаннфюрера СС Юргена Гольдшмита.<br>
+<br>
+Фото Бориса Полякова:
+<br><br><img=foto_2,bot,60,0><br>

@@ -1,5 +1,2 @@
-<tab>Plant discrediting documents about the professor, to disguise the 
-true reason behind his death.<br>
-
-
-
+<tab>Подложить компрометирующие документы профессору, для маскировки
+истинной причины его смерти.<br>

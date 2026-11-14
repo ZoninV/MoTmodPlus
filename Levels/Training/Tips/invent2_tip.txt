@@ -1,1 +1,5 @@
-<tab>Inventory:<br><br>- In order to activate the inventory mode you must either press the relevant key ("I" is set by default) or use the<l="game:Levels\training\tips\action_tip.txt"> Action menu</l> when near a body.<br>- In the inventory mode, you can take and drop items by moving them from the relevant slots.<br>- In the inventory mode, you can drop your backpack.<br>
+<tab>Инвентарь:<br><br>
+- Для того чтобы открыть 'Инвентарь' необходимо нажать соответствующую клавишу ('Q') или при помощи
+<l="game:Levels\training\tips\action_tip.txt">'Меню действий'</l>, находясь около тела.<br>
+- В 'Инвентаре' можно брать или выбрасывать предметы перенося их из соответствующих ячеек.<br>
+- Из 'Инвентаря' можно выбросить даже Рюкзак.<br>

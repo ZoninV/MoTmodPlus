@@ -1,1 +1,6 @@
-<tab>Enemy's vision:<br><br>- The color of the internal area in a field of vision indicates the enemy's alertness level:<br><br><col=008000>green</col><sp> -<sp> calm condition<br><col=808000>yellow</col><sp> -<sp> attention<br><col=800000>red</col><sp> -<sp> alertness<br><br>- If an enemy sees anything suspicious he may become more alert
+<tab>Зрение противников:<br><br>
+- Цвет внутренней зоны сектора зрения указывает на уровень настороженности противника:<br><br>
+<col=008000>зеленый</col><sp> -<sp> спокойное состояние<br>
+<col=808000>желтый</col><sp> -<sp> внимательное<br>
+<col=800000>красный</col><sp> -<sp> боевое<br><br>
+- Если враг заметит что-нибудь подозрительное, он может насторожиться.<br>

@@ -1,1 +1,2 @@
-<tab>Sneak into the diplomat's room. Replace the documents in the safe. The diplomat should not find out that the safe has been opened, or that a stranger has been in the room. Any danger may cause the diplomat to take the documents out of the safe.<br>
+<tab>Проникнуть в комнату дипломата. Заменить документы в сейфе. Дипломат не должен узнать, что сейф был открыт
+или обнаружить в комнате постороннего. Любая опасность может побудить дипломата забрать документы из сейфа.<br>

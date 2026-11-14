@@ -1,1 +1,4 @@
-<tab>Kill Obersturmbannfьhrer Henry Knutt.<br><tab>It will be a lot easier to reach the target wearing an officer's uniform.<br><br><img=p4_small,bot,60,5><br><br><br><img=p3_small,bot,0,2><br>
+<tab>Ликвидировать Оберштурбанфюрера Генри Кнута.<br>
+<tab>В форме офицера добраться до цели будет гораздо проще.<br>
+<br><img=p4_small,bot,60,5><br><br>
+<br><img=p3_small,bot,0,2><br>

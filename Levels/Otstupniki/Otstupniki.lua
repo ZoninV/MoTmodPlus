@@ -2,51 +2,65 @@
   MissionText = 
   {
       --Mission text
-      Message_CutScene_SpyInvite       = "- Everything is going as planned. We are set for the task. Here are the details.";
-      Message_CutScene_SpyRespond      = "- Perfect. Continue the operation as planned. We are advancing to the settlement.";
-      Message_CutScene_Docs            = "- Show me your documents!";
-      Message_CutScene_Binocular       = "- No guards spotted so far. We are clear to begin the operation.";
-      Message_ShowMePass               = "@ Show me your papers!";
-      Message_Fire                     = "@ One more step and I'll shoot!";
-      Message_OkWeWillGo               = "@ Of course captain! We will continue our work elsewhere.";
-      Message_DocsClear                = "@ Comrade captain! Requesting permission to be dismissed!";
-      Message_ForDoctor                = "@ What the hell?! Somebody call the doctor!";
-      Message_Binocular                = "@ No guards spotted so far. We are clear to begin the operation.";
-      Message_ShowDocs                 = "PRODUCE ID";
-      Message_ShowCaptainDocs          = "PRODUCE ID";
-      Message_DocsName                 = "SMERSH ID";
-      Message_DocsNameL                = "SMERSH ID";
-      Message_FormInfo                 = "! Camouflage enables you to hide easily in the grass.";
-      Action_CutRopeBrevna             = "CUT THE ROPE";
-      Action_CutRopeBoat               = "CUT THE ROPE";
-      Action_DropBucket                = "SPILL THE BUCKET";
-      Action_CloseDoor                 = "CLOSE THE DOOR";
-      Action_Demine                    = "DEFUSE EXPLOSIVES";
-      Action_UseRadio                  = "RADIO IN TO HEADQUARTERS";
-      Failed_See                       = "OPERATION FAILED! YOU HAVE BEEN DISCOVERED!";
-      Failed_Body                      = "OPERATION FAILED! THE INTELLIGENCE GROUP FOUND THE BODY OF A SABOTEUR";
-      Failed_Attention                 = "OPERATION FAILED! THE INTELLIGENCE GROUP SUSPECTS SOMETHING";
-      Failed_Kill                      = "OPERATION FAILED! NO MEETING TOOK PLACE";
-      Failed_KillGroup2                = "OPERATION FAILED! YOU HAVE COMPROMISED THE INVESTIGATION OF THIS GROUP!";
-      Failed_Alert                     = "OPERATION FAILED! THE ALARM HAS BEEN RAISED!";
-      Failed_AlertDiver                = "OPERATION FAILED! YOUR PRESENCE WAS DISCOVERED!";
-      Failed_SovietKilled              = "A SOVIET MAN WAS KILLED";
-      Failed_StarikovDead              = "STARIKOV MUST STAY ALIVE";
-      Message_StopMove_WeaponHouseNear = "@ Don't move or I'll shoot!";
-      Message_StopMove_MainHouseNear   = "@ I cannot let you in!";
-      Message_StopMove_MainHouse       = "@ Leave the room immediately!";
-      Message_StopMove_Const_Officer   = "@ Comrade Captain, it is dangerous here!";
-      Message_StopMove_Const_Major     = "@ Comrade Major, it is dangerous here!";
-      Message_StopMove_Const           = "@ You should not be here!";
-      Task_Diversion                   = "Prevent the sabotage";
-      Task_Meet                        = "Surveil the group";
-      Task_Nikolaev                    = "Capture Nikolayev";
-      Task_Shestakov                   = "Capture Shestakov";
-      Task_Starikov                    = "Capture Starikov";
-      Task_Radio                       = "Report to headquarters";
-      Message_PlanName                 = "Enemy sabotage plan";
-      Message_PlanNameL                = "ENEMY SABOTAGE PLAN";
-      Message_TaskChanged              = "Objectives have been updated";
+      Message_CutScene_SpyInvite       = "- Пока все по плану. Мы готовы выполнить задачу. Тут детали.";
+      Message_CutScene_SpyRespond      = "- Отлично. Продолжайте операцию. Мы выдвигаемся в поселок.";
+      Message_CutScene_Docs            = "- Предъявите ваши документы!";
+      Message_CutScene_Binocular       = "- Охраны пока нет. Можем начинать.";
+      Message_ShowMePass               = "@ Предъявите ваши документы!";
+      Message_Fire                     = "@ Еще один шаг и я открываю огонь!";
+      Message_OkWeWillGo               = "@ Так точно! Мы поработаем пока в другом месте.";
+      Message_DocsClear                = "@ Товарищ капитан... Разрешите идти?";
+      Message_ForDoctor                = "@ Что за черт! Я за доктором!";
+      Message_Binocular                = "@ Охраны пока нет. Можем начинать.";
+      Message_ShowDocs                 = "ПОКАЗАТЬ УДОСТОВЕРЕНИЕ";
+      Message_ShowCaptainDocs          = "ПОКАЗАТЬ УДОСТОВЕРЕНИЕ";
+      Message_DocsName                 = "Удостоверение СМЕРШ";
+      Message_DocsNameL                = "УДОСТОВЕРЕНИЕ СМЕРШ";
+      Message_FormInfo                 = "! В камуфляжной форме можно маскироваться в траве.";
+      Action_CutRopeBrevna             = "ПЕРЕРЕЗАТЬ ВЕРЕВКУ";
+      Action_CutRopeBoat               = "ПЕРЕРЕЗАТЬ ВЕРЕВКУ";
+      Action_DropBucket                = "ТОЛКНУТЬ ВЕДРО";
+      Action_CloseDoor                 = "ЗАПЕРЕТЬ ДВЕРЬ";
+      Action_Demine                    = "РАЗМИНИРОВАТЬ";
+      Action_UseRadio                  = "ИСПОЛЬЗОВАТЬ РАЦИЮ";
+      Failed_See                       = "ОПЕРАЦИЯ СОРВАНА! ВАС ОБНАРУЖИЛИ!";
+      Failed_Body                      = "ОПЕРАЦИЯ СОРВАНА! РАЗВЕДГРУППОЙ ОБНАРУЖЕНО ТЕЛО ДИВЕРСАНТА";
+      Failed_Attention                 = "ОПЕРАЦИЯ СОРВАНА! РАЗВЕДГРУППА ЧТО-ТО ЗАПОДОЗРИЛА";
+      Failed_Kill                      = "ОПЕРАЦИЯ СОРВАНА! ВСТРЕЧА НЕ СОСТОЯЛАСЬ";
+      Failed_KillGroup2                = "ОПЕРАЦИЯ ПРОВАЛЕНА! НЕЛЬЗЯ СРЫВАТЬ РАЗРАБОТКУ ЭТОЙ ГРУППЫ!";
+      Failed_Alert                     = "ОПЕРАЦИЯ СОРВАНА! ПОДНЯТА ТРЕВОГА!";
+      Failed_AlertDiver                = "ОПЕРАЦИЯ СОРВАНА! ВАШЕ ПРИСУТСТВИЕ РАСКРЫТО!";
+      Failed_SovietKilled              = "УБИТ СОВЕТСКИЙ ЧЕЛОВЕК";
+      Failed_StarikovDead              = "СТАРИКОВ ДОЛЖЕН ОСТАТЬСЯ ЖИВ";
+      Message_StopMove_WeaponHouseNear = "@ Стой! Стрелять буду!";
+      Message_StopMove_MainHouseNear   = "@ Я не могу пропустить вас сюда!";
+      Message_StopMove_MainHouse       = "@ Покиньте помещение немедленно!";
+      Message_StopMove_Const_Officer   = "@ Товарищ капитан - тут опасно!";
+      Message_StopMove_Const_Major     = "@ Товарищ майор - тут опасно!";
+      Message_StopMove_Const           = "@ Вам не стоит тут находиться!";
+      Task_Diversion                   = "Предотвратить диверсию";
+      Task_Meet                        = "Проследить за группой";
+      Task_Nikolaev                    = "Захватить Николаева";
+      Task_Shestakov                   = "Захватить Шестакова";
+      Task_Starikov                    = "Захватить Старикова";
+      Task_Radio                       = "Сообщить в центр";
+      Message_PlanName                 = "План диверсии";
+      Message_PlanNameL                = "ПЛАН ДИВЕРСИИ";
+      Message_TaskChanged              = "Задания изменены";
+      Message_Help                           = {
+                                                 "Форму можно обнаружить в стирке или на просушке.";
+                                                 "Нахождение на строительной площадке может быть очень опасным.";
+                                                 "Подумайте дважды, прежде чем стоять под подвешенным тяжелым предметом.";
+                                                 "Слишком долгое пребывание в сауне может быть смертельным.";
+                                                 "Даже офицер не сможет ослушаться приказа тайного агента СМЕРШ.";
+                                                 "У диверсантов могут быть при себе документы с подробным описанием их операций.";
+                                               };
+      Message_ClothInfo                             = {
+                                                        "Крестьянам вход в главное здание воспрещен.";
+                                                        "Врач может свободно передвигаться по деревне.";
+                                                        "Капитан РККА может отдавать приказы солдатам.";
+                                                        "Майор РККА может отдавать приказы солдатам.";
+                                                      };
   };
 
 
@@ -67,7 +81,7 @@
 --------------------------------------------------------
 function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_addon" 8' );
 
 end;
 
@@ -97,9 +111,9 @@ end;
        Level.EnableObjectHitNotify('ROPE', true );
        Level.EnableObjectHitNotify('ROP2', true );
        
-       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT  , "#0.4#sounds\\music\\ambiento.ogg" );
-       Level.AddMusic( Level.MUSIC_MOOD_ACTION   , "#0.75#sounds\\music\\sustain.ogg" );       
-       Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.75#sounds\\music\\sustain.ogg" );       
+       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT  , "#0.50#sounds\\music\\ambiento.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ACTION   , "#0.50#sounds\\music\\sustain.ogg" );       
+       Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\action_2.ogg" );       
        
        Level.SetDefaultMusicPause( 100.0, 180.0, 30.0, 120.0 );
        
@@ -165,6 +179,15 @@ end;
        Stream.WriteBool( Level.BrevnaRopeBulletHitted );
        
        Level.OnSave_Common();              
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
 --------------------------------------------------------
@@ -233,8 +256,48 @@ end;
        end       
 
        Level.OnLoad_Common();                                   
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
        Level.OnFinishLoad();
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_otstupniki_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_otstupniki_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
 
 --------------------------------------------------------
 -- Name: Level.OnLoaded()
@@ -348,10 +411,11 @@ end;
        
        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WO02', "OnChangeCloth_Officer" );
        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WS01', "OnChangeCloth_Soldier" );
-       Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WS02', "OnChangeCloth_Soldier" );
+       Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WS02', "OnChangeCloth_Medic" );
        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WS03', "OnChangeCloth_Soldier" );
        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WD01', "OnChangeCloth_Ded" );
        Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH, 'WD02', "OnChangeCloth_Ded" );
+       Level.AddActionHandler( Level.AH_CHANGE_CLOTH );
        
        
        -- Init player..
@@ -444,7 +508,10 @@ end;
        Level.InstallInitialTasks();
 
        -- AI..
-       AI.ForEachNpc("ChangeSoldierLogic", "form", "Soldier");
+       AI.ForEachNpc("ChangeSoldierLogic", "form", "SolRKKI");
+       AI.ForEachNpc("ChangeSoldierLogic", "form", "SolRKKT");
+       AI.ForEachNpc("ChangeSoldierLogic", "form", "SolRKKM");
+       AI.ForEachNpc("ChangeSoldierLogic", "form", "SolRKKZ");
        AI.ForEachNpc("ChangeSoldierLogic", "form", "SoldierWorker");
        AI.ForEachNpc("ChangeSoldierLogic", "form", "Soldier_ID");
        
@@ -578,16 +645,20 @@ end;
              Level.HideItem( form_eq[i] );
           end
        end
-
-       Actor.EnableUseCloth( Level.FindActor('SO06'), false );
      
        -- Timers..
        
        Level.InstallDpc("Level.PlayerNearHouseDisabled = true", 15.0 * 60.0);
        -- Level.InstallDpc("Level.EnableLevelMark('FORM', false)", 20.0);
+
+       Level.SetFormHelp( "Civilian",          MissionText.Message_ClothInfo[1] );
+       Level.SetFormHelp( "Doctor",            MissionText.Message_ClothInfo[2] );
+       Level.SetFormHelp( "Officer",           MissionText.Message_ClothInfo[3] );
+       Level.SetFormHelp( "Major",             MissionText.Message_ClothInfo[4] );
                     
        -- Finish load..
        Level.OnFinishLoad();
+       Level.AutoSave();
   end;
 
   AI.DoFile( "scripts:Levels\\Common.lua", false );
@@ -706,6 +777,9 @@ end;
         end        
 
         Level.PlayMenuSound("task_finish");
+        if (taskId != 'RADI') then
+           Level.AutoSave();
+        end;
      else
         Level.RemoveMissionTask(taskId);
         
@@ -1282,12 +1356,39 @@ end
      elseif (zone == "MainHouse") then
         Level.AddSmallMessage( MissionText.Message_StopMove_MainHouse, 5.0, 175, 175, 175 );
         
-        if (playerForm == "Soldier") then
+        if (playerForm == "SolRKKI") then
            AI.HandleVoice( npc, "male_rus_stopmove_stopmove_05" );
         else
            AI.HandleVoice( npc, "male_rus_stopmove_stopmove_07" );
         end
-     
+
+     elseif (zone == "MainHouse") then
+        Level.AddSmallMessage( MissionText.Message_StopMove_MainHouse, 5.0, 175, 175, 175 );
+        
+        if (playerForm == "SolRKKT") then
+           AI.HandleVoice( npc, "male_rus_stopmove_stopmove_05" );
+        else
+           AI.HandleVoice( npc, "male_rus_stopmove_stopmove_07" );
+        end
+
+     elseif (zone == "MainHouse") then
+        Level.AddSmallMessage( MissionText.Message_StopMove_MainHouse, 5.0, 175, 175, 175 );
+        
+        if (playerForm == "SolRKKM") then
+           AI.HandleVoice( npc, "male_rus_stopmove_stopmove_05" );
+        else
+           AI.HandleVoice( npc, "male_rus_stopmove_stopmove_07" );
+        end
+
+     elseif (zone == "MainHouse") then
+        Level.AddSmallMessage( MissionText.Message_StopMove_MainHouse, 5.0, 175, 175, 175 );
+        
+        if (playerForm == "SolRKKZ") then
+           AI.HandleVoice( npc, "male_rus_stopmove_stopmove_05" );
+        else
+           AI.HandleVoice( npc, "male_rus_stopmove_stopmove_07" );
+        end
+
      elseif (zone == "Constr") then
         
         if (Level.IsPlayerOfficer() == true) then
@@ -2905,6 +3006,23 @@ end
   end  
 
 --------------------------------------------------------
+-- Name: Level.OnChangeCloth_Medic()
+-- Desc:
+--------------------------------------------------------
+  function Level.OnChangeCloth_Medic()
+     local player = Level.GetPlayer();
+     if ( player != nil ) then
+        Actor.EnableMesh( player, "sabg_equipment_up"   , false );
+        Actor.EnableMesh( player, "sabg_equipment_down" , false );
+        Actor.EnableMesh( player, "mesh_helmet"         , false );
+        Actor.EnableMesh( player, "mesh_shoulder"        , true );
+        Actor.EnableMesh( player, "mesh_cap"             , true );
+        
+        Actor.SetSkin( player, 0 );
+     end
+  end  
+
+--------------------------------------------------------
 -- Name: Level.OnChangeCloth_Ded()
 -- Desc:
 --------------------------------------------------------
@@ -3244,6 +3362,14 @@ function Level.HackTestStoneReaction()
        local npc = AI.FindNPC(Level.GlobalScenaryNpc[i]);
        AI.Disable(npc, "stone_reaction");
     end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnChangeCloth()
+-- Desc:
+--------------------------------------------------------
+function Level.OnChangeCloth()
+  Level.InstallDpc("Level.OnHelpForm()", 3.0);
 end
 
 --------------------------------------------------------

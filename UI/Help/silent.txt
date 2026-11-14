@@ -1,13 +1,11 @@
-The enemy can react to the following types of noise:<br><br>
-<tab>-<sp> Noise produced by the player's movement. If the enemy hears a noise made by the player, he may increase his attention level, look around or examine suspicious-looking places, depending on the situation. Slow and accurate movement produces less noise. <l="game:UI\Help\motions.txt">Sneaking</l> is absolutely noiseless.<br>
-<tab>-<sp> Punching produces a fairly loud noise, which normally encourages enemies to inspect the source of the noise.<br>
-<tab>-<sp> Whistling often makes enemies alert, and encourages them to examine any suspicious places nearby.<br>
-<tab>-<sp> The sound of items breaking (such as a glass window), the sound of items falling or thrown, and the creaking of doors -- and the sound of a body falling to the ground: normally an enemy wants to look around after hearing such noises.<br>
-<tab>-<sp> The sound of shooting and of explosions makes enemies very alert. Many may decide to examine the area of the shooting or explosion.<br>
-<tab>-<sp> With the sounding of sirens and alarms, the number of dangerous enemies increases, and the enemy comes to a state of combat-readiness.<br><br>
-
-<tab>On open terrain, sound spreads without interference, whereas indoors, walls and doors significantly muffle the noise level. A closed door muffles a minor noise by 50% or more.<br>
-<tab>If an enemy is familiar with the source of sound, he is likely to ignore it (assuming the sound is not combat-related).<br>
-<tab>The spread of many sounds is shown on the <l="game:UI\Help\map.txt">vector map</l> as semi-transparent circles.<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Противник может реагировать на следующий шум:<br><br>
+<tab>-<sp> Звук движения игрока. Услышав шум игрока, противник может повысить уровень внимания, оглядеться или осмотреть странное место в зависимости от ситуации. Медленное и аккуратное перемещение издает меньше шума. <l="game:UI\Help\motions.txt">Подкрадывание</l> совершенно бесшумно.<br>
+<tab>-<sp> Звук удара кулаком. Довольно громкий – обычно побуждает противников осмотреть источник звука.<br>
+<tab>-<sp> Свист. Часто переводит противников в настороженное состояние. Побуждает исследовать странное место.<br>
+<tab>-<sp> Звук разбивающихся предметов (в том числе стекла). Звук удара предметов. Скрип дверей. Звук падения тела. Обычно противник желает осмотреться.<br>
+<tab>-<sp> Звук стрельбы. Звук взрывов. Переводит противников в боевое состояние. Многие решают осмотреть зону выстрела или взрыва.<br>
+<tab>-<sp> Звук сирен и т.п. Увеличивается число опасных противников. Возможен переход в боевое состояние.<br><br>
+<tab>На открытой местности звук распространяется без помех. В помещениях стены и двери сильно уменьшают уровень шума. Закрытая дверь гасит небольшой шум на 50% и более.<br>
+<tab>Если противник понимает, какой объект является источником шума, то чаще всего он проигнорирует его. (Если конечно звук не является боевым).<br>
+<tab>Распространение многих звуков отображается на <l="game:UI\Help\map.txt">векторной карте</l> в виде расходящегося полупрозрачного круга.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

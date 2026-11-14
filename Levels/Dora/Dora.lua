@@ -2,104 +2,104 @@
   MissionText = 
   {
       --Mission text
-      Task_Suitcase                   = " Intercept the briefcase";
-      Task_Kill                       = " Kill the professor";
-      Task_Leave                      = " Leave the park";
-      Task_Discredit                  = " Plant discrediting evidence";
-      Task_Alarm                      = " Don't raise the alarm";
-      Message_SuitcaseIsNotFounded    = "! The loss of the briefcase has been discovered.";
-      Message_GuardAreLookingSuitcase = "! The guards are looking for a man with a briefcase.";
-      Message_SuitcaseFounded         = "! The guards have found the briefcase.";
-      Message_BodyAlertZone           = "! The guards have found a body and are looking for intruders.";
-      Message_UseHloroform            = "APPLY THE SLEEPING POTION";
-      Message_UsePoisson              = "APPLY THE POISON";
-      Message_RaiseU                  = "RAISE THE VOLTAGE";
-      Message_PoissonWater            = "POISON THE WATER";
-      Message_PoissonSmoke            = "SWAP THE CIGARETTES";
-      Message_PutDiscredit            = "PLANT THE DISCREDITING EVIDENCE";
-      Message_CloseCrane              = "TURN OFF THE TAP";
-      Key_Sklad                       = "Warehouse key";
-      Key_OfficerRoom                 = "Colonel's room key";
-      Key_Archive                     = "Archives key";
-      Key_Doctor                      = "Doctor's room key";
-      Key_ProfessorRoom               = "Professor's room key";
-      Message_StopMove_GuardsGoOut    = "@ Leave the guard room immediately!";
-      Message_StopMove_LivingRoom     = "@ I work here. What do you want?";
-      Message_StopMove_Pass           = "@ Stop right there! Show your pass!";
-      Message_CutScene_Pass           = "- Hold it! Show your pass!";
-      Message_StopMove_Crypt          = "@ You can't come in here.";
-      Message_StopMove_OfficerRoom    = "@ You're not supposed to be here!";
-      Message_StopMove_Storage        = "@ The warehouse is restricted.";
-      Message_StopMove_DoctorRoom     = "@ Leave my room immediately!";
-      Message_StopMove_Archive        = "@ I'm afraid I'm going to have to ask you to leave.";
-      Message_StopMove_ProfRoom       = "@ What are you doing here? This is my office!";
-      Message_StopMove_Basement       = "@ Wait, that's restricted!";
-      Message_StopMove_Stair          = "@ Get off that ladder!";
-      Message_StopMove_Delegation     = "@ This is a restricted area.";
-      Message_StopMove_OnlySoldiers   = "@ Civilians are not allowed on the second floor!";
-      Message_PassName                = "Pass";
-      Message_PassNameL               = "PASS";
-      Message_CigarettesDef           = "Cigarettes";
-      Message_CigarettesDefL          = "CIGARETTES";
-      Message_Soporific               = "Sleeping potion";
-      Message_SoporificL              = "SLEEPING POTION";
-      Message_Cigarettes              = "Poisoned cigarettes";
-      Message_CigarettesL             = "POISONED CIGARETTES";
-      Message_Discredit               = "Discrediting evidence";
-      Message_DiscreditL              = "DISCREDITING EVIDENCE";
-      Message_ShowDocs                = "SHOW THE PASS";
-      Message_PlayerGiveSmoke         = "GIVE HIM THE CIGARETTES";
-      Message_StopMove_DocsClear      = "@ All right, you may proceed.";
-      Fail_Alarm                      = "MISSION FAILED";
-      Fail_Killed                     = "MISSION FAILED";
-      Kill_Civilians                  = "You have killed too many people. ";
-      Kill_Soldiers                   = "You have killed too many military personnel. ";
-      Kill_Msg_1                      = "Only ";
-      Kill_Msg_3                      = "Only ";
-      Kill_Msg_2                      = " more before mission failure.";
-      DocSuitcase_Name                = "DOCUMENT CASE";
-      EmptySuitcase_Name              = "EMPTY CASE";
-      Message_FailKillDelegation      = "AMERICAN REPRESENTATIVE KILLED";                                         
-      Message_FailKillOfficer         = "COLONEL HUDSON KILLED";					 
-      Message_FailHitOfficer          = "COLONEL HUDSON STUNNED";					 
-      Alarm_Timer                     = "Time to complete the mission: %02d:%02d";
-      Message_DelegationState_1       = "- James Bowman, Colonel, OSS. We're picking up documents here. Have you been informed?";
-      Message_DelegationState_3       = "- Here you are. Everything is in this briefcase. Now follow me please. I'll update you on our progress.";
-      Message_DelegationState_5       = "- Where can I find a doctor? Where's the medical post?";
-      Message_ProfessorIsUglyPerson   = "- I've had it up to here with professor Sheppard. Always bumming smokes.";
-      Message_SendDelegation          = "@ Colonel Hudson is expecting you. He's by the main entrance.";
-      Message_IGoSuitcase             = "@ Wait here. I'll bring you your documents in a few minutes.";
-      Message_IHaveHeadAche           = "@ Doctor, I've got a headache. Can you give me anything for it?";
-      Message_SayArchive              = "@ Hello. I need some documents from the archives. I have clearance.";
-      Message_SayProfessor            = "@ Professor, we have a little problem with our equipment. Can you take a look please?";
-      Message_AscSmoking              = "@ Got a smoke?";
-      Message_GiveSmoke               = "@ Of course, yes. Here.";
-      Message_Thanks                  = "@ Thank you.";
-      Message_LossOfficerWarning      = "! The absence of the colonel may alert the Americans.";
-      Message_LossAmericanWarning     = "! The absence of an American representative may create a disturbance.";
-      Message_OfficerWarning          = "! Many people know the colonel by sight.";
-      Message_NeedsPoisson            = "! Poison is required if you want to poison the water.";
-      Message_LeavePark               = "! You need to get the documents out of the park.";
+      Task_Suitcase                   = " Перехватить дипломат";
+      Task_Kill                       = " Уничтожить профессора";
+      Task_Leave                      = " Покинуть парк";
+      Task_Discredit                  = " Подложить компромат";
+      Task_Alarm                      = " Не поднимать тревогу";
+      Message_SuitcaseIsNotFounded    = "! Обнаружена пропажа портфеля.";
+      Message_GuardAreLookingSuitcase = "! Охрана ищет человека с дипломатом.";
+      Message_SuitcaseFounded         = "! Охраной обнаружен дипломат.";
+      Message_BodyAlertZone           = "! Охрана обнаружила тело и ищет постороннего.";
+      Message_UseHloroform            = "ДОБАВИТЬ СНОТВОРНОЕ";
+      Message_UsePoisson              = "ДОБАВИТЬ ЯД";
+      Message_RaiseU                  = "ПОВЫСИТЬ НАПРЯЖЕНИЕ";
+      Message_PoissonWater            = "ОТРАВИТЬ ВОДУ";
+      Message_PoissonSmoke            = "ПОДМЕНИТЬ СИГАРЕТЫ";
+      Message_PutDiscredit            = "ПОДКИНУТЬ КОМПРОМАТ";
+      Message_CloseCrane              = "ЗАКРЫТЬ КРАН";
+      Key_Sklad                       = "Ключ от склада";
+      Key_OfficerRoom                 = "Ключ от комнаты полковника";
+      Key_Archive                     = "Ключ от архивов";
+      Key_Doctor                      = "Ключ от комнаты доктора";
+      Key_ProfessorRoom               = "Ключ от комнаты профессора";
+      Message_StopMove_GuardsGoOut    = "@ Покиньте комнату охраны немедленно!";
+      Message_StopMove_LivingRoom     = "@ Я работаю тут. Вы бы не могли удалиться?";
+      Message_StopMove_Pass           = "@ Стоять! Предъявите ваш пропуск!";
+      Message_CutScene_Pass           = "- Стоять! Предъявите ваш пропуск!";
+      Message_StopMove_Crypt          = "@ Прошу прощения, но вам не положено здесь находиться.";
+      Message_StopMove_OfficerRoom    = "@ Что ты тут забыл?!";
+      Message_StopMove_Storage        = "@ Я никого не пропускаю на территорию склада!";
+      Message_StopMove_DoctorRoom     = "@ Немедленно покиньте мою комнату!";
+      Message_StopMove_Archive        = "@ Боюсь, я должен попросить вас удалиться.";
+      Message_StopMove_ProfRoom       = "@ Э-э-э... Я вас разве приглашал?";
+      Message_StopMove_Basement       = "@ Я думаю вам нечего делать в подвале!";
+      Message_StopMove_Stair          = "@ Слезайте с лестницы!";
+      Message_StopMove_Delegation     = "@ У меня приказ никого не впускать.";
+      Message_StopMove_OnlySoldiers   = "@ Гражданским вход на второй этаж запрещен!";
+      Message_PassName                = "Пропуск";
+      Message_PassNameL               = "ПРОПУСК";
+      Message_CigarettesDef           = "Cигареты";
+      Message_CigarettesDefL          = "СИГАРЕТЫ";
+      Message_Soporific               = "Снотворное";
+      Message_SoporificL              = "СНОТВОРНОЕ";
+      Message_Cigarettes              = "Отравленные сигареты";
+      Message_CigarettesL             = "ОТРАВЛЕННЫЕ СИГАРЕТЫ";
+      Message_Discredit               = "Компрометирующие документы";
+      Message_DiscreditL              = "КОМПРОМАТ";
+      Message_ShowDocs                = "ПОКАЗАТЬ ПРОПУСК";
+      Message_PlayerGiveSmoke         = "ДАТЬ СИГАРЕТЫ";
+      Message_StopMove_DocsClear      = "@ Все нормально - проходите.";
+      Fail_Alarm                      = "МИССИЯ ПРОВАЛЕНА";
+      Fail_Killed                     = "МИССИЯ ПРОВАЛЕНА";
+      Kill_Civilians                  = "Вы уничтожили слишком много человек.";
+      Kill_Soldiers                   = "Вы уничтожили слишком много военных.";
+      Kill_Msg_1                      = "Осталось ";
+      Kill_Msg_3                      = "Остался ";
+      Kill_Msg_2                      = " до провала миссии.";
+      DocSuitcase_Name                = "ДИПЛОМАТ С ДОК-МИ";
+      EmptySuitcase_Name              = "ПУСТОЙ ДИПЛОМАТ";
+      Message_FailKillDelegation      = "Убит американский представитель";                                         
+      Message_FailKillOfficer         = "Убит полковник Хадсон";					 
+      Message_FailHitOfficer          = "Оглушен полковник Хадсон";					 
+      Alarm_Timer                     = "Необходимо завершить операцию за %02d:%02d";
+      Message_DelegationState_1       = "- День добрый. Полковник Джеймс Боуман, ОСС. Мы должны забрать кое-какие материалы, вам сообщили?";
+      Message_DelegationState_3       = "- Все необходимые материалы в этом дипломате. Возьмите его и следуйте за мной. Я покажу вам над чем ведется работа в данный момент.";
+      Message_DelegationState_5       = "- Где можно найти доктора? Где тут медпункт?";
+      Message_ProfessorIsUglyPerson   = "- Профессор Шепард уже достал. Постоянно просит сигареты.";
+      Message_SendDelegation          = "@ Вас ждет полковник Хадсон около входа в главное здание.";
+      Message_IGoSuitcase             = "@ Подождите здесь. Через пять минут я принесу ваши документы.";
+      Message_IHaveHeadAche           = "@ Доктор, есть что-нибудь от головной боли?";
+      Message_SayArchive              = "@ Здравствуйте. Мне необходимы некоторые архивные сведения. У меня есть допуск.";
+      Message_SayProfessor            = "@ Профессор, у нас неполадки с оборудованием. Посмотрите, пожалуйста.";
+      Message_AscSmoking              = "@ У вас не найдется закурить?";
+      Message_GiveSmoke               = "@ Да, конечно";
+      Message_Thanks                  = "@ Спасибо.";
+      Message_LossOfficerWarning      = "! Отсуствие полковника может вызвать беспокойство американцев.";
+      Message_LossAmericanWarning     = "! Отсуствие одного из американских представителей может вызвать беспокойство.";
+      Message_OfficerWarning          = "! Полковника многие знают в лицо.";
+      Message_NeedsPoisson            = "! Нужен яд, чтобы отравить воду.";
+      Message_LeavePark               = "! Необходимо покинуть парк с документами.";
       Message_Help                    = {
-                                          "American representatives may suspect that something is wrong, if they notice a man with a case.";
-                                          "Most civilian employees have passes.";
-                                          "Many people know the officers by sight.";
-                                          "Try not to attract any attention.";
-                                          "Killing a large number of people may trigger an alarm.";
-                                          "There is a medical post in the park.";
-                                          "The cryptography department is off-limits to unauthorised personnel.";
-                                          "The colonel's absence may alert the Americans.";
-                                          "The assassination of the British colonel will result in mission failure.";
-                                          "Poisons may be kept in the medical post.";
-                                          "A handkerchief soaked in chloroform does not draw the attention of onlookers.";
+                                          "Американские представители могут заподозрить неладное, заметив человека с дипломатом.";
+                                          "У большинства гражданских сотрудников есть пропуск.";
+                                          "Офицеров многие знают в лицо.";
+                                          "Постарайтесь не привлекать внимание окружающих.";
+                                          "Убийство большого количества человек может привести к тревоге.";
+                                          "На территории парка есть медпункт.";
+                                          "В отделах шифрования нельзя находиться посторонним.";
+                                          "Отсуствие полковника может вызвать беспокойство американцев.";
+                                          "Убийство британского полковника приведет к поражению в миссии.";
+                                          "В медпункте могут находиться отравляющие средства.";
+                                          "Платок с хлороформом противнику не кажется подозрительным.";
                                         };
       Message_ClothInfo               = {
-                                          "A pass is required for a civilian to get inside the main building.";
-                                          "A cryptographer's uniform would allow access to the cryptography department.";
-                                          "A professor has access to nearly anyplace.";
-                                          "A guard's uniform does not permit access to the cryptography department.";
-                                          "Many people know the doctor by sight.";
-                                          "Many people know the officers by sight.";
+                                          "Чтобы попасть в главное здание в одежде гражданского - нужен пропуск.";
+                                          "Форма шифровальщика дает доступ в отделы шифрования.";
+                                          "Профессор имеет доступ практически в любое место.";
+                                          "В форме охранника нельзя посещать отделы шифрования.";
+                                          "Врача многие знают в лицо.";
+                                          "Офицера многие знают в лицо.";
                                         };
   };
 
@@ -119,7 +119,7 @@
 --------------------------------------------------------
 function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_addon" 5' );
 
 end;
 
@@ -142,9 +142,9 @@ end;
        Level.SetDoorKey('DR07', 'PRKY');
        Level.SetDoorKey('D314', 'PRKY');
        
-       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "sounds\\music\\sustain.ogg" );       
-       Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "sounds\\music\\sustain.ogg" );       
-       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.35#sounds\\music\\b_dark6.ogg" );
+       Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\sustain.ogg" );       
+       Level.AddMusic( Level.MUSIC_MOOD_ATTENTION, "#0.50#sounds\\music\\action_2.ogg" );       
+       Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark6.ogg" );
        
        Level.SetHudEffect("noise_small", true );
        Level.SetDOFPostFilter( 1, 0.0, 1200.0, 1500.0 );
@@ -260,6 +260,15 @@ end;
        Stream.WriteBool( Level.DecamouflageOnGetSuitcase );
        
        Level.OnSave_Common();
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
 --------------------------------------------------------
@@ -365,8 +374,48 @@ end;
        end
 
        Level.OnLoad_Common();                                   
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
        Level.OnFinishLoad();
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_dora_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_dora_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
   
 --------------------------------------------------------
 -- Name: Level.OnLoaded()
@@ -688,10 +737,31 @@ end;
        for i in Level.Delegation do
           local npc = AI.FindNPC(Level.Delegation[i]);
           if (npc != nil) then
-             AI.SetConfLogic( npc, "scripts:ConfLogic\male_usa_guards_conf.shadvs" );
              AI.SetVoiceTemplate( npc, "male_usa" );
-             AI.SetJob(npc, "start");
-          end 
+          end
+       end
+
+       -- Colonel Hudson no longer uses American voice clips. -- Liz Shaw
+       local officer = AI.FindNPC('OFFS');
+       if (officer != nil) then
+          AI.SetVoiceTemplate( officer, "male_eng" );
+       else
+          print("Can't find officer: OFFS");
+       end
+
+       -- The two OSS agents standing near the entrance now use American voice clips. -- Liz Shaw
+       local delegate = AI.FindNPC('DIL4');
+       if (delegate != nil) then
+          AI.SetVoiceTemplate( delegate, "male_usa" );
+       else
+          print("Can't find delegate: DIL4");
+       end
+
+       local delegate = AI.FindNPC('DIL5');
+       if (delegate != nil) then
+          AI.SetVoiceTemplate( delegate, "male_usa" );
+       else
+          print("Can't find delegate: DIL5");
        end
 
        -- Timers..
@@ -701,6 +771,7 @@ end;
        
        -- Finish load..
        Level.OnFinishLoad();
+       Level.AutoSave();
   end;
 
 --------------------------------------------------------
@@ -717,6 +788,10 @@ end;
       --    AI.Enable("investigated_body_alert");
       --    AI.Disable("notify_visited_body");
       -- end
+
+     if (Level.GetDifficulty() != 2) then
+        AI.SetJob(AI.FindNPC('GY17'), "default");
+     end
       
      if (Level.GetDifficulty() == 3) then
         local form_eq = { 'WBC1', 'WBS1', 'WRDC' };
@@ -861,6 +936,9 @@ end;
         Level.CompleteMissionTask(taskId);
 
         Level.PlayMenuSound("task_finish");
+        if (taskId != 'LEAV' and taskId != 'ALAR') then
+           Level.AutoSave();
+        end;
      else
         Level.RemoveMissionTask(taskId);
         Level.RunLogic(nil);
@@ -3329,7 +3407,11 @@ end
 -- Desc:
 --------------------------------------------------------
 function Level.OnChangeCloth_Doctor()
-   Level.OnChangeCloth_Default(0);
+   Level.OnChangeCloth_Default(3);
+   local player = Level.GetPlayer();
+   if ( player != nil ) then
+   Actor.SetSkin( player, 3 );
+   end;
 end
 
 --------------------------------------------------------

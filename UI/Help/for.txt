@@ -1,8 +1,7 @@
-Uniforms:<br><br>
-<tab>-<sp> You can acquire a uniform by: <l="game:UI\Help\Infighting.txt">stunning</l>, <l="game:UI\Help\cold_wepon.txt">choking (using a garrotte or chloroform)</l>, or <l="game:UI\Help\fire_wepon.txt">shooting</l> the enemy in the head (only on 'Easy' and 'Normal' difficulty levels). At 'Saboteur' difficulty level you cannot change your uniform.<br> 
-<tab>-<sp> If you are wearing an officer's uniform, you can <l="game:UI\Help\menu.txt">give orders</l> to some privates.<br>
-<tab>-<sp> You can carry an additional uniform with you in a <l="game:UI\Help\invetory.txt">backpack.</l><br>
-<tab>-<sp> If an enemy<l="game:UI\Help\alarm.txt">has discovered</l> the main hero, his disguise is compromised. Enemies exchange information about your disguise when they come in contact with one another for any length of time.<br>
-<tab>-<sp> If an enemy finds a body without a uniform, then the uniform of the neutralized character becomes suspect. If an enemy who has examined such a body sees the player wearing the stolen uniform, his status will immediately change to hostile.<br> 
-
-<br><br><tab><l="$back">BACK</l><br>
+Форма:<br><br>
+<tab>-<sp> Форму можно получить: <l="game:UI\Help\Infighting.txt">оглушив</l>, <l="game:UI\Help\cold_wepon.txt">задушив (Удавка/Хлороформ)</l>, или <l="game:UI\Help\fire_wepon.txt">застрелив</l> противника в голову (только на уровнях сложности 'Легкий' и 'Нормальный'). На уровне сложности 'Диверсант' переодеваться нельзя.<br> 
+<tab>-<sp> В форме офицера можно <l="game:UI\Help\menu.txt">отдавать приказы</l> некоторым рядовым.<br>
+<tab>-<sp> Один комплект формы можно носить в <l="game:UI\Help\invetory.txt">Рюкзаке.</l><br>
+<tab>-<sp> Если противник <l="game:UI\Help\alarm.txt">распознал</l> главного героя, после переодевания, то эта форма перестает быть пригодной. Информацию о засветившейся форме противники передают друг другу, когда находятся рядом.<br>
+<tab>-<sp> Если противник обнаружит тело без формы, тогда форма нейтрализованного персонажа перестает быть пригодной. Если противник, исследовавший тело обнаружит игрока (когда тот одет в форму жертвы), то он сразу перейдет в боевое состояние.<br> 
+<br><br><tab><l="$back">НАЗАД</l><br>

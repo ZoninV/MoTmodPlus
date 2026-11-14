@@ -2,38 +2,40 @@
   MissionText = 
   {
       --Mission text
-      Task_1                = " Get into the school";
-      Task_2                = " Get the files";
-      Task_3                = " Kill H. Himell";
-      Task_4                = " Kill A. Steinglitz";
-      Task_5                = " Leave the area";
-      Task_6                = " Lure A. Steinglitz out";
-      Message_2             = "Tasks have been updated";
-      Message_Docs          = "TAKE DOCUMENTS";
-      Message_3             = "Tasks have been changed";
-      Key_Name              = "Key to the safe";
-      Key_Door21            = "Key to the chief's office";
-      Key_Door20            = "Key to the office";
-      Docs_Student          = "ID";
-      Message_FireAlarm     = "RAISE FIRE ALARM";
-      Message_ReadInfo      = "READ THE LOG";
-      Message_ReportVisit   = "REPORT ARRIVAL";
-      Message_Alarm_1       = "The alarm has been raised..";
-      Message_Alarm_2       = "The alarm has been raised. The students are bring evacuated..";
-      Message_AlarmFinished = "Guards are standing down..";
-      Message_StopMove_1    = "Civilians are not allowed to pass here..";
-      Message_StopMove_2    = "You are not allowed to pass here..";
-      Message_StopMove_3    = "Only officers are allowed to enter this building..";
-      Message_StopMove_4    = "Only officers are allowed to enter this room..";
-      Message_StopMove_5    = "Only officers have access to the file room..";
-      Message_StopMove_6    = "Only officers or instructors are allowed to enter the library..";
-      Message_StopMove_7    = "Only instructors are allowed to pass here..";
-      Message_StopMove_8    = "Only officers are allowed to pass here..";
+      Task_1                = " Проникнуть в школу";
+      Task_2                = " Добыть картотеку";
+      Task_3                = " Уничтожить Г. Химелля";
+      Task_4                = " Уничтожить А. Шт-ца";
+      Task_5                = " Покинуть местность";
+      Task_6                = " Выманить А. Шт-ца";
+      Message_2             = "Задания обновлены";
+      Message_Docs          = "ВЗЯТЬ ДОКУМЕНТЫ";
+      Message_3             = "Задания изменены";
+      Key_Name              = "Ключ от сейфа";
+      Key_Door21            = "Ключ от кабинета начальника";
+      Key_Door20            = "Ключ от кабинета";
+      Docs_Student          = "Удостоверение учащегося";
+      Docs_Employee         = "Удостоверение сотрудника";
+      Docs_Resh             = "Удостоверение Реша";
+      Message_FireAlarm     = "СООБЩ. О ПОЖ. ТРЕВОГЕ";
+      Message_ReadInfo      = "ПРОЧИТАТЬ ЖУРНАЛ";
+      Message_ReportVisit   = "СООБЩИТЬ О ПРИБЫТИИ";
+      Message_Alarm_1       = "Поднята тревога.";
+      Message_Alarm_2       = "Поднята тревога. Учащиеся эвакуируются.";
+      Message_AlarmFinished = "Охрана успокоилась.";
+      Message_StopMove_1    = "Гражданские не могут пройти здесь.";
+      Message_StopMove_2    = "Вы не можете пройти здесь.";
+      Message_StopMove_3    = "Только офицеры могут пройти в это здание.";
+      Message_StopMove_4    = "Только офицеры могут попасть в эту комнату.";
+      Message_StopMove_5    = "Только офицеры имеют доступ в комнату с архивами.";
+      Message_StopMove_6    = "Только офицеры или инструкторы могут пройти в библиотеку.";
+      Message_StopMove_7    = "Только инструкторы могут пройти здесь.";
+      Message_StopMove_8    = "Только офицеры могут пройти здесь.";
   };
 
   function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_svalka" 1' );
 
   end;
 
@@ -43,7 +45,7 @@
      -- forlik System:SetVar('r_glow_r' , 2.0 );
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
-     System:SetVar( "r_farclip" , 5000 ); -- forlik
+     System:SetVar( "r_farclip" , 3000 ); -- forlik
      System:SetVar( "r_dofsky", 128 ); --forlik
 
      local player = Level.GetPlayer();
@@ -52,8 +54,9 @@
      end;
 
 
-     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "sounds\\music\\action_2.ogg");
-     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.5#sounds\\music\\action_5.ogg" );
+     Level.AddMusic (Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark5b.ogg");
+     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "#0.50#sounds\\music\\action_2.ogg");
+     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\roulet.ogg" );
 
      Level.SeifDoor     = Level.FindDoor( 'SEIF' );
      Level.SeifTrigger  = nil;
@@ -72,6 +75,14 @@
          Level.EnableItemPickup(backpack, true);
      end
 
+     --Liz Shaw
+     Entity.SetSkin(Level.FindVehicle('BL03'), 2);
+     Entity.SetSkin(Level.FindVehicle('BL05'), 2);
+     Entity.SetSkin(Level.FindVehicle('MER1'), 1);
+     Entity.SetSkin(Level.FindVehicle('MER2'), 1);
+     Entity.SetSkin(Level.FindVehicle('BMW1'), 1);
+     Entity.SetSkin(Level.FindVehicle('KB02'), 2);
+     Entity.SetSkin(Level.FindVehicle('KB03'), 3);
   end;
 
   function Level.OnSave()
@@ -91,12 +102,26 @@
         Stream.WriteInt(Level.StudentFormId[i]) ;
      end
 
+     Stream.WriteInt ( Level.EmployeeNumber );
+     for i = 1, Level.EmployeeNumber do
+        Stream.WriteInt(Level.EmployeeFormId[i]) ;
+     end
+
 	     Stream.WriteBool  (Level.ReadInfo);
      Stream.WriteInt   (Level.ReshFormId);
      Stream.WriteBool  (Level.AlarmCalled);
      Stream.WriteString(Level.ReshTriggerName);
      Stream.WriteBool  (Level.KilledGuardian);
      Level.OnSave_Common(); -- forlik
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end;
 
   function Level.OnLoad()
@@ -122,6 +147,13 @@
        Level.StudentFormId[i] = Stream.ReadInt() ;
     end
 
+    Level.EmployeeNumber = Stream.ReadInt();
+    Level.EmployeeFormId = {};
+
+    for i = 1, Level.EmployeeNumber do
+       Level.EmployeeFormId[i] = Stream.ReadInt() ;
+    end
+
     Level.ReadInfo        = Stream.ReadBool();
     Level.ReshFormId      = Stream.ReadInt();
     Level.AlarmCalled     = Stream.ReadBool();
@@ -129,7 +161,47 @@
     Level.KilledGuardian  = Stream.ReadBool();
 
     Level.OnLoad_Common(); -- forlik
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
     Level.OnFinishLoad();
+  end;
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_razvedshkola_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_razvedshkola_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
   end;
 
   function Level.SetDoorKey(door, key)
@@ -172,6 +244,9 @@
      Level.AddActionHandler( Level.AH_ACTOR_KILLED , "SBAN" , "OnKilledShturmbanfurer" );
      Level.AddActionHandler( Level.AH_ACTOR_KILLED , "GS99" , "OnKilledGuardian" );
      Level.AddActionHandler( Level.AH_ACTOR_HITTED , "GS99" , "OnKilledGuardian" );
+     Level.AddActionHandler( Level.AH_ENTER_VEHICLE , "MER1" , "OnMer1Enter" );
+     Level.AddActionHandler( Level.AH_ENTER_VEHICLE , "MER2" , "OnMer2Enter" );
+     Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH , "HNCL" , "OnRadistClothChange" );
 
      Level.AddActionHandler( Level.AH_CHANGE_CLOTH );
      Level.AddActionHandler( Level.AH_PLAYER_INVENTORY );
@@ -262,10 +337,24 @@
      local resh = Level.FindActor( 'GO23' );
      Level.ReshFormId = Actor.GetWearFormId( resh );
 
+     if (resh != nil) then
+        local docs = Level.CreateItem( "Custom" , "Equipment" );
+        if ( docs != nil ) then
+
+           Entity.SetUniqueID( docs, 'RDOC' );
+
+           Level.SetCustomItemName( docs, MissionText.Docs_Resh );
+           Level.SetCustomItemIcon( docs, "ammo_doc" );
+     
+           Actor.PutPouch( resh, Actor.GetEmptyPouch(resh), docs );
+        end
+     end
+
      local studentUID = { 'GO17', 'GO18', 'GO19', 
                           'GO13', 'GO14', 'GO11', 'GO26',
                           'GO27', 'GO28', 'GO29',
-                          'GO30', 'GO31', 'GO32' };
+                          'GO30', 'GO31', 'GO32', 'GO33',
+                          'GO35' };
 
      Level.StudentFormId = {};
      Level.StudentNumber = table.getn(studentUID);
@@ -294,6 +383,41 @@
        else
            print("Error. Student " .. studentUID[i] .. " is not founded");
            Level.StudentsFormId[i] = nil;
+       end
+     end
+
+     local employeeUID = { 'GO24', 'GO02', 'GO03',
+                          'GO06', 'ZO07', 'GO09',
+                          'GO10', 'GO12', 'GO15',
+                          'GO16', 'GO20', 'GO21', 'GO22' };
+
+     Level.EmployeeFormId = {};
+     Level.EmployeeNumber = table.getn(employeeUID);
+
+     for i = 1, Level.EmployeeNumber do
+       local employee = Level.FindActor( employeeUID[i] );
+
+       if (employee != nil) then
+          local docs = Level.CreateItem( "Custom" , "Equipment" );
+          if ( docs != nil ) then
+
+              Entity.SetUniqueID( docs, 'EDOC' );
+
+              Level.SetCustomItemName( docs, MissionText.Docs_Employee );
+              Level.SetCustomItemIcon( docs, "ammo_doc" );
+     
+              Actor.PutPouch( employee, Actor.GetEmptyPouch(employee), docs );
+          end
+
+           Level.EmployeeFormId[i] = Actor.GetWearFormId( employee );
+   
+           if (Level.EmployeeFormId[i] == nil) then
+              print("Error. Employee " .. employeeUID[i] .. " can't get wear form id");
+           end
+
+       else
+           print("Error. Employee " .. employeeUID[i] .. " is not founded");
+           Level.EmployeesFormId[i] = nil;
        end
      end
 
@@ -347,6 +471,7 @@
 
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
      Level.OnFinishLoad();
+     Level.AutoSave();
   end;
 
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
@@ -361,6 +486,9 @@
             Level.AddLargeMessage( MissionText.Message_3 , 15.0 , 255, 255, 255 );
             Level.AddMissionTask( MissionText.Task_5, 'LEAV', "levels\\razvedshkola\\leav_task.txt" );
 
+        end
+        if (task == 'KART') then
+            Level.InstallSingleDpc("Level.AutoSave()", 0.1);
         end
   end
 
@@ -396,11 +524,13 @@
 
        if ( Level.IsMissionTaskCompleted('RAZV') == false ) then
 
+           Level.PlayMenuSound("task_finish"); -- Liz Shaw
            Level.CompleteMissionTask('RAZV' , 15.0 );
 
            Level.EnableLevelMark( 'RAZ1', false );
            Level.EnableLevelMark( 'RAZ2', false );
            Level.EnableLevelMark( 'RAZ3', false );
+           Level.AutoSave();
 
        end;
 
@@ -412,6 +542,7 @@
             Level.IsMissionTaskCompleted('KIL1') and
             Level.IsMissionTaskCompleted('KIL2') ) then
 
+          Level.PlayMenuSound("task_finish"); -- Liz Shaw
           Level.CompleteMissionTask( 'LEAV' , 15.0 );
 
        end;
@@ -431,8 +562,10 @@
      end;
 
      Level.CheckLeaveTask('KIL1');
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask( 'KIL1' , 15.0 );
      Level.EnableLevelMark( 'KIL1' , false );
+     Level.AutoSave();
   end;
 
   function Level.OnKilledShturmbanfurer()
@@ -444,9 +577,11 @@
      Level.UninstallReshTask();
 
      Level.CheckLeaveTask('KIL2');
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask( 'KIL2' , 15.0 );
      Level.EnableLevelMark( 'KIL2' , false );
      Level.EnableLevelMark( 'INS1', false );
+     Level.AutoSave();
   end;
 
   function Level.IsPlayerStudent()
@@ -473,6 +608,32 @@
       end;
 
       return Actor.HasCustomEquipment( player, 'SDOC' );
+  end;
+
+  function Level.IsPlayerEmployee()
+      local player = Level.GetPlayer();
+      if ( player == nil ) then
+         return false;
+      end;
+
+      local playerFormId = Actor.GetWearFormId( player );
+
+      if (Level.EmployeeNumber == nil) then
+         return false;
+      end
+
+      for i = 1, Level.EmployeeNumber do
+          if (playerFormId == Level.EmployeeFormId[i]) then
+             return true;
+          end
+      end
+
+      local form = Actor.GetActorType(player);
+      if (form != Actor.ACTOR_TYPE_OFFICER) then 
+         return false;
+      end;
+
+      return Actor.HasCustomEquipment( player, 'EDOC' );
   end;
 
   function Level.IsPlayerInstructor()
@@ -607,7 +768,8 @@
 
         if (form == Actor.ACTOR_TYPE_OFFICER or
             Level.IsPlayerInstructor() or 
-            Level.IsPlayerStudent()) then
+            Level.IsPlayerStudent() or
+            Level.IsPlayerEmployee()) then
            return false;
         else
            return true;
@@ -816,6 +978,9 @@
 
        AI.RunScriptTask(npc, "scripts:job\\AnchorJob.lua", AI.LOGIC_DEFAULT, properties);
     end
+    if (actorId == 'GS99') then
+       Level.InstallSingleDpc("Level.AutoSave()", 0.1);
+    end
   end
 
   function Level.DoAnchor2(actorId, anchorUID_1, anchorUID_2)
@@ -826,6 +991,9 @@
        Level.SetValue(properties, "CustomString_2", anchorUID_2);
                                                    
        AI.RunScriptTask(npc, "scripts:job\\AnchorJob2.lua", AI.LOGIC_DEFAULT, properties);
+    end
+    if (actorId == 'GS99') then
+       Level.InstallSingleDpc("Level.AutoSave()", 0.1);
     end
   end
 
@@ -921,4 +1089,60 @@ end
 --------------------------------------------------------
 function Level.OnCalcRateScore(rank, score, levelStats, aiStats, a, c, p, n, acc)
    return rank, score;
+end
+
+--------------------------------------------------------
+-- Name: Level.OnStartPlayerCustomAnim()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnStartPlayerCustomAnim( animId )
+  
+   if ( animId == 'GDOC' ) then
+        Level.PlayCustomAnimSound( 'GetDocsSound' );
+   end;
+       
+end;
+
+---------------------------------------------------------
+-- Name: Level.OnMer1Enter()
+-- MoTmod Addon
+-- Liz Shaw
+---------------------------------------------------------
+function Level.OnMer1Enter()
+  local officer = AI.FindNPC('GO02');
+  local driver = AI.FindNPC('GS67');
+  if (officer != nil) then
+    AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "GO02", Actor.ACTOR_TYPE_OFFICER);
+  end
+  if (driver != nil) then
+    AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "GS67", Actor.ACTOR_TYPE_OFFICER);
+    AI.HandleVoice(driver, "male_ger_ohers_postoroniy");
+  end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnMer2Enter()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnMer2Enter()
+  local driver = AI.FindNPC('GS01');
+  if (driver != nil) then
+    AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "GS01", Actor.ACTOR_TYPE_OFFICER);
+  end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnRadistClothChange()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnRadistClothChange()
+  local player = Level.GetPlayer();
+  if (player != nil) then
+    Actor.EnableMesh(player, "sabg_equipment_up", false);
+    Actor.EnableMesh(player, "sabg_equipment_down", false);
+    Actor.EnableMesh(player, "mesh_helmet", false);
+  end
 end

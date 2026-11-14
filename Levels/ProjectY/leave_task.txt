@@ -1,1 +1,1 @@
-<tab>Get to the exit.<br>
+<tab>Добраться до выхода.<br>

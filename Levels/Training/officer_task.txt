@@ -1,1 +1,8 @@
-<tab>Officer:<br><br>-<sp> To access the building you need an officer's uniform.<br>-<sp> Stun an officer in the next building, marked on the map as an icon showing a man with a service cap on.<br>-<sp> Change into the officer's uniform.<br>-<sp> Take the officer's documents away.<br>
+<tab>Офицер:<br><br>
+-<sp> Чтобы попасть в здание, нужна форма офицера.<br>
+-<sp> Оглушите офицера в соседнем здании, обозначенном на карте иконкой с изображением человека в фуражке.<br>
+-<sp> Подойдите к охраннику на входе и проверьте, пропустит ли он вас.<br>
+-<sp> Найдите запасную форму пехотинца и переоденьтесь в нее.<br>
+-<sp> В форме пехотинца подойдите к охраннику и пройдите обыск, чтобы войти в здание.<br>
+-<sp> Переоденьтесь в форму офицера.<br>
+-<sp> Заберите документы у офицера.<br>

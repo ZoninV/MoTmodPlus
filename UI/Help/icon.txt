@@ -1,15 +1,8 @@
-Icons:<br><br>
+Иконки:<br><br>
 <img=hud_eye,bot,100,5><br><br>
-
-<tab>-<sp> If the "Eye" icon is displayed, at least one enemy can currently see you. Be careful: try not to perform any suspicious actions! If the enemy begins to suspect you, <l="game:UI\Help\bar.txt">your danger scale</l> will start to increase.<br>
-
-
+<tab>-<sp> Иконка глаза означает, что как минимум один противник видит вас в данный момент. Будьте внимательны: постарайтесь не совершать подозрительных действий! Если враг подозревает вас, <l="game:UI\Help\bar.txt">шкала опасности</l> начнет расти.<br>
 <img=icon_warn,bot,100,5><br><br>
-
-<tab>-<sp> An "Exclamation mark" icon means that your current actions may lead to your discovery as an enemy.<br>
-
+<tab>-<sp> Иконка восклицательного знака означает, что ваши текущие действия могут повлечь за собой распознавание в вас врага.<br>
 <img=icon_rup,bot,100,5><br><br>
-
-<tab>-<sp> The "Megaphone" icon means that guards are about to raise the alarm.<br>
-
-<br><br><tab><l="$back">BACK</l><br>
+<tab>-<sp> Иконка рупора означает, что охрана собирается поднять тревогу.<br>
+<br><br><tab><l="$back">НАЗАД</l><br>

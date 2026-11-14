@@ -1,5 +1,309 @@
-Update 1.11 from 22.12.2010
----------------------------
+Update 1.16+ from 12.11.2026 [tested on russian GOG versions] (Wunder)
+----------------------------------------------------------------------
+
+The problematic mod files from v1.16 (briefing, Equipment, strings) have been translated into Russian.
+Cyrillic fonts have been restored.
+The issues with converting scripts containing Cyrillic characters to shadvs stemmed from an incorrect script encoding (UTF-8). Therefore, ALL scripts were successfully converted again, first to ANSI (CP1251) and then to shadvs.
+The story mode of both game campaigns has been restored - missions are unlocked sequentially as the game progresses. Now MoT starts seamlessly after the end of the original game.
+ALL cutscenes from both game companies have been restored with the correct field of view for widescreen monitors.
+The cutscenes from the original game have been fully ported to the MoT game engine.
+The 3D model of Strogov's head (from MoT) has been transferred to the cutscenes of the original game (this was the most challenging to implement, as we had to create a new hybrid 3D model of the head compatible with the old 3D model of Strogov's body and redraw the textures).
+The mission loading screens feature a visually appealing Russian-language title positioned right in the center of the screen.
+Video files: intro-1.vid - Haggard, intro-2.vid - DtS.
+You can assign the middle and both side buttons of the mouse (MB3, MB4, MB5).
+The "Holster Weapon" function has become "Holster / Draw Last Weapon" (convenient to assign to the middle mouse button, like in Hitman).
+Two new (customizable) keys have been added for quick actions – "Change Clothes" ('T') and "Pick Up Body" ('B').
+The mouse wheel zooms the map in the Briefing and the mini-map during free movement (instead of changing the stance).
+The +/- keys adjust the camera distance from the character in increments directly in the game. The range of distance values is moved closer to the character (as in Hitman).
+The restriction on the use of >2GB of memory by the game engine has been removed (eliminates crashes due to memory leaks when reloading levels).
+Full support for high-resolution widescreen monitors [21:9] in the HUD (the basic 800x600 interface frame has been replaced with coefficients and adaptive mathematics).
+Correct font scaling at any screen resolution.
+High-quality voice acting for Russian-speaking male and female NPCs (replacing the Tarapunka and Shtepsel characters from forlik).
+The environment alarm for taking out the Garrotte and Chloroform has been disabled (as in Hitman).
+A small round map in the lower-right corner of the screen (the size is the same as the vehicle speedometer).
+The default control key profile is the same as in Hitman.
+After throwing a Knife, the next Knife or other bladed weapon is immediately drawn.
+The 'ACTIONS' label at the top of the Actions Menu has been removed (HUD has been redrawn).
+'Walk' mode is set as the default instead of 'Run'.
+The "-profile name" key in the shortcut properties eliminates the need to select a player profile.
+Screen anti-aliasing 6x (an experimental feature of old ATi cards) has been replaced with universal 8x.
+Fixed the selection of incorrect color depth when loading a level and resetting the resolution to 800*600 when changing graphics settings on non-standard resolutions (16:6).
+The useless minimap has been replaced with a truly useful, functional Compass featuring target markers that take into account the elevation of the targets.
+New fast unpacker and packer of game resources into VFS format with Zlib compression support (Death to Spies .vfs Packer & Extractor v2.0).
+
+
+Update 1.16 from 18.05.2025 (Liz Shaw)
+--------------------------------------
+
+Fixed several reactions for the "GuardRoomNear" zone in Polish Surprise, and removed a typo in the relevant StopMove script.
+Fixed a mistake where the folder "Sabouter" located in the Players folder was changed back to "Saboteur" when packaging v15.0 of the Addon as a result of migrating my work to a newer computer.
+The Heer winter officer now has six different skins representing different ranks, and the uniform is now 100% complete, thanks to Ivan The Belarussian and Fra30ahg2r.
+With the new winter officer skins, I've changed Paul Weber's rank from Generalfeldmarschall to Generalleutnant, and the objective description text where you have to collect the layouts from him has been modified to accommodate this (Winter Cold).
+With changes to the winter officer's belt buckle, I've removed the NormalMap for the default Heer winter officer uniform and reset it back to the original base game NormalMap.
+The officer addressing his troops on the streets has now been reverted back to a winter officer, and now uses the new Feldgendarmerie skin created by Ivan The Belarussian (Die Spies!).
+SS collar runes have been removed from all RSHA skins.
+New NormalMap textures for the warden in Stronghold and the sniper in White Head.
+The warden in Stronghold has now been promoted from Untersturmfuhrer (Lieutenant) to Sturmbannfuhrer (Major).
+Gestapo detectives now have their sunglasses meshes disabled via the SWDs of Stronghold and White Head instead of the LUAs of those missions.
+Clerks in Stronghold no longer carry silenced Lugers, and silenced Lugers have now been removed from one of Stronghold's equipment pack entries.
+Removed the unused equipment pack entry "GermanOfficerSmoke" (a Walther P38 with one magazine and bizarrely a smoke bomb) from Stronghold's SWD.
+Removed the unused equipment pack entry "sniper" from White Head's SWD (in the final vanilla build of White Head, the sniper has placed his rifle and magazine beside him while he has a nap, and has a Walther P38 equipped instead).
+Polyakov no longer talks to himself when he's called in to the interrogation room to get a berating from the officer (Stronghold).
+Collar rank insignia has been improved on most Waffen-SS skins, thanks to Ivan The Belarussian. Unteroffizier skins now have their own NormalMaps instead of using the default one.
+Waffen-SS drivers and radio operators now have their own sleeve patches, thanks to Ivan The Belarussian.
+SS-Totenkopfverbande NormalMaps now have the proper sleeve eagles rendered, taken from Ivan's Waffen-SS skins.
+The soldier who works on the end of the train now has his back turned on Saboteur difficulty as part of his job, giving players enough time to neutralize or sneak past him on the way to the end goal (Winter Cold).
+The soldier who has a smoke in the room with the open window now shuts the door when he heads back to the adjacent room, so the other soldier guarding the room doesn't see you climbing through the window (Polish Surprise).
+All radio operators whose original Actor Template was "GermanYellow" at launch of MoT now have their equipment and helmet meshes disabled via the SWD of Polish Surprise instead of the LUA.
+Fixed a bug where the construction worker standing in front of the renovated house doesn't properly engage in conversation with the policeman (Shefferd).
+All OSS agents now properly use the "male_usa_guards" ConfLogic (Dora).
+The diplomat no longer reopens his room door after locking it when he leaves (Hotel).
+Removed a spare K98k, a spare MP40 and a spare Stielhandgranate from the train station area in Eight Snipers.
+Some sleeping mechanics no longer carry K98k and MP40 magazines on their bodies (Eight Snipers).
+Removed the equipment pack entry "RifleBullets" from Eight Snipers' SWD.
+The soldier who guards the entrance to the base of the second tower will now periodically step inside on Saboteur difficulty (Eight Snipers).
+The soldier who uses one of the radios on the second floor of the eighth tower on Saboteur difficulty now periodically gets up to look at the farthest propaganda poster in the room, so he doesn't hear you opening the door to the roof (Eight Snipers).
+More NPCs no longer freeze at inopportune moments or when you're a certain distance away from them in Winter Cold and Eight Snipers.
+All of the cabinets in Tsavalov's kitchen will no longer turn invisible when viewed through the windows from outside (Shefferd).
+Changed the timer for the pool area zones to reset after showing the guest card to the guard to match those of the other zones disabled by the card (Hotel).
+Smoke bombs have now been removed from Embassy's equipment loadout - they were only there prior to the revamping of Embassy's zones because it was the only way to go to the top floors on Saboteur difficulty without raising the alarm.
+Removed some unnecessary extra spaces in the VCH briefing for Renegades.
+Project Y has now been fully revamped.
+Some posters from Shefferd have been added in some rooms in Project Y, and there are now new American propaganda posters (reskinned from the German ones) throughout the mission as well.
+All American uniforms have been reskinned courtesy of Ivan The Belarussian.
+The unteroffizier who loiters outside the house near the train station on Easy difficulty now has his "AI_GuardOnStrangeSound" property disabled so he doesn't go into search mode when you open the door to said house (Eight Snipers).
+
+
+Update 1.15 from 30.04.2023 (Liz Shaw)
+--------------------------------------
+
+The property "AI_CanLookPlayer" has been implemented for all NPCs in Jagdpanther, Winter Cold, Stronghold, Paycheck and Eight Snipers.
+Dietrich Meltzer's logic has been changed from 5 ("GoalMan") to 8 ("PassiveEnemy") so his "AI_CanLookPlayer" property works properly (Jagdpanther).
+Civilians whose jobs were changed in MoTmod Addon v14.0 should now face their default direction if they moved for whatever reason (Winter Cold).
+All peasants in Paycheck now have the "AI_CanGoAside" property.
+All wardens in Removal now have a duplicate of the property "AI_DontRelaxAfterAlert" removed.
+The mission tips in Removal and Embassy now appear only on Easy difficulty.
+Some workers in the barracks area have been reverted back to soldiers (Lightning).
+The subtitles for the informer's message to Strogov in White Head have been split into two parts, so the full text can be viewed properly on all players' monitors.
+Fixed a bug where the fireplaces in some of the guest rooms in Hotel fail to load their texture if you set your language for non-Unicode programs to Russian.
+Fixed a typo in the tip about identifying different uniforms in Training.
+A table in one of the tents no longer clips through to the point where a small portion of it is seen from outside (Training).
+Katyusha now plays on a radio in the bunker, in the room where you have to take out the radio operator (Training).
+All lockers in the seventh tower now have Wehrmacht uniforms inside them instead of SS ones (Eight Snipers).
+Some NPCs no longer freeze at inopportune moments or when you're a certain distance away from them in Winter Cold, Stronghold, Paycheck, Project Y, Eight Snipers, White Head and Renegades.
+Did a cleanup of Renegades' SWD - got rid of all traces of the now-deprecated AI Form "Soldier" and fixed a bug with one of the tankmen still having this from registered as his AI Body Form.
+Fixed a bug which causes an FBI agent having a drink in the main hall of Tsavalov's house to drop dead as if you poisoned him if you poison Ivan Melnik's wine in White Head and then at any time afterwards play Shefferd in the same game session - the bug is a result of unused poisoning triggers present in Shefferd's SWD file.
+The sniper in White Head will no longer "discover" any bodies inside his shed, causing him to raise the alarm even though he's supposed to be sleeping for the entire mission.
+Actor "WHeadSpy" will now engage in conversation with British civilian Actors.
+The soldiers who guard the top entrances to the final towers will now periodically step away from their posts on Saboteur difficulty to make crossing the bridge and entering the towers in front of them easier (Eight Snipers).
+The guards inside the sixth tower will now have different jobs on Saboteur difficulty, to make it easier to non-lethally take out the sniper on top of that tower (Eight Snipers).
+The guard and officer standing outside the final tower have their "AI_GuardOnStrangeSound" properties disabled so they don't cause problems on Saboteur difficulty when you punch the sniper on top of that tower (Eight Snipers).
+Hotel and Embassy have been fully revamped.
+There are now new paintings in Hotel and Embassy, most of which are real ones made by British artists, except for one painting, which is Peter Breughel the Elder's "The Hunters in the Snow".
+muz_ger_6 has again been replaced, this time with the US version of muz1_ger_loop, while the UK version of muz1_ger_loop (Alte Kameraden) is now part of the MoTmod Addon.
+Fixed a bug where attempting to change into an RKKA infantry soldier's uniform causes the game to crash - the model of Strogov wearing said uniform was never put in the addon folder for some reason.
+Fixed several spacing issues in various mission objective texts in MoT missions, the difficulty description texts, and at least one tip in Training for those who play on higher screen resolutions.
+The steam engine in Eight Snipers now has its original DtS textures rather than the edited MoT textures made specifically for the steam engine in Renegades. Additionally, the uncensored tar wagon texture from the same train has now been properly implemented to the model.
+The worker who has his back turned to the three dynamite points on Easy difficulty no longer floats while doing so (Eight Snipers).
+Actor "Madam_1" has been renamed to "Madam01" as is her original actor name in DtS' Actors.shadvs file.
+The startup.shad file has been modified to remove an extra video from being played on startup, to prevent any potential problems trying to run the addon on the Steam version of MoT. I may make a custom video to replace the third video in the future.
+
+
+Update 1.14 from 08.07.2019 (Liz Shaw)
+--------------------------------------
+
+A chess board in the billiard room no longer floats above the table (Polish Surprise).
+Fixed a bug where two carpet pieces have sunk into the floor in Stronghold.
+The barbed wire obstacle has now been raised slightly to fix an infamous MoTmod bug (Training).
+Waffen SS soldiers now have different helmet decals and cap symbols. Textures courtesy of Altered-beast.
+The two Mechanized Infantry soldiers standing next to the Sdkfz-251 near the bunker now speak to each other (Jagdpanther).
+All NPCs in Jagdpanther now have their AlertDecamouflageLevels set to "0" (used in DtS so an NPC becomes hostile to a certain rank of disguise after an alarm is raised).
+Changed the positions and jobs of some civilians in Winter Cold.
+All doors in Winter Cold now automatically close after a few seconds, provided there's no Actor standing next to them.
+The NPC "GermanSoldier104" no longer carries MP40 cartridges on his body (Eight Snipers).
+The radio operator at the start of Lightning now has an AI Form of "IgnoreSoldier", to prevent an error message from popping up in the console when starting the mission. He also can no longer be ordered to follow you around when dressed as an officer.
+Fixed a bug where a response Anchor was given to the wrong soldier (White Head).
+The uniforms of NPCs "GermanSoldier59" and "GermanSoldier64" are now properly registered as enlisted-rank disguises (White Head).
+Renamed several Actors and removed all clones who were previously created to fit certain entity names in various SWD files (except for those created by forlik for the main MoTmod).
+The two peasants moving between fishing spots on the riverbank should now have a chance to engage in conversation (Paycheck).
+There are now less NPCs talking to themselves in Training, Jagdpanther, Winter Cold, Stronghold, Paycheck and Eight Snipers.
+The NPC "GermanSoldier144" now carries a Walther P38 instead of an MP40 - this is because the MP40 doesn't align properly with his body when he performs the "Act_Posilka_DedSit_NPT" animation as part of his job on Saboteur difficulty (Lightning).
+NPCs who use the animation "Act_Posilka_DedSit" no longer stare at the player when they approach them, and have a limited vision radius - this animation was used by neutral characters in DtS, so it was never given the same treatment as the MoT-exclusive "Act_Posilka_DedSit_NPT".
+RSHA and SS-Totenkopfverbande soldiers now have different helmet decals. Textures courtesy of Altered-beast.
+All NPCs in Training, Jagdpanther, Winter Cold, Stronghold, Paycheck and Eight Snipers now have their "AI_GuardRadius" properties changed to their default state (the GuardRoom and GuardRadius properties are made redundant in MoT missions with the implementation of the zones system).
+All NPCs whose original Actor Template was "GermanFrau" at launch of DtS now have a duplicate of the property "AI_CanGoAside" removed in all DtS missions.
+The unteroffizier guarding the room where you can obtain poison has been moved to the right-hand side of the doorway to prevent him from skirting around the FictDoor position just to unlock the door and back again to his post (Paycheck).
+The alert job of NPC "GermanSoldier102" has also been repositioned for the same reasons (Paycheck).
+Added new conditions to some of Paycheck's StopMove scripts to prevent drivers and radio operators from being marked on the minimap every time you trigger them after you've let the guard unlock the door to the room with the poison and after you've killed Meyer-Mader, respectively.
+Added new brushes in Stronghold, Eight Snipers and Lightning.
+You can now hear the radio Meyer-Mader uses short-circuiting when he tries to use it after you sabotage it (Paycheck).
+AA gun crews should now have StopMoveDynamic reactions for the AA gun you can deliver blank munitions to for all non-AA gun soldiers (Lightning).
+Removed two now-deprecated reactions and fixed one reaction in King's Riddle's zones.shadvs file.
+Fixed some bugs in White Head's zones.shadvs file by changing all duplicated reaction entries.
+Training and Stronghold have been fully revamped.
+The only thing that really needed revamping for Training was the final objective, but in addition to adding zones, I've added extra tasks required to complete said objective and extra tips. In addition, I adjusted some existing tips to explain mechanics introduced in MoT.
+In addition to adding zones and different NPC jobs depending on difficulty in Stronghold, there are now two accident scenarios, a distraction for the warden, plenty of Heil Hitler triggers, most guards in the prison will now carry keys to the cells, and they will also carry cell block access passes.
+The cell block access passes are only necessary for soldiers and sub-officers. The furthest cell blocks are off-limits to them, however. I added three spare passes lying around in some rooms, too, and some sub-officers throughout the castle will carry them.
+Revamped the way the guards respond to Polyakov's escape - when they see him, they'll immediately rush to the nearest alarm box to call the alert - just like in Shefferd if the FBI agents discover Tsavalov when you escort him back to the starting point.
+
+
+Update 1.13 from 20.02.2017 (Liz Shaw)
+--------------------------------------
+
+Some waypoints have been modified for the new jobs in Winter Cold and Eight Snipers.
+The soldier sitting on a chair in the corner facing the stairs to the second floor of the eighth tower now uses one of the radios on Saboteur difficulty (Eight Snipers).
+Strogov now does some custom animations for certain interactions in DtS missions.
+Changed "Restore spawn direction" for NPC "GermanSoldier_74" from "1" to "0" (Stronghold).
+The fight theme in Winter Cold has been replaced with "alt_loops.rhythm1_alt" from the extracted Halo PC files (credited as "Peril" from Halo: Combat Evolved OST).
+The default and fight themes in Die Spies! have been replaced with those used in the Death to Spies 3 Demo.
+Paycheck has now been fully revamped.
+Replaced a couple more British and American voice files.
+The two sets of spare clothes in Die Spies! no longer levitate.
+Added three driveable motorbikes in Eight Snipers, but beware - you'll risk an alert if you hop on some of them in front of their owners.
+Fixed a bug where some models and textures will fail to load if you set your language for non-Unicode programs to Russian.
+The archives chief no longer smokes (Embassy).
+Heer workers now have their Actor type changed from "Officer" to "Soldier". This is so soldiers don't salute you while dressed as a worker in Jagdpanther and Eight Snipers, and to eliminate a potential exploit in Die Spies!.
+Changed the sitting animations for the officer who's wine you can poison and Richter's bodyguard when you turn on the projector. It's unlikely the models will ever be adapted to MoT skeleton now (White Head).
+
+
+Update 1.12 from 14.02.2016 (Liz Shaw)
+--------------------------------------
+
+Replaced some American voice clips with Marine and Crewman dialogue from Halo PC. In addition, a couple of Desperados voice clips have been replaced.
+Male British and American civilians now scream whenever they get shot at (Crewman dialogue from Halo PC used). Americans have extra voice clips from the new "aaa" set, in which they say "Yikes!".
+Did some more polishing with the Heer Engineering and Infantry, Luftwaffe Ground Troop and RSHA uniform textures.
+New Kriegsmarine propaganda posters can be found in King's Riddle.
+New posters can be found in Stronghold, Removal and Polish Surprise.
+New posters aimed at Soviet volunteers can be found in Paycheck.
+New Vichy French propaganda posters can be found in White Head.
+Replaced some British voice clips with Average Jack, Critic and Maiden dialogue from The Dark Mod. Some Hitman: Contracts voice clips have been replaced.
+Recolored the shoes on one of the Hotel guard textures. Also adjusted the skin tone on the new guard faces to better match the rest of their head.
+The behavior of two civilians in Hotel has been modified so they are no longer neutral.
+The civilian working in the generator room and the cleaner with the key to the traitor's room are now hostile to you while you're dressed as a civilian (Hotel).
+All guards in and around the swimming pool now have keys to the empty locker room and the civilian sitting outside the locker rooms no longer has a key (Hotel).
+One of the civilians standing outside the traitor's room no longer has the key to it, and it has been given to the traitor instead (Hotel).
+The new diplomat suits now have different colored ties (Embassy).
+The targets in Die Spies! now have their breast eagles moved to the center of the pocket. Shading courtesy of Dark Mod forum member STiFU.
+A copy of Mein Kampf can be found in one of the houses in Winter Cold.
+New books can be found in Die Spies! and Polish Surprise. In addition, most open books in all German missions have been reskinned.
+Clocks and most maps found in nearly all German missions have been reskinned.
+The traitor now carries a silenced Nagant instead of a TT-33 (Hotel).
+The cook now carries a silenced Luger instead of a Walther P38. In addition, I removed the command to change the doctor's gun from the LUA and added it to the SWD instead (Removal).
+All riflemen in every nearly every German mission now carry KM-42 knives. This also applies to soldiers who use the sniper variant of the K98k. This reflects the fact that the knives were used as bayonets for the K98k.
+All tower sentries in Lightning now carry the sniper variant of the K98k.
+There are now more German soldiers carrying rifles in Winter Cold and White Head.
+The waiter loitering in the dining hall no longer behaves like a soldier (White Head).
+The doctor in Renegades no longer behaves like a soldier.
+The helferin working in the office on the third floor no longer behaves like a soldier (King's Riddle).
+The cook in Removal no longer behaves like a soldier.
+The babushka who gives you the whereabouts of the courier now gives you a German uniform on Easy, Normal and Hard difficulties and a silenced Mosin Nagant on Saboteur difficulty (Winter Cold).
+The snipers in Eight Snipers and Removal now carry Gewehr magazines on their bodies.
+Replaced some American voice clips with Civilian and Trooper dialogue from Halo: Reach. More clips have been replaced.
+Getting inside the two Mercedes Benz cars in Die Spies! will now cause their respective owners to turn hostile.
+Hopping on the BMW at the start of Paycheck will now cause its owners to turn hostile.
+Peasant clothes can now be found inside the building with the three soldiers standing outside in Winter Cold. In addition, the soldier who faces the doorway of the building now steps out to check on the digging peasant instead of the soldier facing to the north-west.
+A cook's outfit can now be found inside one of the warehouses in Removal.
+New disguises can now be found in Stronghold - Gestapo officer, worker and clerk (the last one is currently useless, however).
+There are now two disguises you can select from Stronghold's equipment loadout, the aforementioned worker and clerk disguises.
+Equipment loadouts have now been added to Hotel, Project Y and Embassy. To keep consistency, no guns have been added to the loadouts for Hotel and Embassy, and the only guns you can bring in Project Y are pistols.
+Thanks to the new equipment loadout, it's now possible to complete Embassy without being detected on Saboteur difficulty.
+Most people inside the cyclotron room are no longer hostile to you while dressed as a scientist, making Project Y fully compatible on Saboteur difficulty.
+The two OSS agents standing near the entrance gate now speak to each other, carry High Standard HDMs and use American voice clips (Dora).
+All armed NPCs in Dora now carry a single magazine for their respective weapons.
+Some guards who have previously been standing guard in the corridors have now been moved elsewhere, and there are now workers and clerks in Stronghold.
+Heil Hitler scripts are now triggered when dressed in all officer types (Lightning).
+An extra truck can now be found near the main gate in Jagdpanther on Saboteur difficulty.
+Spare clothes can now be found lying around the village near washboards - two peasant clothes, four soldier uniforms and one unteroffizier uniform. In addition, a radio operator's uniform can now be found in the main building (Paycheck).
+Two new disguises can be found in Die Spies! - signal communications soldier and cook (both are currently of Soldier rank, however).
+Three spare clothes - mechanic, worker and signal communications soldier - can now be found on some beds throughout Eight Snipers.
+You can now bring German backpacks with you in all German DtS missions on Easy, Normal and Hard difficulties.
+There are now plenty of voiced NPC interactions throughout all DtS missions.
+A couple of Feldgendarmerie soldiers near the trucks in Removal have been replaced with drivers, and the unteroffizier standing near the field kitchens is now a cook.
+New mission tips now show up in Renegades on Easy difficulty.
+There's now a truck parked outside the warehouse where I placed the cook's clothes in Removal, and there are also a pile of boxes on the ground nearby, two of which you can pick up (currently, it doesn't do anything).
+Winter soldier's helmet now has a different decal - I made it long ago and forgot to add it to the folder.
+The folder "Saboteur" located in the Players folder has been renamed "Sabouter" for those who copy the folders that contain the files rather than manually copying the files themselves.
+You can now give orders to most of the sailors on the docks when dressed as an officer (King's Riddle).
+A truck has been moved slightly to the left so it doesn't get in the way of a nearby soldier's patrol route (Lightning).
+The waiter standing outside the entrance to the staff area is now a construction worker (Hotel).
+Extended the cutscene which triggers when you overload the generator, so you can hear the whole radio message sound in-game (King's Riddle).
+Two Mercedes Benz cars parked outside the gate at Bletchley Park have now been replaced with Ford 1936 ones, like the ones inside (Dora).
+New propaganda posters can be found in Dora.
+New passzones have been added in White Head. You must now find a driver's uniform in order to use the truck.
+Approaching the driver having a smoke outside the chateau's main entrance will now trigger him to move to the shed with the sniper to have a smoke break there (White Head).
+The waiter can now only poison Melnik's wine. The cinematographer can now poison Richter's wine and the wine in the third floor main hall (White Head).
+The informer now speaks French instead of Russian. I finally figured out how to extend both the cutscene and the informer's speaking animation to match the length of the new voice recording (White Head).
+The stairs connecting the billiard room to the room with the open window is now part of the "FirstFloorWest" passzone (Polish Surprise).
+Added a global passzone in Polish Surprise. This is so that people can now be suspicious of you while dressed as the commander in the outdoor area.
+MoT-style passzones have now been added in Winter Cold and Eight Snipers.
+Added more voiced NPC interactions throughout all DtS missions.
+The two drunk Nazis in the wine cellar at the start of Stronghold now use three new voice clips from Iron Storm.
+Expanded the casual British lines. New voice clips from The Dark Mod.
+Fixed a bug where "male_ger_casual_casual_08" didn't have any volume control.
+The two pairs of Feldgendarmerie soldiers standing next to their respective motorbikes now properly speak to each other (Jagdpanther).
+Fixed a bug in King's Riddle where changing out of the captain's uniform and then changing back into it resets the disguise to its default skin.
+A soldier standing guard at a corner in the first floor corridors is now a clerk, and has been moved to the second floor (Stronghold).
+The peasants working in the field now properly speak to each other (Paycheck).
+The chatting babushka sitting on the bench in the area Nikolayev hangs around now properly speaks (Renegades).
+HiArmyMM triggers have now been added in Winter Cold and Eight Snipers (soldiers guarding doors will now salute you when you pass by them dressed as an officer).
+A motorbike at the start of Eight Snipers has now been lowered and you can no longer use it.
+A worker who was previously a soldier guarding the corridor leading to the prison entrance and moved to a nearby empty dining hall now moves about while sweeping (Stronghold).
+The patrolling soldiers outside the main gate of the camp should now be properly following their leader - this is because there were two officers with the NPC ID 'GO09'. The patrol officer's ID is now 'DO09' (Removal).
+The truck with the nearby unloaded crates has been moved slightly forward, because it was in the way of some waypoints linked to the soldiers moving the crates to the nearby cellar. A barrel in said cellar has also been rearranged so it doesn't clash with the crates being set down (Renegades).
+Fixed a bug where one of the cryptographers was stuck to his chair and therefore couldn't perform the tasks he was supposed to perform on Hard difficulty (Dora).
+New jobs and anchors have been implemented in Winter Cold and Eight Snipers - expect different NPC activities depending on difficulty.
+The soldiers guarding the babka and the courier will now be suspicious of you in an officer's uniform when you enter their territory (Winter Cold).
+A soldier patrolling the lower walkways has now been moved to the basement of the eighth tower, is now a signals soldier, and has been assigned to guard the stairs leading up to the ground floor. New ZoneTrigger and HiArmyMM script added to accomodate the change (Eight Snipers).
+You can now order the worker facing the three dynamite points to go somewhere else when you're dressed as a senior mechanic (Normal and Hard difficulties only). Approaching the worker when you're not dressed as a senior mechanic will give out a hint message and mark the senior mechanics on the minimap (Eight Snipers).
+A kubelwagen in Eight Snipers can no longer be used.
+
+
+Update addon 1.11 from 30.11.2014 (Liz Shaw)
+--------------------------------------------
+
+Shortened the interaction "EAVESDROP ON THE CONVERSATION" in the strings.shadvs file.
+Replaced the German backpack in Eight Snipers and King's Riddle with a Soviet one on Saboteur difficulty.
+Did some polishing and redesigning for Waffen SS, RSHA, SS-Totenkopfverbande and Luftwaffe uniform textures.
+New Kriegsmarine uniform textures courtesy of Dark Mod forum member XendroX.
+New recolored helmet courtesy of XendroX.
+Germans now have a chance of saying Wario's infamous quote from Mario Party.
+Added two new whistle sounds taken from the DtS3 Demo.
+German backpacks have been removed from the equipment loadout for missions which have them on Saboteur difficulty. In addition, you are now forced to carry a Soviet backpack in Polish Surprise on Saboteur difficulty.
+Winter officer's belt buckle has been changed from an SS to a Heer one.
+Warden uniforms in Removal have been recolored courtesy of XendroX.
+The targets in Die Spies! now have their belt buckle changed. Their uniforms have also been recolored courtesy of XendroX.
+Did some further polishing for Waffen SS, RSHA, SS-Totenkopfverbande and Luftwaffe uniform textures. Also made new NormalMap textures for them.
+Several characters in Stronghold have been given a different skin.
+Rerecorded the VCH briefings for DtS missions with a Blue Yeti microphone.
+
+
+Update addon 1.10 from 06.07.2013 (Liz Shaw)
+--------------------------------------------
+
+Some Russian and German voice files have been replaced with ones from Iron Storm.
+Female Soviet peasants now say something when they notice a body.
+Fixed a bug where reloading a save resets all vehicles in some missions to their default skin.
+Changed the sentence of a hint in White Head.
+Shortened the interactions "CUT THE POWER TO THE HALL" and "CUT THE POWER TO THE CLASSROOM" in King's Riddle, "PLANT THE DISCREDITING EVIDENCE" in Dora and "EAVESDROP ON THE CONVERSATION" in Polish Surprise.
+New motorbike skin in Polish Surprise.
+A dismantled truck in Eight Snipers has been reskinned.
+Did some polishing with the Heer Engineering and Infantry, Waffen SS, RSHA and SS-Totenkopfverbande uniform textures.
+Did some polishing with the winter officer's uniform in Winter Cold.
+Some pain sounds have been replaced.
+The targets in Renegades have different colored epaulettes. Nikolaev's color is now black (technical services), Shestakov's is crimson (infantry). Starikov's color hasn't changed, but replaced the crossed cannon barrels with a tank.
+Made some changes to the equipment loadout of most DtS missions. Strogov's knives in DtS missions are now NR-43 knives instead of KM-42 ones.
+DtS missions have a different equipment loadout on Saboteur difficulty - including silenced Luger.
+Most American officers in Project Y no longer wear caps.
+New Luftwaffe propaganda posters can be found in Lightning.
+All DtS missions now have VCH briefings complete with voice-overs (English only). Remade the VCH briefing voice-over for Jagdpanther (previous attempt was recorded from an mp3 player).
+Some drivers, workers and mechanics in Die Spies!, Eight Snipers and Lightning now carry pistols instead of rifles.
+Revamped the passzones in Renegades. Soldiers from the rank of sergeant up will be suspicious of you when dressed in your standard camouflage. In addition, these soldiers will no longer take orders when dressed as an officer.
+The main menu LUA has been modified so that the music is a bit quieter. This is so that you will hear my DtS VCH recordings more easily.
+The credits have been updated. I am on the lookout for an expert on WWII uniforms.
+
+
+Update 1.11 from 22.12.2010 (forlik)
+------------------------------------
 
 Update 1.11 corrects errors and adds enhancements to "Jagdpanther" mission.
 
@@ -7,8 +311,8 @@ To install the update just copy files from archive to the game folder with
 file replacing and run MoTmod.clean.bat.
 
 
-Update 1.10 from 3.07.2010
---------------------------
+Update 1.10 from 3.07.2010 (forlik)
+-----------------------------------
 
 Update 1.10 adds "Jagdpanther" mission based on "Cannibal".
 This update includes all previous updates.
@@ -17,8 +321,8 @@ To install the update just copy files from archive to the game folder with
 file replacing.
 
 
-Update 1.02 from 14.01.2010
----------------------------
+Update 1.02 from 14.01.2010 (forlik)
+------------------------------------
 
 Update 1.02 corrects error with level rating calculation (all DtS missions),
 woman's voice (mission "Hotel") and adds two enemy soldiers to the soldier near
@@ -28,8 +332,8 @@ To install the update just copy files from archive to the game folder with
 file replacing.
 
 
-Update 1.01 from 3.11.2009
---------------------------
+Update 1.01 from 3.11.2009 (forlik)
+-----------------------------------
 
 Update 1.01 corrects errors with officers (mission "Paychek"), traitor's voice
 (missions "Hotel", "Embassy" and "White Head"), scientist's voice (mission
@@ -40,8 +344,8 @@ To install the update just copy files from archive to the game folder with
 file replacing.
 
 
-MoTmod 1.00 from 23.10.2009
----------------------------
+MoTmod 1.00 from 23.10.2009 (forlik)
+------------------------------------
 
 Version 1.00 contains 18 missions (incl. training) on the MoT engine. Some
 models from DtS missions are replaced by MoT models. Cinematics are disabled
@@ -54,18 +358,19 @@ Warning! Demo version (0.8b) resources are not compatible with version 1.00.
 
 Installation steps:
 
-1. Unpack the resources of both games (DtS and MoT) using vfsTool.exe
+1. Unpack the resources of both games (DtS and MoT) using vfsTool.exe (or vfsTool2.exe)
 2. Copy unpacked DtS resources to MoT folder without file replacing
 3. Unpack MoTmod core files and copy them to MoT folder with file replacing
 4. Unpack MoTmod additions (english translations, etc.) and copy them to MoT
    folder with file replacing
 5. Delete (moving to another folder is recomended) packed MoT resources
    (8 vfs-files)
-6. Run the game and create a new profile
+6. Run installation script MoTmod+.cmd (it will patch the largest SWD files, the game executable, and delete tmp files)
+7. Pack the resources folders separately back to .vfs using vfsTool2.exe
+8. Run the game and create a new profile
 
-Step#4 is optional.
-
-On the mod site (http://motmod.at.tut.by) you can find detailed screenshots of
-the installation process.
+Step#4 & #6 is optional.
 
 (Ñ) forlik, 2008-2010
+(C)	Liz Shaw, 2013-2025
+(C) Wunder, 2026

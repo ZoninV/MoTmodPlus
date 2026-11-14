@@ -1,2 +1,2 @@
-<tab>Find and capture Colonel Dietrich Meltzer. According to available reports he is going to inspect technical premises, located in the base. The premises which he can presumably examine are marked on the map. It makes sense to use the truck to hide the body and take it quietly out from the base.<br>
+<tab>Найти и похитить полковника Дитриха Мельтцера. По нашим данным, он сегодня должен производить инспекцию складов. Склады, которые он может предположительно обходить, помечены на карте. Можно воспользоваться грузовиком, чтобы спрятать тело и незаметно вывезти его.<br>
 <img=yazik_small,bot,40,5><br>

@@ -1,1 +1,4 @@
-<tab>Danger scale:<br><br>- The scale at the top of the screen displays the total danger points of your actions. The more points you have the higher is your risk of failure. If the enemy begins to see or hear you, your actions will arouse his suspicion, and your total amount of danger points will increase.<br>
+<tab>Шкала опасности:<br><br>
+- Шкала в верхней части экрана показывает суммарную величину опасности ваших действий по отношению к врагам.<br>
+Чем больше эта шкала, тем выше вероятность вашего провала.<br>
+Если вы начинаете быть видны или слышны противнику или ваши действия будут казаться подозрительными - шкала начнет расти.<br>

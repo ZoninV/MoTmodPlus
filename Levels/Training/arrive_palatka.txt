@@ -1,1 +1,5 @@
-<tab>Access the tent:<br><br>-<sp> Access the tent shown on the map without being noticed by the guards.<br>-<sp> Throw backpack away.<br>-<sp>Examine items inside the tent.<br>-<sp> If you are noticed, your mission will fail.<br>
+<tab>Добраться до палатки:<br><br>
+-<sp> Незаметно для охраны, пробраться в палатку указанную на карте.<br>
+-<sp> Выбросить Рюкзак.<br>
+-<sp> Осмотреть предметы в палатке.<br>
+-<sp> Если вас заметят - задание провалено.<br>

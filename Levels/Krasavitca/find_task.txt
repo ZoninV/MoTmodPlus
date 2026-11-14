@@ -1,2 +1,7 @@
-<tab>Find Captain Boris Polyakov from Military Intelligence. He should be in one of the prison cells located in the basement of the castle.<br>
-- It will be easier to sneak inside the prison after acquiring a warden's uniform. (Red mark)<br>- A warden can visit a prisoner only once he has acquired an access permit signed by the Gestapo investigator SS-Sturmbannfьhrer Reinhard Roerich. (Green mark)<br>- To take the prisoner for interrogation, the warden must transfer special papers to the officer in charge of the guards. The papers can be taken from SS-Sturmbannfьhrer Jьrgen Goldschmidt. (Blue mark)<br><br>Boris Polyakov's photo:<br><br><img=foto_2,bot,60,0><br>
+<tab>Отыскать капитана разведки Бориса Полякова. Он должен находиться в одной из камер тюрьмы, расположенной в подземелье замка.<br>
+- Проникнуть на территорию тюрьмы будет проще добыв форму коменданта. (Красная метка)<br>
+- Комендант может пройти к заключенному имея соответствующее разрешение на допуск от следователя Гестапо Штурмбаннфюрера СС Рейнхарда Рериха. (Зеленая метка)<br>
+- Заключенного могут вызвать на допрос. Для этого комендант должен передать бумаги офицеру охраны. Бумаги можно взять у Штурмбаннфюрера СС Юргена Гольдшмита. (Синяя метка)<br>
+<br>
+Фото Бориса Полякова:
+<br><br><img=foto_2,bot,60,0><br>

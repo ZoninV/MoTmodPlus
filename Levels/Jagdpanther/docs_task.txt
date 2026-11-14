@@ -1,1 +1,1 @@
-<tab>Obtain the documentation of the SPA's test result. The documents are most likely in the safe in the office of Colonel Dietrich Melzter. His office is located on the second floor in the main building. The key should be in the Colonel's pocket.<br>
+<tab>Завладеть документацией по результатам испытания САУ. Вероятнее всего они находятся в сейфе в кабинете полковника Дитриха Мельтцера. Его кабинет находится на втором этаже в главном здании. Ключ от сейфа должен быть у полковника.<br>

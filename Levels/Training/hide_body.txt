@@ -1,1 +1,5 @@
-<tab>Hide the guard's body:<br><br>-<sp> Lift up the guard's body and hide it in an open box.<br>-<sp> The right mouse button can be used to drop the body in the box.<br>-<sp> Be careful, as a strong impact may be fatal.<br>-<sp> The left mouse button serves to carefull lay the body down.<br>
+<tab>Спрятать тело охранника:<br><br>
+-<sp> Поднять тело охранника и спрятать его в открытый ящик броском ('ПКМ') со спины.<br>
+-<sp> Правая кнопка мыши - бросок тела.<br>
+-<sp> Будьте аккуратны - сильный удар о землю может привести к летальному исходу.<br>
+-<sp> Левая кнопка мыши (или 'B')  - бесшумно положить тело.<br>

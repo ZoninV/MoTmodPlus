@@ -2,42 +2,42 @@
   MissionText = 
   {
       --Mission text
-      Message_Move              = "FOLLOW ME";
-      Message_Stop              = "WAIT HERE";
-      Message_Read              = "CHECK RECORDS";
-      Task_Find                 = " Find the informer";
-      Task_GetOut               = " Liberate the agent";
-      Fail_Killed               = "The informer has been killed";
-      Message_StopMove1         = "You cannot get into the depot..";
-      Message_StopMove2         = "Only for officers..";
-      Message_StopMove3         = "A permit is required to get into the camp..";
-      Message_StopMove4         = "You have no access to the camp..";
-      Message_StopMove5         = "You cannot leave the territory with the prisoner..";
-      Message_EnterAlarm        = "Guards are standing down..";
-      Message_BaseAlarm         = "The alarm has been raised. Guards are on high alert..";
-      Message_CampAlarm         = "The alarm has been raised. Some prisoners have been condemned to death";
-      Message_AlarmFinished     = "Guards are standing down..";
-      Message_PrisonerAreaLeave = "You cannot leave this territory with the prisoner.. Change your uniform";
-      Message_PrisonerCampLeave = "You cannot leave the territory with the prisoner";
-      Message_PrisonerWaitThink = "Come back for the informer";
-      Message_3                 = "Tasks have been changed";
-      Message_TestHelp          = {
-                                    "Panic among the prisoners will not raise the alarm";
-                                    "The doctor can carry any prisoner to the aid post for a medical examination";
-                                    "The guards are not concerned about the fate of the prisoners";
-                                    "All the guards on the territory surrounding the prisoners' barracks have permits";
-                                    "A warden can take a prisoner to carry out work on the territory of the prison camp";
-                                    "An alarm at the camp can result in some of the prisoners being executed";
-                                    "The doctor can move around the camp";
-                                    "Most parts of the camp territory are controlled by snipers located in the watchtowers";
-                                    "The wire fence surrounding the barracks is an electric fence.";
+      Message_Move              = "ИДЕМ";
+      Message_Stop              = "ЖДИ ЗДЕСЬ";
+      Message_Read              = "ПОСМОТРЕТЬ ЗАПИСИ";
+      Task_Find                 = " Найти осведомителя";
+      Task_GetOut               = " Освободить агента";
+      Fail_Killed               = "Осведомитель убит";
+      Message_StopMove1         = "Вы не можете пройти на территорию склада.";
+      Message_StopMove2         = "Только для офицеров.";
+      Message_StopMove3         = "Необходим пропуск чтобы попасть на территорию лагеря.";
+      Message_StopMove4         = "У вас нету доступа на территорию лагеря.";
+      Message_StopMove5         = "Вы не можете покинуть территорию с заключенным.";
+      Message_EnterAlarm        = "Поднята тревога.";
+      Message_BaseAlarm         = "Поднята тревога. Охрана стала более подозрительна.";
+      Message_CampAlarm         = "Поднята тревога. Некоторые заключенные приговоренны к смерти.";
+      Message_AlarmFinished     = "Охрана успокоилась.";
+      Message_PrisonerAreaLeave = "Вы не можете покинуть эту территорию с заключенным. Смените форму.";
+      Message_PrisonerCampLeave = "Вы не можете покинуть территорию с заключенным.";
+      Message_PrisonerWaitThink = "Вернитесь за осведомителем.";
+      Message_3                 = "Задания изменены";
+      Message_Help              = {
+                                    "Паника заключенных не приведет к тревоге.";
+                                    "Врач может увести любого заключенного в медпункт на обследование.";
+                                    "Смерть заключенных не беспокоит охрану.";
+                                    "Все охранники на территории бараков с заключенными имеют пропуск.";
+                                    "Надзиратель может уводить заключеннго на работы на территории лагеря.";
+                                    "Тревога на территории лагеря может привести к казни заключенных.";
+                                    "Врач может передвигаться на территории лагеря.";
+                                    "Большая часть территории лагеря контролируется снайперами на вышках.";
+                                    "Сетка, окружающяя бараки, находится под напряжением.";
                                   };
-      Docs_Pass                 = "PERMIT";
+      Docs_Pass                 = "ПРОПУСК";
   };
 
   function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_lubyanka" 14' );
 
   end;
 
@@ -71,6 +71,15 @@
        end
      end
      Level.OnSave_Common(); -- forlik
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
   end
 
   function Level.OnLoad()
@@ -107,9 +116,49 @@
      end
 
      Level.OnLoad_Common(); -- forlik
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
      Level.OnFinishLoad();
 
   end
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_izyatie_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_izyatie_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
+
+  end;
 
   function Level.OnFinishLoad()
 
@@ -118,7 +167,7 @@
      -- forlik System:SetVar( "r_glow_r", 2.0 );
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
-     System:SetVar( "r_farclip" , 5000 ); -- forlik
+     System:SetVar( "r_farclip" , 3000 ); -- forlik
      System:SetVar( "r_dofsky", 128 ); --forlik
 
      --- init music
@@ -126,15 +175,11 @@
 --     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "sounds\\music\\action_2.ogg");
 --     Level.AddMusic( Level.MUSIC_MOOD_ACTION      , "sounds\\music\\action_1.ogg" );
 
-     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "sounds\\music\\action_2.ogg");
-     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "sounds\\music\\action_4.ogg" );
-
+     Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\ambiento.ogg");
+     Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "#0.50#sounds\\music\\action_2.ogg");
+     Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\b_action2.ogg" );
 
      Level.RaulActor     = Level.FindActor('RAUL');
-
-     if ( Level.RaulActor != nil ) then
-        Actor.EnableHitFace( Level.RaulActor, true );
-     end;
 
      Level.GetoTrigger = Level.FindTrigger( 'GetoTrigger' );
 
@@ -159,6 +204,8 @@
      Level.AddActionHandler( Level.AH_ACTOR_HITTED ,      "RAUL" , "OnHitedRaul");
      Level.AddActionHandler( Level.AH_FOLLOW_WAIT_THINK , "RAUL" , "OnFollowWaitThink");
 
+     Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH , "COOK" , "OnCookClothChange");
+
      Level.AddActionHandler( Level.AH_CHANGE_CLOTH );
      Level.AddActionHandler( Level.AH_PLAYER_INVENTORY );
 
@@ -169,6 +216,10 @@
      Level.PassMarksDisabled = false;
 
      Level.DecamouflageStatus = {};
+
+     if (Level.GetDifficulty() != 3) then
+       Level.EnableLevelMark('COOK', true);
+     end;
 
      local player     = Level.FindActor('PLYR');
      if ( player != nil ) then
@@ -218,10 +269,15 @@
 
      end;
 
-      Level.AddTimer( 'DRTR', "OnDinnerTimer", 400, true );
+       local boxes={ 'BOX1', 'BOX2', 'BOX3', 'BOX4', 'BOX5', 'BOX6', 'BOX7', 'BOX8', 'BOX9', 'BX10' };
+       for b in boxes do
+          local item = Level.FindItem( boxes[b] );
+          if ( item != nil ) then
+             Level.EnableItemPickup( item, false );
+          end;       
+       end;
 
-      -- Only for test...
-      Level.AddTimer( 'STHL', "OnShowTestHelp", 200, true );
+      Level.AddTimer( 'DRTR', "OnDinnerTimer", 400, true );
 
       -- Set guard state to officer
       local officer = AI.FindNPC( 'GO08' );
@@ -312,6 +368,7 @@
 
       AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
       Level.OnFinishLoad();
+     Level.AutoSave();
   end;
 
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
@@ -335,7 +392,9 @@
 --         Level.AddLargeMessage( MissionText.Message_3 , 15.0 , 255, 255, 255 );
 --         Level.AddMissionTask( MissionText.Task_GetOut, 'GETO', "levels\\izyatie\\out_task.txt" );
 
+         Level.PlayMenuSound("task_finish"); -- Liz Shaw
          Level.CompleteMissionTask('FIND', 15.0 );
+         Level.AutoSave();
       end
   end
 
@@ -381,11 +440,13 @@
 
         if ( completed != false ) then
            if ( Level.IsMissionTaskCompleted('FIND') == false ) then
+             Level.PlayMenuSound("task_finish"); -- Liz Shaw
              Level.CompleteMissionTask('FIND', 15.0 );
              Level.EnableLevelMark( 'DOCS', false );
            end;
 
            Level.EnableLevelMark( 'RAUL', false );
+           Level.PlayMenuSound("task_finish"); -- Liz Shaw
            Level.CompleteMissionTask('GETO', 15.0 );
         else
           if ( Level.TimerInstalled == false ) then
@@ -417,11 +478,13 @@
       if ( Trigger.IsIntersectNode( Level.GetoTrigger, Entity.GetNode( Level.RaulActor ) ) == true ) then
 
           if ( Level.IsMissionTaskCompleted('FIND') == false ) then
+             Level.PlayMenuSound("task_finish"); -- Liz Shaw
              Level.CompleteMissionTask('FIND', 15.0 );
              Level.EnableLevelMark( 'DOCS', false );
           end;
 
           Level.EnableLevelMark( 'RAUL', false );
+          Level.PlayMenuSound("task_finish"); -- Liz Shaw
           Level.CompleteMissionTask('GETO', 15.0 );
           Level.RemoveTimer( 'CHEK' );
           Level.TimerInstalled = false;
@@ -546,9 +609,11 @@
   function Level.OnActorPlayerAction( actionId )
 
     if ( Level.IsMissionTaskCompleted('FIND') == false and Level.IsMissionFailed() == false ) then
+          Level.PlayMenuSound("task_finish"); -- Liz Shaw
           Level.CompleteMissionTask('FIND', 15.0 );
           Level.EnableLevelMark( 'DOCS', false );
           Level.EnableLevelMark( 'RAUL', false );
+          Level.AutoSave();
     end;
 
     if ( actionId == 'MOVE' ) then
@@ -961,20 +1026,6 @@
      return false
   end
 
-  function Level.OnShowTestHelp()
-
-     if (Random() < 0.4) then
-
-        local index = AI.RandomSample(table.getn(MissionText.Message_TestHelp), 1, false);
-
-        if (index != nil) then
-           local msg = MissionText.Message_TestHelp[ index ];
-           Level.AddSmallMessage( msg, 10.0, 255, 255, 255 );
-        end
-
-     end
-  end
-
   function Level.DisablePassMarks()
       if (Level.PassMarksDisabled == false) then
          Level.PassMarksDisabled = true;
@@ -1053,4 +1104,14 @@ end
 --------------------------------------------------------
 function Level.OnCalcRateScore(rank, score, levelStats, aiStats, a, c, p, n, acc)
    return rank, score;
+end
+
+--------------------------------------------------------
+-- Name: Level.OnCookClothChange()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnCookClothChange()
+  Level.EnableLevelMark('COOK', false);
+  Level.RemoveActionHandler(Level.AH_FINISH_CHANGECLOTH, 'COOK');
 end

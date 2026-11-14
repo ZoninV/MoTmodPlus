@@ -1,21 +1,17 @@
-INFORMATION:<br><br>
-
-Controls:<br><br>
-<tab><l="game:UI\Help\menu.txt">Action menu</l><br><br>
-<tab><l="game:UI\Help\motions.txt">Player movements</l><br><br>
-<tab><l="game:UI\Help\invetory.txt">Inventory</l><br><br>
-<tab><l="game:UI\Help\cars.txt">Transport vehicles </l><br><br>
-<tab><l="game:UI\Help\wepon.txt">Weapons</l><br><br>
-<tab><l="game:UI\Help\spy_staff.txt">Auxiliary equipment </l><br><br>
-
-Game:<br><br>
-
-<tab><l="game:UI\Help\brif.txt">Briefing</l><br><br>
-<tab><l="game:UI\Help\map.txt">Vector map</l><br><br>
-<tab><l="game:UI\Help\bar.txt">Danger scale </l><br><br> 
-<tab><l="game:UI\Help\for.txt">Uniform</l><br><br>
-<tab><l="game:UI\Help\alarm.txt">Discovery</l><br><br>
-<tab><l="game:UI\Help\icon.txt">Icons</l><br><br>
-
-<tab><l="game:UI\Help\tactic.txt">Tactics</l><br><br>
-<tab><l="game:UI\Help\enemy.txt">Enemies</l><br><br>
+ИНФОРМАЦИЯ:<br><br>
+Управление:<br><br>
+<tab><l="game:UI\Help\menu.txt">Меню действий</l><br><br>
+<tab><l="game:UI\Help\motions.txt">Движения игрока</l><br><br>
+<tab><l="game:UI\Help\invetory.txt">Инвентарь</l><br><br>
+<tab><l="game:UI\Help\cars.txt">Транспортные средства</l><br><br>
+<tab><l="game:UI\Help\wepon.txt">Оружие</l><br><br>
+<tab><l="game:UI\Help\spy_staff.txt">Вспомогательное оборудование</l><br><br>
+Игра:<br><br>
+<tab><l="game:UI\Help\brif.txt">Брифинг</l><br><br>
+<tab><l="game:UI\Help\map.txt">Векторная карта</l><br><br>
+<tab><l="game:UI\Help\bar.txt">Шкала опасности</l><br><br> 
+<tab><l="game:UI\Help\for.txt">Форма</l><br><br>
+<tab><l="game:UI\Help\alarm.txt">Распознавание</l><br><br>
+<tab><l="game:UI\Help\icon.txt">Иконки</l><br><br>
+<tab><l="game:UI\Help\tactic.txt">Тактические приемы</l><br><br>
+<tab><l="game:UI\Help\enemy.txt">Противники</l><br><br>

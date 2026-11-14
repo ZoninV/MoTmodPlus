@@ -1,14 +1,11 @@
-<col=400000>HF Radio Message</col><br><br>
-
-To: Agent Zolotnitsky<br>
-Urgent!<br><br>
-
-<tab>It has been reported that 
-a meeting between Gestapo Standartenfьhrer Gerd Richter and our courier Ivan Melnik will soon take place in 'Chateau de Limothe,' a southern Parisian suburb in the 'Perigord' province.<br>
-
-<tab>Our informant suspects that the courier is preparing to defect to the enemy, which would result in critical information about our network in Paris falling into enemy hands.<br>
-<tab>It is of the utmost importance that we ascertain the facts of the situation. Upon completion of your mission, you are to file a report within three hours, identifying all agents
-or groups that may be involved. If, over the course of your mission, you are able to confirm our informant's story, then you are to immediately carry out a 
-'Black Operation': neutralize the defector, then report.<br>
-<tab>In any case, communicate without delay the results of your investigation.<br>
-<br><tab>Smirnov. <br>
+<col=400000>Записка по "ВЧ"</col><br><br>
+Золотницкому!<br>
+Срочно!<br><br>
+<tab>"По поступившим сведеньям в ближайшее время в предместье 'Chateau de Limothe', которое расположено южнее Парижа, в провинции 'Perigord' будет
+организованна встреча Штандартенфюрера гестапо Герда Рихтера и нашего связного Ивана Мельника.<br>
+<tab>Источник подозревает, что связной собирается перекинуться и сдать информацию по нашей сети в Париже.<br>
+<tab>Необходимо -  сконцентрировать сбор информации относительно выше сказанного, в течении трех часов передать информацию по агентам
+или группам которые могут быть задействованы по всем вариантам, в случае, если информация подтвердится  немедленно подготовить
+вариант по пункту 'Черные операции' и доложить мне.<br>
+<tab>О результатах сбора информации  докладывать незамедлительно.<br>
+<br><tab>Смирнов." <br>

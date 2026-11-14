@@ -2,27 +2,36 @@
   MissionText = 
   {
       --Mission text
-      Task_1                = " Plant the dynamite";
-      Task_2                = " Plant the dynamite";
-      Task_3                = " Kill the snipers";
-      Task_4                = " Leave the area";
-      Message_DynSetuped    = "Dynamite has been planted";
-      Message_TaskChanged   = "Tasks have been updated";
-      Message_Sniper        = "An enemy sniper has spotted you..";
-      Message_SniperLost    = "The sniper has lost sight of you..";
-      Message_KillSniper    = "The sniper has been neutralized";
-      Message_SetupDynamite = "PLANT DYNAMITE";
-      Message_NoDynamite    = "You have no dynamite..";
-      Message_StopMove_1    = "Only officers are allowed to pass through this part of the building..";
-      Message_StopMove_3    = "Soldiers have no business being here..";
-      Message_Alarm         = "The alarm has been raised. Guards are on high alert..";
-      Message_AlarmFinished = "Guards are standing down..";
-      Message_Escape        = "You've got %02d:%02d to get out of the area";
+      Task_1                = " Установить динамит";
+      Task_2                = " Установить динамит";
+      Task_3                = " Нейтрализовать снайперов";
+      Task_4                = " Покинуть местность";
+
+      Message_DynSetuped    = "Динамит установлен";
+      Message_TaskChanged   = "Задания обновлены";
+      Message_Sniper        = "Вас обнаружил вражеский снайпер.";
+      Message_SniperLost    = "Снайпер потерял вас из виду.";
+      Message_KillSniper    = "Снайпер нейтрализован";
+      Message_OrderWorker   = "ОТДАТЬ НОВЫЙ ПРИКАЗ";
+      Message_SetupDynamite = "УСТ. ДИНАМИТ";
+      Message_NoDynamite    = "У вас нету динамита.";
+
+      Message_MechanicHint  = "Старший механик может отдавать приказы рабочим.";
+
+      Message_Alarm         = "Поднята тревога. Охрана стала более внимательна.";
+      Message_AlarmFinished = "Охрана успокоилась.";
+      Message_Escape        = "У вас осталось %02d:%02d времени, чтобы покинуть местность";
+
+      -- Liz Shaw
+      MM_StopMove_FGS = "@ Полевой жандармерии здесь не место!";
+      MM_StopMove_Tower = "@ Вам здесь нечего делать!";
+      MM_StopMove_Building = "@ Сюда допускаются только связисты!";
+      MM_StopMove_Ladder = "@ Пользоваться лестницами могут только механики!";
   };
      
   function Level.OnCompleteMission()
 
-      System:ConsoleCommand( 'l_loadlevel "gamemenu" 1' ); -- forlik
+      System:ConsoleCommand( 'l_loadlevel "rolik_bridge" 1' );
 
   end;
 
@@ -41,10 +50,22 @@
       Stream.WriteBool( Level.SniperComplete );
       Stream.WriteInt( Level.SniperKilled );
 
+      Stream.WriteString( Level.OrderWorkerTriggerName ); -- Liz Shaw
+      Stream.WriteBool  ( Level.KilledWorker ); -- Liz Shaw
+
       for i = 1, 8 do
           Stream.WriteBool( Level.SniperKilledList[i] );
       end
       Level.OnSave_Common(); -- forlik
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+        Level.PendingAutoSaveSlot = nil;
+     end;
+     if (Level.AutoSaveSlot == nil) then
+        Stream.WriteInt( 0 );
+     else
+        Stream.WriteInt( Level.AutoSaveSlot );
+     end;
 
   end;
 
@@ -65,13 +86,56 @@
       Level.SniperComplete   = Stream.ReadBool();
       Level.SniperKilled     = Stream.ReadInt();
 
+      Level.OrderWorkerTriggerName = Stream.ReadString(); -- Liz Shaw
+      Level.KilledWorker     = Stream.ReadBool(); -- Liz Shaw
+
       Level.SniperKilledList = {};
       for i = 1, 8 do
           Level.SniperKilledList[i] = Stream.ReadBool( );
       end
 
       Level.OnLoad_Common(); -- forlik
+     Level.AutoSaveSlot = Stream.ReadInt();
+     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
+        Level.AutoSaveSlot = 0;
+     end;
       Level.OnFinishLoad();
+
+  end;
+
+  function Level.AutoSave()
+
+     if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     local nextSlot = 0;
+     if (Level.AutoSaveSlot != nil) then
+        nextSlot = Level.AutoSaveSlot + 1;
+        if (nextSlot > 2) then
+           nextSlot = 0;
+        end;
+     end;
+
+     Level.PendingAutoSaveSlot = nextSlot;
+     System:SaveGame( "_svalka_" .. tostring(nextSlot) .. ".asv" , false );
+     if (Level.PendingAutoSaveSlot != nil) then
+        Level.PendingAutoSaveSlot = nil;
+        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
+     end;
+
+  end;
+
+  function Level.OnFailedMissionHandle()
+
+     local slot = Level.AutoSaveSlot;
+     if (slot == nil or slot < 0 or slot > 2) then
+        slot = 0;
+     end;
+
+     System:LoadGame( "_svalka_" .. tostring(slot) .. ".asv" , true );
+
+     return true;
 
   end;
 
@@ -79,7 +143,7 @@
 
       Level.OnFinishLoad_Common(); -- forlik
       Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
-      System:SetVar( "r_farclip" , 5000 ); -- forlik
+      System:SetVar( "r_farclip" , 3000 ); -- forlik
       System:SetVar( "r_dofsky", 128 ); --forlik
       System:SetVar( "r_shadowmapboxf" , 2.0 );
       -- forlik System:SetVar( "r_glow", true );
@@ -97,8 +161,9 @@
 --      Level.AddMusic( Level.MUSIC_MOOD_ATTENTION  , "sounds\\music\\danger.ogg" );
 --      Level.AddMusic( Level.MUSIC_MOOD_ACTION, "sounds\\music\\action_3.ogg"  );
 
-      Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "sounds\\music\\action_2.ogg");
-      Level.AddMusic( Level.MUSIC_MOOD_ACTION, "sounds\\music\\action_1.ogg" );
+      Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\b_dark3.ogg");
+      Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "#0.50#sounds\\music\\action_2.ogg");
+      Level.AddMusic( Level.MUSIC_MOOD_ACTION, "#0.50#sounds\\music\\b_action2.ogg" );
 
       -- patch
       local backpack = Level.FindContainer();
@@ -106,6 +171,12 @@
           Level.EnableItemPickup(backpack, true);
       end
 
+     --Liz Shaw
+     Entity.SetSkin(Level.FindVehicle('BMW1'), 1);
+     Entity.SetSkin(Level.FindVehicle('BMW2'), 6);
+     Entity.SetSkin(Level.FindVehicle('BMW3'), 1);
+     Entity.SetSkin(Level.FindVehicle('BMW4'), 7);
+     Entity.SetSkin(Level.FindVehicle('KB01'), 3);
   end;
 
   function Level.OnLoaded()
@@ -133,6 +204,13 @@
       Level.AddActionHandler( Level.AH_ACTOR_HITTED , "SNP6" , "OnKillSniper_6");
       Level.AddActionHandler( Level.AH_ACTOR_HITTED , "SNP7" , "OnKillSniper_7");
       Level.AddActionHandler( Level.AH_ACTOR_HITTED , "SNP8" , "OnKillSniper_8");
+
+      Level.AddActionHandler( Level.AH_ENTER_VEHICLE , "BMW3" , "OnBike1Enter");
+      Level.AddActionHandler( Level.AH_ENTER_VEHICLE , "BMW4" , "OnBike2Enter");
+
+      Level.AddActionHandler( Level.AH_ACTOR_KILLED , "GS80" , "OnKilledWorker" );
+      Level.AddActionHandler( Level.AH_ACTOR_HITTED , "GS80" , "OnKilledWorker" );
+      Level.AddActionHandler( Level.AH_FINISH_CHANGECLOTH , "HNCL" , "OnRadistClothChange");
 
       Actor.MarkAsTarget( Level.FindActor( 'SNP1' ) , true );
       Actor.MarkAsTarget( Level.FindActor( 'SNP2' ) , true );
@@ -167,6 +245,9 @@
       Level.DynamiteFused[5] = false;
       Level.DynamiteFused[6] = false;
 
+      Level.OrderWorkerTriggerName = ""; -- Liz Shaw
+      Level.KilledWorker = false; -- Liz Shaw
+
       Level.SniperTimer      = 0;
       Level.SniperNotice     = false;
       Level.SniperComplete   = false;
@@ -175,6 +256,23 @@
       for i = 1, 8 do
          Level.SniperKilledList[i] = false;
       end
+
+      if (Level.GetDifficulty() != 3) then
+        AI.SetJob(AI.FindNPC('G124'), "clean");
+      end;
+
+      local diff = Level.GetDifficulty();
+      if (diff == 1 or
+          diff == 2) then
+
+          Level.EnableLevelMark('ORDR', true);
+      end;
+
+      local diff = Level.GetDifficulty();
+      if (diff == 2) then
+
+          AI.SetForm(AI.FindNPC('MM90'), "HPSB");
+      end;
 
       local player     = Level.FindActor('PLYR');
       if ( player != nil ) then
@@ -225,6 +323,10 @@
 
       Level.ChangePlayerStand( 2 );
 
+      -- Liz Shaw
+      Level.EnableVehicleUse( 'BMW1', false );
+      Level.EnableVehicleUse( 'KB01', false );
+
 --[950.151917 84.409241 100.326996] -> [994.869385 197.546158 117.195946]
       AI.AddHideBodyBox(-1005.0, 176.0,  102.0, -798.0, 224.0,  219.0);
       AI.AddHideBodyBox(-1005.0, 176.0, -217.0, -798.0, 224.0, -101.0);
@@ -243,6 +345,7 @@
 
       AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
       Level.OnFinishLoad();
+     Level.AutoSave();
 
   end;
 
@@ -261,6 +364,7 @@
      Level.AddMissionTask( MissionText.Task_2, 'DYN2', "levels\\svalka\\dyn_2_task.txt" );
      Level.AddMissionTask( MissionText.Task_4, 'LEAV', "levels\\svalka\\leave_task.txt" );
 
+     Level.PlayMenuSound("task_finish"); -- Liz Shaw
      Level.CompleteMissionTask( 'SNPR', 15.0 );
      Level.AddLargeMessage( MissionText.Message_TaskChanged, 15.0, 255, 255, 255 );
  
@@ -287,6 +391,8 @@
      if ( pyn6 != nil ) then
          Level.EnableItemPickup( pyn6, false );
      end;
+
+     Level.AutoSave();
 
   end;
 
@@ -375,8 +481,11 @@
 
         Level.DynamiteFused[dynNumber] = true;
 
+        local saveCheckpoint = false;
         if ( dynNumber == 6 ) then
+          Level.PlayMenuSound("task_finish"); -- Liz Shaw
           Level.CompleteMissionTask( 'DYN2', 15.0 );
+          saveCheckpoint = true;
         else
 
           local completed = true;
@@ -390,8 +499,10 @@
 
           if ( completed == true ) then
              --Level.AddMissionTask( MissionText.Task_2, 'DYN2', "levels\\svalka\\dyn_2_task.txt" );
+             Level.PlayMenuSound("task_finish"); -- Liz Shaw
              Level.CompleteMissionTask('DYN1', 15.0 );
              --Level.AddLargeMessage( MissionText.TaskChanged, 15.0, 255, 255, 255 );
+             saveCheckpoint = true;
           end;
   
         end;
@@ -444,6 +555,9 @@
         Level.UnregisterTrigger( Level.DynamiteTrigger );
         Level.DynamiteTrigger = nil;
         Level.RemovePlayerAction("SDYN");
+        if ( saveCheckpoint == true ) then
+            Level.AutoSave();
+        end;
 
      end;
 
@@ -525,6 +639,7 @@
             Level.IsMissionTaskCompleted('DYN1') and
             Level.IsMissionTaskCompleted('DYN2') ) then
 
+             Level.PlayMenuSound("task_finish"); -- Liz Shaw
              Level.CompleteMissionTask('LEAV', 15.0 );
 
        end;
@@ -535,66 +650,40 @@
              Level.OnSniperNotice();
        end;
 
+    elseif ( trgname == 'MechanicHintTrigger') then
+
+       if ( (Level.GetDifficulty() == 1) and
+            (AI.GetPlayerForm() != "HMO1") and
+            AI.IsDefault(AI.FindNPC('GS80')) ) then
+         Level.AddSmallMessage( MissionText.Message_MechanicHint, 15.0 , 255, 255, 255 );
+         Actor.MarkAsTarget( Level.FindActor( 'GO01' ) , true );
+         Actor.MarkAsTarget( Level.FindActor( 'G105' ) , true );
+         Actor.MarkAsTarget( Level.FindActor( 'MM01' ) , true );
+         Actor.MarkAsTarget( Level.FindActor( 'GS73' ) , true );
+
+       else
+
+           if ( (Level.GetDifficulty() == 2) and
+                (AI.GetPlayerForm() != "HMO1") and
+                AI.IsDefault(AI.FindNPC('GS80')) ) then
+                Level.AddSmallMessage( MissionText.Message_MechanicHint, 15.0 , 255, 255, 255 );
+                Actor.MarkAsTarget( Level.FindActor( 'GO01' ) , true );
+                Actor.MarkAsTarget( Level.FindActor( 'G105' ) , true );
+                Actor.MarkAsTarget( Level.FindActor( 'MM01' ) , true );
+                Actor.MarkAsTarget( Level.FindActor( 'GS73' ) , true );
+           end;
+       end;
+
     elseif ( trgname == 'DynShow' ) then
 
         --Level.EnableLevelMark( trgcmd, false );
 
-   
     end;
 
   end;
 
   function Level.OnLeaveTriggerArea( sender, trgname, trgcmd )
 
-  end;
-
-
- function Level.OnStopMove( actorId )
-     if (actorId == 'DS79' ) then
-
-         AI.HandleVoice( AI.FindNPC(actorId), AI.VOICE_STOP_MOVE_OFFICER );
-         Level.AddSmallMessage( MissionText.Message_StopMove_1, 15.0 , 255, 255, 255 );
-
-     elseif (actorId == 'DS81' or actorId == 'DS80' or actorId == 'GS61' ) then
-
-         AI.HandleVoice( AI.FindNPC(actorId), AI.VOICE_STOP_MOVE_OFFICER );
-         Level.AddSmallMessage( MissionText.Message_StopMove_3, 15.0 , 255, 255, 255 );
-
-     else
-         
-         print("Warning: Level.OnStopMove: Can't recognise actor " .. actorId);
-         
-     end
-  end
-
-  function Level.CheckNeedStop( actorId )
-
-     local player = Level.GetPlayer();
-     if (player == nil) then 
-        return false;
-     end
-
-     local form = Actor.GetActorType(player);
-     
-     if (actorId == 'DS79' or 
-         actorId == 'DS81' or 
-         actorId == 'DS80' or
-         actorId == 'GS61' ) then
-
-        -- Only officers can go
-        if (form == Actor.ACTOR_TYPE_OFFICER) then
-           return false;       
-        else
-           return true;
-        end
-
-     else
-        
-        print("Warning: Level.CheckNeedStop: Can't recognise actor " .. actorId);
-
-     end;
-
-     return false;
   end;
 
   function Level.OnFinishAlert( alertGroupId )
@@ -660,7 +749,8 @@
   end
 
   function Level.SetupEasy()
-    Level.StartCustomAnimationJob('GS80', "Act_ProjectY_WatchDevice", 22.0, 67.0, -101.0, 0.0, 0.0, -1.0);
+    -- Liz Shaw Level.StartCustomAnimationJob('GS80', "Act_ProjectY_WatchDevice", 22.0, 67.0, -101.0, 0.0, 0.0, -1.0);
+    Level.StartCustomAnimationJob('GS80', "Act_ProjectY_WatchDevice", 22.0, 65.9, -101.0, 0.0, 0.0, -1.0);
   end
 
 --------------------------------------------------------
@@ -685,4 +775,132 @@ end
 --------------------------------------------------------
 function Level.OnCalcRateScore(rank, score, levelStats, aiStats, a, c, p, n, acc)
    return rank, score;
+end
+
+--------------------------------------------------------
+-- Level.OnStopMove()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnStopMove(actorId, npc)
+  if (npc == nil) then
+    print("MoTmod.ERROR: Jagdpanther.OnStopMove() npc is null " .. tostring(actorId));
+    return;
+  end
+
+  local npcForm = AI.GetForm(npc);
+  local zone = AI.GetPrimaryPlayerZone(npc);
+  local playerForm = AI.GetPlayerForm();
+
+  if (zone == nil) then 
+    return;
+  end
+
+  if (zone == "mmZoneA1" or
+      zone == "mmZoneB1" or
+      zone == "mmZoneC1") then
+    if (playerForm == "FGS1" or
+        playerForm == "FGO1") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_FGS, 5.0, 175, 175, 175);
+    end
+    AI.HandleVoice(npc, "male_ger_stopmove_stopmove_18");
+  elseif (zone == "mmZoneD1") then
+    if (playerForm == "FGS1" or
+        playerForm == "FGO1") then
+      Level.AddSmallMessage(MissionText.MM_StopMove_FGS, 5.0, 175, 175, 175);
+    else
+      Level.AddSmallMessage(MissionText.MM_StopMove_Building, 5.0, 175, 175, 175);
+    end
+    AI.HandleVoice(npc, "male_ger_stopmove_stopmove_18");
+  elseif (zone == "mmZoneL1") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Ladder, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_ger_stopmove_stopmove_08");
+  elseif (zone == "mmZoneT1") then
+    Level.AddSmallMessage(MissionText.MM_StopMove_Tower, 5.0, 175, 175, 175);
+    AI.HandleVoice(npc, "male_ger_stopmove_stopmove_19");
+  end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnRadistClothChange()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnRadistClothChange()
+  local player = Level.GetPlayer();
+  if (player != nil) then
+    Actor.EnableMesh(player, "sabg_equipment_up", false);
+    Actor.EnableMesh(player, "sabg_equipment_down", false);
+    Actor.EnableMesh(player, "mesh_helmet", false);
+  end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnKilledWorker()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnKilledWorker()
+   Level.KilledWorker = true;
+   Level.EnableLevelMark('ORDR', false);
+   Actor.MarkAsTarget( Level.FindActor( 'GO01' ) , false );
+   Actor.MarkAsTarget( Level.FindActor( 'G105' ) , false );
+   Actor.MarkAsTarget( Level.FindActor( 'MM01' ) , false );
+   Actor.MarkAsTarget( Level.FindActor( 'GS73' ) , false );
+end
+
+--------------------------------------------------------
+-- Name: Level.UninstallOrderWorkerTask()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.UninstallOrderWorkerTask()
+   if (Level.HasPlayerAction('ORDR') != false) then
+       Level.RemovePlayerAction('ORDR');
+   end
+
+   Level.EnableLevelMark('ORDR', false);
+   Actor.MarkAsTarget( Level.FindActor( 'GO01' ) , false );
+   Actor.MarkAsTarget( Level.FindActor( 'G105' ) , false );
+   Actor.MarkAsTarget( Level.FindActor( 'MM01' ) , false );
+   Actor.MarkAsTarget( Level.FindActor( 'GS73' ) , false );
+   Level.UnregisterTrigger( Level.FindTrigger( 'MechanicHintTrigger' ) );
+end
+
+----------------------------------------------------------
+-- Name: Level.OnBike1Enter()
+-- MoTmod Addon
+-- Liz Shaw
+----------------------------------------------------------
+function Level.OnBike1Enter()
+  local mm15 = AI.FindNPC('MM15');
+  local mm16 = AI.FindNPC('MM16');
+  local mm17 = AI.FindNPC('MM17');
+  if (mm15 != nil) then
+    AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "MM15", Actor.ACTOR_TYPE_OFFICER);
+  end
+  if (mm16 != nil) then
+    AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "MM16", Actor.ACTOR_TYPE_OFFICER);
+    AI.HandleVoice(mm16, "male_ger_ohers_postoroniy");
+  end
+  if (mm17 != nil) then
+    AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "MM17", Actor.ACTOR_TYPE_OFFICER);
+  end
+end
+
+--------------------------------------------------------
+-- Name: Level.OnBike2Enter()
+-- MoTmod Addon
+-- Liz Shaw
+--------------------------------------------------------
+function Level.OnBike2Enter()
+  local diff = Level.GetDifficulty();
+  if (diff == 0 or
+      diff == 1) then
+
+     local unteroffizier = AI.FindNPC('MM90');
+     if (unteroffizier != nil) then
+       AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "MM90", Actor.ACTOR_TYPE_OFFICER);
+     end
+  end
 end

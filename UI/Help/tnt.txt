@@ -1,6 +1,5 @@
-Dynamite:<br><br>
-<tab>-<sp> To use dynamite you need to plant it somewhere. In order to do this, you need to call up the explosives list ("6" by default) by holding that key down until the list pops up. After you select dynamite from the list, it will become active. The 'Fire' button then invokes a dialog window for setting the timer on the dynamite.<br>
-<tab>-<sp> In this way, you can set the time left until the explosion. After you confirm, the main hero will plant the dynamite, and the explosion will occur after the set period of time. In the bottom right corner of the screen, a countdown indicator with the dynamite icon will appear. The explosive range is quite large, so it is recommended that you keep to a safe distance.<br>
-<tab>-<sp> The main hero may disable the dynamite and return it to his backpack. To do this, he must approach the active dynamite and use the <l="game:UI\Help\menu.txt">"Action menu."</l><br>
-
-<br><br><tab><l="$back">BACK</l><br>
+Динамит:<br><br>
+<tab>-<sp> Для того чтобы воспользоваться динамитом, необходимо установить его на земле. Эту операцию можно выполнить, вызвав слот взрывчатки ('6') и удерживать клавишу до появления списка. После выбора динамита в списке он станет активным. Клавиша огонь приведет к вызову диалога настройки таймера динамита.<br>
+<tab>-<sp> В диалоге установки можно задать время до взрыва. После подтверждения главный герой установит динамит и через заданный промежуток времени произойдет взрыв. В правом нижнем углу экрана появится индикатор обратного отсчета с иконкой динамита. Радиус взрыва большой, желательно отойти на безопасное расстояние.<br>
+<tab>-<sp> Главный герой может отключить динамит и положить его обратно в рюкзак. Для этого необходимо подойти к установленному динамиту и воспользоваться <l="game:UI\Help\menu.txt">'Меню действий'.</l><br>
+<br><br><tab><l="$back">НАЗАД</l><br>

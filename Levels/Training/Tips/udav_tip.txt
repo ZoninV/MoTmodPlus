@@ -1,1 +1,5 @@
-<tab>Choke cord:<br><br>-<sp> Use a choke cord to neutralize an enemy without any noise.<br>-<sp> You need to approach an enemy from behind.<br>-<sp> Use a choke cord through the <l="game:Levels\training\tips\action_tip.txt">actions mode </l> or clicking the 'Fire' key.<br>-<sp> After using the choke cord you can change into the enemy's uniform.<br>
+<tab>Удавка:<br><br>
+-<sp> Чтобы без шума нейтрализовать противника используйте Удавку (удерживайте клавишу '1' до появления списка).<br>
+-<sp> Необходимо подойти к противнику сзади.<br>
+-<sp> Используйте Удавку через <l="game:Levels\training\tips\action_tip.txt">'Меню действий'</l>.<br>
+-<sp> После использования Удавки можно переодеться в форму противника.<br>
