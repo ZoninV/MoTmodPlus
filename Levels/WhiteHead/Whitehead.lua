@@ -114,7 +114,6 @@ end;
        Level.SetDefaultMusicPause( 180.0, 240.0, 30.0, 120.0 );
        Level.SetDOFPostFilter( 1, 0.0, 1500.0, 2000.0 );
        System:SetVar("r_dofsky", 128 );
-       System:SetVar("r_farclip" , 1500.0 );
        
        System:SetVar( "r_rimsunlightfactor", 0.4 );
        System:SetVar( "r_fogfactor" , 1.75 );

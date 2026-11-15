@@ -143,7 +143,6 @@
 
       Level.OnFinishLoad_Common(); -- forlik
       Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
-      System:SetVar( "r_farclip" , 3000 ); -- forlik
       System:SetVar( "r_dofsky", 128 ); --forlik
       System:SetVar( "r_shadowmapboxf" , 2.0 );
       -- forlik System:SetVar( "r_glow", true );

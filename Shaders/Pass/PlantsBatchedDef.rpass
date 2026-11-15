@@ -1,0 +1,21 @@
+//----------------------------------------------------------
+// Plants batched default render pass
+//----------------------------------------------------------
+
+  condition
+  {
+    DirectionalLights = 1
+  }
+
+  technique ps_1_1
+  {
+    pass p0
+    {
+       PixelShader             = ps_1_1("ps:TexDiffuse.psh");
+       VertexShader            = vs_1_1("vs:PlantsBatched.vsh",dirlights=1,fog,deform,batched);
+
+       VertexShaderConstant[0] = static<FogParams>;
+       VertexShaderConstant[1] = static<SunDirection>;
+       VertexShaderConstant[2] = static<SunLightColors(2)>;
+    }
+  }

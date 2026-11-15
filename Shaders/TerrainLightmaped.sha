@@ -1,0 +1,527 @@
+//----------------------------------------------------------
+// Terrain lightmaped shader
+//
+// Revision: 1.0 Refactored - 02.06.07 Aleksey Agamalov
+//----------------------------------------------------------
+
+//----------------------------------------------------------
+// Input parameters
+//----------------------------------------------------------
+
+public
+{
+
+ texture diffuse;
+ texture lightmap;
+ texture detail;
+
+ texture shadowMap1;
+ texture shadowMap2;
+
+}
+
+DefaultRenderPass = BadPass
+
+//----------------------------------------------------------
+// Pass: Bad pass
+//----------------------------------------------------------
+
+Renderingpass BadPass
+{
+  use "shaders:Pass\BadPass.rpass"
+}
+
+//----------------------------------------------------------
+// Pass: No shadows
+//----------------------------------------------------------
+
+RenderingPass NoLight
+{
+   technique ps_1_1
+   {
+      pass p0
+      {
+        PixelShader             = ps_1_1("ps:TerrainLightmap.psh");
+        VertexShader            = vs_1_1("vs:Terrain.vsh",texcoords=3);
+
+        Texture[0]              = <diffuse>;
+        Texture[1]              = <detail>;
+        Texture[2]              = <lightmap>;
+  
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Ambient
+//----------------------------------------------------------
+
+RenderingPass NoLight
+{
+   condition
+   {
+      AmbientCube = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        PixelShader             = ps_1_1("ps:TerrainLightmap_Amb.psh");
+        VertexShader            = vs_1_1("vs:Terrain.vsh",texcoords=3);
+
+        Texture[0]              = <diffuse>;
+        Texture[1]              = <detail>;
+        Texture[2]              = <lightmap>;
+  
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Detail
+//----------------------------------------------------------
+
+RenderingPass NoLight_Detail
+{
+   condition
+   {
+      Specular = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        PixelShader             = ps_1_1("ps:TerrainLightmap.psh");
+        VertexShader            = vs_1_1("vs:Terrain.vsh",texcoords=3);
+
+        Texture[3]              = <detail>;
+        Texture[0]              = <diffuse>;
+        Texture[1]              = <detail>;
+        Texture[2]              = <lightmap>;
+  
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Detail and ambient
+//----------------------------------------------------------
+
+RenderingPass NoLight_DetailAmb
+{
+   condition
+   {
+      Specular    = true
+      AmbientCube = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        PixelShader             = ps_1_1("ps:TerrainLightmap_Amb.psh");
+        VertexShader            = vs_1_1("vs:Terrain.vsh",texcoords=3);
+
+        Texture[3]              = <detail>;
+        Texture[0]              = <diffuse>;
+        Texture[1]              = <detail>;
+        Texture[2]              = <lightmap>;
+  
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Detail shadow
+//----------------------------------------------------------
+
+RenderingPass DetailShadow
+{
+   condition
+   {
+      Shadows = 1
+      Detail  = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=1);
+        PixelShader      = ps_1_1("ps:TerrainLmapShadow1.psh");
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+ 
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Detail shadow
+//----------------------------------------------------------
+
+RenderingPass DetailShadow_Det
+{
+   condition
+   {
+      Shadows  = 1
+      Detail   = true
+      Specular = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=1);
+        PixelShader      = ps_1_4("ps:TerrainLmapShadow1.psh");
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+        Texture[4]       = <detail>;
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+ 
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Detail shadows ambient
+//----------------------------------------------------------
+
+RenderingPass DetailShadow_Amb
+{
+   condition
+   {
+      Shadows     = 1
+      Detail      = true
+      AmbientCube = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=1);
+        PixelShader      = ps_1_1("ps:TerrainLmapShadow1_Amb.psh");
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+ 
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Detail shadow
+//----------------------------------------------------------
+
+RenderingPass DetailShadow_DetAmb
+{
+   condition
+   {
+      Shadows     = 1
+      Detail      = true
+      Specular    = true
+      AmbientCube = true
+   }
+
+   technique ps_1_1
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=1);
+        PixelShader      = ps_1_4("ps:TerrainLmapShadow1_Amb.psh");
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+        Texture[4]       = <detail>;
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+ 
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass:  Detail shadow + 1 projected shadow map
+//----------------------------------------------------------
+
+RenderingPass DShadow_OneShadowMap
+{
+   condition
+   {
+     Shadows = 2
+     Detail  = true
+   }
+
+   technique ps_1_4
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=2);
+        PixelShader      = ps_1_4("ps:TerrainLmapShadow2.psh");
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+        Texture[4]       = <shadowmap2>;
+
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+
+        AddressU[4]      = Clamp;
+        AddressV[4]      = Clamp;
+
+        TextureTransformFlags[4] = Projected | Count3;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+
+        AddressU[4]      = Wrap;
+        AddressV[4]      = Wrap;
+
+        TextureTransformFlags[4] = TF_Disable;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass:  Detail shadow + 1 projected shadow map
+//----------------------------------------------------------
+
+RenderingPass DShadow_OneShadowMap_Det
+{
+   condition
+   {
+     Shadows  = 2
+     Detail   = true
+     Specular = true
+   }
+
+   technique ps_1_4
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=2);
+        PixelShader      = ps_1_4("ps:TerrainLmapShadow2.psh");
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+        Texture[4]       = <shadowmap2>;
+        Texture[5]       = <detail>;
+
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+
+        AddressU[4]      = Clamp;
+        AddressV[4]      = Clamp;
+
+        TextureTransformFlags[4] = Projected | Count3;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+
+        AddressU[4]      = Wrap;
+        AddressV[4]      = Wrap;
+
+        TextureTransformFlags[4] = TF_Disable;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass:  Detail shadow + 2 projected shadow map
+//----------------------------------------------------------
+
+RenderingPass DShadow_OneShadowMap_Amb
+{
+   condition
+   {
+     Shadows     = 2
+     Detail      = true
+     AmbientCube = true
+   }
+
+   technique ps_1_4
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=2);
+        PixelShader      = ps_1_4("ps:TerrainLmapShadow2_Amb.psh");
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+        Texture[4]       = <shadowmap2>;
+
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+
+        AddressU[4]      = Clamp;
+        AddressV[4]      = Clamp;
+
+        TextureTransformFlags[4] = Projected | Count3;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+
+        AddressU[4]      = Wrap;
+        AddressV[4]      = Wrap;
+
+        TextureTransformFlags[4] = TF_Disable;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass:  Detail shadow + 2 projected shadow map and ambient
+//----------------------------------------------------------
+
+RenderingPass DShadow_OneShadowMap_DetAmb
+{
+   condition
+   {
+     Shadows     = 2
+     Detail      = true
+     Specular    = true
+     AmbientCube = true
+   }
+
+   technique ps_1_4
+   {
+      pass p0
+      {
+        VertexShader     = vs_1_1("vs:Terrain.vsh",texcoords=3,projectors=2);
+        PixelShader      = ps_1_4("ps:TerrainLmapShadow2_Amb.psh");
+
+        VertexShaderConstant[0] = fx_vs_constantsF(0,1);
+
+        Texture[0]       = <diffuse>;
+        Texture[1]       = <detail>;
+        Texture[2]       = <lightmap>;
+        Texture[3]       = <shadowMap1>;
+        Texture[4]       = <shadowmap2>;
+        Texture[5]       = <detail>;
+
+        AddressU[3]      = Clamp;
+        AddressV[3]      = Clamp;
+
+        AddressU[4]      = Clamp;
+        AddressV[4]      = Clamp;
+
+        TextureTransformFlags[4] = Projected | Count3;
+      }
+
+      restorepass
+      {
+        AddressU[3]      = Wrap;
+        AddressV[3]      = Wrap;
+
+        AddressU[4]      = Wrap;
+        AddressV[4]      = Wrap;
+
+        TextureTransformFlags[4] = TF_Disable;
+      }
+   }
+}
+
+//----------------------------------------------------------
+// Pass: Projected light pass
+//----------------------------------------------------------
+
+Renderingpass Terrain_ProjLight
+{
+ use "shaders:pass\ProjectionTerrain.rpass"
+}
+
+//----------------------------------------------------------
+// Pass: Projected light with shadow map
+//----------------------------------------------------------
+
+Renderingpass Terrain_ProjLightShadow
+{
+ use "shaders:pass\ProjectionTerrainShadow.rpass"
+}
+
+//----------------------------------------------------------
+// SpecialPass: Depth to alpha 
+//----------------------------------------------------------
+
+SpecialPass DepthAlpha
+{
+    use "shaders:pass\DepthAlpha.rpass"
+}
+
+

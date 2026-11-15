@@ -106,7 +106,6 @@ end;
        
        System:SetVar( "r_dofsky", 128 );
        System:SetVar( "r_rimsunlightfactor", 0.175 );
-       System:SetVar( "r_farclip" , 3000.0 );
        
        Level.EnableObjectHitNotify('ROPE', true );
        Level.EnableObjectHitNotify('ROP2', true );
