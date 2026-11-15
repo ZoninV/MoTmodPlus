@@ -33,13 +33,15 @@
 
   function Level.OnFinishLoad()
 
+     -- forlik System:SetVar("r_glow", true );
+     -- forlik System:SetVar("r_glow_r", 0.8 );
+     System:SetVar("r_farclip" , 8192 ); -- Wunder
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
      System:SetVar("r_vegalpha", 96 );
      System:SetVar("r_shadowsampledif", 0.35 );
      System:SetVar( "r_dofsky", 128 ); --forlik
-     -- forlik System:SetVar("r_glow", true );
-     -- forlik System:SetVar("r_glow_r", 0.8 );
+
 
      Level.AddMusic( Level.MUSIC_MOOD_DEFAULT, "#0.50#sounds\\music\\ambiento.ogg");
      Level.AddMusic( Level.MUSIC_MOOD_ATTENTION   , "#0.50#sounds\\music\\action_2.ogg");

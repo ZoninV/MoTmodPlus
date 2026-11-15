@@ -164,6 +164,7 @@
 
      -- forlik System:SetVar( "r_glow", true );
      -- forlik System:SetVar( "r_glow_r", 2.0 );
+     System:SetVar( "r_farclip" , 8192 ); -- Wunder
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
      System:SetVar( "r_dofsky", 128 ); --forlik

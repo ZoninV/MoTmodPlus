@@ -12,6 +12,7 @@ setv r_vegbendcameraview true
 
 setv cl_freectrl 0
 
+setv r_dof false
 setv r_refltexsize 4096
 setv r_vfogtexsize 4096
 

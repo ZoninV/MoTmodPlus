@@ -607,7 +607,7 @@
 
   function Level.SaveTraining()
 
-     Level.AddSmallMessage( "Контрольная точка сохранена.." , 5.0, 255, 128, 0 );
+     -- forlik Level.AddSmallMessage( "Контрольная точка сохранена.." , 5.0, 255, 128, 0 );
      System:SaveGame( "_training.asv" , false );
 
   end;
@@ -625,6 +625,7 @@
      -- forlik System:SetVar( "r_glow", true );
      -- forlik System:SetVar( "r_glow_r", 2.0 );
      -- forlik System:SetVar( "g_maxblood", 0 );
+     System:SetVar( "r_farclip" , 8192 ); -- Wunder
      Level.OnFinishLoad_Common(); -- forlik
      Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
      System:SetVar( "r_dofsky", 128 ); --forlik

@@ -141,13 +141,14 @@
 
   function Level.OnFinishLoad()
 
+      -- forlik System:SetVar( "r_glow", true );
+      -- forlik System:SetVar( "r_glow_r", 2.0 );
+      -- forlik System:SetVar( "r_glow_b", 230 );
+      System:SetVar( "r_farclip" , 8192 ); -- Wunder
       Level.OnFinishLoad_Common(); -- forlik
       Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
       System:SetVar( "r_dofsky", 128 ); --forlik
       System:SetVar( "r_shadowmapboxf" , 2.0 );
-      -- forlik System:SetVar( "r_glow", true );
-      -- forlik System:SetVar( "r_glow_r", 2.0 );
-      -- forlik System:SetVar( "r_glow_b", 230 );
       System:SetVar( "ph_water_density", 0.08);
       System:SetVar( "ph_water_wet_time", 17.0);
 
