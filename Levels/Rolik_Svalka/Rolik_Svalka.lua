@@ -3,7 +3,11 @@
 -- Description :  rolik_svalka (adapted for Moment of Truth engine / MoTmod)
 --
 ----------------------------------------------------------------------------
-
+MissionText =
+	{
+	-- Wunder
+	Intro = "\198\229\235\229\231\237\238\228\238\240\238\230\237\251\233 \236\238\241\242 \247\229\240\229\231 \194\232\241\235\243 \237\229\228\224\235\229\234\238 \238\242 \202\240\224\234\238\226\224";
+	};
   --function Rc()
     --    local ns = Level.FindCutScene( 'cherdak' );
     --    CutScene.Stop(ns);
@@ -155,6 +159,7 @@ function Level.OnLoaded()
     Level.SetCutSceneFadeTime( ns, 975.0, 3.0 );
 
     Level.SetColorPostFilter( 1.0, 1.0, 1.0, 0.0, 10000.0 );
+    Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
     Level.PrecacheCutScenes();
     CutScene.Play( ns, 30.0 );

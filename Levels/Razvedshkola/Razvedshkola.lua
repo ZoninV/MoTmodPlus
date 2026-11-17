@@ -31,6 +31,10 @@
       Message_StopMove_6    = "Только офицеры или инструкторы могут пройти в библиотеку.";
       Message_StopMove_7    = "Только инструкторы могут пройти здесь.";
       Message_StopMove_8    = "Только офицеры могут пройти здесь.";
+	  
+	  -- Wunder
+      Intro                 = "Краков, Польша, 1944 г.";
+      files                 = "Документы";
   };
 
   function Level.OnCompleteMission()
@@ -40,6 +44,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar('r_glow', true );
      -- forlik System:SetVar('r_glow_r' , 2.0 );

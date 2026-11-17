@@ -3,7 +3,11 @@
 -- Description :  Rolik_Gestapo (adapted for Moment of Truth engine / MoTmod)
 --
 ----------------------------------------------------------------------------
-
+MissionText =
+	{
+	-- Wunder
+	Intro = "\205\224\246\232\241\242\241\234\224\255 \242\254\240\252\236\224 \227\228\229-\242\238 \226 \195\229\240\236\224\237\232\232...";
+	};
   --function Rc()
     --    local ns = Level.FindCutScene( 'gestapo' );
     --    CutScene.Stop(ns);
@@ -156,6 +160,7 @@ function Level.OnLoaded()
     Level.SetHudEffect( "noise" , true );
     Level.SetHudEffect( "lines" , true );
     Level.SetColorPostFilter( 1.0, 1.0, 1.0, 0.75, 10000.0 );
+    Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
     CutScene.Play( ns, 30.0 );
     Level.SetHudFadeIn( 2.0 );

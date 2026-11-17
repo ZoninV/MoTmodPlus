@@ -1,4 +1,4 @@
-Update 1.16+ from 12.11.2026 [tested on russian GOG versions] (Wunder)
+Update 1.16+ from 12.11.2026 [working on ONLY russian GOG versions yet] (Wunder)
 ----------------------------------------------------------------------
 
 The problematic mod files from v1.16 (briefing, Equipment, strings) have been translated into Russian.
@@ -18,7 +18,7 @@ The +/- keys adjust the camera distance from the character in increments directl
 The restriction on the use of >2GB of memory by the game engine has been removed (eliminates crashes due to memory leaks when reloading levels).
 Full support for high-resolution widescreen monitors [21:9] in the HUD (the basic 800x600 interface frame has been replaced with coefficients and adaptive mathematics).
 Correct font scaling at any screen resolution.
-High-quality voice acting for Russian-speaking male and female NPCs (replacing the Tarapunka and Shtepsel characters from forlik).
+High-quality voice acting for Russian-speaking male and female NPCs (replacing the 'male_rus_babka' characters from Liz Shaw).
 The environment alarm for taking out the Garrotte and Chloroform has been disabled (as in Hitman).
 A small round map in the lower-right corner of the screen (the size is the same as the vehicle speedometer).
 The default control key profile is the same as in Hitman.

@@ -4,7 +4,11 @@
 --
 --
 ----------------------------------------------------------------------------
-
+MissionText =
+	{
+	-- Wunder
+	Intro = "$020$470\203\243\225\255\237\234\224, 1951 \227.";
+	};
   --function Rc()
     --    local ns = Level.FindCutScene( 'rolik01' );        
     --    CutScene.Stop(ns);
@@ -322,7 +326,7 @@ function Level.InitRolik_1()
     Level.SetHudEffect( "noise" , true );
     Level.SetHudEffect( "lines" , true );
     Level.SetColorPostFilter( 1.0, 1.0, 1.0, 0.75, 10000.0 );
-    Level.SetLargeMessage( '$020$470\203\243\225\255\237\234\224, 1951 \227.' , 10.0 , 180, 180, 180 );
+    Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
     
     CutScene.Play( bs, 30.0 );    
     Level.SetHudFadeIn( 2.0 );

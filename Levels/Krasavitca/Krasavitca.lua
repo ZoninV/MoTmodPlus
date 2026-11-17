@@ -32,6 +32,13 @@
       Message_SpyAlert                = "! Охрана заметила Полякова и собирается поднять тревогу!";
       Message_KeyReceived             = "Вам выдан ключ от камер.";
 
+	  -- Wunder
+      Intro                           = "Германия, весна 1944 г." ;
+      Player1                         = "Я пришел, чтобы вытащить вас отсюда, капитан!";
+      Player2                         = "Простите, капитан. У меня не было выбора...";
+      Polyakov1                       = "Большое спасибо. Поехали прямо сейчас!";
+      Polyakov2                       = "Самый короткий путь из Замка - через часовню!";
+
       -- Liz Shaw
       MM_StopMove_CIV           = "@ Доступ в эту часть здания разрешен только солдатам и офицерам СС!";
       MM_StopMove_WKR           = "@ Рабочим здесь не место!";
@@ -69,6 +76,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
       -- forlik System:SetVar( "r_glow", true );
       -- forlik System:SetVar( "r_glow_r", 2.0 );

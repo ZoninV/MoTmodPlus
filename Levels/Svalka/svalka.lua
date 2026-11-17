@@ -21,6 +21,9 @@
       Message_Alarm         = "Поднята тревога. Охрана стала более внимательна.";
       Message_AlarmFinished = "Охрана успокоилась.";
       Message_Escape        = "У вас осталось %02d:%02d времени, чтобы покинуть местность";
+	  
+	  -- Wunder
+      Intro                 = "Река Висла недалеко от Кракова, Польша, 1944 г.";
 
       -- Liz Shaw
       MM_StopMove_FGS = "@ Полевой жандармерии здесь не место!";
@@ -140,6 +143,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+      Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
       -- forlik System:SetVar( "r_glow", true );
       -- forlik System:SetVar( "r_glow_r", 2.0 );

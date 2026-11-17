@@ -33,6 +33,11 @@
                                     "Сетка, окружающяя бараки, находится под напряжением.";
                                   };
       Docs_Pass                 = "ПРОПУСК";
+	  -- Wunder
+      Intro                     = "Германия, недалеко от Моосбурга, весна 1945 г.";
+      Player1                   = "Товарищ?";
+      Player2                   = "Хорошо, пойдёмте со мной!";
+      Raoul                     = "Я здесь!";
   };
 
   function Level.OnCompleteMission()
@@ -161,6 +166,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar( "r_glow", true );
      -- forlik System:SetVar( "r_glow_r", 2.0 );

@@ -352,6 +352,8 @@
                                    "#<MAPS> - Нажмите клавишу 'Карта/Компас (%s)' для переключения между типами навигации";
                                    " - Используйте стрелки или колесико мыши для масштабирования карты.";
                                  };
+	  -- Wunder
+      Intro                       = "Тренировочный военный лагерь, СССР, 1943 г.";     
 
       -- Liz Shaw
       Message_StopMove         = "@ Доступ в это здание разрешен только офицерам!";
@@ -621,6 +623,8 @@
   end;
   
   function Level.OnFinishLoad()
+  
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar( "r_glow", true );
      -- forlik System:SetVar( "r_glow_r", 2.0 );

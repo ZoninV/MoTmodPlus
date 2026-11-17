@@ -28,6 +28,9 @@
        Message_BaseAlarm_2   = "Поднята тревога. Охрана стала более внимательна.";
        Message_AlarmFinished = "Охрана успокоилась.";
 
+	   -- Wunder
+       Intro                 = "Германия, в окрестностях испытательного полигона, 1943 г.";
+
        -- forlik
        MM_StopMove_FGS = "@ Полевой жандармерии здесь делать нечего!";
        MM_StopMove_OFF = "@ Простите, офицер, но вам сюда нельзя!";
@@ -41,6 +44,8 @@
 
 
   function Level.OnFinishLoad()
+
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar( 'r_glow' , true );
      -- forlik System:SetVar( 'r_glow_r' , 2.0 );

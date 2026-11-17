@@ -39,8 +39,11 @@
       Message_AlarmSignal   = "ВЫЗВАТЬ ДЕЖУРНОГО";
       Message_TalkScientist = "@ Сэр, один из генераторов сбоит. Можете взглянуть на него по-быстрому, пожалуйста?";
 
-      -- Liz Shaw
+	  -- Wunder
+      Intro                 = "США, лаборатории Лос-Аламоса, 1944 г.";
+      docs                  = "Секретные документы";
 
+      -- Liz Shaw
       MM_StopMove_Pass          = "@ Стоять! Покажите ваше удостоверение!";
       MM_StopMove_DocsClear     = "@ Все в порядке, можете проходить.";
       MM_StopMove_Search        = "@ Стойте! Мне придется вас обыскать.";
@@ -108,6 +111,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar( 'r_glow' , true );
      -- forlik System:SetVar( 'r_glow_r' , 2.0 );

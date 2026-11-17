@@ -22,6 +22,6 @@ To install MoTmod:
 
 (C) forlik 2008-2010
 
-(C) Liz Shaw, 2013-2025
+(C) Liz Shaw, 2009-2025
 
 (C) Wunder, 2026

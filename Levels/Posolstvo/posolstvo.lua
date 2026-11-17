@@ -35,6 +35,11 @@
       Message_CloseDoor    = "ПОВЕСИТЬ ТАБЛИЧКУ";
       Poison_Need          = "! Нужен яд, чтобы отравить.";
 
+	  -- Wunder
+      Intro                = "Британское посольство, Москва, 1945 г.";
+      Action_StealKey      = "ВЫКРАСТЬ КЛЮЧ";
+      Message_StealKey     = "Вы украли ключ.";
+
       -- Liz Shaw
       MM_StopMove_Pass          = "@ Стоять! Покажите свое удостоверение!";
       MM_StopMove_DocsClear     = "@ Все в порядке, проходите.";
@@ -161,6 +166,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+      Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
       -- forlik System:SetVar( "r_glow", true );
       -- forlik System:SetVar( "r_glow_r", 1.5 );

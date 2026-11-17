@@ -21,6 +21,11 @@
 
       Poison_Need        = "! Нужен яд, чтобы отравить.";
 
+	  -- Wunder
+      Intro              = "Деревня Юратишки, Белоруссия, 1944 г.";
+      Tipp_Poison        = "Бартелс любит выпить. Воспользуйтесь этим!";
+      poison             = "Яд";
+
       -- Liz Shaw
       MM_StopMove_CIV       = "@ Гражданским лицам вход в здание воспрещен.";
       MM_StopMove_Bartels   = "@ Вам не разрешено входить в эту комнату.";
@@ -40,6 +45,8 @@
   end;
 
   function Level.OnFinishLoad()
+
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar( "r_glow", true );
      -- forlik System:SetVar( "r_glow_r", 2.0 );

@@ -38,7 +38,16 @@
       Task_4                    = " Заменить документы";
       Task_5                    = " Покинуть отель";
       TaskChanged               = "Задания изменены";
-
+	  
+      -- Wunder
+      Intro                     = "Гостиница Метрополь, Великобритания 1944 г.";
+      Manager1                  = "Добро пожаловать в отель Метрополь, сэр.";
+      Manager2                  = "Желаю Вам приятного отдыха...";
+      Player                    = "Хорошо... Большое спасибо.";
+      Tip_Refreg                = "Длительное пребывание в холодильной камере закончиться обморожением.";
+      fake_docs                 = "Поддельные документы";
+      real_docs                 = "Секретные документы";
+	  
       -- Liz Shaw
       MM_StopMove_Ticket        = "@ Могу я увидеть вашу карточку постояльца?";
       MM_StopMove_TicketClear   = "@ Все в порядке. Хорошего дня.";
@@ -199,6 +208,8 @@
 
   function Level.OnFinishLoad()
 
+     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
+
      if (Level.OrigCompleteMissionTask == nil) then
         Level.OrigCompleteMissionTask = Level.CompleteMissionTask;
         Level.CompleteMissionTask = function(taskId, time)
@@ -216,7 +227,7 @@
      -- forlik System:SetVar('r_glow', true );
      -- forlik System:SetVar('r_glow_r' , 1.5 );
      Level.OnFinishLoad_Common(); -- forlik
-     Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); --forlik
+     Level.SetDOFPostFilter( 1, 0.0, 1600.0, 3500.0 ); -- forlik
      System:SetVar('ph_water_density', 0.05);
      System:SetVar('ph_water_wet_time', 6.0);
 

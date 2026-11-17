@@ -3,7 +3,11 @@
 -- Description :  Rolik_Cherdak (adapted for Moment of Truth engine / MoTmod)
 --
 ----------------------------------------------------------------------------
-
+MissionText =
+	{
+	-- Wunder
+	Intro = "\202\240\224\234\238\226, \207\238\235\252\248\224";
+	};
   --function Rc()
     --    local ns = Level.FindCutScene( 'cherdak' );
     --    CutScene.Stop(ns);
@@ -155,6 +159,7 @@ function Level.OnLoaded()
     Level.SetHudEffect( "noise" , true );
     Level.SetHudEffect( "lines" , true );
     Level.SetColorPostFilter( 1.0, 1.0, 1.0, 0.75, 10000.0 );
+    Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
     CutScene.Play( ns, 30.0 );
     Level.SetHudFadeIn( 2.0 );
