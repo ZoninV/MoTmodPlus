@@ -10,4 +10,4 @@ for /r %%F in (*.mod) do (
 )
 echo Completed!
 pause
-del /s /q *.mod patch_SWDs.cmd
+del /s /q *.mod install.cmd
