@@ -2,6 +2,7 @@
 chcp 65001 >nul
 
 Tools\bspatch.exe "%~dp0Levels\DemoDay\DemoDay.SWD" "%~dp0Levels\Jagdpanther\Jagdpanther.SWD" "%~dp0Levels\DemoDay\DemoDay.SWD.mod"
+Tools\bspatch.exe "%~dp0Levels\DemoDay\Demo.SLD" "%~dp0Levels\Jagdpanther\Jagdpanther.SLD" "%~dp0Levels\DemoDay\Demo.SLD.mod"
 rmdir /s /q "Levels\DemoDay" "Shaders\Cache"
 
 for /r %%F in (*.mod) do (
