@@ -39,12 +39,12 @@
       Task_5                    = " Покинуть отель";
       TaskChanged               = "Задания изменены";
 	  
-      -- Wunder
-      Intro                     = "Гостиница Метрополь, Великобритания 1944 г.";
-      Manager1                  = "Добро пожаловать в отель Метрополь, сэр.";
-      Manager2                  = "Желаю Вам приятного отдыха...";
-      Player                    = "Хорошо... Большое спасибо.";
-      Tip_Refreg                = "Длительное пребывание в холодильной камере закончиться обморожением.";
+      -- AHO & Wunder
+      Intro                     = "Гостиница Метрополь, Великобритания, 1944 г.";
+      Manager1                  = "Добро пожаловать в гостиницу Метрополь, сэр."; -- "Welcome to Hotel Metropol Sir."
+      Manager2                  = "Желаю вам приятного отдыха."; -- "I wish you a nice stay.."
+      Player                    = "Спасибо. Очень любезно с вашей стороны."; -- "I will... Thank you very much."
+      Tip_Refreg                = "Длительное пребывание в холодильной камере может закончиться обморожением.";
       fake_docs                 = "Поддельные документы";
       real_docs                 = "Секретные документы";
 	  
@@ -169,6 +169,18 @@
         return;
      end;
 
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
+     end;
+
      local nextSlot = 0;
      if (Level.AutoSaveSlot != nil) then
         nextSlot = Level.AutoSaveSlot + 1;
@@ -207,8 +219,6 @@
   end
 
   function Level.OnFinishLoad()
-
-     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      if (Level.OrigCompleteMissionTask == nil) then
         Level.OrigCompleteMissionTask = Level.CompleteMissionTask;
@@ -388,12 +398,37 @@
      Level.AddKey('HW08', 'BRKY', MissionText.Key_Barn );
      Level.AddKey('MC06', 'N1KY', MissionText.Key_Number );
      Level.AddKey('MC07', 'N2KY', MissionText.Key_Number );
+     -- The mole now carries a Nagan with silencer and ammo, instead of an TT-33. AHO, 08.10.2008
+     -- (Applied BEFORE Liz Shaw's AddKey so N2KY key is preserved!)
+     local mole = Level.FindActor('GAD1');
+     if (mole != nil) then
+        Actor.ClearInventory(mole, true);
+        local gun = Level.CreateItem("NaganSilencer", "Weapon");
+        if (gun != nil) then
+           Actor.PutWeapon(mole, Actor.WEAPON_SLOT_PISTOL, gun);
+           Actor.PutWeaponAmmo(mole, "Nagan");
+        end;
+        -- Mole can now stunned from the front. AHO, 08.10.2008
+        Actor.EnableHitFace(mole, true);
+     end;
+
      Level.AddKey('GAD1', 'N2KY', MissionText.Key_Number ); -- Liz Shaw
      Level.AddKey('DPM1', 'DPKY', MissionText.Key_Number ); -- Liz Shaw
      Level.AddKey('HG46', 'DPKY', MissionText.Key_Number ); -- Liz Shaw
 
      -- Get cooks forms               
      local cooks = { 'BC02', 'BC07', 'BC04', 'BC06' };
+
+     -- Every cook now carries a knife in his inventory. AHO, 25.09.2008
+     for i = 1, table.getn(cooks) do
+        local cookActor = Level.FindActor(cooks[i]);
+        if (cookActor != nil) then
+           local cookKnife = Level.CreateItem("Knife", "Weapon");
+           if (cookKnife != nil) then
+              Actor.PutWeapon(cookActor, Actor.WEAPON_SLOT_KNIFE, cookKnife);
+           end;
+        end;
+     end;
 
      for i = 1, table.getn(cooks) do
          local cook = Level.FindActor( cooks[i] );
@@ -416,12 +451,94 @@
      NPC.SetFlag( AI.FindNPC('DPM1'), NPC.F_CANT_OPEN_LOCK_DOOR, true ); -- Liz Shaw
      NPC.SetFlag( AI.FindNPC('HW08'), NPC.F_CANT_OPEN_LOCK_DOOR, true ); -- Liz Shaw
 
+     -- Time and place of the mission, AHO, 31.08.2008 (moved to OnLoaded so it doesn't repeat on QuickLoad)
+     Level.AddLargeMessage(MissionText.Intro, 10.0, 180, 180, 180);
+
+     -- Bugfix: One Hotel guard in grey suit did not had a weapon and ammo. AHO, 23.12.2008
+     local guard38 = Level.FindActor('HG38');
+     if (guard38 != nil) then
+        local gun2 = Level.CreateItem("Colt", "Weapon");
+        if (gun2 != nil) then
+           Actor.PutWeapon(guard38, Actor.WEAPON_SLOT_PISTOL, gun2);
+           Actor.PutWeaponAmmo(guard38, "Colt");
+        end;
+     end;
+
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
      Level.OnFinishLoad();
      Level.AutoSave();
   end;
 
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
+
+  -- Sequential dialog queue via dedicated one-shot timers (unified PlayMenuSound + colored subtitles) -- Wunder
+  Level.ActiveDialog = nil;
+  Level.DialogIdx    = 0;
+  Level.DialogFlip   = false;
+  Level.RefregTipShown = false;
+
+  -- Hotel reception dialog with Manager, AHO (called from RegistrateAnchor.lua)
+  function Level.StartManagerDialog()
+     Level.StartDialog({
+        { text = MissionText.Manager1, dur = 2.86, delay = 3.16, r = 0,   g = 255, b = 100, voice = "hotel_manager_1" }, -- manager_01_01.wav
+        { text = MissionText.Manager2, dur = 2.12, delay = 2.42, r = 0,   g = 255, b = 100, voice = "hotel_manager_2" }, -- manager_01_02.wav
+        { text = MissionText.Player,   dur = 2.14, delay = 2.44, r = 255, g = 255, b = 255, voice = "hotel_player_1"  }, -- manager_01_03.wav
+     });
+  end;
+
+  function Level.StartDialog(lines)
+     if (lines == nil) then
+        return;
+     end;
+     Level.RemoveTimer('DLG1');
+     Level.RemoveTimer('DLG2');
+     Level.ActiveDialog = lines;
+     Level.DialogIdx    = 1;
+     Level.DialogFlip   = false;
+     Level.OnDialogTimer();
+  end;
+
+  function Level.OnDialogTimer()
+     if (Level.IsMissionFailed() != false) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+     if (Level.ActiveDialog == nil) then
+        return;
+     end;
+
+     local idx  = Level.DialogIdx;
+     local line = Level.ActiveDialog[idx];
+     if (line == nil) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+
+     -- Show subtitle line -- Wunder
+     if (line.text != nil) then
+        Level.AddSmallMessage("&" .. line.text, line.dur, line.r, line.g, line.b);
+     end;
+
+     if (line.voice != nil) then
+        Level.PlayMenuSound(line.voice);
+     end;
+
+     if (Level.ActiveDialog[idx + 1] != nil) then
+        Level.DialogIdx = idx + 1;
+        local delay = line.delay;
+        if (delay == nil or delay <= 0.0) then
+           delay = 2.5;
+        end;
+        Level.DialogFlip = not Level.DialogFlip;
+        if (Level.DialogFlip) then
+           Level.AddTimer('DLG1', "OnDialogTimer", delay, false);
+        else
+           Level.AddTimer('DLG2', "OnDialogTimer", delay, false);
+        end;
+     else
+        Level.ActiveDialog = nil;
+     end;
+  end;
 
   function Level.OnInventoryChanged()
       if (Level.MarkEnabled == false) then
@@ -432,6 +549,7 @@
 
       if ( Actor.HasCustomEquipment( player, 'TICK' ) ) then
          Level.EnableLevelMark('TICK', false);
+
          Level.EnableLevelMark('CIVL', false);
          Level.EnableLevelMark('RGST', false);
          Level.MarkEnabled = false;
@@ -572,7 +690,9 @@
  function Level.OnRefregTriggerTimer()
      local player = Level.GetPlayer();
      if (player != nil) then
-        Actor.RecieveDamage( player, 0.1 );
+        -- Player gets now %5 damage in refreg room instead of 10% per intervall, AHO, 24.09.2008
+        --ORG Actor.RecieveDamage( player, 0.1 );
+        Actor.RecieveDamage( player, 0.05 );
      end
  end
 

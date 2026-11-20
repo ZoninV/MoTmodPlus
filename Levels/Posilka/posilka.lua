@@ -19,16 +19,16 @@
 
       -- AHO & Wunder
       Intro                 = "Окрестности Витебска, Белоруссия, декабрь 1943 г.";
-      Babushka1             = "Милок, немцы схватили курьера!";
-      Babushka2             = "Его держат в доме неподалёку от главной улицы.";
-      Player1               = "Спасибо, бабуля.";
-      Player2               = "Понял!";
-      Player3               = "Хорошо. Удачи, товарищ.";
-      Courier_Thanks        = "Спасибо, товарищ, еле пронесло."; -- Always when freeing the courier, AHO, 10.09.2008
-      Courier1              = "Есть одна проблема: у меня забрали схемы.";
-      Courier2              = "Сейчас они у штандартенфюрера Пауля Вебера.";
-      Courier3              = "Отлично, схемы уже у вас, товарищ!";
-      Courier4              = "Уходите из города немедленно.";
+      Babushka1             = "Comrade, the Germans have captured the courier!"; -- "Милок, схватили ведь немцы вчера Степаныча..."
+      Babushka2             = "He is held in a house near the main street.."; -- "Держат в доме неподалёку от главной улицы."
+      Player1               = "Thanks granny."; -- "Проклятие! Спасибо, бабуля."
+      Player2               = "I see!"; -- "Понял."
+      Player3               = "OK, good luck comrade."; -- "Хорошо. Удачи, товарищ.";
+      Courier_Thanks        = "Thank you comrade. I thought that was it for me - the end. I barely made it."; -- "Ух, спасибо, товарищ. Я думал, мне уже всё - конец. Еле пронесло."
+      Courier1              = "There is a small problem, tehy took away the layouts from me."; -- "Только есть одна проблемка - немцы забрали у меня схемы."
+      Courier2              = "They are now in the possesion of SS-Standartenfuhrer Paul Weber."; -- "Сейчас они у штандартенфюрера Пауля Вебера."
+      Courier3              = "Good, you have the layouts comrade!"; -- "Отлично, что схемы уже у вас, товарищ!"
+      Courier4              = "Leave the city immediately."; -- Уходите из города немедленно."
       Message_Courier_Died  = "Курьер погиб. Доставьте схемы в безопасное место."; -- AHO, 22.09.2008
       Message_Courier_Died2 = "Курьер погиб. Заберите схемы и покиньте город."; -- AHO, 29.09.2008
 
@@ -351,9 +351,9 @@
         return;
      end;
 
-     -- Show subtitle line
+     -- Show subtitle line -- Wunder
      --if (line.text != nil) then
-     --   Level.AddSmallMessage(line.text, line.dur, line.r, line.g, line.b);
+     --   Level.AddSmallMessage("&" .. line.text, line.dur, line.r, line.g, line.b);
      --end;
 
      -- Unified voiceover playback for both NPCs and Strogov (channel 'menu' in basesoundsfx.shadvs)
@@ -550,26 +550,24 @@
     if ( Level.DocsComplete == false ) then
 
       Level.AddDocsTask();
-      --- When freeing the courier before gotten the documents. AHO, 10.09.2008
+      --- When freeing the courier before gotten the documents. AHO, 10.09.2008 -- Wunder
       Level.StartDialog({
-         -- TODO: подставьте точную длительность каждого .wav (+ 0.3 сек паузы) в dur и delay -- Wunder
-         { text = MissionText.Courier_Thanks, dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_thanks" }, -- courier_01_01.wav
-         { text = MissionText.Courier1,       dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_1"      }, -- courier_01_02.wav
-         { text = MissionText.Courier2,       dur = 3.5, delay = 3.8, r = 0,   g = 255, b = 0, voice = "posilka_courier_2"      }, -- courier_01_03.wav
-         { text = MissionText.Player3,        dur = 2.5, delay = 2.8, r = 255, g = 255, b = 0,    voice = "posilka_player_3"       }, -- courier_02_01.wav
+         { text = MissionText.Courier_Thanks, dur = 4.54, delay = 4.84, r = 0,   g = 255, b = 100, voice = "posilka_courier_thanks" }, -- courier_01_01.wav
+         { text = MissionText.Courier1,       dur = 3.76, delay = 4.06, r = 0,   g = 255, b = 100, voice = "posilka_courier_1"      }, -- courier_01_02.wav
+         { text = MissionText.Courier2,       dur = 2.62, delay = 2.92, r = 0,   g = 255, b = 100, voice = "posilka_courier_2"      }, -- courier_01_03.wav
+         { text = MissionText.Player3,        dur = 1.86, delay = 2.16, r = 255, g = 255, b = 255, voice = "posilka_player_3"       }, -- courier_02_01.wav
       });
       ---
 
     else
 
       Level.AddLeaveTask();
-      --- When freeing the courier, if documents gotten before. AHO, 10.09.2008
+      --- When freeing the courier, if documents gotten before. AHO, 10.09.2008 -- Wunder
       Level.StartDialog({
-         -- TODO: подставьте точную длительность каждого .wav (+ 0.3 сек паузы) в dur и delay -- Wunder
-         { text = MissionText.Courier_Thanks, dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_thanks" }, -- courier_01_01.wav
-         { text = MissionText.Courier3,       dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_3"      }, -- courier_02_02.wav
-         { text = MissionText.Courier4,       dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_4"      }, -- courier_02_03.wav
-         { text = MissionText.Player3,        dur = 2.5, delay = 2.8, r = 255, g = 255, b = 0,    voice = "posilka_player_3"       }, -- courier_02_01.wav
+         { text = MissionText.Courier_Thanks, dur = 4.54, delay = 4.84, r = 0,   g = 255, b = 100, voice = "posilka_courier_thanks" }, -- courier_01_01.wav
+         { text = MissionText.Courier3,       dur = 2.44, delay = 2.74, r = 0,   g = 255, b = 100, voice = "posilka_courier_3"      }, -- courier_02_02.wav
+         { text = MissionText.Courier4,       dur = 1.64, delay = 1.94, r = 0,   g = 255, b = 100, voice = "posilka_courier_4"      }, -- courier_02_03.wav
+         { text = MissionText.Player3,        dur = 1.86, delay = 2.16, r = 255, g = 255, b = 255, voice = "posilka_player_3"       }, -- courier_02_01.wav
       });
       ---
 
@@ -617,13 +615,12 @@
                Level.SetValue(properties, "CustomString_1", 'AN53');
                AI.RunScriptTask(babka, "scripts:job\\AnchorJob.lua", AI.LOGIC_DEFAULT, properties);
 
-               --- If the courier is not at the meeting point. Dialog with babka (granny), AHO, 10.09.2008
+               --- If the courier is not at the meeting point. Dialog with babka (granny), AHO, 10.09.2008 -- Wunder
                Level.StartDialog({
-                  -- TODO: подставьте точную длительность каждого .wav (+ 0.3 сек паузы) в dur и delay -- Wunder
-                  { text = MissionText.Babushka1, dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_babushka_1" }, -- babushka_01_01.wav
-									{ text = MissionText.Player1,   dur = 2.5, delay = 2.8, r = 255, g = 255, b = 0,    voice = "posilka_player_1"   }, -- babushka_01_02.wav
-                  { text = MissionText.Babushka2, dur = 3.5, delay = 3.8, r = 0,   g = 255, b = 0, voice = "posilka_babushka_2" }, -- babushka_01_03.wav
-                  { text = MissionText.Player2,   dur = 2.0, delay = 2.3, r = 255, g = 255, b = 0,    voice = "posilka_player_2"   }, -- babushka_01_04.wav
+                  { text = MissionText.Babushka1, dur = 4.16, delay = 4.46, r = 255, g = 255, b = 100, voice = "posilka_babushka_1" }, -- babushka_01_01.wav
+									{ text = MissionText.Player1,   dur = 2.78, delay = 3.08, r = 255, g = 255, b = 255, voice = "posilka_player_1"   }, -- babushka_01_02.wav
+                  { text = MissionText.Babushka2, dur = 3.10, delay = 3.40, r = 255, g = 255, b = 100, voice = "posilka_babushka_2" }, -- babushka_01_03.wav
+                  { text = MissionText.Player2,   dur = 0.74, delay = 1.04, r = 255, g = 255, b = 255, voice = "posilka_player_2"   }, -- babushka_01_04.wav
                });
                ---
             end

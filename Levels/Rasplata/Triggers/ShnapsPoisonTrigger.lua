@@ -54,6 +54,11 @@
 
  function ShnapsPoisonTrigger:OnEnterArea( sender )
      if (Level.ShnapsPoisoned == false) then
+       -- AHO, 24.09.2008 & 28.09.2008
+       if (Level.PoisonTipShown != true and MissionText.Tipp_Poison != nil) then
+          Level.PoisonTipShown = true;
+          Level.AddSmallMessage( "&" .. MissionText.Tipp_Poison, 10.0, 255, 255, 255 );
+       end;
        Level.AddPlayerAction("SPTG", MissionText.Message_Poison, self.ObjectName, false);
      end
  end

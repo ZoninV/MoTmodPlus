@@ -32,12 +32,12 @@
       Message_SpyAlert                = "! Охрана заметила Полякова и собирается поднять тревогу!";
       Message_KeyReceived             = "Вам выдан ключ от камер.";
 
-	  -- Wunder
-      Intro                           = "Германия, весна 1944 г." ;
-      Player1                         = "Я пришел, чтобы вытащить вас отсюда, капитан!";
-      Player2                         = "Простите, капитан. У меня не было выбора...";
-      Polyakov1                       = "Большое спасибо. Поехали прямо сейчас!";
-      Polyakov2                       = "Самый короткий путь из Замка - через часовню!";
+      -- AHO & Wunder
+      Intro                           = "Германия, весна 1944 г.";
+      Player1                         = "I've com to get you out of here Captain Polyakov!"; -- "Я пришёл, чтобы вытащить вас отсюда, капитан!"
+      Player2                         = "Sorry comrade Polyakov. I had no choice..."; -- "Простите, капитан. У меня нет выбора..."
+      Polyakov1                       = "Thank you very much comrade. Let's go immediately!"; -- "Большое спасибо, товарищ. Уходим немедленно!"
+      Polyakov2                       = "The shortest way out of the castle is via the chapel!"; -- "Самый короткий путь из замка - через часовню внизу!"
 
       -- Liz Shaw
       MM_StopMove_CIV           = "@ Доступ в эту часть здания разрешен только солдатам и офицерам СС!";
@@ -77,7 +77,8 @@
 
   function Level.OnFinishLoad()
 
-     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
+      -- Enemies do not use granades anymore. This was unlogicial in an indoor level. AHO, 01.11.2008
+      AI.EnableGrenades(false);
 
       -- forlik System:SetVar( "r_glow", true );
       -- forlik System:SetVar( "r_glow_r", 2.0 );
@@ -190,7 +191,7 @@
         return;
      end;
 
-     -- Skip autosave if player is exposed, in combat, or under alert
+     -- Skip autosave if player is exposed, in combat, or under alert -- Wunder
      if (AI.IsSilence() == false or
          AI.IsGlobalAlert() == true or
          AI.IsGoingAlert(-1) == true) then
@@ -487,6 +488,9 @@
      AI.EnableZone("InterrogationRoom_GSpy", false);
      AI.EnableZone("InterrogationRoom_Near", false);
 
+     -- Ort- und Zeit der Mission, AHO, 31.08.2008 (moved to OnLoaded so it doesn't repeat on QuickLoad)
+     Level.AddLargeMessage(MissionText.Intro, 10.0, 180, 180, 180);
+
      AI.Enable("notify_see_custom_actor"); -- Liz Shaw
      Level.OnFinishLoad();
      Level.AutoSave();
@@ -494,6 +498,65 @@
   end;
 
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
+
+  -- Sequential dialog queue via dedicated one-shot timers (unified PlayMenuSound + colored subtitles) -- Wunder
+  Level.ActiveDialog = nil;
+  Level.DialogIdx    = 0;
+  Level.DialogFlip   = false;
+
+  function Level.StartDialog(lines)
+     if (lines == nil) then
+        return;
+     end;
+     Level.RemoveTimer('DLG1');
+     Level.RemoveTimer('DLG2');
+     Level.ActiveDialog = lines;
+     Level.DialogIdx    = 1;
+     Level.DialogFlip   = false;
+     Level.OnDialogTimer();
+  end;
+
+  function Level.OnDialogTimer()
+     if (Level.IsMissionFailed() != false) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+     if (Level.ActiveDialog == nil) then
+        return;
+     end;
+
+     local idx  = Level.DialogIdx;
+     local line = Level.ActiveDialog[idx];
+     if (line == nil) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+
+     -- Show subtitle line -- Wunder
+     --if (line.text != nil) then
+     --   Level.AddSmallMessage("&" .. line.text, line.dur, line.r, line.g, line.b);
+     --end;
+
+     if (line.voice != nil) then
+        Level.PlayMenuSound(line.voice);
+     end;
+
+     if (Level.ActiveDialog[idx + 1] != nil) then
+        Level.DialogIdx = idx + 1;
+        local delay = line.delay;
+        if (delay == nil or delay <= 0.0) then
+           delay = 2.5;
+        end;
+        Level.DialogFlip = not Level.DialogFlip;
+        if (Level.DialogFlip) then
+           Level.AddTimer('DLG1', "OnDialogTimer", delay, false);
+        else
+           Level.AddTimer('DLG2', "OnDialogTimer", delay, false);
+        end;
+     else
+        Level.ActiveDialog = nil;
+     end;
+  end;
 
   function Level.OnComendatCloth()
      Level.EnableLevelMark('YOFS' , false );
@@ -590,6 +653,14 @@
     Level.CompleteMissionTask('RELS', 15.0 );
     Level.AddLargeMessage( MissionText.Message_2, 15.0, 255, 255, 255 );
 
+    -- Polyakov Dialog, AHO, 10.09.2008 -- Wunder
+    Level.StartDialog({
+       { text = MissionText.Player1,   dur = 2.78, delay = 3.08, r = 255, g = 255, b = 255, voice = "krasavitca_player_1"   }, -- polyakov_01_01.wav
+       { text = MissionText.Polyakov1, dur = 3.76, delay = 4.06, r = 0,   g = 255, b = 100, voice = "krasavitca_polyakov_1" }, -- polyakov_01_02.wav
+       { text = MissionText.Polyakov2, dur = 5.88, delay = 6.18, r = 0,   g = 255, b = 100, voice = "krasavitca_polyakov_2" }, -- polyakov_01_03.wav
+    });
+    ---
+
     Level.EnableLevelMark( 'OUTS', true );
     Level.EnableLevelMark( 'DDOC', false );
     Level.EnableLevelMark( 'ADOC', false );
@@ -668,6 +739,12 @@
 
     Level.AddLargeMessage( MissionText.Message_4, 15.0, 255, 255, 255 );
     Level.AddLargeMessage( MissionText.Message_3, 15.0, 255, 255, 255 );
+
+    --- Player entschuldigt sich, wenn er Polyakov toeten muss. AHO, 10.09.2008 -- Wunder
+    Level.StartDialog({
+       { text = MissionText.Player2, dur = 2.92, delay = 3.22, r = 255, g = 255, b = 255, voice = "krasavitca_player_2" }, -- polyakov_02_01.wav
+    });
+    ---
 
     Level.SpyKilled = true;
     Level.AutoSave();

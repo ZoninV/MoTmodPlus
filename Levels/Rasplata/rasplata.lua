@@ -109,6 +109,19 @@
         return;
      end;
 
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
+     end;
+
      local nextSlot = 0;
      if (Level.AutoSaveSlot != nil) then
         nextSlot = Level.AutoSaveSlot + 1;
@@ -215,6 +228,7 @@
       Level.NumKilled            = 0;
       Level.RadioBroken          = false;
       Level.ShnapsPoisoned       = false;
+      Level.PoisonTipShown       = false;
       Level.ShnapsPoisonedGet    = false;
       Level.ShnapsPoisonedActive = false;
       Level.GuardDoorOpened      = false;

@@ -38,13 +38,11 @@ end
 function Anchor:Execute( uid, npc )
   AI.Debug(npc, "Anchor", "RegistrateAnchor::Execute");
 
-  -- Hotelmanager heiﬂt einem Willkommen nach dem Einchecken. AHO, 07.09.2008
-  Level.AddSmallMessage(MissionText.Manager1,10.0,0,255,0);
-  Level.AddSmallMessage(MissionText.Manager2,10.0,0,255,0);
-  Level.AddSmallMessage("",10.0,0,255,0);
-  Level.AddSmallMessage(MissionText.Player,10.0,255,255,0);
-  Level.AddSmallMessage("",10.0,255,255,0);
-  --
+  -- The hotel manager welcomes you after check-in. AHO, 07.09.2008
+  -- Voiced colored dialog moved to Level.StartManagerDialog() in hotel.lua -- Wunder
+  if (Level.StartManagerDialog != nil) then
+     Level.StartManagerDialog();
+  end;
   Level.AddSmallMessage( MissionText.Message_GetsTicket, 15.0, 255, 255, 255 ); -- AHO, 16.09.2008
 
   Level.GiveTicket();

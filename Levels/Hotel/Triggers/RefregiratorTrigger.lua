@@ -15,8 +15,11 @@
 
  function RefregiratorTrigger:OnEnterArea( sender )
       Level.AddTimer( 'RFTG', "OnRefregTriggerTimer", 4, true );
-      -- AHO, Kleiner Hilfstext beim Betreten des Kühlraums. AHO, 24.09.2008    
-      Level.AddSmallMessage(MissionText.Tip_Refreg,10.0,255,255,255);
+      -- Short help text when entering the cold room. AHO, 24.09.2008    
+      if (Level.RefregTipShown != true) then
+         Level.RefregTipShown = true;
+         Level.AddSmallMessage( "!&" .. MissionText.Tip_Refreg, 10.0, 255, 255, 255 );
+      end;
       --
  end
 
