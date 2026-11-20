@@ -112,6 +112,19 @@
         return;
      end;
 
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
+     end;
+
      local nextSlot = 0;
      if (Level.AutoSaveSlot != nil) then
         nextSlot = Level.AutoSaveSlot + 1;
@@ -347,6 +360,15 @@
       if (Level.GetDifficulty() == 0) then
          Level.SetupEasy();
       end
+
+      -- Each of the eight snipers have now one magazine for their rifle in their inventory, AHO, 28.12.2008
+      local snipers = { 'SNP1', 'SNP2', 'SNP3', 'SNP4', 'SNP5', 'SNP6', 'SNP7', 'SNP8' };
+      for i = 1, table.getn(snipers) do
+         local snp = Level.FindActor( snipers[i] );
+         if ( snp != nil ) then
+            Actor.PutEmptyPouch( snp, "Gewehr", "WeaponMagazine" );
+         end;
+      end;
 
       AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
       Level.OnFinishLoad();

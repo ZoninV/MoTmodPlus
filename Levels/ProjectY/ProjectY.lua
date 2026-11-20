@@ -16,7 +16,7 @@
       Message_3             = "Задания изменены";
       Key_Name_1            = "Ключ от сейфа в лаборатории";
       Key_Name_2            = "Ключ от сейфа в кабинете полковника";
-      Key_Name_3            = "Key to the conference room";
+      Key_Name_3            = "Ключ от конференц-зала";
       Message_PassName      = "Удостоверение ученого";
       Message_PassNameL     = "УДОСТОВЕРЕНИЕ УЧЕНОГО";
       Message_Pass2Name     = "Допуск от Полковника Бэкера";
@@ -28,8 +28,8 @@
       Kill_Msg_3            = "Еще ";
       Kill_Msg_2            = " до того как охрана обнаружит неладное и поднимет тревогу.";
       Kill_Soldiers         = "Вы уничтожили слишком много солдат.";
-      Kill_Civilian         = "Вы уничтожили слишком много ученных.";
-      Kill_Officers         = "Вы унчитожили слишком много офицеров.";
+      Kill_Civilian         = "Вы уничтожили слишком много ученых.";
+      Kill_Officers         = "Вы уничтожили слишком много офицеров.";
       Message_Alarm         = "Поднята тревога. Охрана стала более внимательна.";
       Message_AlarmFinished = "Охрана успокоилась.";
       Message_Key           = "У вас нету ключа, чтобы открыть сейф.";
@@ -262,6 +262,19 @@
 
      if (Level.IsMissionFailed() != false) then
         return;
+     end;
+
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
      end;
 
      local nextSlot = 0;

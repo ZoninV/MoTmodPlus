@@ -35,7 +35,7 @@
       Message_CloseDoor    = "ПОВЕСИТЬ ТАБЛИЧКУ";
       Poison_Need          = "! Нужен яд, чтобы отравить.";
 
-	  -- Wunder
+	  -- AHO & Wunder
       Intro                = "Британское посольство, Москва, 1945 г.";
       Action_StealKey      = "ВЫКРАСТЬ КЛЮЧ";
       Message_StealKey     = "Вы украли ключ.";
@@ -133,6 +133,18 @@
 
      if (Level.IsMissionFailed() != false) then
         return;
+     end;
+
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
      end;
 
      local nextSlot = 0;
@@ -332,6 +344,9 @@
       local keyMaster = Level.FindActor( 'KEYM' );
       if (keyMaster != nil) then
 
+         -- The archivist has no longer a weapon and ammo. AHO, 18.02.2009
+         Actor.ClearInventory( keyMaster, true );
+
          local key = Level.CreateItem( "Custom" , "Equipment" );
          if ( key != nil ) then
 
@@ -378,6 +393,35 @@
       Level.SearchJustFinished    = false; -- Liz Shaw
       Level.HadForbidObjects = false; -- Liz Shaw
       Level.TopFloorsDisabled = false; -- Liz Shaw
+
+      -- Some of the standing guards now carry a Sten MP in their inventory. AHO, 25.09.2008
+      local stenGuards = { 'HG06', 'HG09', 'HG10', 'HG12', 'HG13', 'HG14', 'HG15', 'HG16', 'HG21' };
+      for i = 1, table.getn(stenGuards) do
+         local guard = Level.FindActor( stenGuards[i] );
+         if (guard != nil) then
+            local sten = Level.CreateItem( "Sten", "Weapon" );
+            if (sten != nil) then
+               Actor.PutWeapon( guard, Actor.WEAPON_SLOT_MACHINEGUN, sten );
+            end;
+         end;
+      end;
+
+      -- The key to the locked doors can now be stolen from the archivist. AHO, 08.10.2008
+      Level.AddPlayerActorAction( 'steal', 'KEYM', MissionText.Action_StealKey, "OnSteal", false, true );
+
+      -- The archivist is only hostile if you wear civilian clothes. AHO, 18.02.2009
+      AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "KEYM", Actor.ACTOR_TYPE_CIVILIAN);
+
+      -- Volkov now carries a Nagant with silencer and ammo, instead of a Colt. AHO, 18.02.2009
+      local vol = Level.FindActor('VOLK');
+      if (vol != nil) then
+         Actor.ClearInventory( vol, true );
+         local gun = Level.CreateItem("NaganSilencer", "Weapon");
+         if (gun != nil) then
+            Actor.PutWeapon( vol, Actor.WEAPON_SLOT_PISTOL, gun );
+            Actor.PutWeaponAmmo( vol, "Nagan" );
+         end;
+      end;
 
       AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
 
@@ -1614,3 +1658,38 @@ function Level.ChangePashJobs()
    AI.SetJob(AI.FindNPC('E235'), "post_pash");
    AI.SetJob(AI.FindNPC('M227'), "post_pash");
 end
+
+  function Level.OnSteal( actionId )
+     -- The key to the locked doors can now be stolen from the archivist. AHO, 08.10.2008
+     AI.StartDecamouflage( 150.0, 250.0, 5 );
+     Level.AddSmallMessage( MissionText.Message_StealKey, 5.0, 255, 255, 255 );
+     local player = Level.FindActor('PLYR');
+     local arc = Level.FindActor('KEYM');
+     Level.RemovePlayerActorAction("steal");
+
+     -- Create new key and put it into player's inventory
+     if (player != nil) then
+        local key = Level.CreateItem( "Custom", "Equipment" );
+        if (key != nil) then
+           Entity.SetUniqueID( key, 'SKKY' );
+           Level.SetCustomItemName( key, MissionText.Key_Name );
+           Level.SetCustomItemIcon( key, "ammo_key" );
+           Actor.PutPouch( player, Actor.GetEmptyPouch(player), key );
+        end;
+     end;
+
+     -- Remove depot key from archivist's inventory while preserving archive key ('AKKY')
+     if (arc != nil) then
+        local hadArchiveKey = Actor.HasCustomEquipment( arc, 'AKKY' );
+        Actor.ClearInventory( arc, true );
+        if (hadArchiveKey != false) then
+           local key3f = Level.CreateItem( "Custom", "Equipment" );
+           if (key3f != nil) then
+              Entity.SetUniqueID( key3f, 'AKKY' );
+              Level.SetCustomItemName( key3f, MissionText.Key3f_Name );
+              Level.SetCustomItemIcon( key3f, "ammo_key" );
+              Actor.PutPouch( arc, Actor.GetEmptyPouch(arc), key3f );
+           end;
+        end;
+     end;
+  end;

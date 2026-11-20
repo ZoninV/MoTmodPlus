@@ -33,11 +33,11 @@
                                     "Сетка, окружающяя бараки, находится под напряжением.";
                                   };
       Docs_Pass                 = "ПРОПУСК";
-	  -- Wunder
+	    -- AHO & Wunder
       Intro                     = "Германия, недалеко от Моосбурга, весна 1945 г.";
-      Player1                   = "Товарищ?";
-      Player2                   = "Хорошо, пойдёмте со мной!";
-      Raoul                     = "Я здесь!";
+      Player1                   = "Comrade?"; -- "Товарищ?";
+      Player2                   = "Good, come with me!"; -- "Хорошо, пойдёмте со мной!";
+      Raoul                     = "I'm here!"; -- "Я здесь!";
   };
 
   function Level.OnCompleteMission()
@@ -133,6 +133,18 @@
 
      if (Level.IsMissionFailed() != false) then
         return;
+     end;
+
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
      end;
 
      local nextSlot = 0;
@@ -299,6 +311,15 @@
       local DoctorUID = { 'DCT1',
                           'DCT2' };
 
+      -- The doctor now carries a health kit in his inventory. AHO, 09.09.2008
+      local doctor = Level.FindActor('DCT1');
+      if (doctor != nil) then
+         local health = Level.CreateItem( "Medikit" , "Equipment" );
+         if (health != nil) then
+            Actor.PutPouch( doctor, Actor.GetEmptyPouch(doctor), health );
+         end;
+      end;
+
       Level.DoctorFormId = {}; 
 
       for i in DoctorUID do
@@ -372,6 +393,11 @@
       AI.AddHideBodyBox(-558.6, -29.6, -315.1, -529.0, -15.5 + 10.0, -287.7);
       AI.AddHideBodyBox( 305.4, -30.1,   61.7,  335.8, -15.5 + 10.0,   83.9);
 
+      -- AHO: lower decamouflage level for doctor and infirmary guard, and add spare doctor uniform
+      AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "DCT1", Actor.ACTOR_TYPE_CIVILIAN);
+      AI.SetDecamouflageLevel(AI.AI_TARGET_UID, "S141", Actor.ACTOR_TYPE_CIVILIAN);
+      Level.CreateWorldItem( "Wear:GermanDoctor" , "Equipment" , -387.49, -97.95, 14.61, 0.0, 0.0, 0.0, 'id_docsuit' );
+
       AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
       Level.OnFinishLoad();
      Level.AutoSave();
@@ -409,11 +435,79 @@
     Level.ChangeTask();
   end;
 
+  Level.ActiveDialog = nil;
+  Level.DialogIdx    = 0;
+  Level.DialogFlip   = false;
+
+  -- Raul meeting dialog, AHO (voiced by Wunder)
+  function Level.StartRaulDialog()
+     Level.StartDialog({
+        { text = MissionText.Player1, dur = 0.78, delay = 1.08, r = 255, g = 255, b = 255, voice = "izyatie_player_1" }, -- raul_01_01.wav
+        { text = MissionText.Raoul,   dur = 0.94, delay = 1.24, r = 0,   g = 255, b = 100, voice = "izyatie_raul_1"   }, -- raul_01_02.wav
+        { text = MissionText.Player2, dur = 2.30, delay = 2.60, r = 255, g = 255, b = 255, voice = "izyatie_player_2" }, -- raul_01_03.wav
+     });
+  end;
+
+  function Level.StartDialog(lines)
+     if (lines == nil) then
+        return;
+     end;
+     Level.RemoveTimer('DLG1');
+     Level.RemoveTimer('DLG2');
+     Level.ActiveDialog = lines;
+     Level.DialogIdx    = 1;
+     Level.DialogFlip   = false;
+     Level.OnDialogTimer();
+  end;
+
+  function Level.OnDialogTimer()
+     if (Level.IsMissionFailed() != false) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+     if (Level.ActiveDialog == nil) then
+        return;
+     end;
+
+     local idx  = Level.DialogIdx;
+     local line = Level.ActiveDialog[idx];
+     if (line == nil) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+
+     -- Show subtitle line -- Wunder
+     --if (line.text != nil) then
+     --   Level.AddSmallMessage("&" .. line.text, line.dur, line.r, line.g, line.b);
+     --end;
+
+     if (line.voice != nil) then
+        Level.PlayMenuSound(line.voice);
+     end;
+
+     if (Level.ActiveDialog[idx + 1] != nil) then
+        Level.DialogIdx = idx + 1;
+        local delay = line.delay;
+        if (delay == nil or delay <= 0.0) then
+           delay = 2.5;
+        end;
+        Level.DialogFlip = not Level.DialogFlip;
+        if (Level.DialogFlip) then
+           Level.AddTimer('DLG1', "OnDialogTimer", delay, false);
+        else
+           Level.AddTimer('DLG2', "OnDialogTimer", delay, false);
+        end;
+     else
+        Level.ActiveDialog = nil;
+     end;
+  end;
+
   function Level.OnEnterTriggerArea( sender, trgname, trgcmd )
     if     ( trgname == 'BaseTrigger_01' ) then
         Level.EnableEatScript = true;
     elseif ( trgname == 'RaulTrigger_1' or trgname == 'RaulTrigger_2' ) then
 
+        Level.StartRaulDialog();
         Level.ChangeTask();
 
         Actor.SetMapHidden( Level.FindActor('RAUL'), false );
