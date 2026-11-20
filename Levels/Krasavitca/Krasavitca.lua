@@ -190,6 +190,18 @@
         return;
      end;
 
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
+     end;
+
      local nextSlot = 0;
      if (Level.AutoSaveSlot != nil) then
         nextSlot = Level.AutoSaveSlot + 1;
@@ -658,6 +670,7 @@
     Level.AddLargeMessage( MissionText.Message_3, 15.0, 255, 255, 255 );
 
     Level.SpyKilled = true;
+    Level.AutoSave();
 
     if ( Level.LeaveTrigger != nil ) then
 

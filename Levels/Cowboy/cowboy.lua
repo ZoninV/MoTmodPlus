@@ -413,6 +413,18 @@ end;
         return;
      end;
 
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
+     end;
+
      local nextSlot = 0;
      if (Level.AutoSaveSlot != nil) then
         nextSlot = Level.AutoSaveSlot + 1;
@@ -1004,7 +1016,10 @@ end;
      else
         Level.RemoveMissionTask(taskId);
 
-        if (Level.RunLogic(nil) == true) then
+        
+        if (taskId != 'LEAV' and taskId != 'ALAR') then
+           Level.AutoSave();
+        end;if (Level.RunLogic(nil) == true) then
            Level.AddLargeMessage( MissionText.Message_TaskChanged, 10.0, 255, 255, 255 );
            Level.PlayMenuSound("task_finish");
         end

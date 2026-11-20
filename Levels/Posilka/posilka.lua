@@ -17,20 +17,20 @@
       Message_Alarm         = "Поднята тревога. Число патрулей увеличено.";
       Message_AlarmFinished = "Охрана успокоилась.";
 
-	  -- Wunder
+      -- AHO & Wunder
       Intro                 = "Окрестности Витебска, Белоруссия, декабрь 1943 г.";
       Babushka1             = "Милок, немцы схватили курьера!";
-      Babushka2             = "Его держат в доме неподалеку от главной улицы.";
+      Babushka2             = "Его держат в доме неподалёку от главной улицы.";
       Player1               = "Спасибо, бабуля.";
-      Player2               = "Понятно!";
-      Player3               = "Хорошо, удачи, товарищ.";
-      Courier_Thanks        = "Спасибо, это было действительно круто.";
-      Courier1              = "Возникла небольшая проблема: у меня забрали схемы.";
-      Courier2              = "Теперь они находятся в распоряжении штандартенфюрера Пауля Вебера.";
-      Courier3              = "Отлично, у вас есть схемы, товарищ!";
-      Courier4              = "Немедленно покиньте город.";
-      Message_Courier_Died  = "Курьер мертв. Отнесите схемы в безопасное место.";
-      Message_Courier_Died2 = "Курьер мертв. Немедленно получите схемы.";
+      Player2               = "Понял!";
+      Player3               = "Хорошо. Удачи, товарищ.";
+      Courier_Thanks        = "Спасибо, товарищ, еле пронесло."; -- Always when freeing the courier, AHO, 10.09.2008
+      Courier1              = "Есть одна проблема: у меня забрали схемы.";
+      Courier2              = "Сейчас они у штандартенфюрера Пауля Вебера.";
+      Courier3              = "Отлично, схемы уже у вас, товарищ!";
+      Courier4              = "Уходите из города немедленно.";
+      Message_Courier_Died  = "Курьер погиб. Доставьте схемы в безопасное место."; -- AHO, 22.09.2008
+      Message_Courier_Died2 = "Курьер погиб. Заберите схемы и покиньте город."; -- AHO, 29.09.2008
 
       -- Liz Shaw
       MM_StopMove_CIV      = "@ Гражданским лицам вход в здание воспрещен.";
@@ -47,8 +47,6 @@
   end;
 
   function Level.OnFinishLoad()
-
-     Level.AddLargeMessage(MissionText.Intro , 10.0, 180, 180, 180 ); -- Wunder
 
      -- forlik System:SetVar("r_glow", true );
      -- forlik System:SetVar("r_glow_r", 0.8 );
@@ -129,6 +127,15 @@
   function Level.AutoSave()
 
      if (Level.IsMissionFailed() != false) then
+        return;
+     end;
+
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true or
+         AI.IsLocalAlert(1) == true or
+         AI.IsLocalAlert(2) == true) then
         return;
      end;
 
@@ -276,6 +283,33 @@
 
      end;
 
+     -- Date and time of the mission, AHO, 31.08.2008 (moved to OnLoaded so it doesn't repeat on QuickLoad)
+     Level.AddLargeMessage(MissionText.Intro, 10.0, 180, 180, 180);
+
+     -- The courier now carries a health kit in his inventory, AHO, 22.09.2008
+     local courier = Level.FindActor('PKUR');
+     if (courier != nil) then
+        local pouch = Actor.GetEmptyPouch(courier);
+        if (pouch != nil) then
+           local health = Level.CreateItem("Medikit", "Equipment");
+           if (health != nil) then
+              Actor.PutPouch(courier, pouch, health);
+           end;
+        end;
+     end;
+
+     -- the babka (granny) now carries a health kit in her inventory, AHO, 22.09.2008
+     local babkaMed = Level.FindActor('PG04');
+     if (babkaMed != nil) then
+        local pouch = Actor.GetEmptyPouch(babkaMed);
+        if (pouch != nil) then
+           local health = Level.CreateItem("Medikit", "Equipment");
+           if (health != nil) then
+              Actor.PutPouch(babkaMed, pouch, health);
+           end;
+        end;
+     end;
+
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
      Level.OnFinishLoad();
      Level.AutoSave();
@@ -284,9 +318,81 @@
 
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
 
-  function Level.OnKilledKurier()
+  -- Sequential dialog queue via dedicated one-shot timers (unified PlayMenuSound for all lines) -- Wunder
+  Level.ActiveDialog = nil;
+  Level.DialogIdx    = 0;
+  Level.DialogFlip   = false;
 
-      Level.FailedMission( MissionText.Fail_KKilled );
+  function Level.StartDialog(lines)
+     if (lines == nil) then
+        return;
+     end;
+     Level.RemoveTimer('DLG1');
+     Level.RemoveTimer('DLG2');
+     Level.ActiveDialog = lines;
+     Level.DialogIdx    = 1;
+     Level.DialogFlip   = false;
+     Level.OnDialogTimer();
+  end;
+
+  function Level.OnDialogTimer()
+     if (Level.IsMissionFailed() != false) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+     if (Level.ActiveDialog == nil) then
+        return;
+     end;
+
+     local idx  = Level.DialogIdx;
+     local line = Level.ActiveDialog[idx];
+     if (line == nil) then
+        Level.ActiveDialog = nil;
+        return;
+     end;
+
+     -- Show subtitle line
+     --if (line.text != nil) then
+     --   Level.AddSmallMessage(line.text, line.dur, line.r, line.g, line.b);
+     --end;
+
+     -- Unified voiceover playback for both NPCs and Strogov (channel 'menu' in basesoundsfx.shadvs)
+     if (line.voice != nil) then
+        Level.PlayMenuSound(line.voice);
+     end;
+
+     -- Schedule next line in queue (alternating timer UIDs, no InstallSingleDpc/loadstring)
+     if (Level.ActiveDialog[idx + 1] != nil) then
+        Level.DialogIdx = idx + 1;
+        local delay = line.delay;
+        if (delay == nil or delay <= 0.0) then
+           delay = 2.5;
+        end;
+        Level.DialogFlip = not Level.DialogFlip;
+        if (Level.DialogFlip) then
+           Level.AddTimer('DLG1', "OnDialogTimer", delay, false);
+        else
+           Level.AddTimer('DLG2', "OnDialogTimer", delay, false);
+        end;
+     else
+        Level.ActiveDialog = nil;
+     end;
+  end;
+
+  function Level.OnKilledKurier()
+      -- Courier can die if he was freed. The mission is not failed then. AHO, 22.09.2008, Update: 29.09.2008
+      -- org Level.FailedMission( MissionText.Fail_KKilled );
+      if (Level.KurierFree == true) then
+          -- Show different messages when courier dies, depending on player has got the documents or not. AHO, 29.09.2008
+          if (Level.DocsComplete == true) then
+             Level.AddSmallMessage(MissionText.Message_Courier_Died, 15.0, 255, 255, 255);
+          else
+             Level.AddSmallMessage(MissionText.Message_Courier_Died2, 15.0, 255, 255, 255);
+          end;
+          return;
+      else
+          Level.FailedMission( MissionText.Fail_KKilled );
+      end;
 
   end;
 
@@ -411,6 +517,8 @@
 
       end;
 
+      Level.AutoSave();
+
   end;
 
   function Level.AddDocsTask()
@@ -442,10 +550,28 @@
     if ( Level.DocsComplete == false ) then
 
       Level.AddDocsTask();
+      --- When freeing the courier before gotten the documents. AHO, 10.09.2008
+      Level.StartDialog({
+         -- TODO: подставьте точную длительность каждого .wav (+ 0.3 сек паузы) в dur и delay -- Wunder
+         { text = MissionText.Courier_Thanks, dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_thanks" }, -- courier_01_01.wav
+         { text = MissionText.Courier1,       dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_1"      }, -- courier_01_02.wav
+         { text = MissionText.Courier2,       dur = 3.5, delay = 3.8, r = 0,   g = 255, b = 0, voice = "posilka_courier_2"      }, -- courier_01_03.wav
+         { text = MissionText.Player3,        dur = 2.5, delay = 2.8, r = 255, g = 255, b = 0,    voice = "posilka_player_3"       }, -- courier_02_01.wav
+      });
+      ---
 
     else
 
       Level.AddLeaveTask();
+      --- When freeing the courier, if documents gotten before. AHO, 10.09.2008
+      Level.StartDialog({
+         -- TODO: подставьте точную длительность каждого .wav (+ 0.3 сек паузы) в dur и delay -- Wunder
+         { text = MissionText.Courier_Thanks, dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_thanks" }, -- courier_01_01.wav
+         { text = MissionText.Courier3,       dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_3"      }, -- courier_02_02.wav
+         { text = MissionText.Courier4,       dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_courier_4"      }, -- courier_02_03.wav
+         { text = MissionText.Player3,        dur = 2.5, delay = 2.8, r = 255, g = 255, b = 0,    voice = "posilka_player_3"       }, -- courier_02_01.wav
+      });
+      ---
 
     end;
 
@@ -488,8 +614,18 @@
 --          babka must be default
             if (babka != nil) then
                local properties = Level.CreateCustomParams();
-               Level.SetValue(properties, "CustomString_1", 'AN53');                               
+               Level.SetValue(properties, "CustomString_1", 'AN53');
                AI.RunScriptTask(babka, "scripts:job\\AnchorJob.lua", AI.LOGIC_DEFAULT, properties);
+
+               --- If the courier is not at the meeting point. Dialog with babka (granny), AHO, 10.09.2008
+               Level.StartDialog({
+                  -- TODO: подставьте точную длительность каждого .wav (+ 0.3 сек паузы) в dur и delay -- Wunder
+                  { text = MissionText.Babushka1, dur = 3.0, delay = 3.3, r = 0,   g = 255, b = 0, voice = "posilka_babushka_1" }, -- babushka_01_01.wav
+									{ text = MissionText.Player1,   dur = 2.5, delay = 2.8, r = 255, g = 255, b = 0,    voice = "posilka_player_1"   }, -- babushka_01_02.wav
+                  { text = MissionText.Babushka2, dur = 3.5, delay = 3.8, r = 0,   g = 255, b = 0, voice = "posilka_babushka_2" }, -- babushka_01_03.wav
+                  { text = MissionText.Player2,   dur = 2.0, delay = 2.3, r = 255, g = 255, b = 0,    voice = "posilka_player_2"   }, -- babushka_01_04.wav
+               });
+               ---
             end
             
             Level.ChangeKurierTask();     
@@ -696,7 +832,7 @@ end
 --------------------------------------------------------
 function Level.OnStopMove(actorId, npc)
   if (npc == nil) then
-    print("MoTmod.ERROR: Jagdpanther.OnStopMove() npc is null " .. tostring(actorId));
+    print("MoTmod.ERROR: Posilka.OnStopMove() npc is null " .. tostring(actorId));
     return;
   end
 

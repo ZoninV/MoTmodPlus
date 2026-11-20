@@ -180,6 +180,18 @@
         return;
      end;
 
+     -- Skip autosave if player is exposed, in combat, or under alert
+     if (AI.IsSilence() == false or
+         AI.IsGlobalAlert() == true or
+         AI.IsGoingAlert(-1) == true) then
+        return;
+     end;
+     for i = 0, 20 do
+        if (AI.IsLocalAlert(i) == true) then
+           return;
+        end;
+     end;
+
      local nextSlot = 0;
      if (Level.AutoSaveSlot != nil) then
         nextSlot = Level.AutoSaveSlot + 1;
@@ -1022,6 +1034,7 @@
 
        Level.EnableLevelMark('RSH1', true);
        Actor.MarkAsTarget( Level.FindActor( 'GO23' ) , true );
+       Level.AutoSave();
     else
        if (Level.IsPlayerResh() != false) then
           Level.PlayMenuSound("task_finish");
@@ -1029,6 +1042,7 @@
           Level.AddMissionTask( MissionText.Task_6, 'RESH', "levels\\razvedshkola\\resh_task.txt", 3);
           Level.EnableLevelMark('RSH1', true);
           Level.CheckPlayerIsReshTask();
+          Level.AutoSave();
        end
     end
   end
