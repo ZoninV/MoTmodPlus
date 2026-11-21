@@ -41,6 +41,21 @@
      Level.UnregisterTrigger( self.Object );
 
      Level.SeifTrigger = nil;
+
+     -- Files are now shown in inventory if there is space. AHO, 28.09.2008 (fixed UID & guards)
+     local player = Level.GetPlayer();
+     if (player != nil) then
+        local files2 = Level.CreateItem( "Custom", "Equipment" );
+        if (files2 != nil) then
+           Entity.SetUniqueID( files2, 'FLS2' );
+           Level.SetCustomItemName( files2, MissionText.files );
+           Level.SetCustomItemIcon( files2, "ammo_doc" );
+           local pouch = Actor.GetEmptyPouch(player);
+           if (pouch != nil and pouch != -1) then
+              Actor.PutPouch( player, pouch, files2 );
+           end;
+        end;
+     end;
  end
 
  function GetDocsTrigger_2:OnEnterArea( sender )

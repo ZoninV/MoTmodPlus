@@ -41,6 +41,25 @@
        Level.SetDoorNotifyScript( door , false );
      end;
 
+     -- Documents now shown in inventory if there is space. AHO, 28.09.2008 (fixed UID & guards)
+     local player = Level.GetPlayer();
+     if (player != nil) then
+        local docs = Level.CreateItem( "Custom", "Equipment" );
+        if (docs != nil) then
+           if ( self.ScriptCommand == 'SEF1' ) then
+              Entity.SetUniqueID( docs, 'DOC1' );
+           else
+              Entity.SetUniqueID( docs, 'DOC2' );
+           end;
+           Level.SetCustomItemName( docs, MissionText.docs );
+           Level.SetCustomItemIcon( docs, "ammo_doc" );
+           local pouch = Actor.GetEmptyPouch(player);
+           if (pouch != nil and pouch != -1) then
+              Actor.PutPouch( player, pouch, docs );
+           end;
+        end;
+     end;
+
  end
 
  function GetDocumentsTrigger:OnEnterArea( sender )

@@ -54,6 +54,21 @@
 
      Level.EnableLevelMark( 'KAR1' , false );
 
+     -- Files are now shown in inventory if there is space. AHO, 28.09.2008 (fixed UID & guards)
+     local player = Level.GetPlayer();
+     if (player != nil) then
+        local files1 = Level.CreateItem( "Custom", "Equipment" );
+        if (files1 != nil) then
+           Entity.SetUniqueID( files1, 'FLS1' );
+           Level.SetCustomItemName( files1, MissionText.files );
+           Level.SetCustomItemIcon( files1, "ammo_doc" );
+           local pouch = Actor.GetEmptyPouch(player);
+           if (pouch != nil and pouch != -1) then
+              Actor.PutPouch( player, pouch, files1 );
+           end;
+        end;
+     end;
+
  end
 
  function GetDocsTrigger_1:OnEnterArea( sender )

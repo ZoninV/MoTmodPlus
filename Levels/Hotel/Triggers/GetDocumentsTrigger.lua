@@ -54,6 +54,21 @@
      Level.CompleteMissionTask('DOCS', 15.0 );
      Level.EnableLevelMark( 'DOCS', false );
      Level.EnableLevelMark( 'DISH', false );
+
+     -- Player now takes the real documents into his inventory. AHO, 28.09.2008 (fixed UID & guards)
+     local player = Level.GetPlayer();
+     if (player != nil) then
+        local real_docs = Level.CreateItem( "Custom", "Equipment" );
+        if (real_docs != nil) then
+           Entity.SetUniqueID( real_docs, 'RDOC' );
+           Level.SetCustomItemName( real_docs, MissionText.real_docs );
+           Level.SetCustomItemIcon( real_docs, "ammo_doc" );
+           local pouch = Actor.GetEmptyPouch(player);
+           if (pouch != nil and pouch != -1) then
+              Actor.PutPouch( player, pouch, real_docs );
+           end;
+        end;
+     end;
  end
 
  function GetDocumentsTrigger:OnEnterArea( sender )
