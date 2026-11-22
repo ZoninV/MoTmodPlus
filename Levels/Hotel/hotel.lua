@@ -107,15 +107,6 @@
      Stream.WriteBool   ( Level.MaidKeyReceived );
 
      Level.OnSave_Common(); -- forlik
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
-        Level.PendingAutoSaveSlot = nil;
-     end;
-     if (Level.AutoSaveSlot == nil) then
-        Stream.WriteInt( 0 );
-     else
-        Stream.WriteInt( Level.AutoSaveSlot );
-     end;
   end
  
   function Level.OnLoad()
@@ -155,61 +146,10 @@
      Level.MaidKeyReceived            = Stream.ReadBool();
 
      Level.OnLoad_Common(); -- forlik
-     Level.AutoSaveSlot = Stream.ReadInt();
-     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
-        Level.AutoSaveSlot = 0;
-     end;
      Level.OnFinishLoad();
 
   end
 
-  function Level.AutoSave()
-
-     if (Level.IsMissionFailed() != false) then
-        return;
-     end;
-
-     -- Skip autosave if player is exposed, in combat, or under alert
-     if (AI.IsSilence() == false or
-         AI.IsGlobalAlert() == true or
-         AI.IsGoingAlert(-1) == true) then
-        return;
-     end;
-     for i = 0, 20 do
-        if (AI.IsLocalAlert(i) == true) then
-           return;
-        end;
-     end;
-
-     local nextSlot = 0;
-     if (Level.AutoSaveSlot != nil) then
-        nextSlot = Level.AutoSaveSlot + 1;
-        if (nextSlot > 2) then
-           nextSlot = 0;
-        end;
-     end;
-
-     Level.PendingAutoSaveSlot = nextSlot;
-     System:SaveGame( "_hotel_" .. tostring(nextSlot) .. ".asv" , false );
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.PendingAutoSaveSlot = nil;
-        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
-     end;
-
-  end;
-
-  function Level.OnFailedMissionHandle()
-
-     local slot = Level.AutoSaveSlot;
-     if (slot == nil or slot < 0 or slot > 2) then
-        slot = 0;
-     end;
-
-     System:LoadGame( "_hotel_" .. tostring(slot) .. ".asv" , true );
-
-     return true;
-
-  end;
 
   function Level.SetDoorKey(door, key)
      local d = Level.FindDoor(door);
@@ -219,20 +159,6 @@
   end
 
   function Level.OnFinishLoad()
-
-     if (Level.OrigCompleteMissionTask == nil) then
-        Level.OrigCompleteMissionTask = Level.CompleteMissionTask;
-        Level.CompleteMissionTask = function(taskId, time)
-           if (time != nil) then
-              Level.OrigCompleteMissionTask(taskId, time);
-           else
-              Level.OrigCompleteMissionTask(taskId);
-           end;
-           if (taskId == 'DOCS') then
-              Level.InstallSingleDpc("Level.AutoSave()", 0.1);
-           end;
-        end;
-     end;
 
      -- forlik System:SetVar('r_glow', true );
      -- forlik System:SetVar('r_glow_r' , 1.5 );
@@ -466,9 +392,9 @@
 
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
      Level.OnFinishLoad();
-     Level.AutoSave();
   end;
 
+  Level.RestartLevelName = "Hotel";
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
 
   -- Sequential dialog queue via dedicated one-shot timers (unified PlayMenuSound + colored subtitles) -- Wunder
@@ -634,8 +560,19 @@
         return;
      end                               
 
+     local gadActor = Level.FindActor('GAD1');
+     if (gadActor != nil) then
+         Actor.MarkAsTarget(gadActor, false);
+     end
+
      if (Level.IsMissionTaskCompleted( 'DOCS' ) ) then
          Level.SetupLeaveTask();
+     else
+         local dpmActor = Level.FindActor('DPM1');
+         if (dpmActor != nil) then
+             Actor.MarkAsTarget(dpmActor, true);
+             Actor.SetMarkAsFriend(dpmActor, false);
+         end
      end
 
      Level.PlayMenuSound("task_finish"); -- Liz Shaw
@@ -840,6 +777,10 @@
         return;
      end
 
+     if (Level.IsMissionTaskCompleted( 'FNDS' ) != false) then
+        return;
+     end
+
      -- $TODO Add new mission tasks
      Level.AddMissionTask( MissionText.Task_3, 'KILL', "levels\\hotel\\kill_task.txt" );
      Level.AddMissionTask( MissionText.Task_4, 'DOCS', "levels\\hotel\\docs_task.txt" );
@@ -1016,6 +957,10 @@
 
     elseif (trgname == 'Barn2') then
 
+       if (Level.IsMissionTaskCompleted( 'WEPN' ) != false) then
+          return;
+       end
+
        Level.PlayMenuSound("task_finish"); -- Liz Shaw
        Level.CompleteMissionTask( 'WEPN', 15.0 );
        Level.UninstallWeaponTask();
@@ -1026,13 +971,17 @@
        if (Level.IsMissionTaskCompleted('FNDS') != false and
            Level.IsMissionTaskCompleted('DOCS') == false) then
 
+           local dpmActor = Level.FindActor('DPM1');
+           if (dpmActor != nil) then
+              Actor.SetMarkAsFriend(dpmActor, true);
+           end
            Level.EnableLevelMark('DOCS', true);
        end
 
     elseif ( trgname == "TechiMessage" ) then
 
 
-       Level.AddSmallMessage(MissionText.Message_GadWantPlumber, 8.0, 175, 175, 175);
+       Level.VoiceMessage(AI.FindNPC('HG21'), "hotel_techi_1", "Message_GadWantPlumber");
        Level.InstallDpc( "AI.SetJob( AI.FindNPC('HG21'), 'job_new')", 5.5 );
        Level.InstallDpc( "AI.SetJob( AI.FindNPC('HW07'), 'job_new')", 5.5 );
 
@@ -1423,7 +1372,7 @@
 -- Liz Shaw
 --------------------------------------------------------
   function Level.OnAnchor_MMAnchor04()
-     Level.VoiceMessage(AI.FindNPC('DPM1'), "", "Message_OnlyForDinner");
+     Level.VoiceMessage(AI.FindNPC('DPM1'), "hotel_diplomat_1", "Message_OnlyForDinner");
      Level.InstallDpc("Level.RunAnchorJob(AI.FindNPC('HG46'), 'MM05', false)", 4.0);
   end
 
@@ -1968,7 +1917,8 @@ function Level.OnMaidGiveKey()
      Level.EnableLevelMark('TECH', false);
    end
 
-   Level.AddSmallMessage( MissionText.Message_MaidGiveKey, 5.0, 175, 175, 175 );
+   Level.AddSmallMessage( "&" .. MissionText.Message_MaidGiveKey, 5.0, 255, 255, 100 );
+   Level.PlayMenuSound( "hotel_maid_1" );
    Level.EnableLevelMark('N2KY', false);
    Level.MaidKeyReceived = true;
 end

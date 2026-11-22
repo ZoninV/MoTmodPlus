@@ -143,15 +143,6 @@
      Level.WriteArray( Level.SaySpyAlertAnchors );
 
      Level.OnSave_Common(); -- forlik
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
-        Level.PendingAutoSaveSlot = nil;
-     end;
-     if (Level.AutoSaveSlot == nil) then
-        Stream.WriteInt( 0 );
-     else
-        Stream.WriteInt( Level.AutoSaveSlot );
-     end;
 
   end;
 
@@ -177,61 +168,10 @@
      Level.SaySpyAlertAnchors        = Level.ReadArray();
 
      Level.OnLoad_Common(); -- forlik
-     Level.AutoSaveSlot = Stream.ReadInt();
-     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
-        Level.AutoSaveSlot = 0;
-     end;
      Level.OnFinishLoad();
 
   end;
 
-  function Level.AutoSave()
-
-     if (Level.IsMissionFailed() != false) then
-        return;
-     end;
-
-     -- Skip autosave if player is exposed, in combat, or under alert -- Wunder
-     if (AI.IsSilence() == false or
-         AI.IsGlobalAlert() == true or
-         AI.IsGoingAlert(-1) == true) then
-        return;
-     end;
-     for i = 0, 20 do
-        if (AI.IsLocalAlert(i) == true) then
-           return;
-        end;
-     end;
-
-     local nextSlot = 0;
-     if (Level.AutoSaveSlot != nil) then
-        nextSlot = Level.AutoSaveSlot + 1;
-        if (nextSlot > 2) then
-           nextSlot = 0;
-        end;
-     end;
-
-     Level.PendingAutoSaveSlot = nextSlot;
-     System:SaveGame( "_krasavitca_" .. tostring(nextSlot) .. ".asv" , false );
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.PendingAutoSaveSlot = nil;
-        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
-     end;
-
-  end;
-
-  function Level.OnFailedMissionHandle()
-
-     local slot = Level.AutoSaveSlot;
-     if (slot == nil or slot < 0 or slot > 2) then
-        slot = 0;
-     end;
-
-     System:LoadGame( "_krasavitca_" .. tostring(slot) .. ".asv" , true );
-
-     return true;
-
-  end;
 
   function Level.AddKey( actorId, keyId, name )
      local actor = Level.FindActor(actorId);
@@ -493,10 +433,10 @@
 
      AI.Enable("notify_see_custom_actor"); -- Liz Shaw
      Level.OnFinishLoad();
-     Level.AutoSave();
 
   end;
 
+  Level.RestartLevelName = "Krasavitca";
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
 
   -- Sequential dialog queue via dedicated one-shot timers (unified PlayMenuSound + colored subtitles) -- Wunder

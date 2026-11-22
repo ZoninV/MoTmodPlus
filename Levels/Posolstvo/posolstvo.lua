@@ -89,15 +89,6 @@
       Stream.WriteBool  ( Level.TopFloorsDisabled ); -- Liz Shaw
 
       Level.OnSave_Common(); -- forlik
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
-        Level.PendingAutoSaveSlot = nil;
-     end;
-     if (Level.AutoSaveSlot == nil) then
-        Stream.WriteInt( 0 );
-     else
-        Stream.WriteInt( Level.AutoSaveSlot );
-     end;
   end
 
   function Level.OnLoad()
@@ -122,60 +113,9 @@
       Level.TopFloorsDisabled     = Stream.ReadBool(); -- Liz Shaw
 
       Level.OnLoad_Common(); -- forlik
-     Level.AutoSaveSlot = Stream.ReadInt();
-     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
-        Level.AutoSaveSlot = 0;
-     end;
       Level.OnFinishLoad();
   end
 
-  function Level.AutoSave()
-
-     if (Level.IsMissionFailed() != false) then
-        return;
-     end;
-
-     -- Skip autosave if player is exposed, in combat, or under alert
-     if (AI.IsSilence() == false or
-         AI.IsGlobalAlert() == true or
-         AI.IsGoingAlert(-1) == true) then
-        return;
-     end;
-     for i = 0, 20 do
-        if (AI.IsLocalAlert(i) == true) then
-           return;
-        end;
-     end;
-
-     local nextSlot = 0;
-     if (Level.AutoSaveSlot != nil) then
-        nextSlot = Level.AutoSaveSlot + 1;
-        if (nextSlot > 2) then
-           nextSlot = 0;
-        end;
-     end;
-
-     Level.PendingAutoSaveSlot = nextSlot;
-     System:SaveGame( "_posolstvo_" .. tostring(nextSlot) .. ".asv" , false );
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.PendingAutoSaveSlot = nil;
-        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
-     end;
-
-  end;
-
-  function Level.OnFailedMissionHandle()
-
-     local slot = Level.AutoSaveSlot;
-     if (slot == nil or slot < 0 or slot > 2) then
-        slot = 0;
-     end;
-
-     System:LoadGame( "_posolstvo_" .. tostring(slot) .. ".asv" , true );
-
-     return true;
-
-  end;
 
   function Level.OnFinishLoad()
 
@@ -430,9 +370,9 @@
       AI.EnableZone("SearchAlertZone_2",  false);
       AI.EnableZone("SearchZone_2",       false);
       Level.OnFinishLoad();
-     Level.AutoSave();
   end;
 
+  Level.RestartLevelName = "Posolstvo";
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
 
   function Level.OnDinnerTimer()
@@ -1410,7 +1350,7 @@ end
 function Level.OnAnchor_CookAddress()
     Level.RemoveTimer('CTTR');
     Level.RunAnchorJob( AI.FindNPC('E206'), 'MM04', true );
-    Level.VoiceMessage( AI.FindNPC('E206'), "", "Message_SayCook");
+    Level.VoiceMessage( AI.FindNPC('E206'), "posolstvo_cook_1", "Message_SayCook");
     Level.InstallDpc("Level.RunAnchorJob(AI.FindNPC('COOK'), 'MM05', false)", 4.0);
     Level.InstallDpc( "AI.SetJob( AI.FindNPC('COOK'), 'tualet')", 5.5 );
     Level.InstallDpc( "AI.SetJob( AI.FindNPC('E205'), 'dinner')", 6.0 );

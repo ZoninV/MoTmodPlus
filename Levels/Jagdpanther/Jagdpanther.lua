@@ -112,15 +112,6 @@
      Stream.WriteBool(Level.ExecutedDitrihHack);
 
      Level.OnSave_Common(); -- forlik
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
-        Level.PendingAutoSaveSlot = nil;
-     end;
-     if (Level.AutoSaveSlot == nil) then
-        Stream.WriteInt( 0 );
-     else
-        Stream.WriteInt( Level.AutoSaveSlot );
-     end;
   end;
 
   function Level.OnLoad()
@@ -137,48 +128,9 @@
      Level.ExecutedDitrihHack   = Stream.ReadBool();
 
      Level.OnLoad_Common(); -- forlik
-     Level.AutoSaveSlot = Stream.ReadInt();
-     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
-        Level.AutoSaveSlot = 0;
-     end;
      Level.OnFinishLoad();
   end;
 
-  function Level.AutoSave()
-
-     if (Level.IsMissionFailed() != false) then
-        return;
-     end;
-
-     local nextSlot = 0;
-     if (Level.AutoSaveSlot != nil) then
-        nextSlot = Level.AutoSaveSlot + 1;
-        if (nextSlot > 2) then
-           nextSlot = 0;
-        end;
-     end;
-
-     Level.PendingAutoSaveSlot = nextSlot;
-     System:SaveGame( "_jagdpanther_" .. tostring(nextSlot) .. ".asv" , false );
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.PendingAutoSaveSlot = nil;
-        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
-     end;
-
-  end;
-
-  function Level.OnFailedMissionHandle()
-
-     local slot = Level.AutoSaveSlot;
-     if (slot == nil or slot < 0 or slot > 2) then
-        slot = 0;
-     end;
-
-     System:LoadGame( "_jagdpanther_" .. tostring(slot) .. ".asv" , true );
-
-     return true;
-
-  end;
 
 
   function Level.OnLoaded()
@@ -342,10 +294,10 @@
      AI.OnPlayerEnterZone("global", 'GLSC'); -- forlik
 
      Level.OnFinishLoad();
-     Level.AutoSave();
 
   end;
 
+  Level.RestartLevelName = "Jagdpanther";
   AI.DoFile( "scripts:Levels\\Common.lua", false ); -- forlik
 
   function Level.OnKilledYazik()

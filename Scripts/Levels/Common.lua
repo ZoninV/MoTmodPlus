@@ -13,6 +13,9 @@
   -- Desc: 
   --------------------------------------------------------
   function Level.OnLoaded_Common()
+       Level.AutoSaveSlot        = nil;
+       Level.PendingAutoSaveSlot = nil;
+       Level.JustLoadedSave      = false;
        AI.Debug(nil, "Level.OnLoaded_Common()", "");
        
        Level.SoundName  = {  };
@@ -88,6 +91,10 @@
   -- Desc: 
   --------------------------------------------------------
   function Level.OnFinishLoad_Common()
+       if (Level.JustLoadedSave == true) then
+          Level.JustLoadedSave = false;
+          Level.ClearLargeMessages();
+       end;
        Level.UpdateSounds();
        Level.CustomFloorMask = {};
        
@@ -171,6 +178,19 @@
        Stream.WriteString(Level.HiArmyMMTime); -- forlik
        
        Level.WriteArray( Level.FormHelp );
+
+       -- Centralized AutoSave slot (-1 = no checkpoint yet in this mission; skipped in Training)
+       if (Level.SaveTraining == nil) then
+          if (Level.PendingAutoSaveSlot != nil) then
+             Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
+             Level.PendingAutoSaveSlot = nil;
+          end;
+          if (Level.AutoSaveSlot == nil) then
+             Stream.WriteInt( -1 );
+          else
+             Stream.WriteInt( Level.AutoSaveSlot );
+          end;
+       end;
        
   end
 
@@ -268,6 +288,17 @@
        
        -- version 5
        Level.FormHelp = Level.ReadArray();
+
+       -- Centralized AutoSave slot (skipped in Training)
+       if (Level.SaveTraining == nil) then
+          local slot = Stream.ReadInt();
+          if (slot == nil or slot < 0 or slot > 2) then
+             Level.AutoSaveSlot = nil;
+          else
+             Level.AutoSaveSlot = slot;
+          end;
+          Level.JustLoadedSave = true;
+       end;
   end
 
   --------------------------------------------------------
@@ -2091,3 +2122,56 @@ function Level.SetHiArmyMMAnim(anim, time, sound)
     Level.HiArmyMMTime = tostring(time);
   end
 end
+
+  --------------------------------------------------------
+  -- Centralized AutoSave & AutoLoad (3 unified slots: _autosave_0..2.asv)
+  -- Direct save (no timer/DPC callbacks) to avoid Truth.exe timer serialization crash (40000015).
+  -- If failed before first checkpoint, restarts current mission cleanly via l_loadlevel.
+  --------------------------------------------------------
+  if (Level.SaveTraining == nil) then
+
+     function Level.AutoSave()
+        if (Level.IsMissionFailed() != false) then
+           return;
+        end;
+
+        -- Skip autosave if player is exposed, in combat, or under alert
+        if (AI.IsSilence() == false or
+            AI.IsGlobalAlert() == true or
+            AI.IsGoingAlert(-1) == true) then
+           return;
+        end;
+        for i = 0, 20 do
+           if (AI.IsLocalAlert(i) == true) then
+              return;
+           end;
+        end;
+
+        local nextSlot = 0;
+        if (Level.AutoSaveSlot != nil) then
+           nextSlot = Level.AutoSaveSlot + 1;
+           if (nextSlot > 2) then
+              nextSlot = 0;
+           end;
+        end;
+
+        Level.PendingAutoSaveSlot = nextSlot;
+        System:SaveGame( "_autosave_" .. tostring(nextSlot) .. ".asv", false );
+        Level.PendingAutoSaveSlot = nil;
+     end;
+
+     function Level.OnFailedMissionHandle()
+        local slot = Level.AutoSaveSlot;
+        if (slot == nil or slot < 0 or slot > 2) then
+           if (Level.RestartLevelName != nil) then
+              System:ConsoleCommand( 'l_loadlevel "' .. Level.RestartLevelName .. '"' );
+              return true;
+           end;
+           return false;
+        end;
+
+        System:LoadGame( "_autosave_" .. tostring(slot) .. ".asv", true );
+        return true;
+     end;
+
+  end;

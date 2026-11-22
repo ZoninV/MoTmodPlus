@@ -54,6 +54,10 @@
      Level.CompleteMissionTask('DOCS', 15.0 );
      Level.EnableLevelMark( 'DOCS', false );
      Level.EnableLevelMark( 'DISH', false );
+     local dpmActor = Level.FindActor( 'DPM1' );
+     if (dpmActor != nil) then
+        Actor.SetMarkAsFriend( dpmActor, true );
+     end;
 
      -- Player now takes the real documents into his inventory. AHO, 28.09.2008 (fixed UID & guards)
      local player = Level.GetPlayer();
@@ -69,6 +73,8 @@
            end;
         end;
      end;
+
+     Level.AutoSave();
  end
 
  function GetDocumentsTrigger:OnEnterArea( sender )

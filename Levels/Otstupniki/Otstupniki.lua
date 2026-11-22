@@ -178,15 +178,6 @@ end;
        Stream.WriteBool( Level.BrevnaRopeBulletHitted );
        
        Level.OnSave_Common();              
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.AutoSaveSlot = Level.PendingAutoSaveSlot;
-        Level.PendingAutoSaveSlot = nil;
-     end;
-     if (Level.AutoSaveSlot == nil) then
-        Stream.WriteInt( 0 );
-     else
-        Stream.WriteInt( Level.AutoSaveSlot );
-     end;
   end
 
 --------------------------------------------------------
@@ -255,60 +246,9 @@ end;
        end       
 
        Level.OnLoad_Common();                                   
-     Level.AutoSaveSlot = Stream.ReadInt();
-     if (Level.AutoSaveSlot == nil or Level.AutoSaveSlot < 0 or Level.AutoSaveSlot > 2) then
-        Level.AutoSaveSlot = 0;
-     end;
        Level.OnFinishLoad();
   end
 
-  function Level.AutoSave()
-
-     if (Level.IsMissionFailed() != false) then
-        return;
-     end;
-
-     -- Skip autosave if player is exposed, in combat, or under alert
-     if (AI.IsSilence() == false or
-         AI.IsGlobalAlert() == true or
-         AI.IsGoingAlert(-1) == true) then
-        return;
-     end;
-     for i = 0, 20 do
-        if (AI.IsLocalAlert(i) == true) then
-           return;
-        end;
-     end;
-
-     local nextSlot = 0;
-     if (Level.AutoSaveSlot != nil) then
-        nextSlot = Level.AutoSaveSlot + 1;
-        if (nextSlot > 2) then
-           nextSlot = 0;
-        end;
-     end;
-
-     Level.PendingAutoSaveSlot = nextSlot;
-     System:SaveGame( "_otstupniki_" .. tostring(nextSlot) .. ".asv" , false );
-     if (Level.PendingAutoSaveSlot != nil) then
-        Level.PendingAutoSaveSlot = nil;
-        Level.InstallSingleDpc("Level.AutoSave()", 1.0);
-     end;
-
-  end;
-
-  function Level.OnFailedMissionHandle()
-
-     local slot = Level.AutoSaveSlot;
-     if (slot == nil or slot < 0 or slot > 2) then
-        slot = 0;
-     end;
-
-     System:LoadGame( "_otstupniki_" .. tostring(slot) .. ".asv" , true );
-
-     return true;
-
-  end;
 
 --------------------------------------------------------
 -- Name: Level.OnLoaded()
@@ -669,9 +609,9 @@ end;
                     
        -- Finish load..
        Level.OnFinishLoad();
-       Level.AutoSave();
   end;
 
+  Level.RestartLevelName = "Otstupniki";
   AI.DoFile( "scripts:Levels\\Common.lua", false );
   
 ------------------------------- Level logic ----------------------------------
@@ -1438,7 +1378,7 @@ end
 
         AI.RunScriptTask(npc, "scripts:job\\PlayerAnimTask.lua", AI.LOGIC_DEFAULT, properties);
 
-        Level.VoiceMessage(npc, nil, "Message_DocsClear");
+        Level.VoiceMessage(npc, "otstupniki_soldier_1", "Message_DocsClear");
         
         Level.PatrolPassShowed = true;
         Level.InstallSingleDpc("Level.PatrolPassShowed = false", 600.0);
@@ -2659,7 +2599,7 @@ end
            end
         end
         
-        Level.VoiceMessage(npc, nil, "Message_ForDoctor", 300.0);
+        Level.VoiceMessage(npc, "otstupniki_soldier_2", "Message_ForDoctor", 300.0);
      end
   end
   
@@ -3336,7 +3276,7 @@ function Level.OnStartUseBinocular()
    
    Level.BeginCutScene("BinocularCutscene", "Levels\\Otstupniki\\binocular.scm", messages, 9.0, { 1, 0.0, 1500.0, 2500.0, 255 } );   
    
-   Level.VoiceMessage(AI.FindNPC('SPY2'), nil, 'Message_Binocular');
+   Level.VoiceMessage(AI.FindNPC('SPY2'), "otstupniki_spy_1", 'Message_Binocular');
    Level.InstallDpc("Level.PlayCustomSound('Script04_Sound')", 0.1);
 end
 

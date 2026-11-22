@@ -13,7 +13,7 @@ function Anchor:Setup( uid, npc )
   NPC.SetBodyPolicy( npc, NPC.BODY_POLICY_SIMPLE_STANDING );
   NPC.SetFirePolicy( npc, NPC.FIRE_POLICY_NEUTRAL );
 
-  Level.AddSmallMessage( MissionText.Message_TalkScientist, 5.0, 175, 175, 175 );
+  Level.VoiceMessage( npc, "projecty_scientist_1", "Message_TalkScientist" );
 
   local scientist = AI.FindNPC('AS11');
   if (AI.IsDefault(scientist) != false) then
