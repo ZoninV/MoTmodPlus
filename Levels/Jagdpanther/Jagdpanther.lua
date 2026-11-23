@@ -216,6 +216,7 @@
      Level.EnableLevelMark( 'MAK2', false );
      Level.EnableLevelMark( 'MAK3', false );
      Level.EnableLevelMark( 'MAK4', false );
+     Level.EnableLevelMark( 'DOCS', false );
 
      -- forlik
      if (Level.GetDifficulty() != 3) then
@@ -318,6 +319,8 @@
        Level.PlayMenuSound("task_finish"); -- Liz Shaw
        Level.CompleteMissionTask('VODL', 15.0 );
        Level.EnableLevelMark( 'VODL', false );
+       local v = Level.FindActor('VODL');
+       if (v != nil) then Actor.MarkAsTarget(v, false); end;
        Level.AutoSave();
 
     end;
@@ -342,6 +345,8 @@
 
     Level.RemoveMissionTask('VODL');
     Level.RemoveMissionTask('UGON');
+    local v = Level.FindActor('VODL');
+    if (v != nil) then Actor.MarkAsTarget(v, false); end;
 
    end;
 
@@ -362,6 +367,8 @@
     -- strange?!
     Level.RemoveMissionTask('VODL');
     Level.RemoveMissionTask('UGON');
+    local v = Level.FindActor('VODL');
+    if (v != nil) then Actor.MarkAsTarget(v, false); end;
 
    end;
   
@@ -369,6 +376,10 @@
   end;
 
   function Level.OnHittedYazik()
+
+   if (Level.IsMissionTaskCompleted('HITA') != false) then
+       return;
+   end;
 
    Level.UpdateLeaveTask( "HITA" );
    Level.PlayMenuSound("task_finish"); -- Liz Shaw
@@ -378,10 +389,19 @@
        Level.AddLargeMessage( MissionText.Message_2 , 15.0 , 255, 255, 255 );
    end
 
+   local yazkActor = Level.FindActor('YAZK');
+   if (yazkActor != nil) then
+       Actor.MarkAsTarget(yazkActor, false);
+   end;
+
    Level.EnableLevelMark( 'MAK1' , false );
    Level.EnableLevelMark( 'MAK2' , false );
    Level.EnableLevelMark( 'MAK3' , false );
    Level.EnableLevelMark( 'MAK4' , false );
+
+   if (Level.IsMissionTaskCompleted('DOCS') == false) then
+       Level.EnableLevelMark( 'DOCS' , true );
+   end;
 
    Level.YazikHitted = true;
    Level.AutoSave();
@@ -756,6 +776,8 @@ function Level.OnEnterTriggerArea(sender, trgname, trgcmd)
       Level.EnableLevelMark('MAK4', true);
       Level.RemoveMissionTask('VODL');
       Level.RemoveMissionTask('UGON');
+      local v = Level.FindActor('VODL');
+      if (v != nil) then Actor.MarkAsTarget(v, false); end;
       Level.EnterBase = true;
       Level.AutoSave();
     end

@@ -175,7 +175,7 @@
      local diff = Level.GetDifficulty();
      if (diff == 2) then
 
-         AI.SetForm(AI.FindNPC('G233'), "SOL6");
+         local g233 = AI.FindNPC('G233'); if (g233 != nil) then AI.SetForm(g233, "SOL6"); end;
      end;
      --- init player
 
@@ -657,6 +657,8 @@
        Level.PlayMenuSound("task_finish"); -- Liz Shaw
        Level.CompleteMissionTask('DOCS');
        Level.EnableLevelMark( 'DOCS', false );
+       local weber = Level.FindActor('PAUL');
+       if ( weber != nil ) then Actor.MarkAsTarget( weber, false ); end;
        Level.DocsComplete = true;
 
        Level.RemoveActionHandler( Level.AH_PLAYER_INVENTORY );
@@ -685,11 +687,16 @@
     if (alertGroupId == 1) then
 
        if (Level.Alarm[1] == false) then
-         AI.Patrol(AI.FindNPC('GS87'), 'Path27', nil);
-         AI.PatrolFollow(AI.FindNPC('GS88'), 'Path27', AI.FindNPC('GS87'),  0.0, -15.0, nil);
-         AI.SetJob(AI.FindNPC('G234'), "alert");
-         AI.SetJob(AI.FindNPC('GS86'), "alert");
-         AI.SetJob(AI.FindNPC('G300'), "alert");
+         local gs87 = AI.FindNPC('GS87');
+         local gs88 = AI.FindNPC('GS88');
+         local g234 = AI.FindNPC('G234');
+         local gs86 = AI.FindNPC('GS86');
+         local g300 = AI.FindNPC('G300');
+         if (gs87 != nil) then AI.Patrol(gs87, 'Path27', nil); end
+         if (gs88 != nil and gs87 != nil) then AI.PatrolFollow(gs88, 'Path27', gs87, 0.0, -15.0, nil); end
+         if (g234 != nil) then AI.SetJob(g234, "alert"); end
+         if (gs86 != nil) then AI.SetJob(gs86, "alert"); end
+         if (g300 != nil) then AI.SetJob(g300, "alert"); end
 
          Level.Alarm[1] = true;
        end
@@ -697,10 +704,11 @@
        AI.AddAlertValue(1);
 
        if (Level.Alarm[1] == true) then
-         AI.SetForm(AI.FindNPC('GS86'), "SOL5");
-         AI.SetForm(AI.FindNPC('GS87'), "SOL1");
-         AI.SetForm(AI.FindNPC('GS88'), "SOL1");
-         AI.SetForm(AI.FindNPC('G234'), "SOL6");
+         local n;
+         n = AI.FindNPC('GS86'); if (n != nil) then AI.SetForm(n, "SOL5"); end
+         n = AI.FindNPC('GS87'); if (n != nil) then AI.SetForm(n, "SOL1"); end
+         n = AI.FindNPC('GS88'); if (n != nil) then AI.SetForm(n, "SOL1"); end
+         n = AI.FindNPC('G234'); if (n != nil) then AI.SetForm(n, "SOL6"); end
        end
 
     elseif (alertGroupId == 2) then
@@ -710,7 +718,8 @@
          local p = Level.CreateCustomParams();
          Level.SetValue(p, "Use walk", true);
 
-         AI.Patrol(AI.FindNPC('S315'), 'Path28', patrolProp);
+         local s315 = AI.FindNPC('S315');
+         if (s315 != nil) then AI.Patrol(s315, 'Path28', p); end
 
          local properties = Level.CreateCustomParams();
          Level.SetValue(properties, "Return spawn place", true);
@@ -726,17 +735,20 @@
          Level.SetValue(properties, "Position", 333.0, -55.0, -944.0);
          Level.SetValue(properties, "Direction", 1.0, 0.0, 0.0);
 
-         AI.Idle( AI.FindNPC('S316'), properties );
-         AI.SetJob(AI.FindNPC('S309'), "alert");
+         local s316 = AI.FindNPC('S316');
+         if (s316 != nil) then AI.Idle( s316, properties ); end
+         local s309 = AI.FindNPC('S309');
+         if (s309 != nil) then AI.SetJob(s309, "alert"); end
 
          Level.Alarm[2] = true;
          AI.AddAlertValue(1);
        end
 
        if (Level.Alarm[2] == true) then
-         AI.SetForm(AI.FindNPC('S309'), "SOL5");
-         AI.SetForm(AI.FindNPC('S315'), "SOL1");
-         AI.SetForm(AI.FindNPC('S316'), "SOL1");
+         local n;
+         n = AI.FindNPC('S309'); if (n != nil) then AI.SetForm(n, "SOL5"); end
+         n = AI.FindNPC('S315'); if (n != nil) then AI.SetForm(n, "SOL1"); end
+         n = AI.FindNPC('S316'); if (n != nil) then AI.SetForm(n, "SOL1"); end
        end
     end
 
